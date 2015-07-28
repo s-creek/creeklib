@@ -15,13 +15,13 @@ namespace creek
 
     void get(double* out, bool popp=true);
 	
-    inline bool set(const double *in_x, double in_time, double in_2_delta=0, bool in_abs=true) {
+    inline bool set(const double *in_x, double in_time=0.0, double in_2_delta=0, bool in_abs=true) {
       return set(in_x, 0, 0, in_time, in_2_delta, in_abs);
     }
-    inline bool set(const double *in_x, const double *in_dx, double in_time, double in_2_delta=0, bool in_abs=true) {
+    inline bool set(const double *in_x, const double *in_dx, double in_time=0.0, double in_2_delta=0, bool in_abs=true) {
       return set(in_x, in_dx, 0, in_time, in_2_delta, in_abs);
     }
-    bool set(const double *in_x, const double *in_dx, const double *in_ddx, double in_time, double in_2_delta=0, bool in_abs=true);
+    bool set(const double *in_x, const double *in_dx, const double *in_ddx, double in_time=0.0, double in_2_delta=0, bool in_abs=true);
 
 	
     inline const double* at(int index) {
