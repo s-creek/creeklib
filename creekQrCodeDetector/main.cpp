@@ -15,11 +15,11 @@ int main( int argc, char **argv )
   dec.drawFinderPattern(tmp);
 
   cv::namedWindow("src", CV_WINDOW_AUTOSIZE|CV_WINDOW_FREERATIO);
-  cv::namedWindow("tmp", CV_WINDOW_AUTOSIZE|CV_WINDOW_FREERATIO);
+  cv::namedWindow("finder", CV_WINDOW_AUTOSIZE|CV_WINDOW_FREERATIO);
   cv::namedWindow("QR", CV_WINDOW_AUTOSIZE|CV_WINDOW_FREERATIO);
 
   cv::imshow("src", src);
-  cv::imshow("tmp", tmp);
+  cv::imshow("finder", tmp);
   cv::imshow("QR", dec.getQrImage());
 
   cv::waitKey(0);

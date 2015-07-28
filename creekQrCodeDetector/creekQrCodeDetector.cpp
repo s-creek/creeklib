@@ -106,7 +106,8 @@ void creekQrCodeDetector::cropImage(cv::Mat &in_src)
   }
   
 
-  if(false) {
+  int mode=1;
+  if(mode==0) {
     cv::RotatedRect rect = cv::minAreaRect( contour );
     cv::Point2f center = rect.center;
     cv::Size2f  size = rect.size;
@@ -115,6 +116,22 @@ void creekQrCodeDetector::cropImage(cv::Mat &in_src)
     float x = center.x - max/2.0;  if(x<0) x = 0;
     float y = center.y - max/2.0;  if(y<0) y = 0;
     cv::Mat crop(in_src, cv::Rect(x, y, max, max));
+    cv::resize(crop, m_out, m_out.size(), 0, 0, cv::INTER_LINEAR);
+  }
+  else if(mode==1) {
+    cv::RotatedRect rect = cv::minAreaRect( contour );
+    
+    cv::Point2f center = rect.center;
+    cv::Mat rot = cv::getRotationMatrix2D( center, rect.angle, 1.0 );
+    cv::Mat tmp;
+    cv::warpAffine(in_src, tmp, rot, in_src.size());
+
+    cv::Size2f  size = rect.size;
+    float max = std::max(size.width, size.height)*1.1;
+    float x = center.x - max/2.0;  if(x<0) x = 0;
+    float y = center.y - max/2.0;  if(y<0) y = 0;
+
+    cv::Mat crop(tmp, cv::Rect(x, y, max, max));
     cv::resize(crop, m_out, m_out.size(), 0, 0, cv::INTER_LINEAR);
   }
   else {
