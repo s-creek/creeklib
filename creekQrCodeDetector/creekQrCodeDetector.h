@@ -28,7 +28,7 @@ namespace creek
     float cross(cv::Point2f &v1, cv::Point2f &v2);
 
     int m_requiredChildNum;
-    cv::Mat m_gray, m_edge, m_out;
+    cv::Mat m_gray, m_edge, m_bin, m_out;
 
     std::vector< std::vector<cv::Point> > m_contours;
     std::vector< cv::Vec4i > m_hierarchy;

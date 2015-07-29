@@ -13,7 +13,8 @@ bool creekQrCodeDetector::detectQrCode(cv::Mat &in_src, double in_th)
 {
   cv::cvtColor(in_src, m_gray, CV_BGR2GRAY);
   cv::Canny(m_gray, m_edge, 100, 200, 3, true);
-
+  cv::threshold(m_gray, m_bin, 150, 255, CV_THRESH_BINARY);
+  
   if( !detectFinderPattern(in_th) ) {
     return false;
   }
@@ -101,7 +102,7 @@ bool creekQrCodeDetector::cropImage(cv::Mat &in_src)
   tmp = in_src.clone();
 
 
-  int mode=-1;
+  int mode=0;
   float scale=1.04;
   if( mode==0 ) {
     cv::RotatedRect rect = cv::minAreaRect( contour );
@@ -128,7 +129,28 @@ bool creekQrCodeDetector::cropImage(cv::Mat &in_src)
 
   try {
     crop = cv::Mat(tmp, cv::Rect(x, y, max, max));
-    cv::resize(crop, m_out, m_out.size(), 0, 0, cv::INTER_LINEAR);
+    
+    int test=1;
+    if(test==0) {
+      cv::Mat crop_gray, crop_bin;
+      cv::cvtColor(crop, crop_gray, CV_BGR2GRAY);
+      cv::threshold(crop_gray, crop_bin, 128, 255, CV_THRESH_BINARY);
+      //cv::adaptiveThreshold(crop_gray, crop_bin, 255, cv::ADAPTIVE_THRESH_MEAN_C, cv::THRESH_BINARY, 25, 10);
+      //cv::adaptiveThreshold(crop_gray, crop_bin, 255, cv::ADAPTIVE_THRESH_GAUSSIAN_C, cv::THRESH_BINARY, 25, 10);
+      cv::resize(crop_bin, m_out, m_out.size(), 0, 0, cv::INTER_LINEAR);
+    }
+    else if(test==1) {
+      cv::Mat crop_resize, crop_gray;
+      cv::resize(crop, crop_resize, m_out.size(), 0, 0, cv::INTER_LINEAR);
+      cv::cvtColor(crop_resize, crop_gray, CV_BGR2GRAY);
+      cv::threshold(crop_gray, m_out, 128, 255, CV_THRESH_BINARY);
+      //cv::adaptiveThreshold(crop_gray, m_out, 255, cv::ADAPTIVE_THRESH_MEAN_C, cv::THRESH_BINARY, 25, 10);
+      cv::adaptiveThreshold(crop_gray, m_out, 255, cv::ADAPTIVE_THRESH_MEAN_C, cv::THRESH_BINARY, 25, 5);
+      //cv::adaptiveThreshold(crop_gray, m_out, 255, cv::ADAPTIVE_THRESH_GAUSSIAN_C, cv::THRESH_BINARY, 25, 10);
+    }
+    else {
+      m_out = crop.clone();
+    }
   }
   catch(cv::Exception) {
     return false;

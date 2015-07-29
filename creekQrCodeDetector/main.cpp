@@ -18,11 +18,20 @@ int main( int argc, char **argv )
   cv::namedWindow("finder", CV_WINDOW_AUTOSIZE|CV_WINDOW_FREERATIO);
   cv::namedWindow("QR", CV_WINDOW_AUTOSIZE|CV_WINDOW_FREERATIO);
 
-  cv::imshow("src", src);
-  cv::imshow("finder", tmp);
-  cv::imshow("QR", dec.getQrImage());
 
-  cv::waitKey(0);
+  int key(0), num(0);
+  while(key != 'q') {
+    num++;
+    tmp = src.clone();
+    dec.drawFinderPattern(tmp, num);
+    std::cout << "finder index ( 0 : " << (num-1) << " )" << std::endl;
+    num = num%3;
 
+    cv::imshow("src", src);
+    cv::imshow("finder", tmp);
+    cv::imshow("QR", dec.getQrImage());
+
+    key = cv::waitKey(0) & 255;
+  }
   return 0;
 }
