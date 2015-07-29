@@ -27,7 +27,7 @@ bool creekQrCodeDetector::detectQrCode(cv::Mat &in_src, double in_th)
 
 void creekQrCodeDetector::drawFinderPattern(cv::Mat &in_src, int num)
 {
-  std::vector< cv::Scalar > colors = {cv::Scalar(0, 255, 0),
+  static std::vector< cv::Scalar > colors = {cv::Scalar(0, 255, 0),
 				      cv::Scalar(0, 0, 255),
 				      cv::Scalar(200, 0, 200),
 				      cv::Scalar(255, 0, 0),
