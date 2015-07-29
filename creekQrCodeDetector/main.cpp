@@ -12,7 +12,7 @@ int main( int argc, char **argv )
   creek::creekQrCodeDetector dec;
   if( !dec.detectQrCode(src, 0.7) )
     return 0;
-  dec.drawFinderPattern(tmp);
+  dec.drawFinderPattern(tmp, 2);
 
   cv::namedWindow("src", CV_WINDOW_AUTOSIZE|CV_WINDOW_FREERATIO);
   cv::namedWindow("finder", CV_WINDOW_AUTOSIZE|CV_WINDOW_FREERATIO);
