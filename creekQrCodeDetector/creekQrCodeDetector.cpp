@@ -17,10 +17,10 @@ bool creekQrCodeDetector::detectQrCode(cv::Mat &in_src, double in_th)
   if( !detectFinderPattern(in_th) ) {
     return false;
   }
+  align();
   if( !cropImage(in_src) ) {
     return false;
   }
-  align();
   return true;
 }
 
