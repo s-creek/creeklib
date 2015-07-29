@@ -4,6 +4,7 @@ opencv-2.4.x
 ## reference  
 <http://dsynflo.blogspot.jp/2014/10/opencv-qr-code-detection-and-extraction.html>  
 <http://iphone.moo.jp/app/?p=897>  
+<http://imagingsolution.blog107.fc2.com/blog-entry-202.html>  
 
 ## memo  
 sudo apt-get install build-essential libgtk2.0-dev  
