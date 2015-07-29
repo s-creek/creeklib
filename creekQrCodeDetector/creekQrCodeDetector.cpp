@@ -4,7 +4,8 @@ using namespace creek;
 
 creekQrCodeDetector::creekQrCodeDetector(int in_requiredChildNum)
   : m_requiredChildNum(in_requiredChildNum),
-    m_out(256, 256, CV_8UC1)
+    m_out(256, 256, CV_8UC1),
+    m_debug(false)
 {
 }
 
@@ -16,6 +17,7 @@ bool creekQrCodeDetector::detectQrCode(cv::Mat &in_src, double in_th)
   cv::threshold(m_gray, m_bin, 150, 255, CV_THRESH_BINARY);
   
   if( !detectFinderPattern(in_th) ) {
+    if(m_debug) drawFinderPattern(in_src);
     return false;
   }
   align();
@@ -29,14 +31,14 @@ bool creekQrCodeDetector::detectQrCode(cv::Mat &in_src, double in_th)
 void creekQrCodeDetector::drawFinderPattern(cv::Mat &in_src, int num)
 {
   static std::vector< cv::Scalar > colors = {cv::Scalar(0, 255, 0),
-				      cv::Scalar(0, 0, 255),
-				      cv::Scalar(200, 0, 200),
-				      cv::Scalar(255, 0, 0),
-				      cv::Scalar(0, 200, 200),
-				      cv::Scalar(200, 200, 0),
-				      cv::Scalar(0, 0, 100),
-				      cv::Scalar(0, 100, 0),
-				      cv::Scalar(100, 0, 0)};
+					     cv::Scalar(0, 0, 255),
+					     cv::Scalar(200, 0, 200),
+					     cv::Scalar(255, 0, 0),
+					     cv::Scalar(0, 200, 200),
+					     cv::Scalar(200, 200, 0),
+					     cv::Scalar(0, 0, 100),
+					     cv::Scalar(0, 100, 0),
+					     cv::Scalar(100, 0, 0)};
 
   int size = m_index.size();
   if( num > 0 ) {
@@ -84,6 +86,7 @@ bool creekQrCodeDetector::detectFinderPattern(double in_th)
       }
     }
   }
+  if(m_debug) std::cout << "detectFinderPattern : find num = " << m_index.size() << std::endl;
   return (m_index.size() == 3);
 }
 
@@ -105,7 +108,8 @@ bool creekQrCodeDetector::cropImage(cv::Mat &in_src)
   int mode=0;
   float scale=1.04;
   if( mode==0 ) {
-    cv::RotatedRect rect = cv::minAreaRect( contour );
+    //cv::RotatedRect rect = cv::minAreaRect( contour );
+    cv::RotatedRect rect = cv::minAreaRect( cv::Mat(contour) );
     
     cv::Mat rot = cv::getRotationMatrix2D( rect.center, rect.angle, 1.0 );
     cv::warpAffine(in_src, tmp, rot, in_src.size());
@@ -115,7 +119,8 @@ bool creekQrCodeDetector::cropImage(cv::Mat &in_src)
     y = rect.center.y - max/2.0;  if(y<0) y = 0;
   }
   else {
-    cv::Rect rect = cv::boundingRect( contour );
+    //cv::Rect rect = cv::boundingRect( contour );
+    cv::Rect rect = cv::boundingRect( cv::Mat(contour) );
     
     cv::Point2f center;
     center.x = rect.x + rect.width/2.0;
@@ -166,9 +171,11 @@ double creekQrCodeDetector::minAreaRatio(std::vector<int> &in_contIndex)
 
   for(int i=0; i<in_contIndex.size(); i++) {
     int index=in_contIndex[i];
-    cv::RotatedRect rect = cv::minAreaRect( m_contours[index] );
+    //cv::RotatedRect rect = cv::minAreaRect( m_contours[index] );
+    cv::RotatedRect rect = cv::minAreaRect( cv::Mat(m_contours[index]) );
     double rect_area = rect.size.width * rect.size.height;
-    double cont_area = cv::contourArea( m_contours[index] );
+    //double cont_area = cv::contourArea( m_contours[index] );
+    double cont_area = cv::contourArea( cv::Mat(m_contours[index]) );
 
     double ratio=cont_area/rect_area;
     if( min>ratio ) min=ratio;
@@ -185,7 +192,8 @@ void creekQrCodeDetector::align()
 
   for(int i=0; i<m_index.size(); i++) {
     int index = m_index[i].back();
-    mu[i] = cv::moments(m_contours[index]);
+    //mu[i] = cv::moments(m_contours[index]);
+    mu[i] = cv::moments( cv::Mat(m_contours[index]) );
     mc[i] = cv::Point2f( mu[i].m10/mu[i].m00 , mu[i].m01/mu[i].m00 );
   }
 
@@ -196,7 +204,7 @@ void creekQrCodeDetector::align()
   dAB = distance(mc[A], mc[B]);
   dBC = distance(mc[B], mc[C]);
   dCA = distance(mc[C], mc[A]);
-  std::cout << "AB = " << dAB << ",  BC = " << dBC << ",  CA = " << dCA << std::endl;
+  if(m_debug) std::cout << "align : AB = " << dAB << ",  BC = " << dBC << ",  CA = " << dCA << std::endl;
 
 
   // finder index

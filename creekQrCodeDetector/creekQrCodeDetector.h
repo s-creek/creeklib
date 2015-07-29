@@ -17,6 +17,8 @@ namespace creek
     void drawFinderPattern(cv::Mat &in_src, int num=-1);
     inline cv::Mat getQrImage() { return m_out; }
 
+    inline void debug(bool in_flag=false) { m_debug = in_flag; }
+
 
   private:
     bool detectFinderPattern(double in_th=0.70);
@@ -33,6 +35,8 @@ namespace creek
     std::vector< std::vector<cv::Point> > m_contours;
     std::vector< cv::Vec4i > m_hierarchy;
     std::vector< std::vector<int> > m_index;  // finder pattern index (3 x requiredChildNum)
+
+    bool m_debug;
   };
 };
 

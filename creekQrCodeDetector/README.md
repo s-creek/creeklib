@@ -1,5 +1,6 @@
 ## require  
-opencv-2.4.x  
+opencv-2.2.x  
+zbar-0.10  
 
 ## reference  
 <http://dsynflo.blogspot.jp/2014/10/opencv-qr-code-detection-and-extraction.html>  
