@@ -36,7 +36,7 @@ int main()
     m_zbar.set_data(gray.data, gray.total());
     if( m_scanner.scan(m_zbar) != 0 ) {
       for(zbar::Image::SymbolIterator symbol = m_zbar.symbol_begin(); symbol != m_zbar.symbol_end(); ++symbol) {
-	std::cout << "org : type = " << symbol->get_type_name() << ",  type = " << symbol->get_type() << ",  data" << symbol->get_data() << std::endl;
+	std::cout << "org : type = " << symbol->get_type_name() << ",  type = " << symbol->get_type() << ",  data = " << symbol->get_data() << std::endl;
    
       }
     }
@@ -51,7 +51,7 @@ int main()
     m_zbar.set_data(gray.data, gray.total());
     if( m_scanner.scan(m_zbar) != 0 ) {
       for(zbar::Image::SymbolIterator symbol = m_zbar.symbol_begin(); symbol != m_zbar.symbol_end(); ++symbol) {
-	std::cout << "QR  : type = " << symbol->get_type_name() << ",  type = " << symbol->get_type() << ",  data" << symbol->get_data() << std::endl;
+	std::cout << "QR  : type = " << symbol->get_type_name() << ",  type = " << symbol->get_type() << ",  data = " << symbol->get_data() << std::endl;
    
       }
     }
