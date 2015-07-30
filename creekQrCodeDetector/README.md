@@ -8,13 +8,13 @@ zbar-0.10
 <http://imagingsolution.blog107.fc2.com/blog-entry-202.html>  
 
 ## memo  
-*OpenCV
+* OpenCV  
 sudo apt-get install build-essential libgtk2.0-dev  
 sudo apt-get install libqt4-dev libqt4-opengl-dev libvtk5-qt4-dev  
 sudo apt-get install libjpeg-dev libopenjpeg-dev libjasper-dev libpng12-dev libtiff4-dev libopenexr-dev  
 sudo apt-get install libxvidcore-dev libv4l-dev v4l2ucp libvorbis-dev libdc1394-22-dev  
 
-*ZBar  
+* ZBar  
 sudo apt-get install libzbar0  
 sudo apt-get install libzbar0  
 sudo apt-get install libzbar0
