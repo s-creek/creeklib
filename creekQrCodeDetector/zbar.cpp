@@ -5,7 +5,7 @@
 int main()
 {
   cv::VideoCapture video(0);
-  cv::Mat src, finder, gray;
+  cv::Mat src, finder, gray, qr0, qr1;
 
   creek::creekQrCodeDetector dec;
   //dec.debug(true);
@@ -18,7 +18,9 @@ int main()
 
   cv::namedWindow("src", CV_WINDOW_AUTOSIZE|CV_WINDOW_FREERATIO);
   cv::namedWindow("finder", CV_WINDOW_AUTOSIZE|CV_WINDOW_FREERATIO);
-  cv::namedWindow("QR", CV_WINDOW_AUTOSIZE|CV_WINDOW_FREERATIO);
+  cv::namedWindow("QR pers", CV_WINDOW_AUTOSIZE|CV_WINDOW_FREERATIO);
+  cv::namedWindow("QR affin", CV_WINDOW_AUTOSIZE|CV_WINDOW_FREERATIO);
+
 
   int key(0);
   while(key != 'q') {
@@ -27,8 +29,11 @@ int main()
       return 0;
     finder = src.clone();
 
-    if( dec.detectQrCode(src, 0.5) )
+
+    if( dec.detectQrCode(src, 0.7, 0) ) {
       dec.drawFinderPattern(finder);
+      dec.drawVertices(finder);
+    }
 
 
     cv::cvtColor(src, gray, CV_BGR2GRAY);
@@ -41,25 +46,33 @@ int main()
       }
     }
 
-    if( dec.getQrImage().channels() == 3 ) {
-      cv::cvtColor(dec.getQrImage(), gray, CV_BGR2GRAY);
-    }
-    else {
-      gray = dec.getQrImage();
-    }
-    m_zbar.set_size(gray.cols, gray.rows);
-    m_zbar.set_data(gray.data, gray.total());
+
+    qr0 = dec.getQrImage(src, 0);
+    m_zbar.set_size(qr0.cols, qr0.rows);
+    m_zbar.set_data(qr0.data, qr0.total());
     if( m_scanner.scan(m_zbar) != 0 ) {
       for(zbar::Image::SymbolIterator symbol = m_zbar.symbol_begin(); symbol != m_zbar.symbol_end(); ++symbol) {
-	std::cout << "QR  : type = " << symbol->get_type_name() << ",  type = " << symbol->get_type() << ",  data = " << symbol->get_data() << std::endl;
+	std::cout << "QR0 : type = " << symbol->get_type_name() << ",  type = " << symbol->get_type() << ",  data = " << symbol->get_data() << std::endl;
    
+      }
+    }
+
+ 
+    qr1 = dec.getQrImage(src, 1);
+    m_zbar.set_size(qr1.cols, qr1.rows);
+    m_zbar.set_data(qr1.data, qr1.total());
+    if( m_scanner.scan(m_zbar) != 0 ) {
+      for(zbar::Image::SymbolIterator symbol = m_zbar.symbol_begin(); symbol != m_zbar.symbol_end(); ++symbol) {
+	std::cout << "QR1 : type = " << symbol->get_type_name() << ",  type = " << symbol->get_type() << ",  data = " << symbol->get_data() << std::endl;
+	
       }
     }
 
 
     cv::imshow("src", src);
     cv::imshow("finder", finder);
-    cv::imshow("QR", dec.getQrImage());
+    cv::imshow("QR pers", qr0);
+    cv::imshow("QR affin", qr1);
 
     key = cv::waitKey(100) & 255;
   }
