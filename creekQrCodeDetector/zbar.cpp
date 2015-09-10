@@ -22,12 +22,14 @@ int main()
   cv::namedWindow("QR affin", CV_WINDOW_AUTOSIZE|CV_WINDOW_FREERATIO);
 
 
+  std::string orgstr, qrstr;
   int key(0);
   while(key != 'q') {
     video >> src;
     if( src.empty() )
       return 0;
-    finder = src.clone();
+    //finder = src.clone();
+    finder = cv::Mat::zeros(src.rows, src.cols, CV_8U);
 
 
     if( dec.detectQrCode(src, 0.7, 0) ) {
@@ -41,8 +43,8 @@ int main()
     m_zbar.set_data(gray.data, gray.total());
     if( m_scanner.scan(m_zbar) != 0 ) {
       for(zbar::Image::SymbolIterator symbol = m_zbar.symbol_begin(); symbol != m_zbar.symbol_end(); ++symbol) {
-	std::cout << "org : type = " << symbol->get_type_name() << ",  type = " << symbol->get_type() << ",  data = " << symbol->get_data() << std::endl;
-   
+	//std::cout << "org : type = " << symbol->get_type_name() << ",  type = " << symbol->get_type() << ",  data = " << symbol->get_data() << std::endl;
+	orgstr = symbol->get_data();
       }
     }
 
@@ -52,8 +54,8 @@ int main()
     m_zbar.set_data(qr0.data, qr0.total());
     if( m_scanner.scan(m_zbar) != 0 ) {
       for(zbar::Image::SymbolIterator symbol = m_zbar.symbol_begin(); symbol != m_zbar.symbol_end(); ++symbol) {
-	std::cout << "QR0 : type = " << symbol->get_type_name() << ",  type = " << symbol->get_type() << ",  data = " << symbol->get_data() << std::endl;
-   
+	//std::cout << "QR0 : type = " << symbol->get_type_name() << ",  type = " << symbol->get_type() << ",  data = " << symbol->get_data() << std::endl;
+	qrstr = symbol->get_data();
       }
     }
 
@@ -63,9 +65,19 @@ int main()
     m_zbar.set_data(qr1.data, qr1.total());
     if( m_scanner.scan(m_zbar) != 0 ) {
       for(zbar::Image::SymbolIterator symbol = m_zbar.symbol_begin(); symbol != m_zbar.symbol_end(); ++symbol) {
-	std::cout << "QR1 : type = " << symbol->get_type_name() << ",  type = " << symbol->get_type() << ",  data = " << symbol->get_data() << std::endl;
+	//std::cout << "QR1 : type = " << symbol->get_type_name() << ",  type = " << symbol->get_type() << ",  data = " << symbol->get_data() << std::endl;
 	
       }
+    }
+    if( orgstr != qrstr ) {
+      std::cout << "error" << std::endl;
+      std::cout << "  org = " << orgstr << std::endl;
+      std::cout << "  qr0 = " << qrstr << std::endl;
+    }
+    else {
+      std::cout << "ok" << std::endl;
+      std::cout << "  org = " << orgstr << std::endl;
+      std::cout << "  qr0 = " << qrstr << std::endl;
     }
 
 

@@ -253,17 +253,34 @@ void creekQrCodeDetector::getVertices(int in_orientation)
 {
   for(int i=0; i<3; i++) {
     int index = m_index[i].back();
-    cv::RotatedRect rect = cv::minAreaRect( cv::Mat(m_contours[index]) );
-
     cv::Point2f tmp[4];
-    rect.points(tmp);
+
+    std::vector<cv::Point> approx;
+    cv::approxPolyDP(cv::Mat(m_contours[index]), approx, 5.0, true);
+    if(m_debug) {
+      std::clog << "[getVertices] aaprox size = " << approx.size() << std::endl;
+      for(int j=0; j<approx.size(); j++) {
+	std::clog << "  " << approx[j] << std::endl;
+      }
+    }
+    if( approx.size() == 4 && true ) {
+      for(int j=0; j<4; j++) {
+	tmp[j] = approx[j];
+      }
+    }
+    else {
+      cv::RotatedRect rect = cv::minAreaRect( cv::Mat(m_contours[index]) );
+      rect.points(tmp);
+      std::clog << "[getVertices] aaprox size = " << approx.size() << std::endl;
+    }
+
 
     int start(0);
     float dot(-1.0);
-    for( int i=0; i<4; i++) {
-      cv::Point2f d( tmp[(i+1)%4] - tmp[i] );
+    for( int j=0; j<4; j++) {
+      cv::Point2f d( tmp[(j+1)%4] - tmp[j] );
       if( d.dot(m_top) > dot ) {
-	start = i;
+	start = j;
 	dot = d.dot(m_top);
       }
     }
@@ -273,7 +290,7 @@ void creekQrCodeDetector::getVertices(int in_orientation)
     }
 
     if(m_debug) {
-      std::clog << "[getVertices] finder = " << i << ",  orientation = " << in_orientation << ",  angle = " << rect.angle << ",  vertices = [";
+      std::clog << "[getVertices] finder = " << i << ",  orientation = " << in_orientation << ",  vertices = [";
       for(int j=0; j<4; j++)
 	std::clog << " " << m_vertices[i][j] << " ";
       std::clog << "]" << std::endl;
