@@ -15,6 +15,6 @@ sudo apt-get install libjpeg-dev libopenjpeg-dev libjasper-dev libpng12-dev libt
 sudo apt-get install libxvidcore-dev libv4l-dev v4l2ucp libvorbis-dev libdc1394-22-dev  
 
 * ZBar  
-sudo apt-get install libzbar0  
-sudo apt-get install libzbar0  
 sudo apt-get install libzbar0
+sudo apt-get install zbar-tools
+sudo apt-get install libzbar-dev
