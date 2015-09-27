@@ -20,6 +20,8 @@ namespace creek
     inline cv::Mat getQrImage() { return m_out.clone(); }
     cv::Mat getQrImage(cv::Mat &in_src, int in_method=0);
 
+    inline cv::Point2f getCenter() { return m_center; }
+
     inline void debug(bool in_flag=false) { m_debug = in_flag; }
 
 
@@ -34,7 +36,7 @@ namespace creek
     double minAreaRatio(std::vector<int> &in_contIndex);
     float distance(cv::Point2f &P, cv::Point2f &Q);
     float cross(cv::Point2f v1, cv::Point2f v2);
-    int getOrientation(cv::Point2f &in_top);
+    int getOrientation();
 
 
     int m_requiredChildNum;
@@ -45,7 +47,7 @@ namespace creek
     std::vector< std::vector<int> > m_index;  // finder pattern index (3 x requiredChildNum)
     cv::Point2f m_vertices[3][4];  // L, M, Q
     cv::Point2f m_intersection;    // N
-    cv::Point2f m_top;
+    cv::Point2f m_top, m_center;
 
     bool m_debug;
   };

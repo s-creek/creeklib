@@ -53,6 +53,8 @@ void creekQrCodeDetector::drawVertices(cv::Mat &in_src, int num)
 
   cv::line( in_src, m_vertices[1][1], m_intersection, cv::Scalar(150,0,255), 1, 8, 0 );
   cv::line( in_src, m_vertices[2][3], m_intersection, cv::Scalar(150,0,255), 1, 8, 0 );
+  
+  cv::circle( in_src, m_center, 6, cv::Scalar(0,0,255), -1, 8, 0 );
 }
 
 
@@ -72,7 +74,7 @@ bool creekQrCodeDetector::detectQrCode(cv::Mat &in_src, double in_th, int in_met
   }
 
   // align finder-pattern index
-  // * orientation is old code, now in use for debug.
+  // * orientation is old value, now in use for debug.
   int orientation = align();
   if( orientation == QR_CENTER ) {
     if(m_debug) std::clog << "[detectQrCode] error : align()" << std::endl;
@@ -245,7 +247,7 @@ int creekQrCodeDetector::align()
 	m_top = mc[C] - mc[A];
       }
     }
-  return getOrientation(m_top);
+  return getOrientation();
 }
 
 
@@ -307,10 +309,12 @@ bool creekQrCodeDetector::getIntersectionPoint()
   cv::Point2f s(m_vertices[2][2]-m_vertices[2][3]);
 
   if(cross(r, s) == 0) {return false;}
-
   float t = cross( q-p, s)/cross(r, s);
-
   m_intersection = p + t*r;
+
+  m_center.x = (p.x + q.x) / 2.0;
+  m_center.y = (p.y + q.y) / 2.0;
+
   return true;
 }
 
@@ -450,12 +454,12 @@ float creekQrCodeDetector::cross(cv::Point2f v1, cv::Point2f v2)
 }
 
 
-int creekQrCodeDetector::getOrientation(cv::Point2f &in_top)
+int creekQrCodeDetector::getOrientation()
 {
   int orientation(QR_CENTER);
 
-  float x = in_top.x;
-  float y = in_top.y;
+  float x = m_top.x;
+  float y = m_top.y;
 
   if( x > 0  &&  y >=0 )
     orientation = QR_NE;

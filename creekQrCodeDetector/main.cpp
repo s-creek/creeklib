@@ -10,7 +10,7 @@ int main( int argc, char **argv )
   cv::Mat tmp = src.clone();
 
   creek::creekQrCodeDetector dec;
-  //dec.debug(true);  
+  dec.debug(true);  
   if( !dec.detectQrCode(src) )
     return 0;
 

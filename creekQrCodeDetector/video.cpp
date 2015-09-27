@@ -27,13 +27,15 @@ int main()
     if( dec.detectQrCode(src, 0.7) ) {
       dec.drawFinderPattern(finder);
       dec.drawVertices(vertices);
+
+      std::cout << "center : " << dec.getCenter().x << ", " << dec.getCenter().y << std::endl;
     }
  
 
     cv::imshow("src", src);
     cv::imshow("finder", finder);
     cv::imshow("vertices", vertices);
-    cv::imshow("QR", dec.getQrImage(src, 1));
+    cv::imshow("QR", dec.getQrImage(src, 0));
 
     key = cv::waitKey(100) & 255;
   }
