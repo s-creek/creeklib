@@ -321,7 +321,7 @@ bool creekQrCodeDetector::getIntersectionPoint()
 
 bool creekQrCodeDetector::cropImage(cv::Mat &in_src)
 {
-  if( m_intersection.x < 0 || m_intersection.y < 0 || m_intersection.x > in_src.cols || m_intersection.y > in_src.rows )
+  if( m_intersection.x < 0 || m_intersection.y < 0 || m_intersection.x >= in_src.cols || m_intersection.y >= in_src.rows )
     return false;
   
   std::vector<cv::Point> contour;
@@ -395,7 +395,7 @@ bool creekQrCodeDetector::cropImage(cv::Mat &in_src)
 
 bool creekQrCodeDetector::warpImage(cv::Mat &in_src)
 {
-  if( m_intersection.x < 0 || m_intersection.y < 0 || m_intersection.x > in_src.cols || m_intersection.y > in_src.rows )
+  if( m_intersection.x < 0 || m_intersection.y < 0 || m_intersection.x >= in_src.cols || m_intersection.y >= in_src.rows )
     return false;
 
   std::vector<cv::Point2f> org, dst;
