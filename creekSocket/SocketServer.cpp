@@ -9,6 +9,7 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <netdb.h>
+#include <sys/ioctl.h>
 
 using namespace creek;
 #define MAX_BUFFER_SIZE 512
@@ -49,6 +50,10 @@ bool SocketServer::init(unsigned short in_portNum)
   }
 
 
+  //int val = 1;
+  //ioctl(m_socket, FIONBIO, &val);
+
+
   // 接続の許可（回線数の指定）
   listen(m_socket, 5);
 
@@ -84,10 +89,6 @@ bool SocketServer::stop()
 {
   m_active = false;
 
-  // thread の停止
-  if( !ThreadBase::stop() )
-    return false;
-
   // socket のクローズ
   ::close(m_client);
   ::close(m_socket);
@@ -96,6 +97,11 @@ bool SocketServer::stop()
   m_socket = -1;
 
   clear();
+
+
+  // thread の停止
+  if( !ThreadBase::stop() )
+    return false;
 
   //std::cout << "SocketServer::stop()" << std::endl;
   return true;
@@ -109,6 +115,19 @@ void SocketServer::run()
     // 通信待機
     //
     if(m_client < 0) {
+
+      // check active receiver
+      for( std::vector<SocketServer*>::iterator iter = m_receiver.begin(); iter != m_receiver.end(); ) {
+	if( ! (*iter)->isActive() ) {
+	  delete *iter;
+	  iter = m_receiver.erase(iter);
+	  //std::cout << "remove" << std::endl;
+	}
+	else {
+	  ++iter;
+	}
+      }
+
 
       // create new client
       struct sockaddr_in clientAddr;
@@ -130,18 +149,6 @@ void SocketServer::run()
 	  delete receiver;
 	}
       }
-
-
-      // check active receiver
-      for( std::vector<SocketServer*>::iterator iter = m_receiver.begin(); iter != m_receiver.end(); ) {
-	if( ! (*iter)->isActive() ) {
-	  delete *iter;
-	  iter = m_receiver.erase(iter);
-	}
-	else {
-	  ++iter;
-	}
-      }
     }
     //
     // 受信
@@ -155,7 +162,7 @@ void SocketServer::run()
       }
       else if( bufsize > 0 ) {
 	std::string st(data);
-	std::cout << "data = " << st << std::endl;
+	std::cout << st;
       }
       else {
 	std::cout << "connection closed. client id = " << m_client << std::endl;
