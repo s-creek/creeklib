@@ -4,8 +4,6 @@
 #define CREEK_SOCKET_CLIENT_H
 
 #include <string>
-#include <vector>
-#include <deque>
 
 namespace creek
 {

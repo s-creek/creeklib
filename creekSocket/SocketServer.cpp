@@ -145,7 +145,7 @@ void SocketServer::run()
 	  m_receiver.push_back(receiver);
 	}
 	else {
-	  std::cerr << "failed to create new receiver" << std::endl;
+	  std::cout << "failed to create new receiver" << std::endl;
 	  delete receiver;
 	}
       }
@@ -158,11 +158,12 @@ void SocketServer::run()
       int bufsize = recv(m_client, &data[0], MAX_BUFFER_SIZE, 0);
   
       if( bufsize >= MAX_BUFFER_SIZE ) {
-	std::cerr << "buffer overflow" << std::endl;
+	std::cout << "buffer overflow" << std::endl;
       }
       else if( bufsize > 0 ) {
 	std::string st(data);
-	std::cout << st;
+	eraseEndOfWhiteSpace(st);
+	std::cout << st << std::endl;
       }
       else {
 	std::cout << "connection closed. client id = " << m_client << std::endl;
@@ -172,3 +173,12 @@ void SocketServer::run()
     }
   }
 }
+
+
+void SocketServer::eraseEndOfWhiteSpace(std::string &st)
+{
+  while( *st.rbegin() == ' ' || *st.rbegin() == '\t' || *st.rbegin() == '\r' || *st.rbegin() == '\n' ) {
+    st.erase(st.size()-1);
+  }
+}
+

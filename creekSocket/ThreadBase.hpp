@@ -10,11 +10,11 @@ namespace creek
   class ThreadBase
   {
   public:
-    ThreadBase();
-    ~ThreadBase();
+    inline ThreadBase();
+    inline ~ThreadBase();
 
-    bool start();
-    bool stop();
+    inline bool start();
+    inline bool stop();
 
 
   protected:
