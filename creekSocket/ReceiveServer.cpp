@@ -161,7 +161,7 @@ void ReceiveServer::procReceiver(fd_set &fdSet)
       }
 
       if( bufsize > 0 ) {
-	std::string st(data);
+	std::string st(data, bufsize);
 	eraseEndOfWhiteSpace(st);
 	std::cout << st << std::endl;
 	++iter;

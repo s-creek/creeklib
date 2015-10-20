@@ -161,7 +161,7 @@ void SocketServer::run()
 	std::cout << "buffer overflow" << std::endl;
       }
       else if( bufsize > 0 ) {
-	std::string st(data);
+	std::string st(data, bufsize);
 	eraseEndOfWhiteSpace(st);
 	std::cout << st << std::endl;
       }
