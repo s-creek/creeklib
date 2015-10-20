@@ -10,11 +10,11 @@ namespace creek
   class ThreadBase
   {
   public:
-    inline ThreadBase();
-    inline ~ThreadBase();
+    ThreadBase();
+    ~ThreadBase();
 
-    inline bool start();
-    inline bool stop();
+    bool start();
+    bool stop();
 
 
   protected:
@@ -35,18 +35,18 @@ namespace creek
 
 namespace creek
 {
-  ThreadBase::ThreadBase()
+  inline ThreadBase::ThreadBase()
   {
   }
 
 
-  ThreadBase::~ThreadBase()
+  inline ThreadBase::~ThreadBase()
   {
     stop();
   }
 
 
-  bool ThreadBase::start()
+  inline bool ThreadBase::start()
   {
     if( pthread_create(&m_thread, NULL, __run, this) != 0 )
       return false;
@@ -55,7 +55,7 @@ namespace creek
   }
 
 
-  bool ThreadBase::stop()
+  inline bool ThreadBase::stop()
   {
     if( pthread_cancel(m_thread) == 0 ) {
       pthread_join(m_thread, NULL);
