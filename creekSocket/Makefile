@@ -27,14 +27,22 @@ clean:
 	rm -f *~
 	rm -f client server stream receiver
 
+
+#
+# sample
+#
 client: client.cpp
-	$(CXX) $(CXXFLAGS) $< -o $@ $(LDFLAGS) -lcreekSocket
+#	$(CXX) $(CXXFLAGS) $< -o $@ $(LDFLAGS) -lcreekSocket
+	$(CXX) $(CXXFLAGS) $< -o $@ $(LDFLAGS) $(OBJS)
 
 server: server.cpp
-	$(CXX) $(CXXFLAGS) $< -o $@ $(LDFLAGS) -lcreekSocket
+#	$(CXX) $(CXXFLAGS) $< -o $@ $(LDFLAGS) -lcreekSocket
+	$(CXX) $(CXXFLAGS) $< -o $@ $(LDFLAGS) $(OBJS)
 
 stream: stream.cpp StreamSocketClient.hpp
-	$(CXX) $(CXXFLAGS) $< -o $@ $(LDFLAGS) -lcreekSocket
+#	$(CXX) $(CXXFLAGS) $< -o $@ $(LDFLAGS) -lcreekSocket
+	$(CXX) $(CXXFLAGS) $< -o $@ $(LDFLAGS) $(OBJS)
 
 receiver: receiver.cpp
-	$(CXX) $(CXXFLAGS) $< -o $@ $(LDFLAGS) -lcreekSocket
+#	$(CXX) $(CXXFLAGS) $< -o $@ $(LDFLAGS) -lcreekSocket
+	$(CXX) $(CXXFLAGS) $< -o $@ $(LDFLAGS) $(OBJS) 
