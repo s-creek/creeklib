@@ -1,22 +1,19 @@
 CXXFLAGS = -std=c++0x -I. `pkg-config opencv --cflags`
 LDFLAGS  = -L. `pkg-config opencv --libs`
 
-target: main video libQrCodeDetector.so
+target: libQrCodeDetector.so main video
 
 libQrCodeDetector.so: creekQrCodeDetector.cpp creekQrCodeDetector.h
 	$(CXX) $(CXXFLAGS) -fPIC -shared $< -o $@
 
-main: main.cpp creekQrCodeDetector.h libQrCodeDetector.so
-	$(CXX) $(CXXFLAGS) $< -o $@ -lQrCodeDetector $(LDFLAGS)
+main: main.cpp creekQrCodeDetector.h
+	$(CXX) $(CXXFLAGS) $< -o $@ $(LDFLAGS) -lQrCodeDetector
 
-video: video.cpp creekQrCodeDetector.h libQrCodeDetector.so
-	$(CXX) $(CXXFLAGS) $< -o $@ -lQrCodeDetector $(LDFLAGS)
+video: video.cpp creekQrCodeDetector.h
+	$(CXX) $(CXXFLAGS) $< -o $@ $(LDFLAGS) -lQrCodeDetector
 
-rect: rect.cpp creekQrCodeDetector.h libQrCodeDetector.so
-	$(CXX) $(CXXFLAGS) $< -o $@ -lQrCodeDetector $(LDFLAGS)
-
-zbar: zbar.cpp creekQrCodeDetector.h libQrCodeDetector.so
-	$(CXX) $(CXXFLAGS) $< -o $@ -lQrCodeDetector $(LDFLAGS) `pkg-config zbar --libs`
+zbar: zbar.cpp creekQrCodeDetector.h
+	$(CXX) $(CXXFLAGS) $< -o $@ $(LDFLAGS) -lQrCodeDetector `pkg-config zbar --libs`
 
 clean:
 	rm -f *~
