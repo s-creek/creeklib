@@ -2,17 +2,23 @@
 #include <iostream>
 #include "unistd.h"
 
-int main()
+int main(int argc, char **argv)
 {
+  std::string serverIP("localhost");
+  if(argc > 1)
+    serverIP = argv[1];
+
+
   creek::StreamSocketClient ssc;
   ssc.setHeader("[client]");
-  ssc.connect("localhost", 1280);  
+  ssc.connect(serverIP, 1280);
 
   ssc.set(std::cout);
   ssc.set(std::cerr);
   ssc.set(std::clog);
 
-  //ssc.connect("localhost", 1280);  
+
+  //ssc.connect(serverIP, 1280);
 
 
   sleep(1);

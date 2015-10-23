@@ -3,17 +3,22 @@
 #include <sstream>
 #include "unistd.h"
 
-int main()
+int main(int argc, char **argv)
 {
+  std::string serverIP("localhost");
+  if(argc > 1)
+    serverIP = argv[1];
+
+
   creek::SocketClient *client1 = new creek::SocketClient();
-  if( !client1->connect("localhost", 1280) ) {
+  if( !client1->connect(serverIP, 1280) ) {
     std::cerr << "client1 : connect error" << std::endl;
     return 0;
   }
 
 
   creek::SocketClient *client2 = new creek::SocketClient();
-  if( !client2->connect("localhost", 1280) ) {
+  if( !client2->connect(serverIP, 1280) ) {
     std::cerr << "client2 : connect error" << std::endl;
     return 0;
   }
