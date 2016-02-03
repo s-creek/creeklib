@@ -89,7 +89,7 @@ namespace creek
       rhs.assign_to(*this, tvmet::Fcnl_assign<value_type, T2>());
       return *this;
     }
-    
+
     template <class E>
     Matrix& operator=(const tvmet::XprMatrix<E, Rows, Cols>& rhs) {
       rhs.assign_to(*this, tvmet::Fcnl_assign<value_type, typename E::value_type>());
