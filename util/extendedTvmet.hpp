@@ -67,9 +67,9 @@ namespace creek
       return tvmet::CommaInitializer<Matrix, Size>(*this, rhs);
     }
 
-    tvmet::CommaInitializer<Matrix, Size> operator<<(value_type rhs) {
-      return tvmet::CommaInitializer<Matrix, Size>(*this, rhs);
-    }
+    // tvmet::CommaInitializer<Matrix, Size> operator<<(value_type rhs) {
+    //   return tvmet::CommaInitializer<Matrix, Size>(*this, rhs);
+    // }
 
     enum {
       ops_assign = Rows * Cols,
@@ -97,6 +97,14 @@ namespace creek
     }
 
   };
+
 }
+
+
+template<class matT, class valT>
+tvmet::CommaInitializer<matT, matT::Size> operator<<(matT& mat, valT rhs) {
+  return tvmet::CommaInitializer<matT, matT::Size>(mat, rhs);
+}
+
 
 #endif
