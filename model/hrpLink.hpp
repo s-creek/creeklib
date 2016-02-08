@@ -2,23 +2,26 @@
 #define CREEK_HRP_LINK_HPP
 
 #include <hrpModel/Link.h>
-#include <creeklib/util/matrixTypes.hpp>
+#include "../util/matrixTypes.hpp"
 
 namespace creek
 {
-  class hrpLink : public hrp::Link
+  class Link : public hrp::Link
   {
   public:
-    hrpLink() : hrp::Link() {}
-    hrpLink(const hrp::Link& link) : hrp::Link(link) {}
+    Link() : hrp::Link() {}
+    Link(const hrp::Link& link) : hrp::Link(link) {}
     
     std::string name() { return hrp::Link::name; }
 
-    double q() const { return hrp::Link::q; }
-    double& q() { return hrp::Link::q; }
+    inline double q() const { return hrp::Link::q; }
+    inline double& q() { return hrp::Link::q; }
 
-    const creek::Matrix3 R() const { return creek::Matrix3(hrp::Link::R); }
-    hrp::Matrix33& R() { return hrp::Link::R; }
+    inline const creek::Matrix3 R() const { return creek::Matrix3(hrp::Link::R); }
+    inline creek::Matrix3& R() { return static_cast<creek::Matrix3&>(hrp::Link::R); }
+
+    inline const creek::Vector3 p() const { return creek::Vector3(hrp::Link::p); }
+    inline creek::Vector3& p() { return static_cast<creek::Vector3&>(hrp::Link::p); }
   };
 }
 

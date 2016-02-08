@@ -3,7 +3,7 @@
 
 
 //------------------------------------------------------------------
-#ifdef USE_EIGEN
+#ifdef USE_CNOID_MODEL
 
 #include <Eigen/Core>
 #include <Eigen/Geometry>
@@ -48,14 +48,20 @@ namespace creek {
 
 
 //------------------------------------------------------------------
-#else
+#elif defined USE_HRP_MODEL
 
-#include "extendedTvmet.hpp"
+#include "extendedTvmetVector.hpp"
+#include "extendedTvmetMatrix.hpp"
 #include "extendedBoostMatrix.hpp"
 
 namespace creek {
   typedef creek::Matrix<double,3,3> Matrix3;
-  typedef creek::Matrix<double,3,1> Vector3;
+  typedef creek::Vector<double,3>   Vector3;
+}
+
+template<class matT, class valT>
+tvmet::CommaInitializer<matT, matT::Size> operator<<(matT& mat, valT rhs) {
+  return tvmet::CommaInitializer<matT, matT::Size>(mat, rhs);
 }
 
 #endif
