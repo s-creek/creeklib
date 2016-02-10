@@ -48,5 +48,15 @@ int main(int argc, char* argv[])
   std::cout << arm->endLink()->R() << std::endl;
   std::cout << arm->endLink()->R().transpose() << std::endl;
 
+
+  split();
+
+
+  creek::dmatrix Jcom;
+  robot->calcCM();
+  creek::calcCMJacobian(robot, robot->link("RLEG_JOINT5"), Jcom);
+  std::cout << Jcom.rows() << ", " << Jcom.cols() << std::endl;
+
+
   return 0;
 }

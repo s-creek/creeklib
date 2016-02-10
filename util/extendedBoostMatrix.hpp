@@ -46,6 +46,9 @@ namespace creek
       dmatrix ret(ublas::zero_matrix<double>(row,col));
       return ret;
     }
+
+    inline std::size_t rows() const { return size1 (); } const
+    inline std::size_t cols() const { return size2 (); } const
     
 
     //

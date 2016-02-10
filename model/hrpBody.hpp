@@ -33,11 +33,17 @@ namespace creek
     }
 
     inline creek::JointPathPtr getJointPath(hrp::Link* baseLink, hrp::Link* targetLink) {
-      return creek::JointPathPtr(new creek::JointPath(baseLink, targetLink));
+      //return creek::JointPathPtr(new creek::JointPath(baseLink, targetLink));
+      return boost::static_pointer_cast<creek::JointPath>( hrp::Body::getJointPath(baseLink, targetLink) );
     }
   };
 
   typedef boost::intrusive_ptr<Body> BodyPtr;
+
+
+  inline void calcCMJacobian(const hrp::BodyPtr& body, hrp::Link *base, dmatrix &J) {
+    body->calcCMJacobian(base, J);
+  }
 }
 
 #endif
