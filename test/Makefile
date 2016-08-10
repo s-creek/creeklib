@@ -5,3 +5,7 @@ cnoid: test.cpp
 
 hrp: test.cpp
 	$(CXX) `pkg-config openhrp3.1 --cflags --libs` -I../../ $< -o $@ -DUSE_HRP_MODEL -Wno-write-strings
+
+clean:
+	rm -f cnoid hrp
+	rm -f *~

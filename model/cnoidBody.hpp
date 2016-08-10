@@ -5,7 +5,7 @@
 #define USE_CNOID_MODEL
 #endif
 
-#define CNOID_BACKWARD_COMPATIBILITY
+//#define CNOID_BACKWARD_COMPATIBILITY
 #include <cnoid/Body>
 #include <cnoid/Link>
 #include <cnoid/JointPath>
@@ -30,6 +30,14 @@ namespace creek
     inline creek::JointPathPtr getJointPath(Link* baseLink, Link* targetLink) {
       return creek::JointPathPtr(new creek::JointPath(baseLink, targetLink));
       //return cnoid::getCustomJointPath(this->clone(), baseLink, targetLink);
+    }
+
+    inline creek::Vector3 calcCM() {
+      return creek::Vector3( cnoid::Body::calcCenterOfMass() );
+    }
+
+    inline double totalMass() const {
+      return cnoid::Body::mass();
     }
   };
   typedef boost::shared_ptr<Body> BodyPtr;

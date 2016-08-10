@@ -36,6 +36,14 @@ namespace creek
       //return creek::JointPathPtr(new creek::JointPath(baseLink, targetLink));
       return boost::static_pointer_cast<creek::JointPath>( hrp::Body::getJointPath(baseLink, targetLink) );
     }
+
+    inline creek::Vector3 calcCenterOfMass() {
+      return creek::Vector3( hrp::Body::calcCM() );
+    }
+
+    inline double mass() {
+      return hrp::Body::totalMass();
+    }
   };
 
   typedef boost::intrusive_ptr<Body> BodyPtr;

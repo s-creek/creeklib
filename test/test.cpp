@@ -54,9 +54,15 @@ int main(int argc, char* argv[])
 
   creek::dmatrix Jcom;
   robot->calcCM();
+  robot->calcCenterOfMass();
   creek::calcCMJacobian(robot, robot->link("RLEG_JOINT5"), Jcom);
   std::cout << Jcom.rows() << ", " << Jcom.cols() << std::endl;
 
+
+  split();
+
+
+  std::cout << robot->mass() << std::endl;
 
   return 0;
 }
