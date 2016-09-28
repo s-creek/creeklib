@@ -5,7 +5,7 @@
 
 int main()
 {
-  std::ofstream log("/home/grxuser/public/ogawa/workspace/src/creeklib/test/log.dat");
+  std::ofstream log("log.dat");
 
 
   creek::Interpolator inter(3, 0.05);
