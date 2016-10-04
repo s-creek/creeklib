@@ -3,7 +3,7 @@
 
 #include <tvmet/Vector.h>
 
-namespace creek
+namespace creek_tvmet
 {
   template<class T, std::size_t Sz>
   class Vector : public tvmet::Vector< T, Sz >

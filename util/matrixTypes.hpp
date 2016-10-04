@@ -59,8 +59,8 @@ namespace creek {
 #include "tvmetQuaternion.hpp"
 
 namespace creek {
-  typedef creek::Matrix<double,3,3> Matrix3;
-  typedef creek::Vector<double,3>   Vector3;
+  typedef creek_tvmet::Matrix<double,3,3> Matrix3;
+  typedef creek_tvmet::Vector<double,3>   Vector3;
   typedef creek_tvmet::Quaternion<double> Quaternion;
 }
 

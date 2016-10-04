@@ -7,10 +7,10 @@ namespace creek_tvmet
   class Quaternion
   {
   private:
-    typedef creek::Vector< T, 4 >    Coefficients;
-    typedef creek::Vector< T, 3 >    Vector3;
-    typedef creek::Matrix< T, 3, 3 > Matrix3;
-
+    typedef Vector< T, 4 >    Coefficients;
+    typedef Vector< T, 3 >    Vector3;
+    typedef Matrix< T, 3, 3 > Matrix3;
+ 
 
   protected:
     Coefficients m_coeffs;

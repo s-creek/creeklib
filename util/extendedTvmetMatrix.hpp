@@ -3,7 +3,7 @@
 
 #include <tvmet/Matrix.h>
 
-namespace creek
+namespace creek_tvmet
 {
   template<class T, std::size_t NRows, std::size_t NCols>
   class Matrix : public tvmet::Matrix< T, NRows, NCols >
