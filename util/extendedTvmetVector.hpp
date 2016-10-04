@@ -52,6 +52,14 @@ namespace creek
       return Vector(0);
     }
 
+    inline value_type norm() const {
+      return tvmet::norm2(*this);
+    }
+
+    inline value_type squaredNorm() const {
+      return static_cast<typename tvmet::NumericTraits<value_type>::float_type>(dot(*this, *this));
+    }
+
   
     //
     // for operator

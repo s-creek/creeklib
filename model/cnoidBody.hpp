@@ -40,8 +40,8 @@ namespace creek
       return cnoid::Body::mass();
     }
   };
-  typedef boost::shared_ptr<Body> BodyPtr;
-
+  //typedef boost::shared_ptr<Body> BodyPtr;  // 1.4
+  typedef cnoid::ref_ptr<Body> BodyPtr;  // 1.5
 
   inline void calcCMJacobian(const cnoid::BodyPtr& body, cnoid::Link *base, dmatrix &J) {
     cnoid::calcCMJacobian(body, base, J);

@@ -13,12 +13,15 @@ namespace creek {
   using Eigen::Vector3d;
   using Eigen::MatrixXd;
   using Eigen::VectorXd;
+  using Eigen::Quaterniond;
 
   typedef Eigen::Matrix3d Matrix3;
   typedef Eigen::Vector3d Vector3;
 
   typedef Eigen::MatrixXd dmatrix;
   typedef Eigen::VectorXd dvector;
+
+  typedef Eigen::Quaterniond Quaternion;
 
   class dzeromatrix : public dmatrix
   {
@@ -53,10 +56,12 @@ namespace creek {
 #include "extendedTvmetVector.hpp"
 #include "extendedTvmetMatrix.hpp"
 #include "extendedBoostMatrix.hpp"
+#include "tvmetQuaternion.hpp"
 
 namespace creek {
   typedef creek::Matrix<double,3,3> Matrix3;
   typedef creek::Vector<double,3>   Vector3;
+  typedef creek_tvmet::Quaternion<double> Quaternion;
 }
 
 template<class matT, class valT>

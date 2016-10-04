@@ -1,14 +1,20 @@
-target: cnoid hrp inter
+all: cnoid hrp inter
 
-cnoid: test.cpp
-	$(CXX) `pkg-config choreonoid-body-plugin --cflags --libs` -I../../ $< -o $@ -DUSE_CNOID_MODEL -DBOOST_SIGNALS_NO_DEPRECATION_WARNING 
+cnoid: model.cpp
+	$(CXX) `pkg-config choreonoid-body-plugin --cflags` -I../../ $< -o $@ -DUSE_CNOID_MODEL -DBOOST_SIGNALS_NO_DEPRECATION_WARNING `pkg-config choreonoid-body-plugin --libs`
 
-hrp: test.cpp
-	$(CXX) `pkg-config openhrp3.1 --cflags --libs` -I../../ $< -o $@ -DUSE_HRP_MODEL -Wno-write-strings
+hrp: model.cpp
+	$(CXX) `pkg-config openhrp3.1 --cflags` -I../../ $< -o $@ -DUSE_HRP_MODEL -Wno-write-strings `pkg-config openhrp3.1 --libs`
 
 inter: inter.cpp
 	$(CXX)  -I../../ $< -o $@ -L../interpolator -lcreekInterpolator
 
+tvmet: matrix.cpp
+	$(CXX)  -I../../ $< -o $@ -DUSE_HRP_MODEL
+
+eigen: matrix.cpp
+	$(CXX)  -I../../ `pkg-config eigen3 --cflags` $< -o $@ -DUSE_CNOID_MODEL
+
 clean:
-	rm -f cnoid hrp
+	rm -f cnoid hrp tvmet eigen
 	rm -f *~
