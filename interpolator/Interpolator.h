@@ -4,6 +4,7 @@
 #define CREEK_INTERPOLATOR_H
 
 #include <deque>
+#include <cstddef>
 
 namespace creek
 {

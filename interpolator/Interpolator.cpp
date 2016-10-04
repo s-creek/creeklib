@@ -15,7 +15,7 @@ Interpolator::Interpolator(unsigned int in_dim, double in_dt)
   m_sv = new double[in_dim];
   m_sa = new double[in_dim];
 
-  for(int i=0; i<in_dim; i++) {
+  for(unsigned int i=0; i<in_dim; i++) {
     m_sx[i] = m_sv[i] = m_sa[i] = 0.0;
   }
 }
@@ -32,7 +32,7 @@ Interpolator::~Interpolator()
 
 void Interpolator::init(const double *in_sx, const double *in_sv, const double *in_sa)
 {
-  for(int i=0; i<m_dim; i++) {
+  for(unsigned int i=0; i<m_dim; i++) {
     m_sx[i] = in_sx[i];
     in_sv == NULL ? m_sv[i] = 0.0 : m_sv[i] = in_sv[i];
     in_sa == NULL ? m_sa[i] = 0.0 : m_sa[i] = in_sa[i];
@@ -59,7 +59,7 @@ void Interpolator::set(const double *in_gx, const double *in_gv, const double *i
   target.gv = new double[m_dim];
   target.ga = new double[m_dim];
   
-  for(int i=0; i<m_dim; i++) {
+  for(unsigned int i=0; i<m_dim; i++) {
     target.gx[i] = in_gx[i];
     in_gv == NULL ? target.gv[i] = 0.0 : target.gv[i] = in_gv[i];
     in_ga == NULL ? target.ga[i] = 0.0 : target.ga[i] = in_ga[i];
@@ -225,7 +225,7 @@ void Interpolator::linear_interpolation()
   
 
   double *tmpv = new double[m_dim];
-  for(int i=0; i<m_dim; i++)
+  for(unsigned int i=0; i<m_dim; i++)
     tmpv[i] = ( target.gx[i] - m_sx[i] ) / time;
   
 
@@ -234,7 +234,7 @@ void Interpolator::linear_interpolation()
     double *vv = new double[m_dim];
     double *aa = new double[m_dim];
 
-    for(int j=0; j<m_dim; j++) {
+    for(unsigned int j=0; j<m_dim; j++) {
       xx[j] = m_sx[j] + tmpv[j] * ( i * m_dt );
       vv[j] = tmpv[j];
       aa[j] = 0.0;
@@ -259,7 +259,7 @@ void Interpolator::calcInterpolation(InterpolationType in_itype)
 
   // calc interpolation parameter
   double a0[m_dim], a1[m_dim], a2[m_dim], a3[m_dim], a4[m_dim], a5[m_dim];
-  for(int i=0; i<m_dim; i++) {
+  for(unsigned int i=0; i<m_dim; i++) {
     switch(in_itype)
       {
       case CUBIC:
@@ -308,7 +308,7 @@ void Interpolator::calcInterpolation(InterpolationType in_itype)
     double *aa = new double[m_dim];
 
     double tt = i*m_dt;
-    for(int j=0; j<m_dim; j++) {
+    for(unsigned int j=0; j<m_dim; j++) {
       xx[j] = a0[j] + ( a1[j] + (a2[j] + (a3[j] + (a4[j] + a5[j]*tt )*tt )*tt )*tt )*tt;
       vv[j] = a1[j] + ( 2*a2[j] + (3*a3[j] + (4*a4[j] + 5*a5[j]*tt )*tt )*tt )*tt;
       aa[j] = 2*a2[j] + ( 6*a3[j] + ( 12*a4[j] + 20*a5[j]*tt )*tt )*tt;
@@ -355,7 +355,7 @@ void Interpolator::quartic_linear()
     double *aa = new double[m_dim];
 
     tt = count*m_dt;
-    for(int i=0; i<m_dim; i++) {
+    for(unsigned int i=0; i<m_dim; i++) {
       xx[i] = m_sx[i] + m_sv[i]*tt + (mm[i] - m_sv[i]) / (16.0*pow(delta,3)) * pow(tt,3) * (4*delta - tt);
       vv[i] = m_sv[i] + (mm[i] - m_sv[i]) / (16.0*pow(delta,3)) * pow(tt,2) * (12*delta - 4*tt);
       aa[i] = (mm[i] - m_sv[i]) / (16.0*pow(delta,3)) * tt * (24*delta - 12*tt);
@@ -373,7 +373,7 @@ void Interpolator::quartic_linear()
     double *aa = new double[m_dim];
 
     tt = count*m_dt;
-    for(int i=0; i<m_dim; i++) {
+    for(unsigned int i=0; i<m_dim; i++) {
       xx[i] = m_sx[i] + m_sv[i]*delta + mm[i]*(tt-delta);
       vv[i] = mm[i];
       aa[i] = 0.0;
@@ -391,7 +391,7 @@ void Interpolator::quartic_linear()
     double *aa = new double[m_dim];
 
     tt = count*m_dt;
-    for(int i=0; i<m_dim; i++) {
+    for(unsigned int i=0; i<m_dim; i++) {
       xx[i] = target.gx[i] - target.gv[i]*(time-tt) - (mm[i] - target.gv[i]) / (16.0*pow(delta,3))*pow((time-tt),3)*(4*delta-time+tt);
       vv[i] = target.gv[i] + (mm[i] - target.gv[i]) / (16.0*pow(delta,3)) * pow((time-tt),2) * (12*delta - 4*time + 4*tt);
       aa[i] = (mm[i] - target.gv[i]) / (16.0*pow(delta,3)) * (time-tt) * ( -24*delta + 12*time - 12*tt);

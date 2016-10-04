@@ -45,11 +45,23 @@ namespace creek_tvmet
     inline Scalar& z() { return m_coeffs(2); }
     inline Scalar& w() { return m_coeffs(3); }
 
+    static inline Quaternion Identity() { return Quaternion(1, 0, 0, 0); }
+    inline Quaternion& setIdentity() { m_coeffs << 0, 0, 0, 1; return *this; }
+
+    inline Scalar squaredNorm() const { return m_coeffs.squaredNorm(); }
+    inline Scalar norm() const { return m_coeffs.norm(); }
+
     inline const Coefficients& coeffs() const { return m_coeffs; }
     inline Coefficients& coeffs() { return m_coeffs; }
 
+    inline void normalize() { m_coeffs.normalize(); }
+    inline Quaternion normalized() const { return Quaternion(m_coeffs.normalize()); }
+
     Matrix3 toRotationMatrix() const;
     Quaternion slerp(Scalar t, const Quaternion& other) const;
+
+    Quaternion inverse() const;
+    Quaternion conjugate() const;
 
 
     inline Quaternion operator* (const Quaternion& q) const;
@@ -129,6 +141,26 @@ namespace creek_tvmet
     Coefficients out_coeffs;
     out_coeffs = scale0 * coeffs() + scale1 * other.coeffs();
     return Quaternion<Scalar>(out_coeffs);
+  }
+
+
+  template <class Scalar>
+  inline Quaternion<Scalar> Quaternion<Scalar>::inverse() const
+  {
+    Scalar n2 = this->squaredNorm();
+    if (n2 > 0)
+      return Quaternion(conjugate().coeffs() / n2);
+    else
+      {
+	return Quaternion(Coefficients::Zero());
+      }
+  }
+
+  
+  template <class Scalar>
+  inline Quaternion<Scalar> Quaternion<Scalar>::conjugate() const
+  {
+    return Quaternion(this->w(),-this->x(),-this->y(),-this->z());
   }
 
 
