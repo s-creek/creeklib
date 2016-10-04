@@ -60,6 +60,14 @@ namespace creek
       return static_cast<typename tvmet::NumericTraits<value_type>::float_type>(dot(*this, *this));
     }
 
+    inline void normalize() {
+      *this = Vector(tvmet::normalize(*this));
+    }
+
+    inline Vector normalized() const {
+      return Vector(tvmet::normalize(*this));
+    }
+
   
     //
     // for operator

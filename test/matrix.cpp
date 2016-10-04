@@ -25,6 +25,7 @@ int main()
   split();
 
 
+  // q1 -> q0
   creek::Quaternion q1(1,0,0,0);
   creek::Quaternion qs;
   qs = q1.slerp(0.9, q0);
@@ -34,6 +35,7 @@ int main()
   split();
 
 
+  // Quaternion -> Rotation Matrix (3x3)
   creek::Matrix3 mat;
   mat = qs.toRotationMatrix();
   for(int i=0; i<3; i++) {
@@ -47,6 +49,7 @@ int main()
   split();
 
 
+  // Rotation Matrix -> Quaternion
   creek::Quaternion qm(mat);
   std::cout << qm.w() << ", " << qm.x() << ", " << qm.y() << ", " << qm.z() << std::endl;
 
@@ -54,6 +57,7 @@ int main()
   split();
 
 
+  // check convert Quaternion <-> Rotation Matrix
   mat = qm.toRotationMatrix();
   for(int i=0; i<3; i++) {
     for(int j=0; j<3; j++) {
@@ -61,6 +65,26 @@ int main()
     }
     std::cout << std::endl;
   }
+
+
+  split();
+
+
+  // 逆クオータニオン
+  creek::Quaternion q_inv = qm.inverse();
+
+  // 共役クオータニオン
+  creek::Quaternion q_con = qm.conjugate();
+
+  // 回転ベクトルの長さ
+  creek::Quaternion::Scalar norm = qm.norm();
+
+  // 正規化
+  creek::Quaternion qn(2,1,3,4);
+  //qn.normalize();
+  std::cout << qn.w() << ", " << qn.x() << ", " << qn.y() << ", " << qn.z() << std::endl;
+  creek::Quaternion q_norm = qn.normalized();
+  std::cout << q_norm.w() << ", " << q_norm.x() << ", " << q_norm.y() << ", " << q_norm.z() << std::endl;
 
   return 0;
 }

@@ -55,7 +55,7 @@ namespace creek_tvmet
     inline Coefficients& coeffs() { return m_coeffs; }
 
     inline void normalize() { m_coeffs.normalize(); }
-    inline Quaternion normalized() const { return Quaternion(m_coeffs.normalize()); }
+    inline Quaternion normalized() const { return Quaternion(Coefficients(m_coeffs.normalized())); }
 
     Matrix3 toRotationMatrix() const;
     Quaternion slerp(Scalar t, const Quaternion& other) const;
@@ -149,7 +149,10 @@ namespace creek_tvmet
   {
     Scalar n2 = this->squaredNorm();
     if (n2 > 0)
-      return Quaternion(conjugate().coeffs() / n2);
+      {
+	Coefficients tmp(conjugate().coeffs() / n2);
+	return Quaternion(tmp);
+      }
     else
       {
 	return Quaternion(Coefficients::Zero());
