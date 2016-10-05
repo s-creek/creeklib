@@ -108,6 +108,32 @@ namespace creek_tvmet
 
   };
 
+
+  template<class T>
+  class Vector3 : public Vector<T,3>
+  {
+  public:
+    static Vector3 UnitX()
+    {
+      Vector3 ret;
+      ret << 1,0,0;
+      return ret;
+    }
+
+    static Vector3 UnitY()
+    {
+      Vector3 ret;
+      ret << 0,1,0;
+      return ret;
+    }
+
+    static Vector3 UnitZ()
+    {
+      Vector3 ret;
+      ret << 0,0,1;
+      return ret;
+    }
+  };
 }
 
 

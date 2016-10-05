@@ -86,5 +86,66 @@ int main()
   creek::Quaternion q_norm = qn.normalized();
   std::cout << q_norm.w() << ", " << q_norm.x() << ", " << q_norm.y() << ", " << q_norm.z() << std::endl;
 
+
+  split();
+
+  
+  // template float <-> double
+#ifdef USE_CNOID_MODEL
+  Eigen::Quaternion<float> qf(1,2,3,4);
+#elif defined USE_HRP_MODEL
+  creek_tvmet::Quaternion<float> qf(1,2,3,4);
+#endif
+  creek::Quaternion qfd(qf);
+  std::cout << qfd.w() << ", " << qfd.x() << ", " << qfd.y() << ", " << qfd.z() << std::endl;
+
+
+#ifdef USE_HRP_MODEL
+  split();
+
+  qn.normalize();
+  qf.normalize();
+  std::cout << qn.w() << ", " << qn.x() << ", " << qn.y() << ", " << qn.z() << std::endl;
+  std::cout << qf.w() << ", " << qf.x() << ", " << qf.y() << ", " << qf.z() << std::endl;
+
+  qn = qf.slerp(0.5, qn);
+  std::cout << qn.w() << ", " << qn.x() << ", " << qn.y() << ", " << qn.z() << std::endl;
+#endif
+
+
+  split();
+
+
+  creek::Vector3 vec; vec << 0,1,0;
+  creek::AngleAxis aa(0.6, vec);
+
+  creek::Quaternion qaa(aa);
+  std::cout << qaa.w() << ", " << qaa.x() << ", " << qaa.y() << ", " << qaa.z() << std::endl;
+
+
+  split();
+
+
+  aa = qaa;
+  //aa = mat;
+  std::cout << aa.angle() << std::endl;
+  std::cout << aa.axis()(0) << ", " << aa.axis()(1) << ", " << aa.axis()(2) << std::endl;
+
+
+  split();
+
+
+  mat = aa.toRotationMatrix();
+  std::cout << mat << std::endl;
+
+
+  split();
+
+
+  creek::AngleAxis aa2(0.4, creek::Vector3::UnitX());
+  std::cout << aa2.angle() << std::endl;
+  std::cout << aa2.axis()(0) << ", " << aa2.axis()(1) << ", " << aa2.axis()(2) << std::endl;
+
+
   return 0;
 }

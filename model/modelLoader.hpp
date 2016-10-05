@@ -10,8 +10,11 @@ namespace creek
   bool loadBody(creek::BodyPtr body, const std::string& path)
   {
     cnoid::BodyLoader bl;
-    //return bl.load(*body, path);  // 1.4
+#if CNOID_VERSION >= 150
     return bl.load(body, path);  // 1.5
+#else
+    return bl.load(*body, path);  // 1.4
+#endif
   }
 }
 

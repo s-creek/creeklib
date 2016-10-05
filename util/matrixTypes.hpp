@@ -14,6 +14,7 @@ namespace creek {
   using Eigen::MatrixXd;
   using Eigen::VectorXd;
   using Eigen::Quaterniond;
+  using Eigen::AngleAxisd;
 
   typedef Eigen::Matrix3d Matrix3;
   typedef Eigen::Vector3d Vector3;
@@ -22,6 +23,7 @@ namespace creek {
   typedef Eigen::VectorXd dvector;
 
   typedef Eigen::Quaterniond Quaternion;
+  typedef Eigen::AngleAxisd  AngleAxis;
 
   class dzeromatrix : public dmatrix
   {
@@ -53,15 +55,20 @@ namespace creek {
 //------------------------------------------------------------------
 #elif defined USE_HRP_MODEL
 
+#include "extendedBoostMatrix.hpp"
+
+#include "tvmetForwardDeclaration.hpp" 
 #include "extendedTvmetVector.hpp"
 #include "extendedTvmetMatrix.hpp"
-#include "extendedBoostMatrix.hpp"
 #include "tvmetQuaternion.hpp"
+#include "tvmetAngleAxis.hpp"
 
 namespace creek {
   typedef creek_tvmet::Matrix<double,3,3> Matrix3;
-  typedef creek_tvmet::Vector<double,3>   Vector3;
+  //typedef creek_tvmet::Vector<double,3>   Vector3;
+  typedef creek_tvmet::Vector3<double>    Vector3;
   typedef creek_tvmet::Quaternion<double> Quaternion;
+  typedef creek_tvmet::AngleAxis<double>  AngleAxis;
 }
 
 template<class matT, class valT>

@@ -1,40 +1,54 @@
-#ifndef CREEK_QUATERNION_HPP
-#define CREEK_QUATERNION_HPP
+#ifndef CREEK_TVMET_QUATERNION_HPP
+#define CREEK_TVMET_QUATERNION_HPP
 
 namespace creek_tvmet
 {
   template<class T>
   class Quaternion
   {
-  private:
+  public:
+    typedef T  Scalar;
     typedef Vector< T, 4 >    Coefficients;
     typedef Vector< T, 3 >    Vector3;
     typedef Matrix< T, 3, 3 > Matrix3;
- 
+    typedef AngleAxis<T>      AngleAxisType;
+
 
   protected:
     Coefficients m_coeffs;
 
 
   public:
-    typedef T  Scalar;
-
     inline Quaternion() {}
     inline Quaternion(Scalar w, Scalar x, Scalar y, Scalar z)
     {
       m_coeffs << x, y, z, w;
     }
-    inline Quaternion(const Coefficients& in_coeffs) {
+    inline Quaternion(const Coefficients& in_coeffs)
+    {
       m_coeffs = in_coeffs;
     }
-    inline Quaternion(const Matrix3& mat) {
+    template<class Derived>
+    inline Quaternion(const Matrix<Derived,3,3>& mat)
+    {
       *this = mat;
     }
-    inline Quaternion(const Quaternion& other) {
-      m_coeffs = other.m_coeffs;
+    template<class Derived>
+    inline Quaternion(const Quaternion<Derived>& other)
+    {
+      //m_coeffs = other.coeffs();
+      *this = other;
+    }
+    template<class Derived>
+    inline Quaternion(const AngleAxis<Derived>& aa)
+    {
+      *this = aa;
     }
 
 
+    //
+    // function
+    //
     inline Scalar x() const { return m_coeffs(0); }
     inline Scalar y() const { return m_coeffs(1); }
     inline Scalar z() const { return m_coeffs(2); }
@@ -44,6 +58,13 @@ namespace creek_tvmet
     inline Scalar& y() { return m_coeffs(1); }
     inline Scalar& z() { return m_coeffs(2); }
     inline Scalar& w() { return m_coeffs(3); }
+
+    inline Vector3 vec() const
+    {
+      Vector3 ret;
+      ret << m_coeffs(0), m_coeffs(1), m_coeffs(2);
+      return ret;
+    }
 
     static inline Quaternion Identity() { return Quaternion(1, 0, 0, 0); }
     inline Quaternion& setIdentity() { m_coeffs << 0, 0, 0, 1; return *this; }
@@ -58,17 +79,31 @@ namespace creek_tvmet
     inline Quaternion normalized() const { return Quaternion(Coefficients(m_coeffs.normalized())); }
 
     Matrix3 toRotationMatrix() const;
-    Quaternion slerp(Scalar t, const Quaternion& other) const;
+
+    template<class Derived>
+    Quaternion slerp(Scalar t, const Quaternion<Derived>& other) const;
 
     Quaternion inverse() const;
     Quaternion conjugate() const;
 
 
-    inline Quaternion operator* (const Quaternion& q) const;
-    inline Quaternion& operator*= (const Quaternion& q);
+    //
+    // operator
+    //
+    template<class Derived>
+    inline Quaternion operator* (const Quaternion<Derived>& q) const;
 
-    Quaternion& operator=(const Quaternion& other);
-    Quaternion& operator=(const Matrix3& m);
+    template<class Derived>
+    inline Quaternion& operator*= (const Quaternion<Derived>& q);
+
+    template<class Derived>
+    Quaternion& operator=(const Quaternion<Derived>& other);
+
+    template<class Derived>
+    Quaternion& operator=(const Matrix<Derived,3,3>& m);
+
+    template<class Derived>
+    Quaternion& operator=(const AngleAxis<Derived>& aa);
   };
 
 
@@ -109,7 +144,8 @@ namespace creek_tvmet
 
 
   template <class Scalar>
-  Quaternion<Scalar> Quaternion<Scalar>::slerp(Scalar t, const Quaternion& other) const
+  template<class Derived>
+  Quaternion<Scalar> Quaternion<Scalar>::slerp(Scalar t, const Quaternion<Derived>& other) const
   {
     static const Scalar one = Scalar(1) - std::numeric_limits<Scalar>::epsilon();
     Scalar d(0);
@@ -167,8 +203,8 @@ namespace creek_tvmet
   }
 
 
-  template<class Scalar> inline Quaternion<Scalar>
-  ei_quaternion_product(const Quaternion<Scalar>& a, const Quaternion<Scalar>& b)
+  template<class Scalar, class Derived>
+  inline Quaternion<Scalar> ei_quaternion_product(const Quaternion<Scalar>& a, const Quaternion<Derived>& b)
   {
     return Quaternion<Scalar>
       (
@@ -179,29 +215,38 @@ namespace creek_tvmet
        );
   }
 
-  /** \returns the concatenation of two rotations as a quaternion-quaternion product */
+
   template <class Scalar>
-  inline Quaternion<Scalar> Quaternion<Scalar>::operator* (const Quaternion& other) const
+  template<class Derived>
+  inline Quaternion<Scalar> Quaternion<Scalar>::operator* (const Quaternion<Derived>& other) const
   {
     return ei_quaternion_product(*this,other);
   }
 
-  /** \sa operator*(Quaternion) */
+
   template <class Scalar>
-  inline Quaternion<Scalar>& Quaternion<Scalar>::operator*= (const Quaternion& other)
+  template<class Derived>
+  inline Quaternion<Scalar>& Quaternion<Scalar>::operator*= (const Quaternion<Derived>& other)
   {
     return (*this = *this * other);
   }
 
+
   template<class Scalar>
-  inline Quaternion<Scalar>& Quaternion<Scalar>::operator=(const Quaternion& other)
+  template<class Derived>
+  inline Quaternion<Scalar>& Quaternion<Scalar>::operator=(const Quaternion<Derived>& other)
   {
-    m_coeffs = other.m_coeffs;
+    //m_coeffs = other.coeffs();
+    for(unsigned int i=0; i<4; i++)
+      m_coeffs(i) = other.coeffs()(i);
+
     return *this;
   }
 
+
   template<class Scalar>
-  inline Quaternion<Scalar>& Quaternion<Scalar>::operator=(const Matrix3& m)
+  template<class Derived>
+  inline Quaternion<Scalar>& Quaternion<Scalar>::operator=(const Matrix<Derived,3,3>& m)
   {
     // 最大成分を検索
     Scalar elem[ 4 ]; // 0:x, 1:y, 2:z, 3:w
@@ -252,6 +297,20 @@ namespace creek_tvmet
     return *this;
   }
 
+
+  template<class Scalar>
+  template<class Derived>
+  inline Quaternion<Scalar>& Quaternion<Scalar>::operator=(const AngleAxis<Derived>& aa)
+  {
+    Scalar ha = Scalar(0.5)*aa.angle();
+    Scalar sa = std::sin(ha);
+
+    m_coeffs(3) = std::cos(ha);  // w
+    for(unsigned int i=0; i<3; i++)
+      m_coeffs(i) = sa * aa.axis()(i);
+
+    return *this;
+  }
 }
 
 #endif
