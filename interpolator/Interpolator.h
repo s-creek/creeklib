@@ -17,7 +17,6 @@ namespace creek
   };
 }
 
-
 namespace creek 
 {
   class Interpolator 
@@ -31,11 +30,11 @@ namespace creek
     void set(const double *in_gx, double time, InterpolationType in_itype=LINEAR, double in_delta=0.0);
     void set(const double *in_gx, const double *in_gv, double time, InterpolationType in_itype=CUBIC, double in_delta=0.0);
     void set(const double *in_gx, const double *in_gv, const double *in_ga, double time, InterpolationType in_itype=QUINTIC, double in_delta=0.0);
-    void calc();
+    bool calc();
 
-    void get(double* outx, bool ppop=true);
-    void get(double* outx, double *outv, bool ppop=true);
-    void get(double* outx, double *outv, double *outa, bool ppop=true);
+    bool get(double* outx, bool ppop=true);
+    bool get(double* outx, double *outv, bool ppop=true);
+    bool get(double* outx, double *outv, double *outa, bool ppop=true);
 
     void clear();
     void pop();
@@ -46,11 +45,20 @@ namespace creek
     inline bool empty() {
       return m_goals.empty() && m_seqx.empty();
     }
+    inline bool seqEmpty() {
+      return m_seqx.empty();
+    }
     inline unsigned int dimension() {
       return m_dim;
     }
     inline double dt() {
       return m_dt;
+    }
+    inline InterpolationType interpolationType() {
+      return m_itype;
+    }
+    inline void setAutoCalc(bool in_flag) {
+      m_autoCalc = in_flag;
     }
     
 
@@ -81,6 +89,10 @@ namespace creek
 
     // first term
     std::deque<double*> m_seqx, m_seqv, m_seqa;
+
+    InterpolationType m_itype;
+
+    bool m_autoCalc;
   };
 }
 

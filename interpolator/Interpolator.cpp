@@ -9,7 +9,8 @@ using namespace creek;
 Interpolator::Interpolator(unsigned int in_dim, double in_dt)
   : m_dim(in_dim),
     m_dt(in_dt),
-    m_memsize(in_dim * sizeof(double))
+    m_memsize(in_dim * sizeof(double)),
+    m_autoCalc(true)
 {
   m_sx = new double[in_dim];
   m_sv = new double[in_dim];
@@ -71,19 +72,19 @@ void Interpolator::set(const double *in_gx, const double *in_gv, const double *i
   m_goals.push_back(target);
 
 
-  if( m_seqx.empty() )
+  if( m_seqx.empty() && m_autoCalc )
     calc();
 }
 
 
-void Interpolator::calc()
+bool Interpolator::calc()
 {
   if( m_goals.empty() )
-    return;
+    return false;
 
 
-  InterpolationType itype = m_goals.front().itype;
-  switch( itype )
+  m_itype = m_goals.front().itype;
+  switch( m_itype )
     {
     case LINEAR:
       linear_interpolation();
@@ -92,7 +93,7 @@ void Interpolator::calc()
     case CUBIC:
     case QUINTIC:
     case HOFFARBIB:
-      calcInterpolation(itype);
+      calcInterpolation(m_itype);
       break;
       
     case QUARTIC_LINEAR:
@@ -103,25 +104,27 @@ void Interpolator::calc()
       std::cerr << "now coding" << std::endl;
     }
 
-
   popGoal();
+  return true;
 }
 
 
-void Interpolator::get(double* outx, bool ppop)
+bool Interpolator::get(double* outx, bool ppop)
 {
-  get(outx, NULL, NULL, ppop);
+  return get(outx, NULL, NULL, ppop);
 }
 
 
-void Interpolator::get(double* outx, double *outv, bool ppop)
+bool Interpolator::get(double* outx, double *outv, bool ppop)
 {
-  get(outx, outv, NULL, ppop);
+  return get(outx, outv, NULL, ppop);
 }
 
 
-void Interpolator::get(double* outx, double *outv, double *outa, bool ppop)
+bool Interpolator::get(double* outx, double *outv, double *outa, bool ppop)
 {
+  bool toNextTerm(false);
+
   if( !m_seqx.empty() ) {
     double *&xx = m_seqx.front();
     double *&vv = m_seqv.front();
@@ -134,13 +137,16 @@ void Interpolator::get(double* outx, double *outv, double *outa, bool ppop)
     if( ppop )
       pop();
 
-    if( m_seqx.empty() )
-      calc();
+    if( m_seqx.empty() && m_autoCalc ) {
+      toNextTerm = calc();
+    }
   }
 
   std::memcpy(outx, m_sx, m_memsize);
   if( outv != NULL ) std::memcpy(outv, m_sv, m_memsize);
   if( outa != NULL ) std::memcpy(outa, m_sa, m_memsize);
+
+  return toNextTerm;
 }
 
 
