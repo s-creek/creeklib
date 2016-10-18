@@ -57,7 +57,7 @@ namespace creek_tvmet
     }
 
     inline value_type squaredNorm() const {
-      return static_cast<typename tvmet::NumericTraits<value_type>::float_type>(dot(*this, *this));
+      return static_cast<typename tvmet::NumericTraits<value_type>::float_type>(tvmet::dot(*this, *this));
     }
 
     inline void normalize() {
@@ -68,7 +68,14 @@ namespace creek_tvmet
       return Vector(tvmet::normalize(*this));
     }
 
-  
+    inline value_type dot(const tvector& in_v) {
+      return tvmet::dot(*this, in_v);
+    }
+
+    inline Vector cross(const tvector& in_v) const {
+      return Vector(tvmet::cross(*this, in_v));
+    }
+      
     //
     // for operator
     //
@@ -106,31 +113,26 @@ namespace creek_tvmet
       return *this;
     }
 
-  };
 
-
-  template<class T>
-  class Vector3 : public Vector<T,3>
-  {
   public:
-    static Vector3 UnitX()
-    {
-      Vector3 ret;
-      ret << 1,0,0;
+    static Vector UnitX() {
+      Vector ret(0);
+      if( Sz > 0 )
+	ret(0) = 1;
       return ret;
     }
 
-    static Vector3 UnitY()
-    {
-      Vector3 ret;
-      ret << 0,1,0;
+    static Vector UnitY() {
+      Vector ret(0);
+      if( Sz > 1 )
+	ret(1) = 1;
       return ret;
     }
 
-    static Vector3 UnitZ()
-    {
-      Vector3 ret;
-      ret << 0,0,1;
+    static Vector UnitZ() {
+      Vector ret(0);
+      if( Sz > 2 )
+	ret(2) = 1;
       return ret;
     }
   };

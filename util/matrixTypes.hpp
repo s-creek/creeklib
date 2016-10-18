@@ -65,8 +65,8 @@ namespace creek {
 
 namespace creek {
   typedef creek_tvmet::Matrix<double,3,3> Matrix3;
-  //typedef creek_tvmet::Vector<double,3>   Vector3;
-  typedef creek_tvmet::Vector3<double>    Vector3;
+  typedef creek_tvmet::Vector<double,3>   Vector3;
+  //typedef creek_tvmet::Vector3<double>   Vector3;
   typedef creek_tvmet::Quaternion<double> Quaternion;
   typedef creek_tvmet::AngleAxis<double>  AngleAxis;
 }

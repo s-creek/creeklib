@@ -147,5 +147,20 @@ int main()
   std::cout << aa2.axis()(0) << ", " << aa2.axis()(1) << ", " << aa2.axis()(2) << std::endl;
 
 
+  creek::Vector3 veca, vecb;
+  veca << 1,2,3;
+  vecb << 2,3,4;
+
+  double dot = veca.dot(vecb);
+  std::cout << dot << std::endl;
+
+  creek::Vector3 cross;
+  cross = veca.cross(vecb);
+  //cross = veca.normalized();
+
+  std::cout << cross << std::endl; 
+  std::cout << creek::Vector3::UnitY() << std::endl;
+
+
   return 0;
 }

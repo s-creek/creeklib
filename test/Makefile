@@ -9,7 +9,7 @@ hrp: model.cpp
 	$(CXX) `pkg-config openhrp3.1 --cflags` -I../../ $< -o $@ -DUSE_HRP_MODEL -Wno-write-strings `pkg-config openhrp3.1 --libs`
 
 inter: inter.cpp
-	$(CXX)  -I../../ $< -o $@ -L../interpolator -lcreekInterpolator
+	$(CXX)  -I../../ $< -o $@ -L../interpolator -lcreekInterpolator_cnoid
 
 tvmet: matrix.cpp
 	$(CXX)  -I../../ $< -o $@ -DUSE_HRP_MODEL
@@ -17,6 +17,9 @@ tvmet: matrix.cpp
 eigen: matrix.cpp
 	$(CXX)  -I../../ `pkg-config eigen3 --cflags` $< -o $@ -DUSE_CNOID_MODEL
 
+rinter: rinter.cpp
+	$(CXX)  -I../../ `pkg-config eigen3 --cflags` $< -o $@ -DUSE_HRP_MODEL -L../interpolator -lcreekInterpolator_hrp
+
 clean:
-	rm -f cnoid hrp tvmet eigen
+	rm -f cnoid hrp tvmet eigen inter rinter
 	rm -f *~
