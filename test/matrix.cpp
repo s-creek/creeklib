@@ -161,6 +161,15 @@ int main()
   std::cout << cross << std::endl; 
   std::cout << creek::Vector3::UnitY() << std::endl;
 
+  
+  split();
+
+
+  creek::Position pos;
+  pos.translation() = creek::Vector3::Zero();
+  pos.linear() = creek::Matrix3::Identity();
+
+  std::cout << pos.translation() << std::endl << pos.linear() << std::endl;
 
   return 0;
 }

@@ -25,6 +25,8 @@ namespace creek {
   typedef Eigen::Quaterniond Quaternion;
   typedef Eigen::AngleAxisd  AngleAxis;
 
+  typedef Eigen::Transform<double, 3, Eigen::AffineCompact> Position;
+
   class dzeromatrix : public dmatrix
   {
   public:
@@ -69,6 +71,21 @@ namespace creek {
   //typedef creek_tvmet::Vector3<double>   Vector3;
   typedef creek_tvmet::Quaternion<double> Quaternion;
   typedef creek_tvmet::AngleAxis<double>  AngleAxis;
+
+
+  struct Position
+  {
+  public:
+    Matrix3 linear() const { return m_mat; }
+    Matrix3& linear() { return m_mat; }
+    
+    Vector3 translation() const { return m_vec; }
+    Vector3& translation() { return m_vec; }
+
+  private:
+    Matrix3 m_mat;
+    Vector3 m_vec;
+  };
 }
 
 template<class matT, class valT>
