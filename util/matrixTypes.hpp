@@ -81,6 +81,11 @@ namespace creek {
     
     Vector3 translation() const { return m_vec; }
     Vector3& translation() { return m_vec; }
+    
+    void setIdentity() {
+      m_vec = Vector3::Zero();
+      m_mat = Matrix3::Identity();
+    }
 
   private:
     Matrix3 m_mat;

@@ -37,6 +37,14 @@ namespace creek
     inline bool empty() {
       return m_inter.empty() && m_goals.empty();
     }
+    inline void clear() {
+      m_inter.clear();
+      m_goals.clear();
+    }
+    inline int numSequence() {
+      return m_inter.numSequence();
+    }
+
 
     // for TWO_AXIS
     inline void setAxis(const Vector3& in_axis) { 

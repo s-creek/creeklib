@@ -1,5 +1,6 @@
 *~
 *.log
+*.dat
 
 hrp
 cnoid
@@ -7,3 +8,5 @@ inter
 tvmet
 eigen
 rinter
+step_tvmet
+step_eigen

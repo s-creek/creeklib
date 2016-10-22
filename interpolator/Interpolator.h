@@ -60,6 +60,9 @@ namespace creek
     inline void setAutoCalc(bool in_flag) {
       m_autoCalc = in_flag;
     }
+    inline int numSequence() {
+      return m_seqx.size();
+    }
     
 
   private:

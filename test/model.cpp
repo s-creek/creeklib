@@ -65,10 +65,5 @@ int main(int argc, char* argv[])
   std::cout << robot->mass() << std::endl;
 
 
-  split();
-
-
-  creek::Quaternion q0;
-
   return 0;
 }
