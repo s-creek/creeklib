@@ -5,7 +5,7 @@ SRCS=$(OBJS:.o=.cpp)
 HEAD=$(OBJS:.o=.h) discretization.hpp
 
 OBJ_HRP=$(OBJS:.o=.o.hrp)
-OBJ_CNOID=$(OBJS:.o=.o.hrp)
+OBJ_CNOID=$(OBJS:.o=.o.cnoid)
 
 
 all: $(OBJS) libcreekWalk_hrp.so libcreekWalk_cnoid.so
