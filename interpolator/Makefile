@@ -20,10 +20,10 @@ RotationInterpolator.o.cnoid: RotationInterpolator.cpp RotationInterpolator.h
 	rm -f $@
 	$(CXX) $(CXXFLAGS) $< -c -o $@ -DUSE_CNOID_MODEL
 
-libcreekInterpolator_hrp.so: $(OBJS) $(HEAD) RotationInterpolator.o.hrp
+libcreekInterpolator_hrp.so: $(OBJS) $(HEAD) $(ROTS)
 	$(CXX) $(CXXFLAGS) -shared -o $@ $(OBJS) RotationInterpolator.o.hrp
 
-libcreekInterpolator_cnoid.so: $(OBJS) $(HEAD) RotationInterpolator.o.cnoid
+libcreekInterpolator_cnoid.so: $(OBJS) $(HEAD) $(ROTS)
 	$(CXX) $(CXXFLAGS) -shared -o $@ $(OBJS) RotationInterpolator.o.cnoid
 
 clean:

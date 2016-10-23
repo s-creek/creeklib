@@ -1,28 +1,18 @@
 CXXFLAGS=-Wall -fPIC `pkg-config eigen3 --cflags`
-LD_FLAGS=-L../interpolator
 
-OBJ_HRP=StepSequence.o.hrp CapturePoint.o.hrp
-OBJ_CNOID=StepSequence.o.cnoid CapturePoint.o.cnoid
-SRCS=StepSequence.cpp CapturePoint.cpp
-HEAD=StepSequence.h CapturePoint.h
+OBJS=StepSequence.o CapturePoint.o
+SRCS=$(OBJS:.o=.cpp)
+HEAD=$(OBJS:.o=.h) discretization.hpp
 
-all: $(OBJ_HRP) $(OBJ_CNOID) libcreekWalk_hrp.so libcreekWalk_cnoid.so
+OBJ_HRP=$(OBJS:.o=.o.hrp)
+OBJ_CNOID=$(OBJS:.o=.o.hrp)
 
-StepSequence.o.hrp: StepSequence.cpp StepSequence.h
-	rm -f $@
-	$(CXX) $(CXXFLAGS) $< -c -o $@ -DUSE_HRP_MODEL
 
-StepSequence.o.cnoid: StepSequence.cpp StepSequence.h
-	rm -f $@
-	$(CXX) $(CXXFLAGS) $< -c -o $@ -DUSE_CNOID_MODEL
+all: $(OBJS) libcreekWalk_hrp.so libcreekWalk_cnoid.so
 
-CapturePoint.o.hrp: CapturePoint.cpp CapturePoint.h
-	rm -f $@
-	$(CXX) $(CXXFLAGS) $< -c -o $@ -DUSE_HRP_MODEL
-
-CapturePoint.o.cnoid: CapturePoint.cpp CapturePoint.h
-	rm -f $@
-	$(CXX) $(CXXFLAGS) $< -c -o $@ -DUSE_CNOID_MODEL
+.cpp.o: $(HEAD)
+	$(CXX) $(CXXFLAGS) $< -c -o $@.hrp -DUSE_HRP_MODEL
+	$(CXX) $(CXXFLAGS) $< -c -o $@.cnoid -DUSE_CNOID_MODEL
 
 libcreekWalk_hrp.so: $(OBJ_HRP)
 	$(CXX) $(CXXFLAGS) -shared -o $@ $(OBJ_HRP)
@@ -34,4 +24,4 @@ clean:
 	rm -f *~
 	rm -f *.o
 	rm -f *.so
-	rm -f $(OBJ_HRP) $(OBJ_CNOID)
+	rm -f $(OBJ_HRP)
