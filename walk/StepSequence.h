@@ -9,12 +9,14 @@
 
 namespace creek
 {
+  enum StepType {CYCLOID_STEP, QUINTIC_STEP, CUBIC_STEP};
+
   enum FootType {RFOOT=-1, DFOOT, LFOOT, AIR};
-  inline FootType reverseFoot(FootType in_type) {
+  inline FootType reverseFoot(FootType type) {
     FootType ret(DFOOT);
-    if( in_type == RFOOT )
+    if( type == RFOOT )
       ret = LFOOT;
-    else if( in_type == LFOOT )
+    else if( type == LFOOT )
       ret = RFOOT;
     return ret;
   }
@@ -23,12 +25,8 @@ namespace creek
   {
     StepData()
     {
-      rfoot.translation() = creek::Vector3::Zero();
-      rfoot.linear() = creek::Matrix3::Identity();
-
-      lfoot.translation() = creek::Vector3::Zero();
-      lfoot.linear() = creek::Matrix3::Identity();
-
+      rfoot.setIdentity();
+      lfoot.setIdentity();
       sup = DFOOT;
     }
     creek::Position rfoot, lfoot;
@@ -42,12 +40,16 @@ namespace creek
   class OneStepSequence
   {
   public:
-    OneStepSequence(double in_dt);
+    OneStepSequence(double dt);
     //~OneStepSequence();
 
-    void init(const creek::Position &in_rfoot, const creek::Position &in_lfoot);
-    void set(double in_time);  // only double support phase
-    void set(const creek::Position &in_swing_foot, creek::FootType in_swing_foot_type, double in_single_time, double in_double_time);
+    void init(const creek::Position &rfoot, const creek::Position &lfoot);
+    inline void init(const creek::StepData &foot) {
+      init(foot.rfoot, foot.lfoot);
+    }
+
+    void set(double time);  // only double support phase
+    void set(const creek::StepData &step, double single_time, double double_time, creek::StepType step_type=creek::CYCLOID_STEP);
 
     void get(creek::StepData &out_step);
 
@@ -58,10 +60,12 @@ namespace creek
     
     inline creek::FootType supportType() const { return m_sup; }
 
+    inline double remainingTime() { return m_remain_count*m_dt; }
+
 
   private:
     void calcCycloidStep(const creek::Vector3 &start, const creek::Vector3 &goal);
-    //void calcQuinticStep();
+    void calcInterpolationStep(const creek::Vector3 &start, const creek::Vector3 &goal, double time, creek::InterpolationType itype, double top_ration=0.5);
 
     double m_dt;
     int m_remain_count;

@@ -55,9 +55,7 @@ bool RotationInterpolator::calc()
 
   // variation
   double sx(0), gx(1.0);
-  m_inter.init(&sx);  
-  m_inter.set(&gx, target.time, target.itype, target.delta);
-  m_inter.calc();
+  m_inter.calc(&sx, &gx, target.time, target.itype, target.delta);
 
 
   switch( m_itypeR )
@@ -149,4 +147,20 @@ bool RotationInterpolator::get(creek::Matrix3 &out_R, bool popp)
     toNextTerm = calc();
   }
   return toNextTerm;
+}
+
+
+double RotationInterpolator::remainingTime()
+{
+  double time = m_inter.remainingTimeToFirstGoal();
+  for(unsigned int i=0; i<m_goals.size(); i++)
+    time += m_goals.at(i).time;
+
+  return time;
+}
+
+
+double RotationInterpolator::remainingTimeToFirstGoal()
+{
+  return m_inter.remainingTimeToFirstGoal();
 }

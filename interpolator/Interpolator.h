@@ -31,6 +31,11 @@ namespace creek
     void set(const double *in_gx, const double *in_gv, double time, InterpolationType in_itype=CUBIC, double in_delta=0.0);
     void set(const double *in_gx, const double *in_gv, const double *in_ga, double time, InterpolationType in_itype=QUINTIC, double in_delta=0.0);
     bool calc();
+    inline void calc(const double *in_sx, const double *in_gx, double time, InterpolationType in_itype=LINEAR, double in_delta=0.0) {
+      clear();
+      init(in_sx);
+      set(in_gx, time, in_itype, in_delta);
+    }
 
     bool get(double* outx, bool ppop=true);
     bool get(double* outx, double *outv, bool ppop=true);

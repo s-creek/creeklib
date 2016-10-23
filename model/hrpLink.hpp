@@ -22,6 +22,13 @@ namespace creek
 
     inline const creek::Vector3 p() const { return creek::Vector3(hrp::Link::p); }
     inline creek::Vector3& p() { return static_cast<creek::Vector3&>(hrp::Link::p); }
+
+    inline const creek::Position position() const {
+      creek::Position ret;
+      ret.translation() = this->p();
+      ret.linear() = this->R();
+      return ret;
+    }
   };
 }
 

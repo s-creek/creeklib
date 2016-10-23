@@ -26,13 +26,21 @@ namespace creek
     
     void set(const creek::Matrix3& in_gR, double time, InterpolationTypeR in_itypeR=TWO_AXIS, InterpolationType in_itype=CUBIC, double in_delta=0.0);
     bool calc();
-    
+    inline void calc(const creek::Matrix3& in_sR, const creek::Matrix3& in_gR, double time, InterpolationTypeR in_itypeR=TWO_AXIS, InterpolationType in_itype=CUBIC, double in_delta=0.0) {
+      clear();
+      init(in_sR);
+      set(in_gR, time, in_itypeR, in_itype, in_delta);
+    }
+
     bool get(creek::Matrix3 &out_R, bool popp=true);
     inline creek::Matrix3 get(bool popp=true) {
       creek::Matrix3 out;
       get(out, popp);
       return out;
     }
+
+    double remainingTime();
+    double remainingTimeToFirstGoal();
 
     inline bool empty() {
       return m_inter.empty() && m_goals.empty();
