@@ -8,7 +8,7 @@ RotationInterpolator::RotationInterpolator(double in_dt)
 {
   m_sR = Matrix3::Identity();
   m_gR = Matrix3::Identity();
-  m_inter.setAutoCalc(false);
+  //m_inter.setAutoCalc(false);
   m_axis << 0,0,1;
 }
 
@@ -56,7 +56,7 @@ bool RotationInterpolator::calc()
   // variation
   double sx(0), gx(1.0);
   m_inter.calc(&sx, &gx, target.time, target.itype, target.delta);
-
+  
 
   switch( m_itypeR )
     {

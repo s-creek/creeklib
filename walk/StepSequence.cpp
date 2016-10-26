@@ -129,7 +129,7 @@ void OneStepSequence::get(StepData &out_step)
     // single support phase
     //
     else if( m_remain_count >= n2 ) {
-      Vector3 pos( m_seq_pos.front() );  m_seq_pos.pop_front();
+      Vector3 pos( m_seq_pos.front() );  if( m_seq_pos.size() > 1 ) m_seq_pos.pop_front();
       Matrix3 rot;  m_seq_rot.get(rot);
 
       switch(m_sup)
@@ -164,6 +164,9 @@ void OneStepSequence::get(StepData &out_step)
     if( m_remain_count == 0 ) {
       m_start_rfoot = m_goal_rfoot;
       m_start_lfoot = m_goal_lfoot;
+
+      m_seq_pos.clear();
+      m_seq_rot.clear();
     }
   }
   else {

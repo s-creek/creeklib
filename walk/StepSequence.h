@@ -44,7 +44,7 @@ namespace creek
     //~OneStepSequence();
 
     void init(const creek::Position &rfoot, const creek::Position &lfoot);
-    inline void init(const creek::StepData &foot) {
+    void init(const creek::StepData &foot) {
       init(foot.rfoot, foot.lfoot);
     }
 
@@ -61,6 +61,7 @@ namespace creek
     inline creek::FootType supportType() const { return m_sup; }
 
     inline double remainingTime() { return m_remain_count*m_dt; }
+    inline int numSequence() { return m_remain_count; }
 
 
   private:
@@ -76,7 +77,7 @@ namespace creek
     creek::Position m_goal_rfoot, m_goal_lfoot;
     creek::FootType m_sup;
 
-    std::deque<creek::Vector3> m_seq_pos;
+    std::deque<creek::Vector3>  m_seq_pos;
     creek::RotationInterpolator m_seq_rot;
   };
 
