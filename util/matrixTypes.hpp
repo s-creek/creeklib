@@ -11,6 +11,7 @@
 namespace creek {
   using Eigen::Matrix3d;
   using Eigen::Vector3d;
+  using Eigen::Vector4d;
   using Eigen::MatrixXd;
   using Eigen::VectorXd;
   using Eigen::Quaterniond;
@@ -18,6 +19,7 @@ namespace creek {
 
   typedef Eigen::Matrix3d Matrix3;
   typedef Eigen::Vector3d Vector3;
+  typedef Eigen::Vector4d Vector4;
 
   typedef Eigen::MatrixXd dmatrix;
   typedef Eigen::VectorXd dvector;
@@ -68,7 +70,7 @@ namespace creek {
 namespace creek {
   typedef creek_tvmet::Matrix<double,3,3> Matrix3;
   typedef creek_tvmet::Vector<double,3>   Vector3;
-  //typedef creek_tvmet::Vector3<double>   Vector3;
+  typedef creek_tvmet::Vector<double,4>   Vector4;
   typedef creek_tvmet::Quaternion<double> Quaternion;
   typedef creek_tvmet::AngleAxis<double>  AngleAxis;
 

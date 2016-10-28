@@ -44,7 +44,7 @@ namespace creek
     //~OneStepSequence();
 
     void init(const creek::Position &rfoot, const creek::Position &lfoot);
-    void init(const creek::StepData &foot) {
+    inline void init(const creek::StepData &foot) {
       init(foot.rfoot, foot.lfoot);
     }
 
@@ -63,6 +63,8 @@ namespace creek
     inline double remainingTime() { return m_remain_count*m_dt; }
     inline int numSequence() { return m_remain_count; }
 
+    inline double stepTime() { return m_step_time; }
+
 
   private:
     void calcCycloidStep(const creek::Vector3 &start, const creek::Vector3 &goal);
@@ -71,6 +73,7 @@ namespace creek
     double m_dt;
     int m_remain_count;
     int n1, n2;
+    double m_step_time;
 
     double m_step_height;
     creek::Position m_start_rfoot, m_start_lfoot;

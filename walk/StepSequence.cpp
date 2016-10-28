@@ -11,6 +11,7 @@ OneStepSequence::OneStepSequence(double in_dt)
   m_remain_count = 0;
   m_sup = DFOOT;
   m_step_height = 0.05;
+  m_step_time = 0.0;
 }
 
 
@@ -27,11 +28,11 @@ void OneStepSequence::set(double in_time)
   m_goal_lfoot = m_start_lfoot;
   m_sup = DFOOT;
 
-
   // time to step number (discretization)
   m_remain_count = timeToNum(in_time, m_dt);
   n1 = n2 = (m_remain_count + 1);
 
+  m_step_time = m_remain_count*m_dt;
 
   m_seq_pos.clear();
   m_seq_rot.clear();
@@ -44,6 +45,8 @@ void OneStepSequence::set(const creek::StepData &in_step, double in_single_time,
   n2 = timeToNum(in_double_time/2.0, m_dt);
   n1 = n2 + timeToNum(in_single_time, m_dt);
   m_remain_count = n1 + n2;
+
+  m_step_time = m_remain_count*m_dt;
 
 
   // set support foot type (for next step)

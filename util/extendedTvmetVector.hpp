@@ -68,7 +68,7 @@ namespace creek_tvmet
       return Vector(tvmet::normalize(*this));
     }
 
-    inline value_type dot(const tvector& in_v) {
+    inline value_type dot(const tvector& in_v) const {
       return tvmet::dot(*this, in_v);
     }
 
