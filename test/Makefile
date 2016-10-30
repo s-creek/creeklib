@@ -24,7 +24,7 @@ step_tvmet: step.cpp
 	$(CXX)  -I../../ `pkg-config eigen3 --cflags` $< -o $@ -DUSE_HRP_MODEL -L../walk -lcreekWalk_hrp -L../interpolator -lcreekInterpolator_hrp
 
 step_eigen: step.cpp
-	$(CXX)  -I../../ `pkg-config eigen3 --cflags` $< -o $@ -DUSE_CNOID_MODEL -L../walk -lcreekWalk_cnoid -L../interpolator -lcreekInterpolator_cnoid
+	$(CXX)  -I../../ `pkg-config eigen3 --cflags` `pkg-config choreonoid-body-plugin --cflags` $< -o $@ -DUSE_CNOID_MODEL -L../walk -lcreekWalk_cnoid -L../interpolator -lcreekInterpolator_cnoid `pkg-config choreonoid-body-plugin --libs`
 
 clean:
 	rm -f cnoid hrp tvmet eigen inter rinter step_tvmet step_eigen

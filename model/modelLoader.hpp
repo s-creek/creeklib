@@ -1,3 +1,5 @@
+// -*- c++ -*-
+
 #ifndef CREEK_MODEL_LOADER_HPP
 #define CREEK_MODEL_LOADER_HPP
 

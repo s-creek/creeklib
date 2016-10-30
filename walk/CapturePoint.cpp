@@ -44,13 +44,13 @@ void CapturePoint::set(const Vector3 &in_cp, double in_time, double in_com_heigh
 {
   m_com_height = m_start_com(2) - m_start_cp(2);
   double ground_height = m_start_cp(2);
-
+  
 
   // calc com pos z (world)
   double start_com_z(m_start_com(2)), goal_com_z(in_cp(2)+in_com_height);
   Interpolator seq_com_z(1, m_dt);
   seq_com_z.calc(&start_com_z, &goal_com_z, in_time, CUBIC);
-
+  
 
   // calc capture point parameter
   static double g(9.80665);
@@ -58,12 +58,12 @@ void CapturePoint::set(const Vector3 &in_cp, double in_time, double in_com_heigh
   double ww  = std::sqrt(g/mid_com_height);
   double bb  = std::exp(ww*in_time);
   double wdt = ww * m_dt;
-
+  
   // calc zmp
   m_zmp = 1/(1-bb)*in_cp - bb/(1-bb)*m_start_cp;
   m_zmp(2) = ground_height;
   
-
+  
   // calc com & cp sequence
   m_seq_com.clear();
   m_seq_cp.clear();
@@ -81,14 +81,16 @@ void CapturePoint::set(const Vector3 &in_cp, double in_time, double in_com_heigh
     m_seq_com.push_back(com);
     m_seq_cp.push_back(cp);
   }
-
-  m_goal_com   = m_seq_com.back();
-  m_goal_cp    = m_seq_cp.back();
+ 
+  if( !m_seq_com.empty() ) {
+    m_goal_com   = m_seq_com.back();
+    m_goal_cp    = m_seq_cp.back();
+  }
   m_com_height = in_com_height;
 }
 
 
-void CapturePoint::get(Vector3 &out_zmp, Vector3 &out_com, Vector3 &out_cp)
+void CapturePoint::get(Vector3 &out_zmp, Vector3 &out_com, Vector3 &out_cp, bool pop)
 {
   out_zmp = m_zmp;
 
@@ -100,8 +102,10 @@ void CapturePoint::get(Vector3 &out_zmp, Vector3 &out_com, Vector3 &out_cp)
     out_com = m_seq_com.front();
     out_cp  = m_seq_cp.front();
 
-    m_seq_com.pop_front();
-    m_seq_cp.pop_front();
+    if( pop ) {
+      m_seq_com.pop_front();
+      m_seq_cp.pop_front();
+    }
 
     // end sequence
     if( empty() ) {
@@ -147,9 +151,21 @@ Vector3 CapturePoint::calcNextCapturePoint(const Vector3 &in_goal_foot, const Ve
 void CapturePoint::calcDefaultOffset(double in_distance, double in_time, double in_com_height)
 {
   static double g(9.80665);
+  double mid_com_height = in_com_height;
+  double ww = std::sqrt(g/mid_com_height);
+  double bb = std::exp(ww*in_time);
+
+  m_offset = 1/(bb-1)*std::fabs(in_distance);
+}
+
+
+void CapturePoint::calcOffset(double in_distance, double in_time, double in_com_height)
+{
+  static double g(9.80665);
   double mid_com_height = (m_com_height + in_com_height)/2.0;
   double ww = std::sqrt(g/mid_com_height);
   double bb = std::exp(ww*in_time);
 
   m_offset = 1/(bb-1)*std::fabs(in_distance);
 }
+

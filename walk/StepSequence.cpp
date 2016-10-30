@@ -4,29 +4,34 @@
 
 using namespace creek;
 
-OneStepSequence::OneStepSequence(double in_dt)
+StepSequence::StepSequence(double in_dt)
   : m_dt(in_dt),
     m_seq_rot(in_dt)
 {
   m_remain_count = 0;
   m_sup = DFOOT;
+  m_stepType = WAIT;
   m_step_height = 0.05;
   m_step_time = 0.0;
 }
 
 
-void OneStepSequence::init(const Position &in_rfoot, const Position &in_lfoot)
+void StepSequence::init(const Position &in_rfoot, const Position &in_lfoot)
 {
   m_start_rfoot = in_rfoot;
   m_start_lfoot = in_lfoot;
+
+  m_goal_rfoot = m_start_rfoot;
+  m_goal_lfoot = m_start_lfoot;
 }
 
 
-void OneStepSequence::set(double in_time)
+void StepSequence::set(double in_time, StepType in_stepType)
 {
   m_goal_rfoot = m_start_rfoot;
   m_goal_lfoot = m_start_lfoot;
   m_sup = DFOOT;
+  m_stepType = in_stepType;
 
   // time to step number (discretization)
   m_remain_count = timeToNum(in_time, m_dt);
@@ -39,11 +44,11 @@ void OneStepSequence::set(double in_time)
 }
 
 
-void OneStepSequence::set(const creek::StepData &in_step, double in_single_time, double in_double_time, StepType in_step_type)
+void StepSequence::set(const creek::StepData &in_step)
 {
   // time to step number (discretization)
-  n2 = timeToNum(in_double_time/2.0, m_dt);
-  n1 = n2 + timeToNum(in_single_time, m_dt);
+  n2 = timeToNum(in_step.double_time/2.0, m_dt);
+  n1 = n2 + timeToNum(in_step.single_time, m_dt);
   m_remain_count = n1 + n2;
 
   m_step_time = m_remain_count*m_dt;
@@ -51,6 +56,10 @@ void OneStepSequence::set(const creek::StepData &in_step, double in_single_time,
 
   // set support foot type (for next step)
   m_sup = in_step.sup;
+
+
+  // set step type
+  m_stepType = in_step.stepType;
 
 
   // set start & goal foot data
@@ -82,43 +91,61 @@ void OneStepSequence::set(const creek::StepData &in_step, double in_single_time,
       break;
 
     default:
-      std::cerr << "can not move foot" << std::endl;
-      set(in_single_time+in_double_time);
+      set(m_step_time, in_step.stepType);
       return;
-    };
+    }
 
 
   // calc swing foot trajectory
   m_seq_pos.clear();
   m_seq_rot.clear();
-  switch(in_step_type)
+  switch(in_step.stepType)
     {
     case QUINTIC_STEP:
       {
-	calcInterpolationStep(start_swing_foot.translation(), goal_swing_foot.translation(), in_single_time, QUINTIC, 0.5);
-	m_seq_rot.calc(start_swing_foot.linear(), goal_swing_foot.linear(), in_single_time, TWO_AXIS, QUINTIC);
+	calcInterpolationStep(start_swing_foot.translation(), goal_swing_foot.translation(), in_step.single_time, QUINTIC, 0.5);
+	m_seq_rot.calc(start_swing_foot.linear(), goal_swing_foot.linear(), in_step.single_time, TWO_AXIS, QUINTIC);
       }
       break;
 
     case CUBIC_STEP:
       {
-	calcInterpolationStep(start_swing_foot.translation(), goal_swing_foot.translation(), in_single_time, CUBIC, 0.5);
-	m_seq_rot.calc(start_swing_foot.linear(), goal_swing_foot.linear(), in_single_time, TWO_AXIS, CUBIC);
+	calcInterpolationStep(start_swing_foot.translation(), goal_swing_foot.translation(), in_step.single_time, CUBIC, 0.5);
+	m_seq_rot.calc(start_swing_foot.linear(), goal_swing_foot.linear(), in_step.single_time, TWO_AXIS, CUBIC);
       }
       break;
 
     case CYCLOID_STEP:
+      {
+	calcCycloidStep(start_swing_foot.translation(), goal_swing_foot.translation());
+	m_seq_rot.calc(start_swing_foot.linear(), goal_swing_foot.linear(), in_step.single_time);
+      }
+      break;
+
+    case STEP_STOP:
+    case STEP_START:
     default:
-      calcCycloidStep(start_swing_foot.translation(), goal_swing_foot.translation());
-      m_seq_rot.calc(start_swing_foot.linear(), goal_swing_foot.linear(), in_single_time);
-    };
+      set(m_step_time, in_step.stepType);
+    }
 }
 
 
-void OneStepSequence::get(StepData &out_step)
+void StepSequence::wait(double in_time)
+{
+  int wait_count = timeToNum(in_time, m_dt);
+  m_remain_count += wait_count;
+  n1 += wait_count;
+  n2 += wait_count;
+
+  m_step_time += wait_count*m_dt;
+}
+
+
+void StepSequence::get(StepData &out_step, bool pop)
 {
   if( m_remain_count > 0 ) {
-    --m_remain_count;
+    if( pop )
+      --m_remain_count;
 
     //
     // double support phase
@@ -132,8 +159,8 @@ void OneStepSequence::get(StepData &out_step)
     // single support phase
     //
     else if( m_remain_count >= n2 ) {
-      Vector3 pos( m_seq_pos.front() );  if( m_seq_pos.size() > 1 ) m_seq_pos.pop_front();
-      Matrix3 rot;  m_seq_rot.get(rot);
+      Vector3 pos( m_seq_pos.front() );  if( m_seq_pos.size() > 1 && pop ) m_seq_pos.pop_front();
+      Matrix3 rot;  m_seq_rot.get(rot, pop);
 
       switch(m_sup)
 	{
@@ -151,7 +178,7 @@ void OneStepSequence::get(StepData &out_step)
 
 	default:
 	  std::cerr << "can not move foot" << std::endl;
-	};
+	}
       out_step.sup = m_sup;
     }
     //
@@ -162,6 +189,11 @@ void OneStepSequence::get(StepData &out_step)
       out_step.lfoot = m_goal_lfoot;
       out_step.sup   = DFOOT;
     }
+
+
+    // set step type
+    out_step.stepType = m_stepType;
+
 
     // end sequence
     if( m_remain_count == 0 ) {
@@ -176,11 +208,12 @@ void OneStepSequence::get(StepData &out_step)
     out_step.rfoot = m_start_rfoot;
     out_step.lfoot = m_start_lfoot;
     out_step.sup   = DFOOT;
+    out_step.stepType = m_stepType;
   }
 }
 
 
-void OneStepSequence::calcCycloidStep(const creek::Vector3 &in_start, const creek::Vector3 &in_goal)
+void StepSequence::calcCycloidStep(const creek::Vector3 &in_start, const creek::Vector3 &in_goal)
 {
   int n = n1 - n2;
   double dtheta = 2 * M_PI / n;
@@ -200,7 +233,7 @@ void OneStepSequence::calcCycloidStep(const creek::Vector3 &in_start, const cree
 }
 
 
-void OneStepSequence::calcInterpolationStep(const creek::Vector3 &in_start, const creek::Vector3 &in_goal, double in_time, InterpolationType in_itype, double in_top_ratio)
+void StepSequence::calcInterpolationStep(const creek::Vector3 &in_start, const creek::Vector3 &in_goal, double in_time, InterpolationType in_itype, double in_top_ratio)
 {
   // start --z1--> top --z2 --> goal
   double time_z1, time_z2;
@@ -237,4 +270,29 @@ void OneStepSequence::calcInterpolationStep(const creek::Vector3 &in_start, cons
     pos << xy[0], xy[1], z;
     m_seq_pos.push_back(pos);
   }
+}
+
+
+double StepSequence::groundHeight(creek::FootType foot_type)
+{
+  StepData step;
+  get(step, false);
+
+  double ground_height=0;
+  switch(foot_type)
+    {
+    case RFOOT:
+      ground_height = step.rfoot.translation()(2);
+      break;
+    case LFOOT:
+      ground_height = step.lfoot.translation()(2);
+      break;
+    case DFOOT:
+      ground_height = (step.rfoot.translation()(2) + step.lfoot.translation()(2)) / 2.0;
+      break;
+    default:
+      std::cerr << "in the air" << std::endl;
+    }
+
+  return ground_height;
 }

@@ -13,6 +13,7 @@ namespace creek
     Link(const hrp::Link& link) : hrp::Link(link) {}
     
     std::string name() { return hrp::Link::name; }
+    void setName(const std::string &set_name)  { hrp::Link::name = set_name; }
 
     inline double q() const { return hrp::Link::q; }
     inline double& q() { return hrp::Link::q; }
@@ -29,6 +30,15 @@ namespace creek
       ret.linear() = this->R();
       return ret;
     }
+
+    inline void appendChild(hrp::Link *link) { this->addChild(link); }
+
+    inline void setOffsetPosition(const creek::Position &offset) {
+      setOffsetTranslation(offset.translation());
+      setOffsetRotation(offset.linear());
+    }
+    inline void setOffsetTranslation(const creek::Vector3 &offset) { this->b = offset; }
+    inline void setOffsetRotation(const creek::Matrix3 &offset) { this->Rs = offset; }
   };
 }
 
