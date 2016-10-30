@@ -18,6 +18,7 @@ namespace creek
     
     void set(const creek::Vector3 &cp, double time, double com_height);
     inline void set(const creek::Vector3 &cp, double time) { set(cp, time, m_com_height); }
+    bool stop(double time);
 
     void get(creek::Vector3 &zmp, creek::Vector3 &com, creek::Vector3 &cp, bool pop=true);
     inline void getGoal(creek::Vector3 &zmp, creek::Vector3 &com, creek::Vector3 &cp) {

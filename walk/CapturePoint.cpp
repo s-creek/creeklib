@@ -90,6 +90,47 @@ void CapturePoint::set(const Vector3 &in_cp, double in_time, double in_com_heigh
 }
 
 
+bool CapturePoint::stop(double in_time)
+{
+  // capture point parameter
+  static double g(9.80665);
+  double ww = std::sqrt(g/m_com_height);
+
+
+  // calc current com velocity
+  Vector3 com_vel_cur;
+  com_vel_cur = ww * (m_goal_cp-m_goal_com);
+  com_vel_cur(2) = 0.0;
+  if( com_vel_cur.norm() < 1.0e-6 )
+    return false;
+  
+
+  // set referemce data
+  Vector3 com_pos_cur(m_goal_com), com_pos_ref(m_goal_cp), com_vel_ref(Vector3::Zero());
+  com_pos_ref(2) = com_pos_cur(2);
+
+
+  // calc sequence
+  Interpolator seq_com_stop(3, m_dt);
+  seq_com_stop.init(&com_pos_cur(0), &com_vel_cur(0));
+  seq_com_stop.set(&com_pos_ref(0), &com_vel_ref(0), in_time);
+  while( !seq_com_stop.empty() ) {
+    Vector3 com, cp(m_goal_cp);
+    seq_com_stop.get(&com(0));
+
+    m_seq_com.push_back(com);
+    m_seq_cp.push_back(cp);
+  }
+  if( empty() )
+    return false;
+
+ 
+  m_goal_com = m_seq_com.back();
+  m_zmp = m_goal_cp;
+  return true;
+}
+
+
 void CapturePoint::get(Vector3 &out_zmp, Vector3 &out_com, Vector3 &out_cp, bool pop)
 {
   out_zmp = m_zmp;
