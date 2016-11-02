@@ -9,7 +9,7 @@
 #include "cnoidBody.hpp"
 namespace creek
 {
-  bool loadBody(creek::BodyPtr body, const std::string& path)
+  inline bool loadBody(creek::BodyPtr body, const std::string& path)
   {
     cnoid::BodyLoader bl;
 #if CNOID_VERSION >= 150
@@ -26,7 +26,7 @@ namespace creek
 #include "hrpBody.hpp"
 namespace creek
 {
-  bool loadBody(creek::BodyPtr body, const std::string& path)
+  inline bool loadBody(creek::BodyPtr body, const std::string& path)
   {
     int argc(1);
     char* argv[1] = {"a"};
