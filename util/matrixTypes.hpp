@@ -9,6 +9,8 @@
 #include <Eigen/Geometry>
 
 namespace creek {
+  using Eigen::Matrix2d;
+  using Eigen::Vector2d;
   using Eigen::Matrix3d;
   using Eigen::Vector3d;
   using Eigen::Vector4d;
@@ -17,6 +19,8 @@ namespace creek {
   using Eigen::Quaterniond;
   using Eigen::AngleAxisd;
 
+  typedef Eigen::Matrix3d Matrix2;
+  typedef Eigen::Vector3d Vector2;
   typedef Eigen::Matrix3d Matrix3;
   typedef Eigen::Vector3d Vector3;
   typedef Eigen::Vector4d Vector4;
@@ -68,6 +72,8 @@ namespace creek {
 #include "tvmetAngleAxis.hpp"
 
 namespace creek {
+  typedef creek_tvmet::Matrix<double,2,2> Matrix2;
+  typedef creek_tvmet::Vector<double,2>   Vector2;
   typedef creek_tvmet::Matrix<double,3,3> Matrix3;
   typedef creek_tvmet::Vector<double,3>   Vector3;
   typedef creek_tvmet::Vector<double,4>   Vector4;

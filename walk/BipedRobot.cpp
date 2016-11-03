@@ -63,7 +63,7 @@ bool BipedRobot::calc(creek::FootType in_supportFoot, const Vector3 &in_comPosRe
 		 const Vector3 &in_lfootPosRef, const Matrix3 &in_lfootRotRef)
 {
   bool converged = false;
-
+  
 
   // for error
   int n = m_robot->numJoints();
@@ -74,25 +74,25 @@ bool BipedRobot::calc(creek::FootType in_supportFoot, const Vector3 &in_comPosRe
   Vector3 porg(m_robot->rootLink()->p());
   Matrix3 Rorg(m_robot->rootLink()->R());
 
-
+  
   // calc inverse
   m_robot->calcForwardKinematics();
   if( in_supportFoot == creek::RFOOT ) {
     if( !m_wl2rfPath->calcInverseKinematics(in_rfootPosRef, in_rfootRotRef) )
       return false;
-
+    
     converged = calcComInverseKinematics(in_supportFoot, in_comPosRef, in_waistRotRef, in_lfootPosRef, in_lfootRotRef);
   }
   // とりあえず両脚支持の時も左足を支持脚に
   else {
     if( !m_wl2lfPath->calcInverseKinematics(in_lfootPosRef, in_lfootRotRef) )
       return false;
-
+    
     in_supportFoot = creek::LFOOT;
     converged = calcComInverseKinematics(in_supportFoot, in_comPosRef, in_waistRotRef, in_rfootPosRef, in_rfootRotRef);
   }
 
-
+  
   if( !converged ) {
     m_robot->rootLink()->p() = porg;
     m_robot->rootLink()->R() = Rorg;
