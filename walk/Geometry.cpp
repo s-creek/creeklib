@@ -106,4 +106,22 @@ namespace creek
     Vector3 ret;  ret << roll, pitch, yaw;
     return ret;
   }
+
+
+  Matrix3 rotFromRpy(double r, double p, double y)
+  {
+    const double cr = cos(r);
+    const double sr = sin(r);
+    const double cp = cos(p);
+    const double sp = sin(p);
+    const double cy = cos(y);
+    const double sy = sin(y);
+
+    Matrix3 R;
+    R << cp*cy, sr*sp*cy - cr*sy, cr*sp*cy + sr*sy,
+      cp*sy, sr*sp*sy + cr*cy, cr*sp*sy - sr*cy,
+      -sp  , sr*cp           , cr*cp;
+    
+    return R;
+  }
 }

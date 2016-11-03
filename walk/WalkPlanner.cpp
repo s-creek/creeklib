@@ -436,6 +436,7 @@ void WalkPlanner::addComMove()
   double time = goal.single_time+goal.double_time;
   
   if( goal.stepType == STEP_STOP ) {
+    m_stepping = false;
     if( m_capturePoint->stop(time) )
       m_stepSequence->wait(time);
   }
