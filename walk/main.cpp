@@ -7,13 +7,15 @@
 #include <iostream>
 #include <fstream>
 
-int main()
+int main(int argc, char** argv)
 {
- //
+  //
   // setup robot
   //
-  //std::string path("/home/player/tsml/model/JVRC-1/main.wrl");
-  std::string path("/opt/grx/HRP2A/model/HRP2Amain.wrl");
+  std::string path("/home/player/tsml/model/JVRC-1/main.wrl");
+  if( argc > 1 )
+    path = argv[1];
+
   creek::BodyPtr robot( new creek::Body() );
   if( !creek::loadBody(robot, path) ) {
     std::cerr << "error : model loader" << std::endl;

@@ -15,7 +15,9 @@ void split()
 
 int main(int argc, char* argv[])
 {
-  std::string path("/opt/grx/HRP2A/model/HRP2Amain.wrl");
+  std::string path("/home/player/tsml/model/JVRC-1/main.wrl");
+  if( argc > 1 )
+    path = argv[1];
 
 
   creek::BodyPtr robot( new creek::Body() );
