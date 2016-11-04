@@ -83,11 +83,15 @@ FootType WalkPlanner::getSupportFootType(const StepData &step, const Vector3 &in
 
   // DOUBLE
   if( ret == AIR ) {
-    Vector3 rt, rh, lt, lh;  // RorL, TOEorHEEL
-    rt = rfoot.translation() + rfoot.linear() * Vector3(m_footSize(0)-in_margin, m_footSize(3), 0.0) - com;
-    rh = rfoot.translation() + rfoot.linear() * Vector3(-m_footSize(1)+in_margin, m_footSize(3), 0.0) - com;
-    lt = lfoot.translation() + lfoot.linear() * Vector3(m_footSize(0)-in_margin, -m_footSize(3), 0.0) - com;
-    lh = lfoot.translation() + lfoot.linear() * Vector3(-m_footSize(1)+in_margin, -m_footSize(3), 0.0) - com;
+    Vector3 rt, rh, lt, lh, tmp;  // RorL, TOEorHEEL
+    tmp << m_footSize(0)-in_margin, m_footSize(3), 0.0;
+    rt = rfoot.translation() + rfoot.linear() * tmp - com;
+    tmp << -m_footSize(1)+in_margin, m_footSize(3), 0.0;
+    rh = rfoot.translation() + rfoot.linear() * tmp - com;
+    tmp << m_footSize(0)-in_margin, -m_footSize(3), 0.0;
+    lt = lfoot.translation() + lfoot.linear() * tmp - com;
+    tmp << -m_footSize(1)+in_margin, -m_footSize(3), 0.0;
+    lh = lfoot.translation() + lfoot.linear() * tmp - com;
 
     // projection
     rt = rt / rt[2] * dz + com;
@@ -376,7 +380,7 @@ bool WalkPlanner::needLiftUpFoot(const creek::Position &in_start, const creek::P
  
   Vector3 dp(in_goal.translation() - in_start.translation());
   Matrix3 dR(in_goal.linear().transpose() * in_start.linear());
-  creek::AngleAxisd omega(dR);
+  creek::AngleAxis omega(dR);
   if( dp.norm() > dpmin || std::fabs(omega.angle()) > dRmin )
     need = true; 
 

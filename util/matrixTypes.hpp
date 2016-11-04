@@ -7,6 +7,7 @@
 
 #include <Eigen/Core>
 #include <Eigen/Geometry>
+#include <Eigen/StdVector>
 
 namespace creek {
   using Eigen::Matrix2d;

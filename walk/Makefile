@@ -1,39 +1,35 @@
-CXXFLAGS=-Wall -fPIC `pkg-config eigen3 --cflags`
+CXXFLAGS=-std=c++0x -Wall -fPIC -DBOOST_SIGNALS_NO_DEPRECATION_WARNING `pkg-config eigen3 --cflags`
 
-OBJS=StepSequence.o CapturePoint.o Geometry.o
+OBJS=StepSequence.o CapturePoint.o Geometry.o BipedRobot.o WalkPlanner.o
 SRCS=$(OBJS:.o=.cpp)
-HEAD=$(OBJS:.o=.h) discretization.hpp BipedRobot.h WalkPlanner.h
+HEAD=$(OBJS:.o=.h) discretization.hpp
 
 OBJ_HRP=$(OBJS:.o=.o.hrp)
-OBJ_CNOID=$(OBJS:.o=.o.cnoid) BipedRobot.o.cnoid WalkPlanner.o.cnoid
+OBJ_CNOID=$(OBJS:.o=.o.cnoid)
 
+HRP_FLAGS=$(CXXFLAGS) `pkg-config openhrp3.1 --cflags`
+CNOID_FLAGS=$(CXXFLAGS) `pkg-config choreonoid-body-plugin --cflags`
 
+HRP_LIBS=`pkg-config openhrp3.1 --libs`
+CNOID_LIBS=`pkg-config choreonoid-body-plugin --libs`
 CNOID_VERSION=$(subst .,,$(shell pkg-config --modversion choreonoid-body-plugin))
 
 
-all: $(OBJS) libcreekWalk_hrp.so libcreekWalk_cnoid.so BipedRobot.o.cnoid WalkPlanner.o.cnoid main
+all: $(OBJS) libcreekWalk_hrp.so libcreekWalk_cnoid.so main
 
 .cpp.o: $(HEAD)
 	rm -f $@.hrp $@.cnoid
-	$(CXX) $(CXXFLAGS) $< -c -o $@.hrp -DUSE_HRP_MODEL
-	$(CXX) $(CXXFLAGS) $< -c -o $@.cnoid -DUSE_CNOID_MODEL
-
-BipedRobot.o.cnoid: BipedRobot.cpp BipedRobot.h
-	rm -f $@
-	$(CXX) $(CXXFLAGS) `pkg-config choreonoid-body-plugin --cflags` $< -c -o $@ -DUSE_CNOID_MODEL -DCNOID_VERSION=$(CNOID_VERSION)
-
-WalkPlanner.o.cnoid: WalkPlanner.cpp WalkPlanner.h
-	rm -f $@
-	$(CXX) $(CXXFLAGS) `pkg-config choreonoid-body-plugin --cflags` $< -c -o $@ -DUSE_CNOID_MODEL -DCNOID_VERSION=$(CNOID_VERSION)
+	$(CXX) $(HRP_FLAGS) $< -c -o $@.hrp -DUSE_HRP_MODEL
+	$(CXX) $(CNOID_FLAGS) $< -c -o $@.cnoid -DUSE_CNOID_MODEL -DCNOID_VERSION=$(CNOID_VERSION)
 
 libcreekWalk_hrp.so: $(OBJ_HRP)
-	$(CXX) $(CXXFLAGS) -shared -o $@ $(OBJ_HRP)
+	$(CXX) $(HRP_FLAGS) -shared -o $@ $(OBJ_HRP) $(HRP_LIBS)
 
 libcreekWalk_cnoid.so: $(OBJ_CNOID)
-	$(CXX) $(CXXFLAGS) `pkg-config choreonoid-body-plugin --cflags` -shared -o $@ $(OBJ_CNOID)
+	$(CXX) $(CNOID_FLAGS) -shared -o $@ $(OBJ_CNOID) $(CNOID_LIBS)
 
 main: main.cpp libcreekWalk_cnoid.so
-	$(CXX) $(CXXFLAGS) `pkg-config choreonoid-body-plugin --cflags` $< -o $@ libcreekWalk_cnoid.so ../interpolator/libcreekInterpolator_cnoid.so `pkg-config choreonoid-body-plugin --libs` -DCNOID_VERSION=$(CNOID_VERSION)
+	$(CXX) $(CNOID_FLAGS) $< -o $@ libcreekWalk_cnoid.so ../interpolator/libcreekInterpolator_cnoid.so $(CNOID_LIBS) -DCNOID_VERSION=$(CNOID_VERSION)
 
 clean:
 	rm -f *~

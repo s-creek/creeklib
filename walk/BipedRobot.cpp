@@ -189,7 +189,11 @@ bool BipedRobot::calcComInverseKinematics(creek::FootType in_supportFoot, const 
       v(i+9) = dSwingOmega(i);
     }
 
+#ifdef USE_CNOID_MODEL
     errsqr = v.squaredNorm();
+#elif defined USE_HRP_MODEL
+    errsqr = hrp::ublas::inner_prod(v,v);
+#endif
     if( errsqr < maxIKErrorSqr ) {
       converged = true;
       break;
@@ -247,7 +251,8 @@ bool BipedRobot::calcComInverseKinematics(creek::FootType in_supportFoot, const 
     for(int i = 0; i < n; i++) {
       sp2swPath->joint(i)->q() += LAMBDA * dq(i);
     }
-    sp2swPath->baseLink()->position() = supBase;
+    sp2swPath->baseLink()->p() = supBase.translation();
+    sp2swPath->baseLink()->R() = supBase.linear();
     sp2swPath->calcForwardKinematics();
     m_robot->calcForwardKinematics();
   }
@@ -257,7 +262,9 @@ bool BipedRobot::calcComInverseKinematics(creek::FootType in_supportFoot, const 
     for(int i=0; i < n; ++i){
       sp2swPath->joint(i)->q() = qorg[i];
     }
-    sp2swPath->baseLink()->position() = supBase;
+    //sp2swPath->baseLink()->position() = supBase;
+    sp2swPath->baseLink()->p() = supBase.translation();
+    sp2swPath->baseLink()->R() = supBase.linear();
     sp2swPath->calcForwardKinematics();
     m_robot->calcForwardKinematics();
   }

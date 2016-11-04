@@ -18,7 +18,8 @@ eigen: matrix.cpp
 	$(CXX)  -I../../ `pkg-config eigen3 --cflags` $< -o $@ -DUSE_CNOID_MODEL
 
 rinter: rinter.cpp
-	$(CXX)  -I../../ `pkg-config eigen3 --cflags` $< -o $@ -DUSE_HRP_MODEL -L../interpolator -lcreekInterpolator_hrp
+	$(CXX)  -I../../ `pkg-config eigen3 --cflags` $< -o $@ -DUSE_CNOID_MODEL ../interpolator/libcreekInterpolator_cnoid.so
+#$(CXX)  -I../../ `pkg-config eigen3 --cflags` $< -o $@ -DUSE_HRP_MODEL -L../interpolator -lcreekInterpolator_hrp
 
 step_tvmet: step.cpp
 	$(CXX)  -I../../ `pkg-config eigen3 --cflags` $< -o $@ -DUSE_HRP_MODEL -L../walk -lcreekWalk_hrp -L../interpolator -lcreekInterpolator_hrp

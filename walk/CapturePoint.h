@@ -11,6 +11,10 @@ namespace creek
   class CapturePoint
   {
   public:
+#ifdef USE_CNOID_MODEL
+    EIGEN_MAKE_ALIGNED_OPERATOR_NEW
+#endif
+
     CapturePoint(double dt);
 
     // !!! cp(2) = ground height !!!
@@ -71,7 +75,11 @@ namespace creek
     creek::Vector3 m_zmp;
     creek::Vector3 m_start_com, m_start_cp;
     creek::Vector3 m_goal_com, m_goal_cp;
+#ifdef USE_CNOID_MODEL
+    std::deque<creek::Vector3, Eigen::aligned_allocator<creek::Vector3> > m_seq_com, m_seq_cp;
+#else
     std::deque<creek::Vector3> m_seq_com, m_seq_cp;
+#endif
   };
 }
 

@@ -9,10 +9,10 @@ CapturePoint::CapturePoint(double in_dt)
   : m_dt(in_dt)
 {
   m_com_height = 1.0;
-
+  
   m_start_com = Vector3::Zero();
   m_start_cp  = Vector3::Zero();
-
+  
   m_offset = 0.0;
 }
 

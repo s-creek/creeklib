@@ -9,20 +9,23 @@
 
 int main()
 {
-  //
+ //
   // setup robot
   //
-  std::string path("/home/player/tsml/model/JVRC-1/main.wrl");
+  //std::string path("/home/player/tsml/model/JVRC-1/main.wrl");
+  std::string path("/opt/grx/HRP2A/model/HRP2Amain.wrl");
   creek::BodyPtr robot( new creek::Body() );
   if( !creek::loadBody(robot, path) ) {
     std::cerr << "error : model loader" << std::endl;
     return 0;
   }
+  
 
   creek::BipedRobotPtr biped( new creek::BipedRobot() );
   biped->setRobot(robot);
-  
-  biped->setJointPath("R_ANKLE_P", "PELVIS", "L_ANKLE_P", "PELVIS");
+
+  //biped->setJointPath("R_ANKLE_P", "PELVIS", "L_ANKLE_P", "PELVIS");
+  biped->setJointPath("RLEG_JOINT5", "WAIST", "LLEG_JOINT5", "WAIST");
   robot->rootLink()->p() << 0.0, 0.0, 0.854;
 
   creek::Vector3 offset;  offset << 0, 0, -0.108;
@@ -52,7 +55,7 @@ int main()
   //
   // walk planner
   //
-  creek::WalkPlanner *walk;  walk = new creek::WalkPlanner(0.005);
+  creek::WalkPlanner *walk = new creek::WalkPlanner(0.005);
   walk->setTime(0.7, 0.1);
   walk->setFootSize(0.160, 0.100, 0.055, 0.055);
   walk->init(biped);
@@ -67,8 +70,8 @@ int main()
     creek::FootType swing_foot_type;
     creek::StepData step;
     walk->getGoal(step);
-    
-
+   
+   
     // add step
     if( walk->isStepping() ) {
       step.sup = creek::reverseFoot(step.sup);

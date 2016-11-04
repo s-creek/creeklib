@@ -23,6 +23,9 @@ namespace creek
 
   struct StepData
   {
+#ifdef USE_CNOID_MODEL
+    EIGEN_MAKE_ALIGNED_OPERATOR_NEW
+#endif
     StepData()
     {
       rfoot.setIdentity();
@@ -51,6 +54,10 @@ namespace creek
   class StepSequence
   {
   public:
+#ifdef USE_CNOID_MODEL
+    EIGEN_MAKE_ALIGNED_OPERATOR_NEW
+#endif
+    
     StepSequence(double dt);
     //~StepSequence();
 
@@ -108,7 +115,11 @@ namespace creek
     creek::FootType m_sup;
     creek::StepType m_stepType;
 
+#ifdef USE_CNOID_MODEL
+    std::deque<creek::Vector3, Eigen::aligned_allocator<creek::Vector3> > m_seq_pos;
+#else
     std::deque<creek::Vector3>  m_seq_pos;
+#endif
     creek::RotationInterpolator m_seq_rot;
   };
 }

@@ -19,7 +19,10 @@ namespace creek
   class RotationInterpolator
   {
   public:
-    RotationInterpolator(double in_dt);
+#ifdef USE_CNOID_MODEL
+    EIGEN_MAKE_ALIGNED_OPERATOR_NEW
+#endif
+   RotationInterpolator(double in_dt);
     ~RotationInterpolator();
 
     void init(const creek::Matrix3& in_sR);
@@ -70,6 +73,9 @@ namespace creek
     // goals
     struct TargetR
     {
+#ifdef USE_CNOID_MODEL
+    EIGEN_MAKE_ALIGNED_OPERATOR_NEW
+#endif
       creek::Matrix3 gR;
       double time, delta;
       InterpolationType itype;

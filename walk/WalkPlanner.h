@@ -19,6 +19,10 @@ namespace creek
   class WalkPlanner
   {
   public:
+#ifdef USE_CNOID_MODEL
+    EIGEN_MAKE_ALIGNED_OPERATOR_NEW
+#endif
+
     WalkPlanner(double dt);
 
     inline void setTime(double single_time, double double_time)  {
@@ -78,7 +82,11 @@ namespace creek
     double m_margin;  // default margin for getFootType
     creek::Vector4 m_footSize; // toe, heel, outer, inner
 
+#ifdef USE_CNOID_MODEL
+    std::deque<creek::StepData, Eigen::aligned_allocator<creek::StepData> > m_goals;
+#else
     std::deque<creek::StepData> m_goals;
+#endif
   };
 }
 
