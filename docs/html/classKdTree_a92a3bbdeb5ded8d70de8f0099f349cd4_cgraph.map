@@ -1,0 +1,6 @@
+<map id="KdTree::knnSearch" name="KdTree::knnSearch">
+<area shape="rect" id="node2" href="$classKdTree.html#a39be0613924ab32c8f16ad66b4ad1abe" title="KdTree::knnSearchRecursive" alt="" coords="188,56,381,83"/>
+<area shape="rect" id="node3" href="$classKdTree_1_1Node.html#aa761a746f0aae634700717a5f836d957" title="KdTree::Node::axis" alt="" coords="463,5,598,32"/>
+<area shape="rect" id="node4" href="$classKdTree.html#a6c2339cdcbb6f58b583a10612298b655" title="KdTree::distance" alt="" coords="470,56,591,83"/>
+<area shape="rect" id="node5" href="$classKdTree_1_1BoundedPriorityQueue.html#a273e2e92b3e36d62ab5bc684fdf5f464" title="KdTree::BoundedPriorityQueue\l::push" alt="" coords="429,107,632,149"/>
+</map>

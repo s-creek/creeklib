@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['m_5faxis',['m_axis',['../classKdTree_1_1Node.html#ac6dc3476c973f963399ba0204d964490',1,'KdTree::Node']]],
+  ['m_5fchild',['m_child',['../classKdTree_1_1Node.html#a6a3a21f9d2ca2ede233d6ce094f1d306',1,'KdTree::Node']]],
+  ['m_5fclusterid_5fto_5fdataids',['m_clusterid_to_dataids',['../classscl_1_1KMeans.html#a0317038165a355821130ce3cfd5b0535',1,'scl::KMeans']]],
+  ['m_5fdim',['m_dim',['../classscl_1_1KMeans.html#a012b790ced4abbf9fe55b1f1eab19470',1,'scl::KMeans::m_dim()'],['../classBSpline.html#a751c918d24a53532b2928c1f9369279e',1,'BSpline::m_dim()'],['../classKdTree.html#ad65a915bce6ff394aa041f18789f54e5',1,'KdTree::m_dim()']]],
+  ['m_5findex',['m_index',['../classKdTree_1_1Node.html#a5d873c92a8040fff657164734151f92a',1,'KdTree::Node']]],
+  ['m_5fisinit',['m_isInit',['../classCubicSpline.html#a29f5569b3b523b0268662162708def5e',1,'CubicSpline']]],
+  ['m_5fknot',['m_knot',['../classBSpline.html#a489b2fbec785294dc23e94d78d8447f3',1,'BSpline']]],
+  ['m_5fknottype',['m_knotType',['../classBSpline.html#abe7880fdab8147fa98468bdc804e618c',1,'BSpline']]],
+  ['m_5fmax_5fiteration',['m_max_iteration',['../classscl_1_1KMeans.html#aeae5bb6741ea6ac98589cb3fd2ae7974',1,'scl::KMeans']]],
+  ['m_5fmax_5fpp_5ftrial',['m_max_pp_trial',['../classscl_1_1KMeans.html#a3a54127781842bd10d61a9674a0b2e71',1,'scl::KMeans']]],
+  ['m_5fnodenumber',['m_nodeNumber',['../classCubicSpline.html#a9f1f1572cdda870531d18738ce23b76b',1,'CubicSpline']]],
+  ['m_5fpoints',['m_points',['../classKdTree.html#a177d9d6038a6e436cecbfffb3b5e1f0d',1,'KdTree']]],
+  ['m_5froot',['m_root',['../classKdTree.html#a312e90b65e7b0b458c6a315ead6dfe19',1,'KdTree']]],
+  ['m_5fsearchtype',['m_searchType',['../classBSpline.html#af4f7ac8e888b1c5fb5e5a63811545c1d',1,'BSpline']]],
+  ['m_5ftolerance',['m_tolerance',['../classscl_1_1KMeans.html#a754b430613703dfa15a8eb84b98e1494',1,'scl::KMeans']]],
+  ['m_5fx',['m_x',['../classBSpline.html#af4a291a219bc54f086982f0643e39c97',1,'BSpline::m_x()'],['../classCubicSpline.html#a813a8e9bce68d7a553234a5e6df75922',1,'CubicSpline::m_x()']]],
+  ['m_5fy',['m_y',['../classBSpline.html#ac2327ce2652bc6889f8e9bb56e9451dc',1,'BSpline::m_y()'],['../classCubicSpline.html#a48b453de7792a0d7799d068841b3e77b',1,'CubicSpline::m_y()']]],
+  ['m_5fy2d',['m_y2d',['../classCubicSpline.html#a4d659f329b2c67d4e71e98036e966892',1,'CubicSpline']]],
+  ['manual',['MANUAL',['../classscl_1_1KMeans.html#af06aa7b562d4b32603e0d444a5958eb8a058ff8e44a58623f586dff12c5d3d02e',1,'scl::KMeans']]]
+];

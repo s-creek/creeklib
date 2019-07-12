@@ -1,0 +1,14 @@
+<map id="KdTree::distance" name="KdTree::distance">
+<area shape="rect" id="node2" href="$classKdTree.html#adeda28784b40ca89919c1fb47ff1e25c" title="KdTree::points" alt="" coords="708,226,815,253"/>
+<area shape="rect" id="node3" href="$classKdTree.html#a1492ae12ad8b808485cea68462f9a855" title="KdTree::nnSearchRecursive" alt="" coords="197,74,383,101"/>
+<area shape="rect" id="node5" href="$classKdTree.html#a39be0613924ab32c8f16ad66b4ad1abe" title="KdTree::knnSearchRecursive" alt="" coords="193,175,387,202"/>
+<area shape="rect" id="node7" href="$classKdTree.html#a1d0c0e1ae4f5460ba5bdd948712ce809" title="KdTree::radiusSearchRecursive" alt="" coords="187,277,393,303"/>
+<area shape="rect" id="node10" href="$classKdTree.html#a55ca59e2067c82f3d1850386bdd786aa" title="KdTree::radiusSearchRecursiveSort" alt="" coords="175,327,405,354"/>
+<area shape="rect" id="node11" href="$classKdTree.html#aaecdfdaaacec33cca0ab9621076a2c7f" title="KdTree::rangeSearchRecursive" alt="" coords="188,378,392,405"/>
+<area shape="rect" id="node12" href="$classKdTree.html#a59582f561617ee3b63aed15485e6c415" title="KdTree::rangeSearchRecursiveSort" alt="" coords="176,429,404,455"/>
+<area shape="rect" id="node4" href="$classKdTree.html#ac76074b54e5c1c62d5b757193108480e" title="KdTree::nnSearch" alt="" coords="493,74,620,101"/>
+<area shape="rect" id="node6" href="$classKdTree.html#a3108b7966d7fae2392aa70d48ff88eb9" title="KdTree::knnSearch" alt="" coords="489,175,624,202"/>
+<area shape="rect" id="node8" href="$classKdTree.html#a449f55d85a35726a801609f631efe165" title="KdTree::radiusSearch" alt="" coords="483,327,631,354"/>
+<area shape="rect" id="node9" href="$classKdTree.html#a24be5abc0262f28093f142af9c817630" title="KdTree::radiusSearchRecursive" alt="" coords="453,277,660,303"/>
+<area shape="rect" id="node13" href="$classKdTree.html#ad08411b8133c3f72f815bf6291069377" title="KdTree::rangeSearch" alt="" coords="484,479,629,506"/>
+</map>

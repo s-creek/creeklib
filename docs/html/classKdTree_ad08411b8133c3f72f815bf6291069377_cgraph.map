@@ -1,0 +1,7 @@
+<map id="KdTree::rangeSearch" name="KdTree::rangeSearch">
+<area shape="rect" id="node2" href="$classKdTree.html#a7f3fc30bb689b9076aec9988c947b634" title="KdTree::rangeSearchRecursive" alt="" coords="211,8,415,35"/>
+<area shape="rect" id="node4" href="$classKdTree.html#a59582f561617ee3b63aed15485e6c415" title="KdTree::rangeSearchRecursiveSort" alt="" coords="199,63,427,89"/>
+<area shape="rect" id="node3" href="$classKdTree_1_1Node.html#aa761a746f0aae634700717a5f836d957" title="KdTree::Node::axis" alt="" coords="509,5,643,32"/>
+<area shape="rect" id="node5" href="$classKdTree_1_1BoundedPriorityQueue.html#a273e2e92b3e36d62ab5bc684fdf5f464" title="KdTree::BoundedPriorityQueue\l::push" alt="" coords="475,57,677,98"/>
+<area shape="rect" id="node6" href="$classKdTree.html#a6c2339cdcbb6f58b583a10612298b655" title="KdTree::distance" alt="" coords="515,123,637,149"/>
+</map>
