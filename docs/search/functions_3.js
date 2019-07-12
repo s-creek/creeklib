@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['dim',['dim',['../classKdTree.html#a5b4439ad85ee93044aaf4e97ff06a9dd',1,'KdTree']]],
-  ['distance',['distance',['../classKdTree.html#a6c2339cdcbb6f58b583a10612298b655',1,'KdTree']]]
+  ['dim',['dim',['../classscl_1_1KdTree.html#a169f821250cbd6107a3b00176461d348',1,'scl::KdTree']]],
+  ['distance',['distance',['../classscl_1_1KdTree.html#aec30f91a2b2f5f589dca86166fd4cedb',1,'scl::KdTree']]]
 ];

@@ -1,6 +1,0 @@
-<map id="KdTree::build" name="KdTree::build">
-<area shape="rect" id="node2" href="$classKdTree.html#adb4a7f1cc9e0a437480e4d08c1742f7b" title="KdTree::buildRecursive" alt="" coords="152,56,311,83"/>
-<area shape="rect" id="node3" href="$classKdTree_1_1Node.html#aa761a746f0aae634700717a5f836d957" title="KdTree::Node::axis" alt="" coords="359,5,493,32"/>
-<area shape="rect" id="node4" href="$classKdTree_1_1Node.html#a1e77effc24a372ebcde567e15d060134" title="KdTree::Node::lo" alt="" coords="365,56,487,83"/>
-<area shape="rect" id="node5" href="$classKdTree_1_1Node.html#a98645c4943f418391d545bb1595d3282" title="KdTree::Node::hi" alt="" coords="365,107,487,133"/>
-</map>

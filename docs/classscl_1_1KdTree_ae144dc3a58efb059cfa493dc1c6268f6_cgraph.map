@@ -1,0 +1,5 @@
+<map id="scl::KdTree::rangeSearchRecursiveSort" name="scl::KdTree::rangeSearchRecursiveSort">
+<area shape="rect" id="node2" href="$classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="scl::KdTree::Node::axis" alt="" coords="239,5,399,32"/>
+<area shape="rect" id="node3" href="$classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a85c442933928a9ac477ccbbe1a6e888c" title="scl::KdTree::BoundedPriority\lQueue::push" alt="" coords="224,57,413,98"/>
+<area shape="rect" id="node4" href="$classscl_1_1KdTree.html#aec30f91a2b2f5f589dca86166fd4cedb" title="scl::KdTree::distance" alt="" coords="245,123,392,149"/>
+</map>

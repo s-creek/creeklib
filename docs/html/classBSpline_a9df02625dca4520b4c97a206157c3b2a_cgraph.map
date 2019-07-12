@@ -1,0 +1,8 @@
+<map id="BSpline::setDim" name="BSpline::setDim">
+<area shape="rect" id="node2" href="$classBSpline.html#aa8f036181afa8ed6ba4637ad2ea775d2" title="BSpline::calc" alt="" coords="187,36,285,63"/>
+<area shape="rect" id="node3" href="$classBSpline.html#a404e864f7ce8909fd85a1ed4f4aa5e48" title="BSpline::uniformKnot" alt="" coords="349,11,495,37"/>
+<area shape="rect" id="node4" href="$classBSpline.html#a71eb2542e1074705790edac272db9702" title="BSpline::openKnot" alt="" coords="357,87,487,113"/>
+<area shape="rect" id="node5" href="$classBSpline.html#a3f2414bbbed9ac12aa3d398ee7fb5a16" title="BSpline::bsplineBasisFunction" alt="" coords="543,112,741,139"/>
+<area shape="rect" id="node6" href="$classBSpline.html#a78b54f02f186c888d352b1acf2bd0115" title="BSpline::clear" alt="" coords="185,188,287,215"/>
+<area shape="rect" id="node7" href="$classBSpline.html#ab88106b26985dbf16b9107174727fc8e" title="BSpline::operator=" alt="" coords="171,239,301,265"/>
+</map>

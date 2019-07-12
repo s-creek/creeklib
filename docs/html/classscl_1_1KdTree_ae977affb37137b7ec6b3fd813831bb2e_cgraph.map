@@ -1,0 +1,19 @@
+<map id="scl::KdTree::points" name="scl::KdTree::points">
+<area shape="rect" id="node2" href="$classscl_1_1KdTree.html#a08c6232bee9722257283edebfc4bbedc" title="scl::KdTree::build" alt="" coords="210,563,334,589"/>
+<area shape="rect" id="node3" href="$classscl_1_1KdTree.html#a202f818d101873dc96fc34e8c05585e9" title="scl::KdTree::buildRecursive" alt="" coords="425,563,607,589"/>
+<area shape="rect" id="node5" href="$classscl_1_1KdTree_1_1Node.html#a4e12e18d46b166b18aa98c17831318d6" title="scl::KdTree::Node::lo" alt="" coords="695,537,841,564"/>
+<area shape="rect" id="node6" href="$classscl_1_1KdTree_1_1Node.html#a77ecd3306ad3c5baa8160f249e363b22" title="scl::KdTree::Node::hi" alt="" coords="695,627,841,653"/>
+<area shape="rect" id="node7" href="$classscl_1_1KdTree.html#aeb61742e883aedd8875d73405063d14f" title="scl::KdTree::nnSearch" alt="" coords="196,715,348,741"/>
+<area shape="rect" id="node8" href="$classscl_1_1KdTree.html#a03527e2f394b328ef20b7aaabc5a311b" title="scl::KdTree::knnSearch" alt="" coords="193,5,351,32"/>
+<area shape="rect" id="node9" href="$classscl_1_1KdTree.html#aaa908e2a11c36a6b234c119c1df5034e" title="scl::KdTree::knnSearchRecursive" alt="" coords="407,84,625,111"/>
+<area shape="rect" id="node10" href="$classscl_1_1KdTree.html#aec30f91a2b2f5f589dca86166fd4cedb" title="scl::KdTree::distance" alt="" coords="695,332,841,359"/>
+<area shape="rect" id="node12" href="$classscl_1_1KdTree.html#a5b2de3ac7fff76574dd1ac8105da0441" title="scl::KdTree::radiusSearch" alt="" coords="185,309,359,336"/>
+<area shape="rect" id="node13" href="$classscl_1_1KdTree.html#a5cfc75965431d83b9a22d00ba6f26df0" title="scl::KdTree::radiusSearch\lRecursive" alt="" coords="429,331,603,373"/>
+<area shape="rect" id="node14" href="$classscl_1_1KdTree.html#a1b45d4f1d974a6c99ddba23b9053e2ba" title="scl::KdTree::radiusSearch\lRecursiveSort" alt="" coords="429,266,603,307"/>
+<area shape="rect" id="node15" href="$classscl_1_1KdTree.html#a35dc60a31ba0b2848085c68cb2fc0bab" title="scl::KdTree::rangeSearch" alt="" coords="187,157,357,184"/>
+<area shape="rect" id="node16" href="$classscl_1_1KdTree.html#a63c300abd75cd02c5f0a871debb056f6" title="scl::KdTree::rangeSearch\lRecursive" alt="" coords="431,135,601,177"/>
+<area shape="rect" id="node17" href="$classscl_1_1KdTree.html#ae144dc3a58efb059cfa493dc1c6268f6" title="scl::KdTree::rangeSearch\lRecursiveSort" alt="" coords="431,201,601,242"/>
+<area shape="rect" id="node18" href="$classscl_1_1KdTree.html#a327fa277838d663ed68669d31978a829" title="scl::KdTree::nnSearchRecursive" alt="" coords="411,397,621,424"/>
+<area shape="rect" id="node4" href="$classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="scl::KdTree::Node::axis" alt="" coords="688,273,848,300"/>
+<area shape="rect" id="node11" href="$classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a85c442933928a9ac477ccbbe1a6e888c" title="scl::KdTree::BoundedPriority\lQueue::push" alt="" coords="673,201,863,242"/>
+</map>

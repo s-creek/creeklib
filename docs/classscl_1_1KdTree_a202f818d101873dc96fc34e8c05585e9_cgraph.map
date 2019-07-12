@@ -1,0 +1,5 @@
+<map id="scl::KdTree::buildRecursive" name="scl::KdTree::buildRecursive">
+<area shape="rect" id="node2" href="$classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="scl::KdTree::Node::axis" alt="" coords="236,5,396,32"/>
+<area shape="rect" id="node3" href="$classscl_1_1KdTree_1_1Node.html#a4e12e18d46b166b18aa98c17831318d6" title="scl::KdTree::Node::lo" alt="" coords="243,56,389,83"/>
+<area shape="rect" id="node4" href="$classscl_1_1KdTree_1_1Node.html#a77ecd3306ad3c5baa8160f249e363b22" title="scl::KdTree::Node::hi" alt="" coords="243,107,389,133"/>
+</map>
