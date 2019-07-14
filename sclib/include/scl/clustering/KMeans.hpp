@@ -8,7 +8,8 @@
 
 #include <vector>
 #include <numeric>    // iota
-#include <algorithm>  // shuffle & random
+#include <algorithm>  // shuffle
+#include <random>     // random
 #include <limits>     // limit
 
 #include <cassert>    // assert
