@@ -463,7 +463,6 @@ namespace scl
         for (std::size_t data_index = 0; data_index < data_set.size(); ++data_index)
         {
             // set target data
-            const DataType &target(data_set.at(data_index));
             double min_squared_distance(std::numeric_limits<double>::max());
             std::size_t nearest_cluster_index(0);
 
@@ -471,13 +470,7 @@ namespace scl
             for (std::size_t cluster_index = 0; cluster_index < centroids.size(); ++cluster_index)
             {
                 // calc squared distance
-                const std::vector<double> &centroid(centroids.at(cluster_index));
-                double new_squared_distance(0);
-                for (std::size_t value_index = 0; value_index < dim; ++value_index)
-                {
-                    double value_error = static_cast<double>(target[value_index]) - centroid[value_index];
-                    new_squared_distance += (value_error * value_error);
-                }
+                double new_squared_distance = getSquaredDistance(data_set.at(data_index), centroids.at(cluster_index));
 
                 // update nearest cluster (centroid)
                 if (new_squared_distance < min_squared_distance)
