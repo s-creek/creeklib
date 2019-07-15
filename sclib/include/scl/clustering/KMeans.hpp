@@ -130,7 +130,7 @@ namespace scl
          * @return point と centroid の距離の2乗
          */
         template<class DataType>
-        double getSquaredDistance(const DataType &point, const std::vector<double> &centroid);
+        double calcSquaredDistance(const DataType &point, const std::vector<double> &centroid);
 
     
         /**
@@ -368,7 +368,7 @@ namespace scl
         double sum_squared_distance(0.0);
         for (std::size_t data_index = 0; data_index < data_set.size(); ++data_index)
         {
-            distance_list[data_index] = getSquaredDistance(data_set.at(data_index), centroids.back());
+            distance_list[data_index] = calcSquaredDistance(data_set.at(data_index), centroids.back());
             sum_squared_distance += distance_list[data_index];
         }
 
@@ -407,7 +407,7 @@ namespace scl
                 // proposed_centroid 時の評価値計算 //
                 for (std::size_t data_index = 0; data_index < data_set.size(); ++data_index)
                 {
-                    double squared_distance = getSquaredDistance(data_set.at(data_index), proposed_centroid);
+                    double squared_distance = calcSquaredDistance(data_set.at(data_index), proposed_centroid);
                     if ( squared_distance < distance_list[data_index] )
                     {
                         proposed_distance_list[data_index] = squared_distance;
@@ -435,7 +435,7 @@ namespace scl
 
 
     template<class DataType>
-    double KMeans::getSquaredDistance(const DataType &point, const std::vector<double> &centroid)
+    double KMeans::calcSquaredDistance(const DataType &point, const std::vector<double> &centroid)
     {
         double squared_distance(0.0);
 
@@ -471,7 +471,7 @@ namespace scl
             for (std::size_t cluster_index = 0; cluster_index < centroids.size(); ++cluster_index)
             {
                 // calc squared distance
-                double new_squared_distance = getSquaredDistance(data_set.at(data_index), centroids.at(cluster_index));
+                double new_squared_distance = calcSquaredDistance(data_set.at(data_index), centroids.at(cluster_index));
 
                 // update nearest cluster (centroid)
                 if (new_squared_distance < min_squared_distance)
