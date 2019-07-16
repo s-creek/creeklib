@@ -10,4 +10,4 @@ xmeans: xmeans.cpp
 
 clean:
 	rm -rf *~
-	rm -rf kmeans
+	rm -rf kmeans xmeans
