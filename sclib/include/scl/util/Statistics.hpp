@@ -5,7 +5,7 @@
  */
 
 #ifndef SCL_STATISTICS_HPP
-#define SCL_STATISTICS_HP
+#define SCL_STATISTICS_HPP
 
 #include <vector>
 #include <cmath>
