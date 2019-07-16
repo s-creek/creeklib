@@ -64,7 +64,7 @@ namespace scl
          * @param[in] dim DataTypeの次数
          * @param[in] data_set クラスタリングするデータセット
          * @param[in] num_clusters クラスタ数
-         * @param[in,out] centroids 各クラスタの重心位置 ( method が MANUAL の時だけ[in]も使う)
+         * @param[in,out] centroids 各クラスタの重心位置 ( method が  KMeans::MANUAL の時だけ[in]も使う)
          * @param[in] method クラスタ重心の初期化方法 (デフォルト k-means++)
          * @return クラスタリングが収束したか (重心の更新値が KMeans::m_tolerance 以下に収まっているか)
          * @details DataType needs [] access operator

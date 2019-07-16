@@ -16,7 +16,7 @@ var classscl_1_1KMeans =
     [ "initCentroidsRandom", "classscl_1_1KMeans.html#a082f680b169864648e975dd0d4c9ff7f", null ],
     [ "initCentroidsUniform", "classscl_1_1KMeans.html#a361d32ee6e1787219ec381832ecf7bf2", null ],
     [ "initCentroidsPlusplus", "classscl_1_1KMeans.html#a729508a4ce2a8e783a751a3b7fbcb289", null ],
-    [ "getSquaredDistance", "classscl_1_1KMeans.html#a748855c57b4ce4c92dee0796082c099f", null ],
+    [ "calcSquaredDistance", "classscl_1_1KMeans.html#a8f4d5c3dd1f52f6b2ba4ebfb30ebb985", null ],
     [ "updateLabel", "classscl_1_1KMeans.html#a0a4183eb30c4a70349882c59a4d5503c", null ],
     [ "calcCentroids", "classscl_1_1KMeans.html#a20c38c760f0b5607283addbb3daf863e", null ],
     [ "m_clusterid_to_dataids", "classscl_1_1KMeans.html#a0317038165a355821130ce3cfd5b0535", null ],

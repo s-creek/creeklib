@@ -6,6 +6,7 @@ var searchData=
   ['m_5fdim',['m_dim',['../classscl_1_1KMeans.html#a012b790ced4abbf9fe55b1f1eab19470',1,'scl::KMeans::m_dim()'],['../classBSpline.html#a751c918d24a53532b2928c1f9369279e',1,'BSpline::m_dim()'],['../classscl_1_1KdTree.html#a507105ff40964a09cdf2969b8a57e39e',1,'scl::KdTree::m_dim()']]],
   ['m_5findex',['m_index',['../classscl_1_1KdTree_1_1Node.html#a14d926c520ba438be5b8a2a003758dcd',1,'scl::KdTree::Node']]],
   ['m_5fisinit',['m_isInit',['../classCubicSpline.html#a29f5569b3b523b0268662162708def5e',1,'CubicSpline']]],
+  ['m_5fkmeans',['m_kmeans',['../classscl_1_1XMeans.html#ae4360ba5d800d8b9e31318a961cbf0c9',1,'scl::XMeans']]],
   ['m_5fknot',['m_knot',['../classBSpline.html#a489b2fbec785294dc23e94d78d8447f3',1,'BSpline']]],
   ['m_5fknottype',['m_knotType',['../classBSpline.html#abe7880fdab8147fa98468bdc804e618c',1,'BSpline']]],
   ['m_5fmax_5fiteration',['m_max_iteration',['../classscl_1_1KMeans.html#aeae5bb6741ea6ac98589cb3fd2ae7974',1,'scl::KMeans']]],

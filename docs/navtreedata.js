@@ -1,6 +1,6 @@
 var NAVTREE =
 [
-  [ "s-creek library", "index.html", [
+  [ "sc library", "index.html", [
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ]
     ] ],

@@ -1,6 +1,7 @@
 <map id="scl::KMeans::calcCentroids" name="scl::KMeans::calcCentroids">
 <area shape="rect" id="node2" href="$classscl_1_1KMeans.html#a232f760d441960e6c0b52a87e3692cdf" title="クラスタリング " alt="" coords="460,33,619,59"/>
-<area shape="rect" id="node4" href="$classscl_1_1KMeans.html#a082f680b169864648e975dd0d4c9ff7f" title="乱数によるクラスタ重心の初期化 " alt="" coords="236,25,412,67"/>
-<area shape="rect" id="node5" href="$classscl_1_1KMeans.html#a361d32ee6e1787219ec381832ecf7bf2" title="頭から順番にクラスタリングして重心初期化 " alt="" coords="236,91,412,132"/>
-<area shape="rect" id="node3" href="$classscl_1_1KMeans.html#a752689be0f9f7a149f1291426777eb4e" title="クラスタリング " alt="" coords="667,33,825,59"/>
+<area shape="rect" id="node5" href="$classscl_1_1KMeans.html#a082f680b169864648e975dd0d4c9ff7f" title="乱数によるクラスタ重心の初期化 " alt="" coords="236,25,412,67"/>
+<area shape="rect" id="node6" href="$classscl_1_1KMeans.html#a361d32ee6e1787219ec381832ecf7bf2" title="頭から順番にクラスタリングして重心初期化 " alt="" coords="236,91,412,132"/>
+<area shape="rect" id="node3" href="$classscl_1_1KMeans.html#a752689be0f9f7a149f1291426777eb4e" title="クラスタリング " alt="" coords="667,7,825,34"/>
+<area shape="rect" id="node4" href="$classscl_1_1XMeans.html#a045d9016c5dfc2e9257e2f1baf00432f" title="クラスタリング " alt="" coords="667,58,825,85"/>
 </map>

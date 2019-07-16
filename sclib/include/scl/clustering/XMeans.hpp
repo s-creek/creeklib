@@ -37,13 +37,13 @@ namespace scl
          * @param[in] dim DataTypeの次数
          * @param[in] data_set クラスタリングするデータセット
          * @param[in] init_num_clusters 初期クラスタ数
-         * @param[in,out] centroids 各クラスタの重心位置 ( method が KMeans::InitMethod::MANUAL の時だけ[in]も使う)
+         * @param[in,out] centroids 各クラスタの重心位置 ( method が KMeans::MANUAL の時だけ[in]も使う)
          * @param[in] method クラスタ重心の初期化方法 (デフォルト k-means++)
          * @return クラスタリングが収束したか
          * @details DataType needs [] access operator
          */
         template<class DataType>
-        bool clustering(const std::size_t dim, const std::vector<DataType> &data_set, const std::size_t init_num_clusters, std::vector< std::vector<double> > &centroids, const KMeans::InitMethod method=KMeans::InitMethod::PLUSPLUS);
+        bool clustering(const std::size_t dim, const std::vector<DataType> &data_set, const std::size_t init_num_clusters, std::vector< std::vector<double> > &centroids, const KMeans::InitMethod method=KMeans::PLUSPLUS);
 
     
     private:

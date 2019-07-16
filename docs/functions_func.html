@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>s-creek library: Class Members - Functions</title>
+<title>sc library: Class Members - Functions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -31,7 +31,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">s-creek library
+   <div id="projectname">sc library
    </div>
   </td>
  </tr>
@@ -103,6 +103,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="#index_s"><span>s</span></a></li>
       <li><a href="#index_t"><span>t</span></a></li>
       <li><a href="#index_u"><span>u</span></a></li>
+      <li><a href="#index_x"><span>x</span></a></li>
       <li class="current"><a href="#index_0x7e"><span>~</span></a></li>
     </ul>
   </div>
@@ -175,6 +176,9 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>calcCentroids()
 : <a class="el" href="classscl_1_1KMeans.html#a20c38c760f0b5607283addbb3daf863e">scl::KMeans</a>
 </li>
+<li>calcSquaredDistance()
+: <a class="el" href="classscl_1_1KMeans.html#a8f4d5c3dd1f52f6b2ba4ebfb30ebb985">scl::KMeans</a>
+</li>
 <li>child()
 : <a class="el" href="classscl_1_1KdTree_1_1Node.html#aa7143c83beebaa6a264e1baf5d605f51">scl::KdTree&lt; PointType &gt;::Node</a>
 </li>
@@ -183,7 +187,8 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 , <a class="el" href="classCubicSpline.html#a921148e9a9eafdf1e89e163877346303">CubicSpline</a>
 </li>
 <li>clustering()
-: <a class="el" href="classscl_1_1KMeans.html#a752689be0f9f7a149f1291426777eb4e">scl::KMeans</a>
+: <a class="el" href="classscl_1_1KMeans.html#a232f760d441960e6c0b52a87e3692cdf">scl::KMeans</a>
+, <a class="el" href="classscl_1_1XMeans.html#a045d9016c5dfc2e9257e2f1baf00432f">scl::XMeans</a>
 </li>
 <li>CubicSpline()
 : <a class="el" href="classCubicSpline.html#a3eee74ae159c9473a6d15512ddc68d25">CubicSpline</a>
@@ -211,9 +216,6 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 </li>
 <li>getClusters()
 : <a class="el" href="classscl_1_1KMeans.html#a597d07c24cfd0882fee521b2e020cfcd">scl::KMeans</a>
-</li>
-<li>getSquaredDistance()
-: <a class="el" href="classscl_1_1KMeans.html#a748855c57b4ce4c92dee0796082c099f">scl::KMeans</a>
 </li>
 </ul>
 
@@ -315,13 +317,13 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="classscl_1_1KdTree.html#a5b2de3ac7fff76574dd1ac8105da0441">scl::KdTree&lt; PointType &gt;</a>
 </li>
 <li>radiusSearchRecursive()
-: <a class="el" href="classscl_1_1KdTree.html#aabd795a26c9d5b8798f588143279de62">scl::KdTree&lt; PointType &gt;</a>
+: <a class="el" href="classscl_1_1KdTree.html#a5cfc75965431d83b9a22d00ba6f26df0">scl::KdTree&lt; PointType &gt;</a>
 </li>
 <li>radiusSearchRecursiveSort()
 : <a class="el" href="classscl_1_1KdTree.html#a1b45d4f1d974a6c99ddba23b9053e2ba">scl::KdTree&lt; PointType &gt;</a>
 </li>
 <li>rangeSearch()
-: <a class="el" href="classscl_1_1KdTree.html#a7269fb6f47e376929a9094b1cb893078">scl::KdTree&lt; PointType &gt;</a>
+: <a class="el" href="classscl_1_1KdTree.html#a35dc60a31ba0b2848085c68cb2fc0bab">scl::KdTree&lt; PointType &gt;</a>
 </li>
 <li>rangeSearchRecursive()
 : <a class="el" href="classscl_1_1KdTree.html#a63c300abd75cd02c5f0a871debb056f6">scl::KdTree&lt; PointType &gt;</a>
@@ -344,6 +346,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 </li>
 <li>setParameters()
 : <a class="el" href="classscl_1_1KMeans.html#af1a4481e57f8edfd57a96d2ae7cbd287">scl::KMeans</a>
+, <a class="el" href="classscl_1_1XMeans.html#a41514372b6812275e3568d2aff64de7b">scl::XMeans</a>
 </li>
 </ul>
 
@@ -361,6 +364,13 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 </li>
 <li>updateLabel()
 : <a class="el" href="classscl_1_1KMeans.html#a0a4183eb30c4a70349882c59a4d5503c">scl::KMeans</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_x"></a>- x -</h3><ul>
+<li>XMeans()
+: <a class="el" href="classscl_1_1XMeans.html#a8728bc7f1613acf5fc7b2d640cae7230">scl::XMeans</a>
 </li>
 </ul>
 
