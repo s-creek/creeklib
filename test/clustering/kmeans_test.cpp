@@ -67,6 +67,17 @@ int main ()
     }
 
 
+    // save points
+    {
+        std::ofstream dat("./log/sample_data.log");
+        for (std::size_t i = 0; i < points.size(); ++i)
+        {
+            dat << points.at(i).at(0) << " " << points.at(i).at(1) << std::endl;
+        }
+        dat.close();
+    }
+    
+
     // for compare results
     std::vector< std::vector<std::size_t> > clusters_random(cluster_size);
     std::vector< std::vector<std::size_t> > clusters_uniform(cluster_size);

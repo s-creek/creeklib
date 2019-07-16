@@ -2,6 +2,6 @@
 
 int main ()
 {
-  scl::XMeans xmeans;
-  return 0;
+    scl::XMeans xmeans;
+    return 0;
 }
