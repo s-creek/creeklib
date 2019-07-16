@@ -17,6 +17,7 @@ var files =
     [ "KMeans.hpp", "KMeans_8hpp.html", [
       [ "KMeans", "classscl_1_1KMeans.html", "classscl_1_1KMeans" ]
     ] ],
+    [ "Statistics.hpp", "Statistics_8hpp.html", "Statistics_8hpp" ],
     [ "XMeans.hpp", "XMeans_8hpp.html", [
       [ "XMeans", "classscl_1_1XMeans.html", "classscl_1_1XMeans" ]
     ] ]

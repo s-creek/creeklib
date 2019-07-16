@@ -8,6 +8,7 @@
 #define SCL_X_MEANS_HPP
 
 #include <scl/clustering/KMeans.hpp>
+#include <scl/util/Statistics.hpp>
 
 namespace scl
 {

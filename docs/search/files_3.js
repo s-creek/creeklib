@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['xmeans_2ehpp',['XMeans.hpp',['../XMeans_8hpp.html',1,'']]]
+  ['statistics_2ehpp',['Statistics.hpp',['../Statistics_8hpp.html',1,'']]]
 ];

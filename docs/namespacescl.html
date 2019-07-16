@@ -70,6 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="namespaces.html"><span>Namespace&#160;List</span></a></li>
+      <li><a href="namespacemembers.html"><span>Namespace&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -103,7 +104,8 @@ $(document).ready(function(){initNavTree('namespacescl.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">scl Namespace Reference</div>  </div>
 </div><!--header-->
@@ -120,7 +122,179 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscl_1_1XMeans.html">XMeans</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">x-means clustering.  <a href="classscl_1_1XMeans.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:afc4a2d3c5d662659ddfe5aeb88a1639f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescl.html#afc4a2d3c5d662659ddfe5aeb88a1639f">calcCovariance</a> (const Eigen::MatrixXd &amp;data_set, Eigen::MatrixXd &amp;covariance)</td></tr>
+<tr class="memdesc:afc4a2d3c5d662659ddfe5aeb88a1639f"><td class="mdescLeft">&#160;</td><td class="mdescRight">calc covariance-matrix  <a href="#afc4a2d3c5d662659ddfe5aeb88a1639f">More...</a><br /></td></tr>
+<tr class="separator:afc4a2d3c5d662659ddfe5aeb88a1639f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ee2587dffb45f754acddbc21a56deae"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescl.html#a2ee2587dffb45f754acddbc21a56deae">calcPdf</a> (const Eigen::VectorXd &amp;x, const Eigen::VectorXd &amp;mean, const Eigen::MatrixXd &amp;covariance)</td></tr>
+<tr class="memdesc:a2ee2587dffb45f754acddbc21a56deae"><td class="mdescLeft">&#160;</td><td class="mdescRight">probability density function  <a href="#a2ee2587dffb45f754acddbc21a56deae">More...</a><br /></td></tr>
+<tr class="separator:a2ee2587dffb45f754acddbc21a56deae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad549c5e34c6afab5740341a6a671f423"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescl.html#ad549c5e34c6afab5740341a6a671f423">calcLogLikelihood</a> (const Eigen::MatrixXd &amp;data_set)</td></tr>
+<tr class="memdesc:ad549c5e34c6afab5740341a6a671f423"><td class="mdescLeft">&#160;</td><td class="mdescRight">log(likelihood) = sum( log(pdf) )  <a href="#ad549c5e34c6afab5740341a6a671f423">More...</a><br /></td></tr>
+<tr class="separator:ad549c5e34c6afab5740341a6a671f423"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a226f9503c506589b348c5ef18520ac12"><td class="memTemplParams" colspan="2">template&lt;class DataType &gt; </td></tr>
+<tr class="memitem:a226f9503c506589b348c5ef18520ac12"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacescl.html#a226f9503c506589b348c5ef18520ac12">convertStlToEigen</a> (const std::size_t dim, const std::vector&lt; DataType &gt; &amp;stl_mat, Eigen::MatrixXd &amp;eigen_mat)</td></tr>
+<tr class="memdesc:a226f9503c506589b348c5ef18520ac12"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert matrix data STL -&gt; Eigen  <a href="#a226f9503c506589b348c5ef18520ac12">More...</a><br /></td></tr>
+<tr class="separator:a226f9503c506589b348c5ef18520ac12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="afc4a2d3c5d662659ddfe5aeb88a1639f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool scl::calcCovariance </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>data_set</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>covariance</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>calc covariance-matrix </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">data_set</td><td>dataset (num data x dim) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">covariance</td><td>covariance-matrix </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>size check </dd></dl>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacescl_afc4a2d3c5d662659ddfe5aeb88a1639f_icgraph.png" border="0" usemap="#namespacescl_afc4a2d3c5d662659ddfe5aeb88a1639f_icgraph" alt=""/></div>
+<map name="namespacescl_afc4a2d3c5d662659ddfe5aeb88a1639f_icgraph" id="namespacescl_afc4a2d3c5d662659ddfe5aeb88a1639f_icgraph">
+<area shape="rect" id="node2" href="namespacescl.html#ad549c5e34c6afab5740341a6a671f423" title="log(likelihood) = sum( log(pdf) ) " alt="" coords="191,5,341,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2ee2587dffb45f754acddbc21a56deae"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double scl::calcPdf </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>mean</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>covariance</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>probability density function </p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacescl_a2ee2587dffb45f754acddbc21a56deae_icgraph.png" border="0" usemap="#namespacescl_a2ee2587dffb45f754acddbc21a56deae_icgraph" alt=""/></div>
+<map name="namespacescl_a2ee2587dffb45f754acddbc21a56deae_icgraph" id="namespacescl_a2ee2587dffb45f754acddbc21a56deae_icgraph">
+<area shape="rect" id="node2" href="namespacescl.html#ad549c5e34c6afab5740341a6a671f423" title="log(likelihood) = sum( log(pdf) ) " alt="" coords="144,5,295,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad549c5e34c6afab5740341a6a671f423"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double scl::calcLogLikelihood </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>data_set</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>log(likelihood) = sum( log(pdf) ) </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacescl_ad549c5e34c6afab5740341a6a671f423_cgraph.png" border="0" usemap="#namespacescl_ad549c5e34c6afab5740341a6a671f423_cgraph" alt=""/></div>
+<map name="namespacescl_ad549c5e34c6afab5740341a6a671f423_cgraph" id="namespacescl_ad549c5e34c6afab5740341a6a671f423_cgraph">
+<area shape="rect" id="node2" href="namespacescl.html#afc4a2d3c5d662659ddfe5aeb88a1639f" title="calc covariance&#45;matrix " alt="" coords="204,5,341,32"/>
+<area shape="rect" id="node3" href="namespacescl.html#a2ee2587dffb45f754acddbc21a56deae" title="probability density function " alt="" coords="227,56,318,83"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a226f9503c506589b348c5ef18520ac12"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void scl::convertStlToEigen </td>
+          <td>(</td>
+          <td class="paramtype">const std::size_t&#160;</td>
+          <td class="paramname"><em>dim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; DataType &gt; &amp;&#160;</td>
+          <td class="paramname"><em>stl_mat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::MatrixXd &amp;&#160;</td>
+          <td class="paramname"><em>eigen_mat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>convert matrix data STL -&gt; Eigen </p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
