@@ -40,13 +40,6 @@ int main ()
     
     const std::size_t num(dataset.size()), dim(dataset.front().size());
     Eigen::MatrixXd mat(num, dim);
-    // for (std::size_t i = 0; i < num; ++i)
-    // {
-    //     for (std::size_t j = 0; j < dim; ++j)
-    //     {
-    //         mat(i,j) = dataset[i][j];
-    //     }
-    // }
     scl::convertStlToEigen(dim, dataset, mat);
     
     
@@ -72,5 +65,11 @@ int main ()
     double log_likelihood = scl::calcLogLikelihood(mat);
     std::cout << "------------\nresult\n  " << log_likelihood << std::endl; 
 
+
+    double likelihood = scl::calcLikelihood(mat);
+    std::cout << "------------\nresult\n  " << likelihood << std::endl;
+    std::cout << "  " << std::log(likelihood) << std::endl;
+
+    
     return 0;
 }

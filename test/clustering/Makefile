@@ -12,4 +12,4 @@ xmeans_test: xmeans_test.cpp
 
 clean:
 	rm -rf *~
-	rm -rf kmeans_test
+	rm -rf kmeans_test xmeans_test

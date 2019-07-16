@@ -129,8 +129,8 @@ namespace scl
          * @param[in] centroid 重心位置
          * @return point と centroid の距離の2乗
          */
-        template<class DataType>
-        double calcSquaredDistance(const DataType &point, const std::vector<double> &centroid);
+        template<class DataTypeA, class DataTypeB>
+        double calcSquaredDistance(const DataTypeA &point_a, const DataTypeB &point_b);
 
     
         /**
@@ -434,14 +434,14 @@ namespace scl
     }
 
 
-    template<class DataType>
-    double KMeans::calcSquaredDistance(const DataType &point, const std::vector<double> &centroid)
+    template<class DataTypeA, class DataTypeB>
+    double KMeans::calcSquaredDistance(const DataTypeA &point_a, const DataTypeB &point_b)
     {
         double squared_distance(0.0);
 
         for (std::size_t value_index = 0; value_index < m_dim; ++value_index)
         {
-            double value_error = centroid[value_index] - static_cast<double>(point[value_index]);
+            double value_error = static_cast<double>(point_a[value_index]) - static_cast<double>(point_b[value_index]);
             squared_distance += (value_error * value_error);
         }
         

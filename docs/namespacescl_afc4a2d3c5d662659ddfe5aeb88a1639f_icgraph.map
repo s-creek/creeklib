@@ -1,3 +1,4 @@
 <map id="scl::calcCovariance" name="scl::calcCovariance">
-<area shape="rect" id="node2" href="$namespacescl.html#ad549c5e34c6afab5740341a6a671f423" title="log(likelihood) = sum( log(pdf) ) " alt="" coords="191,5,341,32"/>
+<area shape="rect" id="node2" href="$namespacescl.html#ad549c5e34c6afab5740341a6a671f423" title="対数尤度 " alt="" coords="191,5,341,32"/>
+<area shape="rect" id="node3" href="$namespacescl.html#ab12bf19f48e562bee73bcf4857415f0f" title="尤度 " alt="" coords="201,56,331,83"/>
 </map>

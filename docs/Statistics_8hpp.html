@@ -105,7 +105,6 @@ $(document).ready(function(){initNavTree('Statistics_8hpp.html','');});
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Statistics.hpp File Reference</div>  </div>
@@ -119,8 +118,6 @@ $(document).ready(function(){initNavTree('Statistics_8hpp.html','');});
 Include dependency graph for Statistics.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="Statistics_8hpp__incl.png" border="0" usemap="#Statistics_8hpp" alt=""/></div>
-<map name="Statistics_8hpp" id="Statistics_8hpp">
-</map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
@@ -138,11 +135,6 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespacescl"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescl.html">scl</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a7e382fd7ee10853f5ca49b55ff6a6531"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Statistics_8hpp.html#a7e382fd7ee10853f5ca49b55ff6a6531">SCL_STATISTICS_HP</a></td></tr>
-<tr class="separator:a7e382fd7ee10853f5ca49b55ff6a6531"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:afc4a2d3c5d662659ddfe5aeb88a1639f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescl.html#afc4a2d3c5d662659ddfe5aeb88a1639f">scl::calcCovariance</a> (const Eigen::MatrixXd &amp;data_set, Eigen::MatrixXd &amp;covariance)</td></tr>
@@ -152,26 +144,20 @@ Functions</h2></td></tr>
 <tr class="memdesc:a2ee2587dffb45f754acddbc21a56deae"><td class="mdescLeft">&#160;</td><td class="mdescRight">probability density function  <a href="namespacescl.html#a2ee2587dffb45f754acddbc21a56deae">More...</a><br /></td></tr>
 <tr class="separator:a2ee2587dffb45f754acddbc21a56deae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad549c5e34c6afab5740341a6a671f423"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescl.html#ad549c5e34c6afab5740341a6a671f423">scl::calcLogLikelihood</a> (const Eigen::MatrixXd &amp;data_set)</td></tr>
-<tr class="memdesc:ad549c5e34c6afab5740341a6a671f423"><td class="mdescLeft">&#160;</td><td class="mdescRight">log(likelihood) = sum( log(pdf) )  <a href="namespacescl.html#ad549c5e34c6afab5740341a6a671f423">More...</a><br /></td></tr>
+<tr class="memdesc:ad549c5e34c6afab5740341a6a671f423"><td class="mdescLeft">&#160;</td><td class="mdescRight">対数尤度  <a href="namespacescl.html#ad549c5e34c6afab5740341a6a671f423">More...</a><br /></td></tr>
 <tr class="separator:ad549c5e34c6afab5740341a6a671f423"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab12bf19f48e562bee73bcf4857415f0f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescl.html#ab12bf19f48e562bee73bcf4857415f0f">scl::calcLikelihood</a> (const Eigen::MatrixXd &amp;data_set)</td></tr>
+<tr class="memdesc:ab12bf19f48e562bee73bcf4857415f0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">尤度  <a href="namespacescl.html#ab12bf19f48e562bee73bcf4857415f0f">More...</a><br /></td></tr>
+<tr class="separator:ab12bf19f48e562bee73bcf4857415f0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a226f9503c506589b348c5ef18520ac12"><td class="memTemplParams" colspan="2">template&lt;class DataType &gt; </td></tr>
 <tr class="memitem:a226f9503c506589b348c5ef18520ac12"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacescl.html#a226f9503c506589b348c5ef18520ac12">scl::convertStlToEigen</a> (const std::size_t dim, const std::vector&lt; DataType &gt; &amp;stl_mat, Eigen::MatrixXd &amp;eigen_mat)</td></tr>
 <tr class="memdesc:a226f9503c506589b348c5ef18520ac12"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert matrix data STL -&gt; Eigen  <a href="namespacescl.html#a226f9503c506589b348c5ef18520ac12">More...</a><br /></td></tr>
 <tr class="separator:a226f9503c506589b348c5ef18520ac12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8e9b85bf513088ffa1abf6af391d2f2"><td class="memTemplParams" colspan="2">template&lt;class DataType &gt; </td></tr>
+<tr class="memitem:ae8e9b85bf513088ffa1abf6af391d2f2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacescl.html#ae8e9b85bf513088ffa1abf6af391d2f2">scl::convertStlToEigen</a> (const std::size_t dim, const std::vector&lt; DataType &gt; &amp;stl_mat, const std::vector&lt; std::size_t &gt; &amp;indices, Eigen::MatrixXd &amp;eigen_mat)</td></tr>
+<tr class="memdesc:ae8e9b85bf513088ffa1abf6af391d2f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert matrix data STL -&gt; Eigen  <a href="namespacescl.html#ae8e9b85bf513088ffa1abf6af391d2f2">More...</a><br /></td></tr>
+<tr class="separator:ae8e9b85bf513088ffa1abf6af391d2f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a7e382fd7ee10853f5ca49b55ff6a6531"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SCL_STATISTICS_HP</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

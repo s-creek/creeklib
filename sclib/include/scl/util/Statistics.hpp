@@ -56,7 +56,8 @@ namespace scl
 
 
     /**
-     * @brief log(likelihood) = sum( log(pdf) )
+     * @brief 対数尤度
+     * @note log(likelihood) = sum( log(pdf) )
      */
     double calcLogLikelihood(const Eigen::MatrixXd &data_set)
     {
@@ -74,6 +75,33 @@ namespace scl
             log_likelihood += std::log(pdf);
         }
         return log_likelihood;
+    }
+
+
+    /**
+     * @brief 尤度
+     * @details 尤度は確率(密度)を標本個数分だけ掛けてできるもの。
+     * 0〜1の間の数で何回もかけ算することになり、ほぼ０になってしまう。
+     * かけ算が足し算にできる計算のしやすさもあり対数尤度とすることが多い。
+     * @see scl::calcLogLikelihood
+     * @note likelihood = prod(pdf)
+     */
+    double calcLikelihood(const Eigen::MatrixXd &data_set)
+    {
+        // calc parameter
+        Eigen::VectorXd mean(data_set.colwise().mean());
+        Eigen::MatrixXd covariance;
+        calcCovariance(data_set, covariance);
+
+        // calc likelihood
+        const std::size_t num(data_set.rows());
+        double likelihood(1.0);
+        for (std::size_t i = 0; i < num; ++i)
+        {
+            double pdf = calcPdf(data_set.row(i), mean, covariance);
+            likelihood *= pdf;
+        }
+        return likelihood;
     }
 
 
@@ -96,6 +124,31 @@ namespace scl
             for (std::size_t j = 0; j < dim; ++j)
             {
                 eigen_mat(i,j) = stl_mat[i][j];
+            }
+        }
+    }
+
+
+    /**
+     * @brief convert matrix data STL -> Eigen
+     */
+    template<class DataType>
+    void convertStlToEigen(const std::size_t dim, const std::vector<DataType> & stl_mat, const std::vector<std::size_t> &indices, Eigen::MatrixXd &eigen_mat)
+    {
+        const std::size_t num( indices.size() );
+        if (num < 2)
+        {
+            return;
+        }
+
+        // copy
+        eigen_mat.resize(num, dim);
+        for (std::size_t i = 0; i < num; ++i)
+        {
+            std::size_t index(indices[i]);
+            for (std::size_t j = 0; j < dim; ++j)
+            {
+                eigen_mat(i,j) = stl_mat[index][j];
             }
         }
     }
