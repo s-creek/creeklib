@@ -27,6 +27,8 @@ namespace scl
     /** 
      * @class KdTree
      * @brief kd-tree
+     * @tparam PointType データの型
+     * @attention PointType には size() 関数と要素にアクセスする [] オペレータが必須
      * @details 参考サイト @n
      * <a href="https://hope.c.fun.ac.jp/course/view.php?id=373">reference 1</a> @n
      * <a href="https://hope.c.fun.ac.jp/pluginfile.php/33640/mod_resource/content/1/2014-Kd-tree%E3%81%A8%E6%9C%80%E8%BF%91%E5%82%8D%E6%8E%A2%E7%B4%A2.pdf?forcedownload=1">reference 1 (pdf)</a> @n
@@ -34,31 +36,44 @@ namespace scl
      */
     template<class PointType>
     class KdTree
-    {
+    {      
+    public:
         //----------------------------------------------------------------------------------------
         // Node class (tree構造を構成するノードクラス)
         //----------------------------------------------------------------------------------------
-        
-    public:
+
         class Node;
         using NodePtr = std::shared_ptr<Node>;
         
-        
+
+        /**
+         * @class Node
+         * @brief tree構造を構成するノードクラス
+         */
         class Node
         {
         public:
             Node() : m_index(0), m_axis(0) {}
-            Node(std::size_t index, std::size_t axis) {
-                m_index = index;
-                m_axis = axis;
-            }
+            Node(std::size_t index, std::size_t axis) : m_index(index), m_axis(axis) {}
 
+            /**
+             * @brief ノードのインデックス
+             * @details 元データのインデックスと対応
+             */
             const std::size_t index() const { return m_index; }
+
+            /** @brief 分割した軸 */
             const std::size_t axis() const { return m_axis; }
 
+            /**
+             * @brief 子ノード
+             * @param[in] lh 0 or 1 (low or high)
+             */
             NodePtr& child(std::size_t lh) { return m_child[lh]; }
-            const NodePtr& child(std::size_t lh) const { return m_child[lh]; }
 
+            /** @see Node::child */
+            const NodePtr& child(std::size_t lh) const { return m_child[lh]; }
+            
             NodePtr& lo() { return m_child[0]; }
             NodePtr& hi() { return m_child[1]; }
 
@@ -67,8 +82,9 @@ namespace scl
 
 
         private:
-            std::size_t m_index, m_axis;
-            NodePtr m_child[2];
+            std::size_t m_index;  /**< @brief ノードのインデックス */
+            std::size_t m_axis;   /**< @brief 分割した軸 */
+            NodePtr m_child[2];   /**< @brief 子ノード */
         };
 
 
@@ -78,29 +94,40 @@ namespace scl
         // BoundedPriorityQueue class
         //----------------------------------------------------------------------------------------
 
-        //
-        // Container = std::vector or std::deque
-        //
+        /**
+         * @class BoundedPriorityQueue
+         * @brief 制限付き優先度キュー ... と言いつつ実は今は制限がない
+         * @tparam T キューに入れるデータ型
+         * @tparam Container キューを管理するコンテナ
+         * @tparam Compare ソートに使う比較器
+         * @attention Container = std::vector or std::deque
+         */
         template<class T, class Container = std::vector<T>, class Compare = std::less<typename Container::value_type> >
         class BoundedPriorityQueue : public Container
         {
         public:
             BoundedPriorityQueue() : Container() {}
 
+            /** @brief キューにデータ追加 */
             void push(const T& val) {
                 typename Container::iterator it = std::find_if(this->begin(), this->end(), [&](const T& p) { return Compare()(val, p); });
                 this->insert(it, val);
             }
 
+            /** @brief 先頭(再優先)キュー */
             T& top() { return this->front(); }
+
+            /** @brief 先頭(再優先)キュー */
             const T& top() const { return this->front(); }
 
+            /** @brief 先頭(再優先)キューを削除 */
             void pop() { this->erase(this->begin()); }
         };
 
-        // piar <index, distance>
+        /** @brief インデックスと距離(評価値)のペア */
         using KnnNode = std::pair<std::size_t, double>;
 
+        /** @brief KnnNode 比較器 */
         struct KnnCompare
         {
             bool operator()(const KnnNode& l, const KnnNode& r) {
@@ -108,32 +135,51 @@ namespace scl
             }
         };
 
+        /**
+         * @brief KdTreeのk近傍探索などで使う優先度キュー
+         * @see BoundedPriorityQueue
+         * @see KnnNode
+         * @see KnnCompare
+         */
         using KnnQueue = BoundedPriorityQueue<KnnNode, std::vector<KnnNode>, KnnCompare>;  // 自作の方が速かった・・・謎
         //using KnnQueue = std::priority_queue<KnnNode, std::vector<KnnNode>, KnnCompare>;
 
 
 
 
+    public:
         //----------------------------------------------------------------------------------------
         // kd-tree class
         //----------------------------------------------------------------------------------------
 
-    public:
         KdTree() {}
 	
         template <template <class T, class A = std::allocator<T> > class Container>
         KdTree(const Container<PointType> &points, const std::size_t leaf_size = 20) { this->build(points, leaf_size); }
 
 
+        /** @brief データの次数 */
         const std::size_t dim() const { return m_dim; }
+
+        
+        /** @brief ツリーの根 */
         const NodePtr root() const { return m_root; }
+
+        
+        /** 
+         * @brief データ
+         * @param index データのインデックス
+         */
         const PointType& point(std::size_t index) const { return m_points.at(index); }
+
+        
+        /** @brief 全データ */
         const std::vector<PointType>& points() const { return m_points; }
 
 
-        //
-        // kd-treeの構築
-        //
+        /**
+         * @brief kd-treeの構築
+         */
         template <template <class T, class A = std::allocator<T> > class Container>
         void build(const Container<PointType> &points, const std::size_t leaf_size = 20);
 

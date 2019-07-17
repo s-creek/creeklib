@@ -113,6 +113,9 @@ $(document).ready(function(){initNavTree('classscl_1_1KdTree_1_1BoundedPriorityQ
 </div><!--header-->
 <div class="contents">
 
+<p>制限付き優先度キュー ... と言いつつ実は今は制限がない  
+ <a href="classscl_1_1KdTree_1_1BoundedPriorityQueue.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="KdTree_8hpp_source.html">KdTree.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for scl::KdTree&lt; PointType &gt;::BoundedPriorityQueue&lt; T, Container, Compare &gt;:</div>
@@ -130,15 +133,34 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9c242f5f7a4a6b06b1d8f16c814c4eac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a9c242f5f7a4a6b06b1d8f16c814c4eac">BoundedPriorityQueue</a> ()</td></tr>
 <tr class="separator:a9c242f5f7a4a6b06b1d8f16c814c4eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85c442933928a9ac477ccbbe1a6e888c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a85c442933928a9ac477ccbbe1a6e888c">push</a> (const T &amp;val)</td></tr>
+<tr class="memdesc:a85c442933928a9ac477ccbbe1a6e888c"><td class="mdescLeft">&#160;</td><td class="mdescRight">キューにデータ追加  <a href="#a85c442933928a9ac477ccbbe1a6e888c">More...</a><br /></td></tr>
 <tr class="separator:a85c442933928a9ac477ccbbe1a6e888c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5676ced2567c7bdd16946a3669713de9"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a5676ced2567c7bdd16946a3669713de9">top</a> ()</td></tr>
+<tr class="memdesc:a5676ced2567c7bdd16946a3669713de9"><td class="mdescLeft">&#160;</td><td class="mdescRight">先頭(再優先)キュー  <a href="#a5676ced2567c7bdd16946a3669713de9">More...</a><br /></td></tr>
 <tr class="separator:a5676ced2567c7bdd16946a3669713de9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b4e17a35230386992fcbe2f2a0ba76c"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a0b4e17a35230386992fcbe2f2a0ba76c">top</a> () const </td></tr>
+<tr class="memdesc:a0b4e17a35230386992fcbe2f2a0ba76c"><td class="mdescLeft">&#160;</td><td class="mdescRight">先頭(再優先)キュー  <a href="#a0b4e17a35230386992fcbe2f2a0ba76c">More...</a><br /></td></tr>
 <tr class="separator:a0b4e17a35230386992fcbe2f2a0ba76c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a745acb96230dbe907301be6200fe190e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a745acb96230dbe907301be6200fe190e">pop</a> ()</td></tr>
+<tr class="memdesc:a745acb96230dbe907301be6200fe190e"><td class="mdescLeft">&#160;</td><td class="mdescRight">先頭(再優先)キューを削除  <a href="#a745acb96230dbe907301be6200fe190e">More...</a><br /></td></tr>
 <tr class="separator:a745acb96230dbe907301be6200fe190e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;class PointType&gt;<br />
+template&lt;class T, class Container = std::vector&lt;T&gt;, class Compare = std::less&lt;typename Container::value_type&gt;&gt;<br />
+class scl::KdTree&lt; PointType &gt;::BoundedPriorityQueue&lt; T, Container, Compare &gt;</h3>
+
+<p>制限付き優先度キュー ... と言いつつ実は今は制限がない </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>キューに入れるデータ型 </td></tr>
+    <tr><td class="paramname">Container</td><td>キューを管理するコンテナ </td></tr>
+    <tr><td class="paramname">Compare</td><td>ソートに使う比較器 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section attention"><dt>Attention</dt><dd>Container = std::vector or std::deque </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a9c242f5f7a4a6b06b1d8f16c814c4eac"></a>
 <div class="memitem">
 <div class="memproto">
@@ -193,6 +215,8 @@ template&lt;class T, class Container = std::vector&lt;T&gt;, class Compare = std
 </table>
 </div><div class="memdoc">
 
+<p>キューにデータ追加 </p>
+
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -201,7 +225,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" id="node2" href="classscl_1_1KdTree.html#aaa908e2a11c36a6b234c119c1df5034e" title="scl::KdTree::knnSearchRecursive" alt="" coords="243,36,461,63"/>
 <area shape="rect" id="node5" href="classscl_1_1KdTree.html#a1b45d4f1d974a6c99ddba23b9053e2ba" title="scl::KdTree::radiusSearch\lRecursiveSort" alt="" coords="265,102,439,144"/>
 <area shape="rect" id="node7" href="classscl_1_1KdTree.html#ae144dc3a58efb059cfa493dc1c6268f6" title="scl::KdTree::rangeSearch\lRecursiveSort" alt="" coords="267,181,437,222"/>
-<area shape="rect" id="node3" href="classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="scl::KdTree::points" alt="" coords="731,112,863,139"/>
+<area shape="rect" id="node3" href="classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="全データ " alt="" coords="731,112,863,139"/>
 <area shape="rect" id="node4" href="classscl_1_1KdTree.html#a03527e2f394b328ef20b7aaabc5a311b" title="scl::KdTree::knnSearch" alt="" coords="517,36,675,63"/>
 <area shape="rect" id="node6" href="classscl_1_1KdTree.html#a5b2de3ac7fff76574dd1ac8105da0441" title="scl::KdTree::radiusSearch" alt="" coords="509,138,683,164"/>
 <area shape="rect" id="node8" href="classscl_1_1KdTree.html#a35dc60a31ba0b2848085c68cb2fc0bab" title="scl::KdTree::rangeSearch" alt="" coords="511,239,681,266"/>
@@ -236,6 +260,8 @@ template&lt;class T, class Container = std::vector&lt;T&gt;, class Compare = std
 </table>
 </div><div class="memdoc">
 
+<p>先頭(再優先)キュー </p>
+
 </div>
 </div>
 <a class="anchor" id="a0b4e17a35230386992fcbe2f2a0ba76c"></a>
@@ -263,6 +289,8 @@ template&lt;class T, class Container = std::vector&lt;T&gt;, class Compare = std
 </table>
 </div><div class="memdoc">
 
+<p>先頭(再優先)キュー </p>
+
 </div>
 </div>
 <a class="anchor" id="a745acb96230dbe907301be6200fe190e"></a>
@@ -289,6 +317,8 @@ template&lt;class T, class Container = std::vector&lt;T&gt;, class Compare = std
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>先頭(再優先)キューを削除 </p>
 
 </div>
 </div>

@@ -1,7 +1,7 @@
 <map id="scl::KdTree::rangeSearch" name="scl::KdTree::rangeSearch">
 <area shape="rect" id="node2" href="$classscl_1_1KdTree.html#a63c300abd75cd02c5f0a871debb056f6" title="scl::KdTree::rangeSearch\lRecursive" alt="" coords="224,5,395,47"/>
 <area shape="rect" id="node4" href="$classscl_1_1KdTree.html#ae144dc3a58efb059cfa493dc1c6268f6" title="scl::KdTree::rangeSearch\lRecursiveSort" alt="" coords="224,71,395,112"/>
-<area shape="rect" id="node3" href="$classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="scl::KdTree::Node::axis" alt="" coords="457,15,617,42"/>
-<area shape="rect" id="node5" href="$classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a85c442933928a9ac477ccbbe1a6e888c" title="scl::KdTree::BoundedPriority\lQueue::push" alt="" coords="443,68,632,109"/>
+<area shape="rect" id="node3" href="$classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="分割した軸 " alt="" coords="457,15,617,42"/>
+<area shape="rect" id="node5" href="$classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a85c442933928a9ac477ccbbe1a6e888c" title="キューにデータ追加 " alt="" coords="443,68,632,109"/>
 <area shape="rect" id="node6" href="$classscl_1_1KdTree.html#aec30f91a2b2f5f589dca86166fd4cedb" title="scl::KdTree::distance" alt="" coords="464,134,611,161"/>
 </map>

@@ -115,7 +115,9 @@ namespace scl
     }
 
 
-    /** @brief convert vector data : DataType -> Eigen */
+    /** 
+     * @brief convert vector data : DataType -> Eigen
+     */
     template<class DataType>
     Eigen::VectorXd toEigenVector(const std::size_t dim, const DataType data)
     {

@@ -67,7 +67,7 @@ namespace scl
          * @param[in,out] centroids 各クラスタの重心位置 ( method が  KMeans::MANUAL の時だけ[in]も使う)
          * @param[in] method クラスタ重心の初期化方法 (デフォルト k-means++)
          * @return クラスタリングが収束したか (重心の更新値が KMeans::m_tolerance 以下に収まっているか)
-         * @details DataType needs [] access operator
+         * @attention DataType needs [] access operator
          */
         template<class DataType>
         bool clustering(const std::size_t dim, const std::vector<DataType> &dataset, const std::size_t num_clusters, std::vector< std::vector<double> > &centroids, const InitMethod method=PLUSPLUS);

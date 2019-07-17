@@ -1,5 +1,5 @@
 <map id="scl::KdTree::knnSearchRecursive" name="scl::KdTree::knnSearchRecursive">
-<area shape="rect" id="node2" href="$classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="scl::KdTree::Node::axis" alt="" coords="287,5,447,32"/>
+<area shape="rect" id="node2" href="$classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="分割した軸 " alt="" coords="287,5,447,32"/>
 <area shape="rect" id="node3" href="$classscl_1_1KdTree.html#aec30f91a2b2f5f589dca86166fd4cedb" title="scl::KdTree::distance" alt="" coords="293,56,440,83"/>
-<area shape="rect" id="node4" href="$classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a85c442933928a9ac477ccbbe1a6e888c" title="scl::KdTree::BoundedPriority\lQueue::push" alt="" coords="272,107,461,149"/>
+<area shape="rect" id="node4" href="$classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a85c442933928a9ac477ccbbe1a6e888c" title="キューにデータ追加 " alt="" coords="272,107,461,149"/>
 </map>

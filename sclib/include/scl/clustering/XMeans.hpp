@@ -44,11 +44,11 @@ namespace scl
          * @param[in] dataset クラスタリングするデータセット
          * @param[in] init_num_clusters 初期クラスタ数
          * @param[in,out] centroids 各クラスタの重心位置 ( method が KMeans::MANUAL の時だけ[in]も使う)
-         * @return クラスタリングが収束したか
-         * @details DataType needs [] access operator
+         * @param[in] min_num 各クラスタ内の最小データ数
+         * @attention DataType needs [] access operator
          */
         template<class DataType>
-        bool clustering(const std::size_t dim, const std::vector<DataType> &dataset, const std::size_t init_num_clusters, std::vector< std::vector<double> > &centroids);
+        void clustering(const std::size_t dim, const std::vector<DataType> &dataset, const std::size_t init_num_clusters, std::vector< std::vector<double> > &centroids, const std::size_t min_num=5);
 
 
         /** 
@@ -66,9 +66,15 @@ namespace scl
 
         
     private:
-        /** @brief split data */
+        /**
+         * @brief split data (x-means main algorithm)
+         * @param[in] dataset クラスタリングする全データ
+         * @param[in] indices 分割予定のクラスタのインデックスリスト
+         * @param[in] centered 分割予定のクラスタの重心
+         * @param[in] min_num クラスタ内の最小データ数 (これ以下なら分割しない)
+         */
         template<class DataType>
-        void recursivelySplit(const std::vector<DataType> &dataset, const std::vector<std::size_t> &indices, const std::vector<double> &centroid);
+        void recursivelySplit(const std::vector<DataType> &dataset, const std::vector<std::size_t> &indices, const std::vector<double> &centroid, const std::size_t min_num);
 
 
         /** @brief クラスタリングするデータの次数 */
@@ -114,7 +120,7 @@ namespace scl
     
     
     template<class DataType>
-    bool XMeans::clustering(const std::size_t dim, const std::vector<DataType> &dataset, const std::size_t init_num_clusters, std::vector< std::vector<double> > &centroids)
+    void XMeans::clustering(const std::size_t dim, const std::vector<DataType> &dataset, const std::size_t init_num_clusters, std::vector< std::vector<double> > &centroids, const std::size_t min_num)
     {
         // set parameter
         m_dim = dim;
@@ -131,16 +137,13 @@ namespace scl
         const std::vector< std::vector<std::size_t> > clusters(m_kmeans.getClusters());
         for (std::size_t cluster_id = 0; cluster_id < clusters.size(); ++cluster_id)
         {
-            recursivelySplit(dataset, clusters.at(cluster_id), child_centroids.at(cluster_id));
+            recursivelySplit(dataset, clusters.at(cluster_id), child_centroids.at(cluster_id), min_num);
         }
 
         
         // copy results
         centroids.clear();
         centroids.assign(m_centroids.begin(), m_centroids.end());
-
-
-        return true;
     }
 
 
@@ -157,9 +160,9 @@ namespace scl
 
 
     template<class DataType>
-    void XMeans::recursivelySplit(const std::vector<DataType> &dataset, const std::vector<std::size_t> &indices, const std::vector<double> &centroid)
+    void XMeans::recursivelySplit(const std::vector<DataType> &dataset, const std::vector<std::size_t> &indices, const std::vector<double> &centroid, const std::size_t min_num)
     {
-        if ( indices.size() < 5 )
+        if ( indices.size() < min_num )
         {
             m_clusterid_to_dataids.push_back(indices);
             m_centroids.push_back(centroid);
@@ -189,7 +192,7 @@ namespace scl
         // size check
         for (std::size_t current_cluster_id = 0; current_cluster_id < current_clusters.size(); ++current_cluster_id)
         {
-            if ( current_clusters.at(current_cluster_id).size() < 5 )
+            if ( current_clusters.at(current_cluster_id).size() < min_num )
             {
                 m_clusterid_to_dataids.push_back(indices);
                 m_centroids.push_back(centroid);
@@ -246,7 +249,7 @@ namespace scl
                     std::size_t original_dataset_index = indices.at( current_clusters[split_id][i] );
                     split_indices[i] = original_dataset_index;
                 }
-                recursivelySplit(dataset, split_indices, current_centroids[split_id]);
+                recursivelySplit(dataset, split_indices, current_centroids[split_id], min_num);
             }
         }
         else

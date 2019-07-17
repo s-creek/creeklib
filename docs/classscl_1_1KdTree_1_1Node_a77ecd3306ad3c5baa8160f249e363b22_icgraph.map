@@ -1,6 +1,6 @@
 <map id="scl::KdTree::Node::hi" name="scl::KdTree::Node::hi">
-<area shape="rect" id="node2" href="$classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="scl::KdTree::points" alt="" coords="606,31,738,57"/>
+<area shape="rect" id="node2" href="$classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="全データ " alt="" coords="606,31,738,57"/>
 <area shape="rect" id="node3" href="$classscl_1_1KdTree.html#a202f818d101873dc96fc34e8c05585e9" title="scl::KdTree::buildRecursive" alt="" coords="200,31,383,57"/>
-<area shape="rect" id="node4" href="$classscl_1_1KdTree.html#a08c6232bee9722257283edebfc4bbedc" title="scl::KdTree::build" alt="" coords="431,81,555,108"/>
+<area shape="rect" id="node4" href="$classscl_1_1KdTree.html#a08c6232bee9722257283edebfc4bbedc" title="kd&#45;treeの構築 " alt="" coords="431,81,555,108"/>
 <area shape="rect" id="node5" href="$classscl_1_1KdTree.html#ae1490e7d8d3f895b25ead4f6411946fc" title="scl::KdTree::KdTree" alt="" coords="603,81,741,108"/>
 </map>

@@ -20,6 +20,7 @@ namespace scl
      * @param[in] dataset dataset (num data x dim)
      * @param[out] covariance covariance-matrix
      * @return size check
+     * @details 不偏推定量 (標本不偏分散)
      */
     bool calcCovariance(const Eigen::MatrixXd &dataset, Eigen::MatrixXd &covariance)
     {
@@ -60,7 +61,7 @@ namespace scl
         double cumulativeDensityFunction(const double x, const double mean=0, const double variance=1)
         {
             double alpha = (x - mean) / std::sqrt(2 * variance);
-            return 0.5 * (1 + std::erf(alpha));
+            return ( 0.5 * (1 + std::erf(alpha)) );
         }
         
         

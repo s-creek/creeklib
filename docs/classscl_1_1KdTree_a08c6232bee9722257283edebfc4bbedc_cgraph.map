@@ -1,6 +1,6 @@
 <map id="scl::KdTree::build" name="scl::KdTree::build">
 <area shape="rect" id="node2" href="$classscl_1_1KdTree.html#a202f818d101873dc96fc34e8c05585e9" title="scl::KdTree::buildRecursive" alt="" coords="177,56,360,83"/>
-<area shape="rect" id="node3" href="$classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="scl::KdTree::Node::axis" alt="" coords="408,5,568,32"/>
+<area shape="rect" id="node3" href="$classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="分割した軸 " alt="" coords="408,5,568,32"/>
 <area shape="rect" id="node4" href="$classscl_1_1KdTree_1_1Node.html#a4e12e18d46b166b18aa98c17831318d6" title="scl::KdTree::Node::lo" alt="" coords="415,56,561,83"/>
 <area shape="rect" id="node5" href="$classscl_1_1KdTree_1_1Node.html#a77ecd3306ad3c5baa8160f249e363b22" title="scl::KdTree::Node::hi" alt="" coords="415,107,561,133"/>
 </map>

@@ -1,0 +1,8 @@
+\form#0:$ log(likelihood) = \Sigma pdf $
+\form#1:$ log(likelihood) = \Sigma log(pdf) $
+\form#2:$ likelihood = \Pi pdf $
+\form#3:\[ likelihood = \Pi pdf \]
+\form#4:\begin{eqnarray*} likelihood = \Pi pdf \end{eqnarray*}
+\form#5:\begin{eqnarray*} log(likelihood) = \Sigma log(pdf) \end{eqnarray*}
+\form#6:$ log(likelihood) $
+\form#7:$ likelihood $

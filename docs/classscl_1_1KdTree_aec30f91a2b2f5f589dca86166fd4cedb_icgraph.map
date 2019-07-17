@@ -1,5 +1,5 @@
 <map id="scl::KdTree::distance" name="scl::KdTree::distance">
-<area shape="rect" id="node2" href="$classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="scl::KdTree::points" alt="" coords="688,219,820,246"/>
+<area shape="rect" id="node2" href="$classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="全データ " alt="" coords="688,219,820,246"/>
 <area shape="rect" id="node3" href="$classscl_1_1KdTree.html#a327fa277838d663ed68669d31978a829" title="scl::KdTree::nnSearchRecursive" alt="" coords="204,67,415,94"/>
 <area shape="rect" id="node5" href="$classscl_1_1KdTree.html#aaa908e2a11c36a6b234c119c1df5034e" title="scl::KdTree::knnSearchRecursive" alt="" coords="200,169,419,195"/>
 <area shape="rect" id="node7" href="$classscl_1_1KdTree.html#a5cfc75965431d83b9a22d00ba6f26df0" title="scl::KdTree::radiusSearch\lRecursive" alt="" coords="223,249,396,291"/>

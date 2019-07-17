@@ -130,10 +130,13 @@ Collaboration diagram for scl::KdTree&lt; PointType &gt;:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscl_1_1KdTree_1_1BoundedPriorityQueue.html">BoundedPriorityQueue</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">制限付き優先度キュー ... と言いつつ実は今は制限がない  <a href="classscl_1_1KdTree_1_1BoundedPriorityQueue.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structscl_1_1KdTree_1_1KnnCompare.html">KnnCompare</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">KnnNode 比較器  <a href="structscl_1_1KdTree_1_1KnnCompare.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscl_1_1KdTree_1_1Node.html">Node</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">tree構造を構成するノードクラス  <a href="classscl_1_1KdTree_1_1Node.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
@@ -141,8 +144,10 @@ Public Types</h2></td></tr>
 <tr class="memitem:a7a5c98e8790285210f3e68d1dc8647ad"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscl_1_1KdTree.html#a7a5c98e8790285210f3e68d1dc8647ad">NodePtr</a> = std::shared_ptr&lt; <a class="el" href="classscl_1_1KdTree_1_1Node.html">Node</a> &gt;</td></tr>
 <tr class="separator:a7a5c98e8790285210f3e68d1dc8647ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44fce72345aa47d30aa84bdc6739d21d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscl_1_1KdTree.html#a44fce72345aa47d30aa84bdc6739d21d">KnnNode</a> = std::pair&lt; std::size_t, double &gt;</td></tr>
+<tr class="memdesc:a44fce72345aa47d30aa84bdc6739d21d"><td class="mdescLeft">&#160;</td><td class="mdescRight">インデックスと距離(評価値)のペア  <a href="#a44fce72345aa47d30aa84bdc6739d21d">More...</a><br /></td></tr>
 <tr class="separator:a44fce72345aa47d30aa84bdc6739d21d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16f954afead1c9e76d0f9a2a657e22f8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscl_1_1KdTree.html#a16f954afead1c9e76d0f9a2a657e22f8">KnnQueue</a> = <a class="el" href="classscl_1_1KdTree_1_1BoundedPriorityQueue.html">BoundedPriorityQueue</a>&lt; <a class="el" href="classscl_1_1KdTree.html#a44fce72345aa47d30aa84bdc6739d21d">KnnNode</a>, std::vector&lt; <a class="el" href="classscl_1_1KdTree.html#a44fce72345aa47d30aa84bdc6739d21d">KnnNode</a> &gt;, <a class="el" href="structscl_1_1KdTree_1_1KnnCompare.html">KnnCompare</a> &gt;</td></tr>
+<tr class="memdesc:a16f954afead1c9e76d0f9a2a657e22f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">KdTreeのk近傍探索などで使う優先度キュー  <a href="#a16f954afead1c9e76d0f9a2a657e22f8">More...</a><br /></td></tr>
 <tr class="separator:a16f954afead1c9e76d0f9a2a657e22f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -153,15 +158,20 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae1490e7d8d3f895b25ead4f6411946fc"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classscl_1_1KdTree.html#ae1490e7d8d3f895b25ead4f6411946fc">KdTree</a> (const Container&lt; PointType &gt; &amp;<a class="el" href="classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e">points</a>, const std::size_t leaf_size=20)</td></tr>
 <tr class="separator:ae1490e7d8d3f895b25ead4f6411946fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a169f821250cbd6107a3b00176461d348"><td class="memItemLeft" align="right" valign="top">const std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscl_1_1KdTree.html#a169f821250cbd6107a3b00176461d348">dim</a> () const </td></tr>
+<tr class="memdesc:a169f821250cbd6107a3b00176461d348"><td class="mdescLeft">&#160;</td><td class="mdescRight">データの次数  <a href="#a169f821250cbd6107a3b00176461d348">More...</a><br /></td></tr>
 <tr class="separator:a169f821250cbd6107a3b00176461d348"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3b1bcd8b3873bfbb98a33ac4c97b6f6"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classscl_1_1KdTree.html#a7a5c98e8790285210f3e68d1dc8647ad">NodePtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscl_1_1KdTree.html#af3b1bcd8b3873bfbb98a33ac4c97b6f6">root</a> () const </td></tr>
+<tr class="memdesc:af3b1bcd8b3873bfbb98a33ac4c97b6f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">ツリーの根  <a href="#af3b1bcd8b3873bfbb98a33ac4c97b6f6">More...</a><br /></td></tr>
 <tr class="separator:af3b1bcd8b3873bfbb98a33ac4c97b6f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafebd80e886ad2fa40048fea650b0419"><td class="memItemLeft" align="right" valign="top">const PointType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscl_1_1KdTree.html#aafebd80e886ad2fa40048fea650b0419">point</a> (std::size_t index) const </td></tr>
+<tr class="memdesc:aafebd80e886ad2fa40048fea650b0419"><td class="mdescLeft">&#160;</td><td class="mdescRight">データ  <a href="#aafebd80e886ad2fa40048fea650b0419">More...</a><br /></td></tr>
 <tr class="separator:aafebd80e886ad2fa40048fea650b0419"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae977affb37137b7ec6b3fd813831bb2e"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; PointType &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e">points</a> () const </td></tr>
+<tr class="memdesc:ae977affb37137b7ec6b3fd813831bb2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">全データ  <a href="#ae977affb37137b7ec6b3fd813831bb2e">More...</a><br /></td></tr>
 <tr class="separator:ae977affb37137b7ec6b3fd813831bb2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08c6232bee9722257283edebfc4bbedc"><td class="memTemplParams" colspan="2">template&lt;template&lt; class T, class A=std::allocator&lt; T &gt; &gt; class Container&gt; </td></tr>
 <tr class="memitem:a08c6232bee9722257283edebfc4bbedc"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classscl_1_1KdTree.html#a08c6232bee9722257283edebfc4bbedc">build</a> (const Container&lt; PointType &gt; &amp;<a class="el" href="classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e">points</a>, const std::size_t leaf_size=20)</td></tr>
+<tr class="memdesc:a08c6232bee9722257283edebfc4bbedc"><td class="mdescLeft">&#160;</td><td class="mdescRight">kd-treeの構築  <a href="#a08c6232bee9722257283edebfc4bbedc">More...</a><br /></td></tr>
 <tr class="separator:a08c6232bee9722257283edebfc4bbedc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb61742e883aedd8875d73405063d14f"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscl_1_1KdTree.html#aeb61742e883aedd8875d73405063d14f">nnSearch</a> (const PointType &amp;query)</td></tr>
 <tr class="separator:aeb61742e883aedd8875d73405063d14f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -222,6 +232,13 @@ Private Attributes</h2></td></tr>
 class scl::KdTree&lt; PointType &gt;</h3>
 
 <p>kd-tree </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">PointType</td><td>データの型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section attention"><dt>Attention</dt><dd>PointType には size() 関数と要素にアクセスする [] オペレータが必須</dd></dl>
 <p>参考サイト <br />
 <a href="https://hope.c.fun.ac.jp/course/view.php?id=373">reference 1</a> <br />
 <a href="https://hope.c.fun.ac.jp/pluginfile.php/33640/mod_resource/content/1/2014-Kd-tree%E3%81%A8%E6%9C%80%E8%BF%91%E5%82%8D%E6%8E%A2%E7%B4%A2.pdf?forcedownload=1">reference 1 (pdf)</a> <br />
@@ -253,6 +270,8 @@ template&lt;class PointType&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>インデックスと距離(評価値)のペア </p>
+
 </div>
 </div>
 <a class="anchor" id="a16f954afead1c9e76d0f9a2a657e22f8"></a>
@@ -266,6 +285,13 @@ template&lt;class PointType&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>KdTreeのk近傍探索などで使う優先度キュー </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classscl_1_1KdTree_1_1BoundedPriorityQueue.html" title="制限付き優先度キュー ... と言いつつ実は今は制限がない ">BoundedPriorityQueue</a> </dd>
+<dd>
+<a class="el" href="classscl_1_1KdTree.html#a44fce72345aa47d30aa84bdc6739d21d" title="インデックスと距離(評価値)のペア ">KnnNode</a> </dd>
+<dd>
+<a class="el" href="structscl_1_1KdTree_1_1KnnCompare.html" title="KnnNode 比較器 ">KnnCompare</a> </dd></dl>
 
 </div>
 </div>
@@ -336,9 +362,9 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscl_1_1KdTree_ae1490e7d8d3f895b25ead4f6411946fc_cgraph.png" border="0" usemap="#classscl_1_1KdTree_ae1490e7d8d3f895b25ead4f6411946fc_cgraph" alt=""/></div>
 <map name="classscl_1_1KdTree_ae1490e7d8d3f895b25ead4f6411946fc_cgraph" id="classscl_1_1KdTree_ae1490e7d8d3f895b25ead4f6411946fc_cgraph">
-<area shape="rect" id="node2" href="classscl_1_1KdTree.html#a08c6232bee9722257283edebfc4bbedc" title="scl::KdTree::build" alt="" coords="192,56,316,83"/>
+<area shape="rect" id="node2" href="classscl_1_1KdTree.html#a08c6232bee9722257283edebfc4bbedc" title="kd&#45;treeの構築 " alt="" coords="192,56,316,83"/>
 <area shape="rect" id="node3" href="classscl_1_1KdTree.html#a202f818d101873dc96fc34e8c05585e9" title="scl::KdTree::buildRecursive" alt="" coords="364,56,547,83"/>
-<area shape="rect" id="node4" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="scl::KdTree::Node::axis" alt="" coords="595,5,755,32"/>
+<area shape="rect" id="node4" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="分割した軸 " alt="" coords="595,5,755,32"/>
 <area shape="rect" id="node5" href="classscl_1_1KdTree_1_1Node.html#a4e12e18d46b166b18aa98c17831318d6" title="scl::KdTree::Node::lo" alt="" coords="601,56,748,83"/>
 <area shape="rect" id="node6" href="classscl_1_1KdTree_1_1Node.html#a77ecd3306ad3c5baa8160f249e363b22" title="scl::KdTree::Node::hi" alt="" coords="601,107,748,133"/>
 </map>
@@ -371,6 +397,8 @@ template&lt;class PointType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>データの次数 </p>
+
 </div>
 </div>
 <a class="anchor" id="af3b1bcd8b3873bfbb98a33ac4c97b6f6"></a>
@@ -395,6 +423,8 @@ template&lt;class PointType&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>ツリーの根 </p>
 
 </div>
 </div>
@@ -422,6 +452,14 @@ template&lt;class PointType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>データ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>データのインデックス </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="ae977affb37137b7ec6b3fd813831bb2e"></a>
@@ -447,12 +485,14 @@ template&lt;class PointType&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>全データ </p>
+
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscl_1_1KdTree_ae977affb37137b7ec6b3fd813831bb2e_cgraph.png" border="0" usemap="#classscl_1_1KdTree_ae977affb37137b7ec6b3fd813831bb2e_cgraph" alt=""/></div>
 <map name="classscl_1_1KdTree_ae977affb37137b7ec6b3fd813831bb2e_cgraph" id="classscl_1_1KdTree_ae977affb37137b7ec6b3fd813831bb2e_cgraph">
-<area shape="rect" id="node2" href="classscl_1_1KdTree.html#a08c6232bee9722257283edebfc4bbedc" title="scl::KdTree::build" alt="" coords="210,563,334,589"/>
+<area shape="rect" id="node2" href="classscl_1_1KdTree.html#a08c6232bee9722257283edebfc4bbedc" title="kd&#45;treeの構築 " alt="" coords="210,563,334,589"/>
 <area shape="rect" id="node3" href="classscl_1_1KdTree.html#a202f818d101873dc96fc34e8c05585e9" title="scl::KdTree::buildRecursive" alt="" coords="425,563,607,589"/>
 <area shape="rect" id="node5" href="classscl_1_1KdTree_1_1Node.html#a4e12e18d46b166b18aa98c17831318d6" title="scl::KdTree::Node::lo" alt="" coords="695,537,841,564"/>
 <area shape="rect" id="node6" href="classscl_1_1KdTree_1_1Node.html#a77ecd3306ad3c5baa8160f249e363b22" title="scl::KdTree::Node::hi" alt="" coords="695,627,841,653"/>
@@ -467,8 +507,8 @@ Here is the call graph for this function:</div>
 <area shape="rect" id="node16" href="classscl_1_1KdTree.html#a63c300abd75cd02c5f0a871debb056f6" title="scl::KdTree::rangeSearch\lRecursive" alt="" coords="431,135,601,177"/>
 <area shape="rect" id="node17" href="classscl_1_1KdTree.html#ae144dc3a58efb059cfa493dc1c6268f6" title="scl::KdTree::rangeSearch\lRecursiveSort" alt="" coords="431,201,601,242"/>
 <area shape="rect" id="node18" href="classscl_1_1KdTree.html#a327fa277838d663ed68669d31978a829" title="scl::KdTree::nnSearchRecursive" alt="" coords="411,397,621,424"/>
-<area shape="rect" id="node4" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="scl::KdTree::Node::axis" alt="" coords="688,273,848,300"/>
-<area shape="rect" id="node11" href="classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a85c442933928a9ac477ccbbe1a6e888c" title="scl::KdTree::BoundedPriority\lQueue::push" alt="" coords="673,201,863,242"/>
+<area shape="rect" id="node4" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="分割した軸 " alt="" coords="688,273,848,300"/>
+<area shape="rect" id="node11" href="classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a85c442933928a9ac477ccbbe1a6e888c" title="キューにデータ追加 " alt="" coords="673,201,863,242"/>
 </map>
 </div>
 </p>
@@ -503,13 +543,15 @@ template&lt;template&lt; class T, class A=std::allocator&lt; T &gt; &gt; class C
       </table>
 </div><div class="memdoc">
 
+<p>kd-treeの構築 </p>
+
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscl_1_1KdTree_a08c6232bee9722257283edebfc4bbedc_cgraph.png" border="0" usemap="#classscl_1_1KdTree_a08c6232bee9722257283edebfc4bbedc_cgraph" alt=""/></div>
 <map name="classscl_1_1KdTree_a08c6232bee9722257283edebfc4bbedc_cgraph" id="classscl_1_1KdTree_a08c6232bee9722257283edebfc4bbedc_cgraph">
 <area shape="rect" id="node2" href="classscl_1_1KdTree.html#a202f818d101873dc96fc34e8c05585e9" title="scl::KdTree::buildRecursive" alt="" coords="177,56,360,83"/>
-<area shape="rect" id="node3" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="scl::KdTree::Node::axis" alt="" coords="408,5,568,32"/>
+<area shape="rect" id="node3" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="分割した軸 " alt="" coords="408,5,568,32"/>
 <area shape="rect" id="node4" href="classscl_1_1KdTree_1_1Node.html#a4e12e18d46b166b18aa98c17831318d6" title="scl::KdTree::Node::lo" alt="" coords="415,56,561,83"/>
 <area shape="rect" id="node5" href="classscl_1_1KdTree_1_1Node.html#a77ecd3306ad3c5baa8160f249e363b22" title="scl::KdTree::Node::hi" alt="" coords="415,107,561,133"/>
 </map>
@@ -522,7 +564,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="classscl_1_1KdTree_a08c6232bee9722257283edebfc4bbedc_icgraph.png" border="0" usemap="#classscl_1_1KdTree_a08c6232bee9722257283edebfc4bbedc_icgraph" alt=""/></div>
 <map name="classscl_1_1KdTree_a08c6232bee9722257283edebfc4bbedc_icgraph" id="classscl_1_1KdTree_a08c6232bee9722257283edebfc4bbedc_icgraph">
 <area shape="rect" id="node2" href="classscl_1_1KdTree.html#ae1490e7d8d3f895b25ead4f6411946fc" title="scl::KdTree::KdTree" alt="" coords="177,5,316,32"/>
-<area shape="rect" id="node3" href="classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="scl::KdTree::points" alt="" coords="181,56,313,83"/>
+<area shape="rect" id="node3" href="classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="全データ " alt="" coords="181,56,313,83"/>
 </map>
 </div>
 </p>
@@ -550,7 +592,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscl_1_1KdTree_aeb61742e883aedd8875d73405063d14f_icgraph.png" border="0" usemap="#classscl_1_1KdTree_aeb61742e883aedd8875d73405063d14f_icgraph" alt=""/></div>
 <map name="classscl_1_1KdTree_aeb61742e883aedd8875d73405063d14f_icgraph" id="classscl_1_1KdTree_aeb61742e883aedd8875d73405063d14f_icgraph">
-<area shape="rect" id="node2" href="classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="scl::KdTree::points" alt="" coords="205,5,337,32"/>
+<area shape="rect" id="node2" href="classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="全データ " alt="" coords="205,5,337,32"/>
 </map>
 </div>
 </p>
@@ -589,7 +631,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classscl_1_1KdTree_a828409d630bfc7c95d2966f243504dc4_cgraph.png" border="0" usemap="#classscl_1_1KdTree_a828409d630bfc7c95d2966f243504dc4_cgraph" alt=""/></div>
 <map name="classscl_1_1KdTree_a828409d630bfc7c95d2966f243504dc4_cgraph" id="classscl_1_1KdTree_a828409d630bfc7c95d2966f243504dc4_cgraph">
 <area shape="rect" id="node2" href="classscl_1_1KdTree.html#a327fa277838d663ed68669d31978a829" title="scl::KdTree::nnSearchRecursive" alt="" coords="205,31,416,57"/>
-<area shape="rect" id="node3" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="scl::KdTree::Node::axis" alt="" coords="464,5,624,32"/>
+<area shape="rect" id="node3" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="分割した軸 " alt="" coords="464,5,624,32"/>
 <area shape="rect" id="node4" href="classscl_1_1KdTree.html#aec30f91a2b2f5f589dca86166fd4cedb" title="scl::KdTree::distance" alt="" coords="471,56,617,83"/>
 </map>
 </div>
@@ -635,9 +677,9 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classscl_1_1KdTree_a03527e2f394b328ef20b7aaabc5a311b_cgraph.png" border="0" usemap="#classscl_1_1KdTree_a03527e2f394b328ef20b7aaabc5a311b_cgraph" alt=""/></div>
 <map name="classscl_1_1KdTree_a03527e2f394b328ef20b7aaabc5a311b_cgraph" id="classscl_1_1KdTree_a03527e2f394b328ef20b7aaabc5a311b_cgraph">
 <area shape="rect" id="node2" href="classscl_1_1KdTree.html#aaa908e2a11c36a6b234c119c1df5034e" title="scl::KdTree::knnSearchRecursive" alt="" coords="212,56,431,83"/>
-<area shape="rect" id="node3" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="scl::KdTree::Node::axis" alt="" coords="493,5,653,32"/>
+<area shape="rect" id="node3" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="分割した軸 " alt="" coords="493,5,653,32"/>
 <area shape="rect" id="node4" href="classscl_1_1KdTree.html#aec30f91a2b2f5f589dca86166fd4cedb" title="scl::KdTree::distance" alt="" coords="500,56,647,83"/>
-<area shape="rect" id="node5" href="classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a85c442933928a9ac477ccbbe1a6e888c" title="scl::KdTree::BoundedPriority\lQueue::push" alt="" coords="479,107,668,149"/>
+<area shape="rect" id="node5" href="classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a85c442933928a9ac477ccbbe1a6e888c" title="キューにデータ追加 " alt="" coords="479,107,668,149"/>
 </map>
 </div>
 </p>
@@ -647,7 +689,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscl_1_1KdTree_a03527e2f394b328ef20b7aaabc5a311b_icgraph.png" border="0" usemap="#classscl_1_1KdTree_a03527e2f394b328ef20b7aaabc5a311b_icgraph" alt=""/></div>
 <map name="classscl_1_1KdTree_a03527e2f394b328ef20b7aaabc5a311b_icgraph" id="classscl_1_1KdTree_a03527e2f394b328ef20b7aaabc5a311b_icgraph">
-<area shape="rect" id="node2" href="classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="scl::KdTree::points" alt="" coords="212,5,344,32"/>
+<area shape="rect" id="node2" href="classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="全データ " alt="" coords="212,5,344,32"/>
 </map>
 </div>
 </p>
@@ -700,9 +742,9 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classscl_1_1KdTree_a83fcdc02e0239e27d9c3ad60546d7004_cgraph.png" border="0" usemap="#classscl_1_1KdTree_a83fcdc02e0239e27d9c3ad60546d7004_cgraph" alt=""/></div>
 <map name="classscl_1_1KdTree_a83fcdc02e0239e27d9c3ad60546d7004_cgraph" id="classscl_1_1KdTree_a83fcdc02e0239e27d9c3ad60546d7004_cgraph">
 <area shape="rect" id="node2" href="classscl_1_1KdTree.html#aaa908e2a11c36a6b234c119c1df5034e" title="scl::KdTree::knnSearchRecursive" alt="" coords="212,56,431,83"/>
-<area shape="rect" id="node3" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="scl::KdTree::Node::axis" alt="" coords="493,5,653,32"/>
+<area shape="rect" id="node3" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="分割した軸 " alt="" coords="493,5,653,32"/>
 <area shape="rect" id="node4" href="classscl_1_1KdTree.html#aec30f91a2b2f5f589dca86166fd4cedb" title="scl::KdTree::distance" alt="" coords="500,56,647,83"/>
-<area shape="rect" id="node5" href="classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a85c442933928a9ac477ccbbe1a6e888c" title="scl::KdTree::BoundedPriority\lQueue::push" alt="" coords="479,107,668,149"/>
+<area shape="rect" id="node5" href="classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a85c442933928a9ac477ccbbe1a6e888c" title="キューにデータ追加 " alt="" coords="479,107,668,149"/>
 </map>
 </div>
 </p>
@@ -754,9 +796,9 @@ Here is the call graph for this function:</div>
 <map name="classscl_1_1KdTree_a5b2de3ac7fff76574dd1ac8105da0441_cgraph" id="classscl_1_1KdTree_a5b2de3ac7fff76574dd1ac8105da0441_cgraph">
 <area shape="rect" id="node2" href="classscl_1_1KdTree.html#a5cfc75965431d83b9a22d00ba6f26df0" title="scl::KdTree::radiusSearch\lRecursive" alt="" coords="227,5,400,47"/>
 <area shape="rect" id="node5" href="classscl_1_1KdTree.html#a1b45d4f1d974a6c99ddba23b9053e2ba" title="scl::KdTree::radiusSearch\lRecursiveSort" alt="" coords="227,71,400,112"/>
-<area shape="rect" id="node3" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="scl::KdTree::Node::axis" alt="" coords="463,63,623,90"/>
+<area shape="rect" id="node3" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="分割した軸 " alt="" coords="463,63,623,90"/>
 <area shape="rect" id="node4" href="classscl_1_1KdTree.html#aec30f91a2b2f5f589dca86166fd4cedb" title="scl::KdTree::distance" alt="" coords="469,13,616,39"/>
-<area shape="rect" id="node6" href="classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a85c442933928a9ac477ccbbe1a6e888c" title="scl::KdTree::BoundedPriority\lQueue::push" alt="" coords="448,115,637,156"/>
+<area shape="rect" id="node6" href="classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a85c442933928a9ac477ccbbe1a6e888c" title="キューにデータ追加 " alt="" coords="448,115,637,156"/>
 </map>
 </div>
 </p>
@@ -766,7 +808,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscl_1_1KdTree_a5b2de3ac7fff76574dd1ac8105da0441_icgraph.png" border="0" usemap="#classscl_1_1KdTree_a5b2de3ac7fff76574dd1ac8105da0441_icgraph" alt=""/></div>
 <map name="classscl_1_1KdTree_a5b2de3ac7fff76574dd1ac8105da0441_icgraph" id="classscl_1_1KdTree_a5b2de3ac7fff76574dd1ac8105da0441_icgraph">
-<area shape="rect" id="node2" href="classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="scl::KdTree::points" alt="" coords="227,5,359,32"/>
+<area shape="rect" id="node2" href="classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="全データ " alt="" coords="227,5,359,32"/>
 </map>
 </div>
 </p>
@@ -826,9 +868,9 @@ Here is the call graph for this function:</div>
 <map name="classscl_1_1KdTree_a00b53fa0db19fa819cc7c9f1fc5d2903_cgraph" id="classscl_1_1KdTree_a00b53fa0db19fa819cc7c9f1fc5d2903_cgraph">
 <area shape="rect" id="node2" href="classscl_1_1KdTree.html#a5cfc75965431d83b9a22d00ba6f26df0" title="scl::KdTree::radiusSearch\lRecursive" alt="" coords="227,5,400,47"/>
 <area shape="rect" id="node5" href="classscl_1_1KdTree.html#a1b45d4f1d974a6c99ddba23b9053e2ba" title="scl::KdTree::radiusSearch\lRecursiveSort" alt="" coords="227,71,400,112"/>
-<area shape="rect" id="node3" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="scl::KdTree::Node::axis" alt="" coords="463,63,623,90"/>
+<area shape="rect" id="node3" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="分割した軸 " alt="" coords="463,63,623,90"/>
 <area shape="rect" id="node4" href="classscl_1_1KdTree.html#aec30f91a2b2f5f589dca86166fd4cedb" title="scl::KdTree::distance" alt="" coords="469,13,616,39"/>
-<area shape="rect" id="node6" href="classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a85c442933928a9ac477ccbbe1a6e888c" title="scl::KdTree::BoundedPriority\lQueue::push" alt="" coords="448,115,637,156"/>
+<area shape="rect" id="node6" href="classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a85c442933928a9ac477ccbbe1a6e888c" title="キューにデータ追加 " alt="" coords="448,115,637,156"/>
 </map>
 </div>
 </p>
@@ -880,8 +922,8 @@ Here is the call graph for this function:</div>
 <map name="classscl_1_1KdTree_a35dc60a31ba0b2848085c68cb2fc0bab_cgraph" id="classscl_1_1KdTree_a35dc60a31ba0b2848085c68cb2fc0bab_cgraph">
 <area shape="rect" id="node2" href="classscl_1_1KdTree.html#a63c300abd75cd02c5f0a871debb056f6" title="scl::KdTree::rangeSearch\lRecursive" alt="" coords="224,5,395,47"/>
 <area shape="rect" id="node4" href="classscl_1_1KdTree.html#ae144dc3a58efb059cfa493dc1c6268f6" title="scl::KdTree::rangeSearch\lRecursiveSort" alt="" coords="224,71,395,112"/>
-<area shape="rect" id="node3" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="scl::KdTree::Node::axis" alt="" coords="457,15,617,42"/>
-<area shape="rect" id="node5" href="classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a85c442933928a9ac477ccbbe1a6e888c" title="scl::KdTree::BoundedPriority\lQueue::push" alt="" coords="443,68,632,109"/>
+<area shape="rect" id="node3" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="分割した軸 " alt="" coords="457,15,617,42"/>
+<area shape="rect" id="node5" href="classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a85c442933928a9ac477ccbbe1a6e888c" title="キューにデータ追加 " alt="" coords="443,68,632,109"/>
 <area shape="rect" id="node6" href="classscl_1_1KdTree.html#aec30f91a2b2f5f589dca86166fd4cedb" title="scl::KdTree::distance" alt="" coords="464,134,611,161"/>
 </map>
 </div>
@@ -892,7 +934,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscl_1_1KdTree_a35dc60a31ba0b2848085c68cb2fc0bab_icgraph.png" border="0" usemap="#classscl_1_1KdTree_a35dc60a31ba0b2848085c68cb2fc0bab_icgraph" alt=""/></div>
 <map name="classscl_1_1KdTree_a35dc60a31ba0b2848085c68cb2fc0bab_icgraph" id="classscl_1_1KdTree_a35dc60a31ba0b2848085c68cb2fc0bab_icgraph">
-<area shape="rect" id="node2" href="classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="scl::KdTree::points" alt="" coords="224,5,356,32"/>
+<area shape="rect" id="node2" href="classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="全データ " alt="" coords="224,5,356,32"/>
 </map>
 </div>
 </p>
@@ -952,8 +994,8 @@ Here is the call graph for this function:</div>
 <map name="classscl_1_1KdTree_a7269fb6f47e376929a9094b1cb893078_cgraph" id="classscl_1_1KdTree_a7269fb6f47e376929a9094b1cb893078_cgraph">
 <area shape="rect" id="node2" href="classscl_1_1KdTree.html#a63c300abd75cd02c5f0a871debb056f6" title="scl::KdTree::rangeSearch\lRecursive" alt="" coords="224,5,395,47"/>
 <area shape="rect" id="node4" href="classscl_1_1KdTree.html#ae144dc3a58efb059cfa493dc1c6268f6" title="scl::KdTree::rangeSearch\lRecursiveSort" alt="" coords="224,71,395,112"/>
-<area shape="rect" id="node3" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="scl::KdTree::Node::axis" alt="" coords="457,15,617,42"/>
-<area shape="rect" id="node5" href="classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a85c442933928a9ac477ccbbe1a6e888c" title="scl::KdTree::BoundedPriority\lQueue::push" alt="" coords="443,68,632,109"/>
+<area shape="rect" id="node3" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="分割した軸 " alt="" coords="457,15,617,42"/>
+<area shape="rect" id="node5" href="classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a85c442933928a9ac477ccbbe1a6e888c" title="キューにデータ追加 " alt="" coords="443,68,632,109"/>
 <area shape="rect" id="node6" href="classscl_1_1KdTree.html#aec30f91a2b2f5f589dca86166fd4cedb" title="scl::KdTree::distance" alt="" coords="464,134,611,161"/>
 </map>
 </div>
@@ -1000,7 +1042,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscl_1_1KdTree_aec30f91a2b2f5f589dca86166fd4cedb_icgraph.png" border="0" usemap="#classscl_1_1KdTree_aec30f91a2b2f5f589dca86166fd4cedb_icgraph" alt=""/></div>
 <map name="classscl_1_1KdTree_aec30f91a2b2f5f589dca86166fd4cedb_icgraph" id="classscl_1_1KdTree_aec30f91a2b2f5f589dca86166fd4cedb_icgraph">
-<area shape="rect" id="node2" href="classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="scl::KdTree::points" alt="" coords="688,219,820,246"/>
+<area shape="rect" id="node2" href="classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="全データ " alt="" coords="688,219,820,246"/>
 <area shape="rect" id="node3" href="classscl_1_1KdTree.html#a327fa277838d663ed68669d31978a829" title="scl::KdTree::nnSearchRecursive" alt="" coords="204,67,415,94"/>
 <area shape="rect" id="node5" href="classscl_1_1KdTree.html#aaa908e2a11c36a6b234c119c1df5034e" title="scl::KdTree::knnSearchRecursive" alt="" coords="200,169,419,195"/>
 <area shape="rect" id="node7" href="classscl_1_1KdTree.html#a5cfc75965431d83b9a22d00ba6f26df0" title="scl::KdTree::radiusSearch\lRecursive" alt="" coords="223,249,396,291"/>
@@ -1075,7 +1117,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscl_1_1KdTree_a202f818d101873dc96fc34e8c05585e9_cgraph.png" border="0" usemap="#classscl_1_1KdTree_a202f818d101873dc96fc34e8c05585e9_cgraph" alt=""/></div>
 <map name="classscl_1_1KdTree_a202f818d101873dc96fc34e8c05585e9_cgraph" id="classscl_1_1KdTree_a202f818d101873dc96fc34e8c05585e9_cgraph">
-<area shape="rect" id="node2" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="scl::KdTree::Node::axis" alt="" coords="236,5,396,32"/>
+<area shape="rect" id="node2" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="分割した軸 " alt="" coords="236,5,396,32"/>
 <area shape="rect" id="node3" href="classscl_1_1KdTree_1_1Node.html#a4e12e18d46b166b18aa98c17831318d6" title="scl::KdTree::Node::lo" alt="" coords="243,56,389,83"/>
 <area shape="rect" id="node4" href="classscl_1_1KdTree_1_1Node.html#a77ecd3306ad3c5baa8160f249e363b22" title="scl::KdTree::Node::hi" alt="" coords="243,107,389,133"/>
 </map>
@@ -1087,8 +1129,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscl_1_1KdTree_a202f818d101873dc96fc34e8c05585e9_icgraph.png" border="0" usemap="#classscl_1_1KdTree_a202f818d101873dc96fc34e8c05585e9_icgraph" alt=""/></div>
 <map name="classscl_1_1KdTree_a202f818d101873dc96fc34e8c05585e9_icgraph" id="classscl_1_1KdTree_a202f818d101873dc96fc34e8c05585e9_icgraph">
-<area shape="rect" id="node2" href="classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="scl::KdTree::points" alt="" coords="411,5,543,32"/>
-<area shape="rect" id="node3" href="classscl_1_1KdTree.html#a08c6232bee9722257283edebfc4bbedc" title="scl::KdTree::build" alt="" coords="236,56,360,83"/>
+<area shape="rect" id="node2" href="classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="全データ " alt="" coords="411,5,543,32"/>
+<area shape="rect" id="node3" href="classscl_1_1KdTree.html#a08c6232bee9722257283edebfc4bbedc" title="kd&#45;treeの構築 " alt="" coords="236,56,360,83"/>
 <area shape="rect" id="node4" href="classscl_1_1KdTree.html#ae1490e7d8d3f895b25ead4f6411946fc" title="scl::KdTree::KdTree" alt="" coords="408,56,547,83"/>
 </map>
 </div>
@@ -1147,7 +1189,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscl_1_1KdTree_a327fa277838d663ed68669d31978a829_cgraph.png" border="0" usemap="#classscl_1_1KdTree_a327fa277838d663ed68669d31978a829_cgraph" alt=""/></div>
 <map name="classscl_1_1KdTree_a327fa277838d663ed68669d31978a829_cgraph" id="classscl_1_1KdTree_a327fa277838d663ed68669d31978a829_cgraph">
-<area shape="rect" id="node2" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="scl::KdTree::Node::axis" alt="" coords="264,5,424,32"/>
+<area shape="rect" id="node2" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="分割した軸 " alt="" coords="264,5,424,32"/>
 <area shape="rect" id="node3" href="classscl_1_1KdTree.html#aec30f91a2b2f5f589dca86166fd4cedb" title="scl::KdTree::distance" alt="" coords="271,56,417,83"/>
 </map>
 </div>
@@ -1158,7 +1200,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscl_1_1KdTree_a327fa277838d663ed68669d31978a829_icgraph.png" border="0" usemap="#classscl_1_1KdTree_a327fa277838d663ed68669d31978a829_icgraph" alt=""/></div>
 <map name="classscl_1_1KdTree_a327fa277838d663ed68669d31978a829_icgraph" id="classscl_1_1KdTree_a327fa277838d663ed68669d31978a829_icgraph">
-<area shape="rect" id="node2" href="classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="scl::KdTree::points" alt="" coords="274,5,406,32"/>
+<area shape="rect" id="node2" href="classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="全データ " alt="" coords="274,5,406,32"/>
 <area shape="rect" id="node3" href="classscl_1_1KdTree.html#a828409d630bfc7c95d2966f243504dc4" title="scl::KdTree::nnSearch" alt="" coords="264,56,416,83"/>
 </map>
 </div>
@@ -1217,9 +1259,9 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscl_1_1KdTree_aaa908e2a11c36a6b234c119c1df5034e_cgraph.png" border="0" usemap="#classscl_1_1KdTree_aaa908e2a11c36a6b234c119c1df5034e_cgraph" alt=""/></div>
 <map name="classscl_1_1KdTree_aaa908e2a11c36a6b234c119c1df5034e_cgraph" id="classscl_1_1KdTree_aaa908e2a11c36a6b234c119c1df5034e_cgraph">
-<area shape="rect" id="node2" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="scl::KdTree::Node::axis" alt="" coords="287,5,447,32"/>
+<area shape="rect" id="node2" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="分割した軸 " alt="" coords="287,5,447,32"/>
 <area shape="rect" id="node3" href="classscl_1_1KdTree.html#aec30f91a2b2f5f589dca86166fd4cedb" title="scl::KdTree::distance" alt="" coords="293,56,440,83"/>
-<area shape="rect" id="node4" href="classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a85c442933928a9ac477ccbbe1a6e888c" title="scl::KdTree::BoundedPriority\lQueue::push" alt="" coords="272,107,461,149"/>
+<area shape="rect" id="node4" href="classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a85c442933928a9ac477ccbbe1a6e888c" title="キューにデータ追加 " alt="" coords="272,107,461,149"/>
 </map>
 </div>
 </p>
@@ -1229,7 +1271,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscl_1_1KdTree_aaa908e2a11c36a6b234c119c1df5034e_icgraph.png" border="0" usemap="#classscl_1_1KdTree_aaa908e2a11c36a6b234c119c1df5034e_icgraph" alt=""/></div>
 <map name="classscl_1_1KdTree_aaa908e2a11c36a6b234c119c1df5034e_icgraph" id="classscl_1_1KdTree_aaa908e2a11c36a6b234c119c1df5034e_icgraph">
-<area shape="rect" id="node2" href="classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="scl::KdTree::points" alt="" coords="479,5,611,32"/>
+<area shape="rect" id="node2" href="classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="全データ " alt="" coords="479,5,611,32"/>
 <area shape="rect" id="node3" href="classscl_1_1KdTree.html#a03527e2f394b328ef20b7aaabc5a311b" title="scl::KdTree::knnSearch" alt="" coords="272,31,431,57"/>
 </map>
 </div>
@@ -1288,7 +1330,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscl_1_1KdTree_a5cfc75965431d83b9a22d00ba6f26df0_cgraph.png" border="0" usemap="#classscl_1_1KdTree_a5cfc75965431d83b9a22d00ba6f26df0_cgraph" alt=""/></div>
 <map name="classscl_1_1KdTree_a5cfc75965431d83b9a22d00ba6f26df0_cgraph" id="classscl_1_1KdTree_a5cfc75965431d83b9a22d00ba6f26df0_cgraph">
-<area shape="rect" id="node2" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="scl::KdTree::Node::axis" alt="" coords="227,5,387,32"/>
+<area shape="rect" id="node2" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="分割した軸 " alt="" coords="227,5,387,32"/>
 <area shape="rect" id="node3" href="classscl_1_1KdTree.html#aec30f91a2b2f5f589dca86166fd4cedb" title="scl::KdTree::distance" alt="" coords="233,56,380,83"/>
 </map>
 </div>
@@ -1299,7 +1341,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscl_1_1KdTree_a5cfc75965431d83b9a22d00ba6f26df0_icgraph.png" border="0" usemap="#classscl_1_1KdTree_a5cfc75965431d83b9a22d00ba6f26df0_icgraph" alt=""/></div>
 <map name="classscl_1_1KdTree_a5cfc75965431d83b9a22d00ba6f26df0_icgraph" id="classscl_1_1KdTree_a5cfc75965431d83b9a22d00ba6f26df0_icgraph">
-<area shape="rect" id="node2" href="classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="scl::KdTree::points" alt="" coords="448,5,580,32"/>
+<area shape="rect" id="node2" href="classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="全データ " alt="" coords="448,5,580,32"/>
 <area shape="rect" id="node3" href="classscl_1_1KdTree.html#a5b2de3ac7fff76574dd1ac8105da0441" title="scl::KdTree::radiusSearch" alt="" coords="227,31,400,57"/>
 <area shape="rect" id="node4" href="classscl_1_1KdTree.html#aabd795a26c9d5b8798f588143279de62" title="scl::KdTree::radiusSearch\lRecursive" alt="" coords="227,82,400,123"/>
 </map>
@@ -1367,7 +1409,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscl_1_1KdTree_aabd795a26c9d5b8798f588143279de62_cgraph.png" border="0" usemap="#classscl_1_1KdTree_aabd795a26c9d5b8798f588143279de62_cgraph" alt=""/></div>
 <map name="classscl_1_1KdTree_aabd795a26c9d5b8798f588143279de62_cgraph" id="classscl_1_1KdTree_aabd795a26c9d5b8798f588143279de62_cgraph">
-<area shape="rect" id="node2" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="scl::KdTree::Node::axis" alt="" coords="448,5,608,32"/>
+<area shape="rect" id="node2" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="分割した軸 " alt="" coords="448,5,608,32"/>
 <area shape="rect" id="node3" href="classscl_1_1KdTree.html#a5cfc75965431d83b9a22d00ba6f26df0" title="scl::KdTree::radiusSearch\lRecursive" alt="" coords="227,25,400,66"/>
 <area shape="rect" id="node4" href="classscl_1_1KdTree.html#aec30f91a2b2f5f589dca86166fd4cedb" title="scl::KdTree::distance" alt="" coords="455,60,601,87"/>
 </map>
@@ -1427,9 +1469,9 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscl_1_1KdTree_a1b45d4f1d974a6c99ddba23b9053e2ba_cgraph.png" border="0" usemap="#classscl_1_1KdTree_a1b45d4f1d974a6c99ddba23b9053e2ba_cgraph" alt=""/></div>
 <map name="classscl_1_1KdTree_a1b45d4f1d974a6c99ddba23b9053e2ba_cgraph" id="classscl_1_1KdTree_a1b45d4f1d974a6c99ddba23b9053e2ba_cgraph">
-<area shape="rect" id="node2" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="scl::KdTree::Node::axis" alt="" coords="241,5,401,32"/>
+<area shape="rect" id="node2" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="分割した軸 " alt="" coords="241,5,401,32"/>
 <area shape="rect" id="node3" href="classscl_1_1KdTree.html#aec30f91a2b2f5f589dca86166fd4cedb" title="scl::KdTree::distance" alt="" coords="248,56,395,83"/>
-<area shape="rect" id="node4" href="classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a85c442933928a9ac477ccbbe1a6e888c" title="scl::KdTree::BoundedPriority\lQueue::push" alt="" coords="227,107,416,149"/>
+<area shape="rect" id="node4" href="classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a85c442933928a9ac477ccbbe1a6e888c" title="キューにデータ追加 " alt="" coords="227,107,416,149"/>
 </map>
 </div>
 </p>
@@ -1439,7 +1481,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscl_1_1KdTree_a1b45d4f1d974a6c99ddba23b9053e2ba_icgraph.png" border="0" usemap="#classscl_1_1KdTree_a1b45d4f1d974a6c99ddba23b9053e2ba_icgraph" alt=""/></div>
 <map name="classscl_1_1KdTree_a1b45d4f1d974a6c99ddba23b9053e2ba_icgraph" id="classscl_1_1KdTree_a1b45d4f1d974a6c99ddba23b9053e2ba_icgraph">
-<area shape="rect" id="node2" href="classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="scl::KdTree::points" alt="" coords="448,13,580,39"/>
+<area shape="rect" id="node2" href="classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="全データ " alt="" coords="448,13,580,39"/>
 <area shape="rect" id="node3" href="classscl_1_1KdTree.html#a5b2de3ac7fff76574dd1ac8105da0441" title="scl::KdTree::radiusSearch" alt="" coords="227,38,400,65"/>
 </map>
 </div>
@@ -1498,7 +1540,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscl_1_1KdTree_a63c300abd75cd02c5f0a871debb056f6_cgraph.png" border="0" usemap="#classscl_1_1KdTree_a63c300abd75cd02c5f0a871debb056f6_cgraph" alt=""/></div>
 <map name="classscl_1_1KdTree_a63c300abd75cd02c5f0a871debb056f6_cgraph" id="classscl_1_1KdTree_a63c300abd75cd02c5f0a871debb056f6_cgraph">
-<area shape="rect" id="node2" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="scl::KdTree::Node::axis" alt="" coords="224,13,384,39"/>
+<area shape="rect" id="node2" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="分割した軸 " alt="" coords="224,13,384,39"/>
 </map>
 </div>
 </p>
@@ -1508,7 +1550,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscl_1_1KdTree_a63c300abd75cd02c5f0a871debb056f6_icgraph.png" border="0" usemap="#classscl_1_1KdTree_a63c300abd75cd02c5f0a871debb056f6_icgraph" alt=""/></div>
 <map name="classscl_1_1KdTree_a63c300abd75cd02c5f0a871debb056f6_icgraph" id="classscl_1_1KdTree_a63c300abd75cd02c5f0a871debb056f6_icgraph">
-<area shape="rect" id="node2" href="classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="scl::KdTree::points" alt="" coords="443,5,575,32"/>
+<area shape="rect" id="node2" href="classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="全データ " alt="" coords="443,5,575,32"/>
 <area shape="rect" id="node3" href="classscl_1_1KdTree.html#a35dc60a31ba0b2848085c68cb2fc0bab" title="scl::KdTree::rangeSearch" alt="" coords="224,31,395,57"/>
 <area shape="rect" id="node4" href="classscl_1_1KdTree.html#a6c75000e5908548660ed4432566c521f" title="scl::KdTree::rangeSearch\lRecursive" alt="" coords="224,82,395,123"/>
 </map>
@@ -1576,7 +1618,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscl_1_1KdTree_a6c75000e5908548660ed4432566c521f_cgraph.png" border="0" usemap="#classscl_1_1KdTree_a6c75000e5908548660ed4432566c521f_cgraph" alt=""/></div>
 <map name="classscl_1_1KdTree_a6c75000e5908548660ed4432566c521f_cgraph" id="classscl_1_1KdTree_a6c75000e5908548660ed4432566c521f_cgraph">
-<area shape="rect" id="node2" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="scl::KdTree::Node::axis" alt="" coords="443,5,603,32"/>
+<area shape="rect" id="node2" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="分割した軸 " alt="" coords="443,5,603,32"/>
 <area shape="rect" id="node3" href="classscl_1_1KdTree.html#a63c300abd75cd02c5f0a871debb056f6" title="scl::KdTree::rangeSearch\lRecursive" alt="" coords="224,27,395,69"/>
 <area shape="rect" id="node4" href="classscl_1_1KdTree.html#aec30f91a2b2f5f589dca86166fd4cedb" title="scl::KdTree::distance" alt="" coords="236,93,383,120"/>
 </map>
@@ -1636,8 +1678,8 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscl_1_1KdTree_ae144dc3a58efb059cfa493dc1c6268f6_cgraph.png" border="0" usemap="#classscl_1_1KdTree_ae144dc3a58efb059cfa493dc1c6268f6_cgraph" alt=""/></div>
 <map name="classscl_1_1KdTree_ae144dc3a58efb059cfa493dc1c6268f6_cgraph" id="classscl_1_1KdTree_ae144dc3a58efb059cfa493dc1c6268f6_cgraph">
-<area shape="rect" id="node2" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="scl::KdTree::Node::axis" alt="" coords="239,5,399,32"/>
-<area shape="rect" id="node3" href="classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a85c442933928a9ac477ccbbe1a6e888c" title="scl::KdTree::BoundedPriority\lQueue::push" alt="" coords="224,57,413,98"/>
+<area shape="rect" id="node2" href="classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="分割した軸 " alt="" coords="239,5,399,32"/>
+<area shape="rect" id="node3" href="classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a85c442933928a9ac477ccbbe1a6e888c" title="キューにデータ追加 " alt="" coords="224,57,413,98"/>
 <area shape="rect" id="node4" href="classscl_1_1KdTree.html#aec30f91a2b2f5f589dca86166fd4cedb" title="scl::KdTree::distance" alt="" coords="245,123,392,149"/>
 </map>
 </div>
@@ -1648,7 +1690,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscl_1_1KdTree_ae144dc3a58efb059cfa493dc1c6268f6_icgraph.png" border="0" usemap="#classscl_1_1KdTree_ae144dc3a58efb059cfa493dc1c6268f6_icgraph" alt=""/></div>
 <map name="classscl_1_1KdTree_ae144dc3a58efb059cfa493dc1c6268f6_icgraph" id="classscl_1_1KdTree_ae144dc3a58efb059cfa493dc1c6268f6_icgraph">
-<area shape="rect" id="node2" href="classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="scl::KdTree::points" alt="" coords="443,13,575,39"/>
+<area shape="rect" id="node2" href="classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="全データ " alt="" coords="443,13,575,39"/>
 <area shape="rect" id="node3" href="classscl_1_1KdTree.html#a35dc60a31ba0b2848085c68cb2fc0bab" title="scl::KdTree::rangeSearch" alt="" coords="224,38,395,65"/>
 </map>
 </div>

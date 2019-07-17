@@ -1,5 +1,5 @@
 <map id="scl::KdTree::points" name="scl::KdTree::points">
-<area shape="rect" id="node2" href="$classscl_1_1KdTree.html#a08c6232bee9722257283edebfc4bbedc" title="scl::KdTree::build" alt="" coords="210,563,334,589"/>
+<area shape="rect" id="node2" href="$classscl_1_1KdTree.html#a08c6232bee9722257283edebfc4bbedc" title="kd&#45;treeの構築 " alt="" coords="210,563,334,589"/>
 <area shape="rect" id="node3" href="$classscl_1_1KdTree.html#a202f818d101873dc96fc34e8c05585e9" title="scl::KdTree::buildRecursive" alt="" coords="425,563,607,589"/>
 <area shape="rect" id="node5" href="$classscl_1_1KdTree_1_1Node.html#a4e12e18d46b166b18aa98c17831318d6" title="scl::KdTree::Node::lo" alt="" coords="695,537,841,564"/>
 <area shape="rect" id="node6" href="$classscl_1_1KdTree_1_1Node.html#a77ecd3306ad3c5baa8160f249e363b22" title="scl::KdTree::Node::hi" alt="" coords="695,627,841,653"/>
@@ -14,6 +14,6 @@
 <area shape="rect" id="node16" href="$classscl_1_1KdTree.html#a63c300abd75cd02c5f0a871debb056f6" title="scl::KdTree::rangeSearch\lRecursive" alt="" coords="431,135,601,177"/>
 <area shape="rect" id="node17" href="$classscl_1_1KdTree.html#ae144dc3a58efb059cfa493dc1c6268f6" title="scl::KdTree::rangeSearch\lRecursiveSort" alt="" coords="431,201,601,242"/>
 <area shape="rect" id="node18" href="$classscl_1_1KdTree.html#a327fa277838d663ed68669d31978a829" title="scl::KdTree::nnSearchRecursive" alt="" coords="411,397,621,424"/>
-<area shape="rect" id="node4" href="$classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="scl::KdTree::Node::axis" alt="" coords="688,273,848,300"/>
-<area shape="rect" id="node11" href="$classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a85c442933928a9ac477ccbbe1a6e888c" title="scl::KdTree::BoundedPriority\lQueue::push" alt="" coords="673,201,863,242"/>
+<area shape="rect" id="node4" href="$classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="分割した軸 " alt="" coords="688,273,848,300"/>
+<area shape="rect" id="node11" href="$classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a85c442933928a9ac477ccbbe1a6e888c" title="キューにデータ追加 " alt="" coords="673,201,863,242"/>
 </map>

@@ -136,10 +136,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0201f3d21694b42a9d59edbd9538ed33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscl_1_1XMeans.html#a0201f3d21694b42a9d59edbd9538ed33">setParameters</a> (const std::size_t max_iteration, const double tolerance, const std::size_t max_pp_trial=3, const <a class="el" href="classscl_1_1KMeans.html#af06aa7b562d4b32603e0d444a5958eb8">KMeans::InitMethod</a> method=<a class="el" href="classscl_1_1KMeans.html#af06aa7b562d4b32603e0d444a5958eb8a73ccb821faf78a4964cc8ae585466429">KMeans::PLUSPLUS</a>)</td></tr>
 <tr class="memdesc:a0201f3d21694b42a9d59edbd9538ed33"><td class="mdescLeft">&#160;</td><td class="mdescRight">k-means のパラメータ設定  <a href="#a0201f3d21694b42a9d59edbd9538ed33">More...</a><br /></td></tr>
 <tr class="separator:a0201f3d21694b42a9d59edbd9538ed33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6bd95662b30886437228d4b908dfd384"><td class="memTemplParams" colspan="2">template&lt;class DataType &gt; </td></tr>
-<tr class="memitem:a6bd95662b30886437228d4b908dfd384"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classscl_1_1XMeans.html#a6bd95662b30886437228d4b908dfd384">clustering</a> (const std::size_t dim, const std::vector&lt; DataType &gt; &amp;dataset, const std::size_t init_num_clusters, std::vector&lt; std::vector&lt; double &gt; &gt; &amp;centroids)</td></tr>
-<tr class="memdesc:a6bd95662b30886437228d4b908dfd384"><td class="mdescLeft">&#160;</td><td class="mdescRight">クラスタリング  <a href="#a6bd95662b30886437228d4b908dfd384">More...</a><br /></td></tr>
-<tr class="separator:a6bd95662b30886437228d4b908dfd384"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e14f70eb1750170b2b0bbdf33c52788"><td class="memTemplParams" colspan="2">template&lt;class DataType &gt; </td></tr>
+<tr class="memitem:a0e14f70eb1750170b2b0bbdf33c52788"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classscl_1_1XMeans.html#a0e14f70eb1750170b2b0bbdf33c52788">clustering</a> (const std::size_t dim, const std::vector&lt; DataType &gt; &amp;dataset, const std::size_t init_num_clusters, std::vector&lt; std::vector&lt; double &gt; &gt; &amp;centroids, const std::size_t min_num=5)</td></tr>
+<tr class="memdesc:a0e14f70eb1750170b2b0bbdf33c52788"><td class="mdescLeft">&#160;</td><td class="mdescRight">クラスタリング  <a href="#a0e14f70eb1750170b2b0bbdf33c52788">More...</a><br /></td></tr>
+<tr class="separator:a0e14f70eb1750170b2b0bbdf33c52788"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6dd8c39a62e80123d39e1a07a3fdc39c"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::vector&lt; std::size_t &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscl_1_1XMeans.html#a6dd8c39a62e80123d39e1a07a3fdc39c">getClusters</a> () const </td></tr>
 <tr class="memdesc:a6dd8c39a62e80123d39e1a07a3fdc39c"><td class="mdescLeft">&#160;</td><td class="mdescRight">全クラスタの情報取得  <a href="#a6dd8c39a62e80123d39e1a07a3fdc39c">More...</a><br /></td></tr>
 <tr class="separator:a6dd8c39a62e80123d39e1a07a3fdc39c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,10 +149,10 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:acfb549e06764318010fc810529b4babb"><td class="memTemplParams" colspan="2">template&lt;class DataType &gt; </td></tr>
-<tr class="memitem:acfb549e06764318010fc810529b4babb"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classscl_1_1XMeans.html#acfb549e06764318010fc810529b4babb">recursivelySplit</a> (const std::vector&lt; DataType &gt; &amp;dataset, const std::vector&lt; std::size_t &gt; &amp;indices, const std::vector&lt; double &gt; &amp;centroid)</td></tr>
-<tr class="memdesc:acfb549e06764318010fc810529b4babb"><td class="mdescLeft">&#160;</td><td class="mdescRight">split data  <a href="#acfb549e06764318010fc810529b4babb">More...</a><br /></td></tr>
-<tr class="separator:acfb549e06764318010fc810529b4babb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c98906986f9e464ffd3adffec38bfd4"><td class="memTemplParams" colspan="2">template&lt;class DataType &gt; </td></tr>
+<tr class="memitem:a0c98906986f9e464ffd3adffec38bfd4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classscl_1_1XMeans.html#a0c98906986f9e464ffd3adffec38bfd4">recursivelySplit</a> (const std::vector&lt; DataType &gt; &amp;dataset, const std::vector&lt; std::size_t &gt; &amp;indices, const std::vector&lt; double &gt; &amp;centroid, const std::size_t min_num)</td></tr>
+<tr class="memdesc:a0c98906986f9e464ffd3adffec38bfd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">split data (x-means main algorithm)  <a href="#a0c98906986f9e464ffd3adffec38bfd4">More...</a><br /></td></tr>
+<tr class="separator:a0c98906986f9e464ffd3adffec38bfd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -254,14 +254,14 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="a6bd95662b30886437228d4b908dfd384"></a>
+<a class="anchor" id="a0e14f70eb1750170b2b0bbdf33c52788"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class DataType &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">bool scl::XMeans::clustering </td>
+          <td class="memname">void scl::XMeans::clustering </td>
           <td>(</td>
           <td class="paramtype">const std::size_t&#160;</td>
           <td class="paramname"><em>dim</em>, </td>
@@ -282,7 +282,13 @@ template&lt;class DataType &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::vector&lt; std::vector&lt; double &gt; &gt; &amp;&#160;</td>
-          <td class="paramname"><em>centroids</em>&#160;</td>
+          <td class="paramname"><em>centroids</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::size_t&#160;</td>
+          <td class="paramname"><em>min_num</em> = <code>5</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -305,20 +311,20 @@ template&lt;class DataType &gt; </div>
     <tr><td class="paramdir">[in]</td><td class="paramname">dataset</td><td>クラスタリングするデータセット </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">init_num_clusters</td><td>初期クラスタ数 </td></tr>
     <tr><td class="paramdir">[in,out]</td><td class="paramname">centroids</td><td>各クラスタの重心位置 ( method が <a class="el" href="classscl_1_1KMeans.html#af06aa7b562d4b32603e0d444a5958eb8a058ff8e44a58623f586dff12c5d3d02e">KMeans::MANUAL</a> の時だけ[in]も使う) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">min_num</td><td>各クラスタ内の最小データ数 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>クラスタリングが収束したか</dd></dl>
-<p>DataType needs [] access operator </p>
+<dl class="section attention"><dt>Attention</dt><dd>DataType needs [] access operator </dd></dl>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classscl_1_1XMeans_a6bd95662b30886437228d4b908dfd384_cgraph.png" border="0" usemap="#classscl_1_1XMeans_a6bd95662b30886437228d4b908dfd384_cgraph" alt=""/></div>
-<map name="classscl_1_1XMeans_a6bd95662b30886437228d4b908dfd384_cgraph" id="classscl_1_1XMeans_a6bd95662b30886437228d4b908dfd384_cgraph">
+<div class="center"><img src="classscl_1_1XMeans_a0e14f70eb1750170b2b0bbdf33c52788_cgraph.png" border="0" usemap="#classscl_1_1XMeans_a0e14f70eb1750170b2b0bbdf33c52788_cgraph" alt=""/></div>
+<map name="classscl_1_1XMeans_a0e14f70eb1750170b2b0bbdf33c52788_cgraph" id="classscl_1_1XMeans_a0e14f70eb1750170b2b0bbdf33c52788_cgraph">
 <area shape="rect" id="node2" href="classscl_1_1KMeans.html#a1a1fe0c9948cfc66e3bae9ca24db3b37" title="クラスタリング " alt="" coords="449,137,607,163"/>
 <area shape="rect" id="node9" href="classscl_1_1KMeans.html#a597d07c24cfd0882fee521b2e020cfcd" title="全クラスタの情報取得 " alt="" coords="443,187,613,214"/>
-<area shape="rect" id="node10" href="classscl_1_1XMeans.html#acfb549e06764318010fc810529b4babb" title="split data " alt="" coords="212,268,379,309"/>
+<area shape="rect" id="node10" href="classscl_1_1XMeans.html#a0c98906986f9e464ffd3adffec38bfd4" title="split data (x&#45;means main algorithm) " alt="" coords="212,268,379,309"/>
 <area shape="rect" id="node3" href="classscl_1_1KMeans.html#a606a8657d130805a1b0a312fb96b4fba" title="乱数によるクラスタ重心の初期化 " alt="" coords="686,123,862,164"/>
 <area shape="rect" id="node4" href="classscl_1_1KMeans.html#af7974e79732e8b009d6b1b0f4fdc76de" title="クラスタ重心の計算 " alt="" coords="919,195,1101,222"/>
 <area shape="rect" id="node5" href="classscl_1_1KMeans.html#a239e8f2f97945237934a273ad9ea1bae" title="頭から順番にクラスタリングして重心初期化 " alt="" coords="686,188,862,229"/>
@@ -375,7 +381,7 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="acfb549e06764318010fc810529b4babb"></a>
+<a class="anchor" id="a0c98906986f9e464ffd3adffec38bfd4"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -400,7 +406,13 @@ template&lt;class DataType &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::vector&lt; double &gt; &amp;&#160;</td>
-          <td class="paramname"><em>centroid</em>&#160;</td>
+          <td class="paramname"><em>centroid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::size_t&#160;</td>
+          <td class="paramname"><em>min_num</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -415,13 +427,22 @@ template&lt;class DataType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>split data </p>
+<p>split data (x-means main algorithm) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dataset</td><td>クラスタリングする全データ </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">indices</td><td>分割予定のクラスタのインデックスリスト </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">centered</td><td>分割予定のクラスタの重心 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">min_num</td><td>クラスタ内の最小データ数 (これ以下なら分割しない) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classscl_1_1XMeans_acfb549e06764318010fc810529b4babb_cgraph.png" border="0" usemap="#classscl_1_1XMeans_acfb549e06764318010fc810529b4babb_cgraph" alt=""/></div>
-<map name="classscl_1_1XMeans_acfb549e06764318010fc810529b4babb_cgraph" id="classscl_1_1XMeans_acfb549e06764318010fc810529b4babb_cgraph">
+<div class="center"><img src="classscl_1_1XMeans_a0c98906986f9e464ffd3adffec38bfd4_cgraph.png" border="0" usemap="#classscl_1_1XMeans_a0c98906986f9e464ffd3adffec38bfd4_cgraph" alt=""/></div>
+<map name="classscl_1_1XMeans_a0c98906986f9e464ffd3adffec38bfd4_cgraph" id="classscl_1_1XMeans_a0c98906986f9e464ffd3adffec38bfd4_cgraph">
 <area shape="rect" id="node2" href="classscl_1_1KMeans.html#a1a1fe0c9948cfc66e3bae9ca24db3b37" title="クラスタリング " alt="" coords="242,162,401,189"/>
 <area shape="rect" id="node9" href="classscl_1_1KMeans.html#a597d07c24cfd0882fee521b2e020cfcd" title="全クラスタの情報取得 " alt="" coords="236,254,407,281"/>
 <area shape="rect" id="node10" href="namespacescl_1_1normal.html#ac06cfcadff3709c2b41587984c74303b" title="対数尤度 &#160;&#160;&#160;" alt="" coords="223,355,420,382"/>
@@ -444,9 +465,9 @@ Here is the call graph for this function:</div>
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classscl_1_1XMeans_acfb549e06764318010fc810529b4babb_icgraph.png" border="0" usemap="#classscl_1_1XMeans_acfb549e06764318010fc810529b4babb_icgraph" alt=""/></div>
-<map name="classscl_1_1XMeans_acfb549e06764318010fc810529b4babb_icgraph" id="classscl_1_1XMeans_acfb549e06764318010fc810529b4babb_icgraph">
-<area shape="rect" id="node2" href="classscl_1_1XMeans.html#a6bd95662b30886437228d4b908dfd384" title="クラスタリング " alt="" coords="220,13,379,39"/>
+<div class="center"><img src="classscl_1_1XMeans_a0c98906986f9e464ffd3adffec38bfd4_icgraph.png" border="0" usemap="#classscl_1_1XMeans_a0c98906986f9e464ffd3adffec38bfd4_icgraph" alt=""/></div>
+<map name="classscl_1_1XMeans_a0c98906986f9e464ffd3adffec38bfd4_icgraph" id="classscl_1_1XMeans_a0c98906986f9e464ffd3adffec38bfd4_icgraph">
+<area shape="rect" id="node2" href="classscl_1_1XMeans.html#a0e14f70eb1750170b2b0bbdf33c52788" title="クラスタリング " alt="" coords="220,13,379,39"/>
 </map>
 </div>
 </p>
