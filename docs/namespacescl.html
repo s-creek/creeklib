@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('namespacescl.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
@@ -111,6 +112,14 @@ $(document).ready(function(){initNavTree('namespacescl.html','');});
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespacescl_1_1internal"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescl_1_1internal.html">internal</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacescl_1_1normal"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescl_1_1normal.html">normal</a></td></tr>
+<tr class="memdesc:namespacescl_1_1normal"><td class="mdescLeft">&#160;</td><td class="mdescRight">正規分布モデル <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscl_1_1KdTree.html">KdTree</a></td></tr>
@@ -125,28 +134,191 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:afd785d69790eac2553b70b1ba89f80ce"><td class="memTemplParams" colspan="2">template&lt;class ValueType  = double, class Matrix &gt; </td></tr>
+<tr class="memitem:afd785d69790eac2553b70b1ba89f80ce"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix&lt; ValueType, Eigen::Dynamic, Eigen::Dynamic &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacescl.html#afd785d69790eac2553b70b1ba89f80ce">toEigenMatrix</a> (Matrix &amp;matrix)</td></tr>
+<tr class="memdesc:afd785d69790eac2553b70b1ba89f80ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Eigen::Matrix from matrix.  <a href="#afd785d69790eac2553b70b1ba89f80ce">More...</a><br /></td></tr>
+<tr class="separator:afd785d69790eac2553b70b1ba89f80ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4ac98127b4e3ec18eeaff6037c49b75"><td class="memTemplParams" colspan="2">template&lt;class Vector &gt; </td></tr>
+<tr class="memitem:ae4ac98127b4e3ec18eeaff6037c49b75"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix&lt; typename Vector::value_type, Eigen::Dynamic, 1 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacescl.html#ae4ac98127b4e3ec18eeaff6037c49b75">toEigenVector</a> (Vector &amp;vector)</td></tr>
+<tr class="memdesc:ae4ac98127b4e3ec18eeaff6037c49b75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Eigen::Vector from vector.  <a href="#ae4ac98127b4e3ec18eeaff6037c49b75">More...</a><br /></td></tr>
+<tr class="separator:ae4ac98127b4e3ec18eeaff6037c49b75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec93a7297634edf173c474dfc3130dca"><td class="memTemplParams" colspan="2">template&lt;class DataType &gt; </td></tr>
+<tr class="memitem:aec93a7297634edf173c474dfc3130dca"><td class="memTemplItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacescl.html#aec93a7297634edf173c474dfc3130dca">toEigenMatrix</a> (const std::size_t dim, const std::vector&lt; DataType &gt; &amp;stl_mat)</td></tr>
+<tr class="memdesc:aec93a7297634edf173c474dfc3130dca"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert matrix data : STL -&gt; Eigen  <a href="#aec93a7297634edf173c474dfc3130dca">More...</a><br /></td></tr>
+<tr class="separator:aec93a7297634edf173c474dfc3130dca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fa60a29f3e28dc961a4d81ee724fb42"><td class="memTemplParams" colspan="2">template&lt;class DataType &gt; </td></tr>
+<tr class="memitem:a0fa60a29f3e28dc961a4d81ee724fb42"><td class="memTemplItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacescl.html#a0fa60a29f3e28dc961a4d81ee724fb42">toEigenMatrix</a> (const std::size_t dim, const std::vector&lt; DataType &gt; &amp;stl_mat, const std::vector&lt; std::size_t &gt; &amp;indices)</td></tr>
+<tr class="memdesc:a0fa60a29f3e28dc961a4d81ee724fb42"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert matrix data : STL -&gt; Eigen  <a href="#a0fa60a29f3e28dc961a4d81ee724fb42">More...</a><br /></td></tr>
+<tr class="separator:a0fa60a29f3e28dc961a4d81ee724fb42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acab90aaeee418e7bb8bb1021964e213d"><td class="memTemplParams" colspan="2">template&lt;class DataType &gt; </td></tr>
+<tr class="memitem:acab90aaeee418e7bb8bb1021964e213d"><td class="memTemplItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacescl.html#acab90aaeee418e7bb8bb1021964e213d">toEigenVector</a> (const std::size_t dim, const DataType data)</td></tr>
+<tr class="memdesc:acab90aaeee418e7bb8bb1021964e213d"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert vector data : DataType -&gt; Eigen  <a href="#acab90aaeee418e7bb8bb1021964e213d">More...</a><br /></td></tr>
+<tr class="separator:acab90aaeee418e7bb8bb1021964e213d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc4a2d3c5d662659ddfe5aeb88a1639f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescl.html#afc4a2d3c5d662659ddfe5aeb88a1639f">calcCovariance</a> (const Eigen::MatrixXd &amp;data_set, Eigen::MatrixXd &amp;covariance)</td></tr>
 <tr class="memdesc:afc4a2d3c5d662659ddfe5aeb88a1639f"><td class="mdescLeft">&#160;</td><td class="mdescRight">calc covariance-matrix  <a href="#afc4a2d3c5d662659ddfe5aeb88a1639f">More...</a><br /></td></tr>
 <tr class="separator:afc4a2d3c5d662659ddfe5aeb88a1639f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ee2587dffb45f754acddbc21a56deae"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescl.html#a2ee2587dffb45f754acddbc21a56deae">calcPdf</a> (const Eigen::VectorXd &amp;x, const Eigen::VectorXd &amp;mean, const Eigen::MatrixXd &amp;covariance)</td></tr>
-<tr class="memdesc:a2ee2587dffb45f754acddbc21a56deae"><td class="mdescLeft">&#160;</td><td class="mdescRight">probability density function  <a href="#a2ee2587dffb45f754acddbc21a56deae">More...</a><br /></td></tr>
-<tr class="separator:a2ee2587dffb45f754acddbc21a56deae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad549c5e34c6afab5740341a6a671f423"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescl.html#ad549c5e34c6afab5740341a6a671f423">calcLogLikelihood</a> (const Eigen::MatrixXd &amp;data_set)</td></tr>
-<tr class="memdesc:ad549c5e34c6afab5740341a6a671f423"><td class="mdescLeft">&#160;</td><td class="mdescRight">対数尤度  <a href="#ad549c5e34c6afab5740341a6a671f423">More...</a><br /></td></tr>
-<tr class="separator:ad549c5e34c6afab5740341a6a671f423"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab12bf19f48e562bee73bcf4857415f0f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescl.html#ab12bf19f48e562bee73bcf4857415f0f">calcLikelihood</a> (const Eigen::MatrixXd &amp;data_set)</td></tr>
-<tr class="memdesc:ab12bf19f48e562bee73bcf4857415f0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">尤度  <a href="#ab12bf19f48e562bee73bcf4857415f0f">More...</a><br /></td></tr>
-<tr class="separator:ab12bf19f48e562bee73bcf4857415f0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a226f9503c506589b348c5ef18520ac12"><td class="memTemplParams" colspan="2">template&lt;class DataType &gt; </td></tr>
-<tr class="memitem:a226f9503c506589b348c5ef18520ac12"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacescl.html#a226f9503c506589b348c5ef18520ac12">convertStlToEigen</a> (const std::size_t dim, const std::vector&lt; DataType &gt; &amp;stl_mat, Eigen::MatrixXd &amp;eigen_mat)</td></tr>
-<tr class="memdesc:a226f9503c506589b348c5ef18520ac12"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert matrix data STL -&gt; Eigen  <a href="#a226f9503c506589b348c5ef18520ac12">More...</a><br /></td></tr>
-<tr class="separator:a226f9503c506589b348c5ef18520ac12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8e9b85bf513088ffa1abf6af391d2f2"><td class="memTemplParams" colspan="2">template&lt;class DataType &gt; </td></tr>
-<tr class="memitem:ae8e9b85bf513088ffa1abf6af391d2f2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacescl.html#ae8e9b85bf513088ffa1abf6af391d2f2">convertStlToEigen</a> (const std::size_t dim, const std::vector&lt; DataType &gt; &amp;stl_mat, const std::vector&lt; std::size_t &gt; &amp;indices, Eigen::MatrixXd &amp;eigen_mat)</td></tr>
-<tr class="memdesc:ae8e9b85bf513088ffa1abf6af391d2f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert matrix data STL -&gt; Eigen  <a href="#ae8e9b85bf513088ffa1abf6af391d2f2">More...</a><br /></td></tr>
-<tr class="separator:ae8e9b85bf513088ffa1abf6af391d2f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="afd785d69790eac2553b70b1ba89f80ce"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ValueType  = double, class Matrix &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::Matrix&lt;ValueType, Eigen::Dynamic, Eigen::Dynamic&gt; scl::toEigenMatrix </td>
+          <td>(</td>
+          <td class="paramtype">Matrix &amp;&#160;</td>
+          <td class="paramname"><em>matrix</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Eigen::Matrix from matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">matrix</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Eigen::Matrix </dd></dl>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacescl_afd785d69790eac2553b70b1ba89f80ce_cgraph.png" border="0" usemap="#namespacescl_afd785d69790eac2553b70b1ba89f80ce_cgraph" alt=""/></div>
+<map name="namespacescl_afd785d69790eac2553b70b1ba89f80ce_cgraph" id="namespacescl_afd785d69790eac2553b70b1ba89f80ce_cgraph">
+<area shape="rect" id="node2" href="namespacescl_1_1internal.html#a7d8e9e019294ec5c9a3338f3310d0e5d" title="Serialize Matrix to 1D array. " alt="" coords="180,5,373,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae4ac98127b4e3ec18eeaff6037c49b75"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Vector &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::Matrix&lt;typename Vector::value_type, Eigen::Dynamic, 1&gt; scl::toEigenVector </td>
+          <td>(</td>
+          <td class="paramtype">Vector &amp;&#160;</td>
+          <td class="paramname"><em>vector</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Eigen::Vector from vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vector</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Eigen::Vector </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aec93a7297634edf173c474dfc3130dca"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::MatrixXd scl::toEigenMatrix </td>
+          <td>(</td>
+          <td class="paramtype">const std::size_t&#160;</td>
+          <td class="paramname"><em>dim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; DataType &gt; &amp;&#160;</td>
+          <td class="paramname"><em>stl_mat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>convert matrix data : STL -&gt; Eigen </p>
+
+</div>
+</div>
+<a class="anchor" id="a0fa60a29f3e28dc961a4d81ee724fb42"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::MatrixXd scl::toEigenMatrix </td>
+          <td>(</td>
+          <td class="paramtype">const std::size_t&#160;</td>
+          <td class="paramname"><em>dim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; DataType &gt; &amp;&#160;</td>
+          <td class="paramname"><em>stl_mat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::size_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>indices</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>convert matrix data : STL -&gt; Eigen </p>
+
+</div>
+</div>
+<a class="anchor" id="acab90aaeee418e7bb8bb1021964e213d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::VectorXd scl::toEigenVector </td>
+          <td>(</td>
+          <td class="paramtype">const std::size_t&#160;</td>
+          <td class="paramname"><em>dim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const DataType&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>convert vector data : DataType -&gt; Eigen </p>
+
+</div>
+</div>
 <a class="anchor" id="afc4a2d3c5d662659ddfe5aeb88a1639f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -186,195 +358,12 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacescl_afc4a2d3c5d662659ddfe5aeb88a1639f_icgraph.png" border="0" usemap="#namespacescl_afc4a2d3c5d662659ddfe5aeb88a1639f_icgraph" alt=""/></div>
 <map name="namespacescl_afc4a2d3c5d662659ddfe5aeb88a1639f_icgraph" id="namespacescl_afc4a2d3c5d662659ddfe5aeb88a1639f_icgraph">
-<area shape="rect" id="node2" href="namespacescl.html#ad549c5e34c6afab5740341a6a671f423" title="対数尤度 " alt="" coords="191,5,341,32"/>
-<area shape="rect" id="node3" href="namespacescl.html#ab12bf19f48e562bee73bcf4857415f0f" title="尤度 " alt="" coords="201,56,331,83"/>
+<area shape="rect" id="node2" href="namespacescl_1_1normal.html#a89db45c17eee47725544a0ad85c78348" title="対数尤度 &#160;&#160;&#160;" alt="" coords="191,5,388,32"/>
+<area shape="rect" id="node4" href="namespacescl_1_1normal.html#a673988c7f7cf59622d06b757819b0845" title="尤度 &#160;&#160;" alt="" coords="201,56,377,83"/>
+<area shape="rect" id="node3" href="namespacescl_1_1normal.html#ad7af73d4d3d21df061d36e40e3503688" title="対数尤度 " alt="" coords="436,5,633,32"/>
 </map>
 </div>
 </p>
-
-</div>
-</div>
-<a class="anchor" id="a2ee2587dffb45f754acddbc21a56deae"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double scl::calcPdf </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::VectorXd &amp;&#160;</td>
-          <td class="paramname"><em>mean</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>covariance</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>probability density function </p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespacescl_a2ee2587dffb45f754acddbc21a56deae_icgraph.png" border="0" usemap="#namespacescl_a2ee2587dffb45f754acddbc21a56deae_icgraph" alt=""/></div>
-<map name="namespacescl_a2ee2587dffb45f754acddbc21a56deae_icgraph" id="namespacescl_a2ee2587dffb45f754acddbc21a56deae_icgraph">
-<area shape="rect" id="node2" href="namespacescl.html#ad549c5e34c6afab5740341a6a671f423" title="対数尤度 " alt="" coords="144,5,295,32"/>
-<area shape="rect" id="node3" href="namespacescl.html#ab12bf19f48e562bee73bcf4857415f0f" title="尤度 " alt="" coords="155,56,284,83"/>
-</map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="ad549c5e34c6afab5740341a6a671f423"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double scl::calcLogLikelihood </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>data_set</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>対数尤度 </p>
-<dl class="section note"><dt>Note</dt><dd>log(likelihood) = sum( log(pdf) ) </dd></dl>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespacescl_ad549c5e34c6afab5740341a6a671f423_cgraph.png" border="0" usemap="#namespacescl_ad549c5e34c6afab5740341a6a671f423_cgraph" alt=""/></div>
-<map name="namespacescl_ad549c5e34c6afab5740341a6a671f423_cgraph" id="namespacescl_ad549c5e34c6afab5740341a6a671f423_cgraph">
-<area shape="rect" id="node2" href="namespacescl.html#afc4a2d3c5d662659ddfe5aeb88a1639f" title="calc covariance&#45;matrix " alt="" coords="204,5,341,32"/>
-<area shape="rect" id="node3" href="namespacescl.html#a2ee2587dffb45f754acddbc21a56deae" title="probability density function " alt="" coords="227,56,318,83"/>
-</map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="ab12bf19f48e562bee73bcf4857415f0f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double scl::calcLikelihood </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>data_set</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>尤度 </p>
-<p>尤度は確率(密度)を標本個数分だけ掛けてできるもの。 0〜1の間の数で何回もかけ算することになり、ほぼ０になってしまう。 かけ算が足し算にできる計算のしやすさもあり対数尤度とすることが多い。 </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="namespacescl.html#ad549c5e34c6afab5740341a6a671f423" title="対数尤度 ">scl::calcLogLikelihood</a> </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>likelihood = prod(pdf) </dd></dl>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespacescl_ab12bf19f48e562bee73bcf4857415f0f_cgraph.png" border="0" usemap="#namespacescl_ab12bf19f48e562bee73bcf4857415f0f_cgraph" alt=""/></div>
-<map name="namespacescl_ab12bf19f48e562bee73bcf4857415f0f_cgraph" id="namespacescl_ab12bf19f48e562bee73bcf4857415f0f_cgraph">
-<area shape="rect" id="node2" href="namespacescl.html#afc4a2d3c5d662659ddfe5aeb88a1639f" title="calc covariance&#45;matrix " alt="" coords="183,5,320,32"/>
-<area shape="rect" id="node3" href="namespacescl.html#a2ee2587dffb45f754acddbc21a56deae" title="probability density function " alt="" coords="206,56,297,83"/>
-</map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a226f9503c506589b348c5ef18520ac12"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class DataType &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void scl::convertStlToEigen </td>
-          <td>(</td>
-          <td class="paramtype">const std::size_t&#160;</td>
-          <td class="paramname"><em>dim</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; DataType &gt; &amp;&#160;</td>
-          <td class="paramname"><em>stl_mat</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>eigen_mat</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>convert matrix data STL -&gt; Eigen </p>
-
-</div>
-</div>
-<a class="anchor" id="ae8e9b85bf513088ffa1abf6af391d2f2"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class DataType &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void scl::convertStlToEigen </td>
-          <td>(</td>
-          <td class="paramtype">const std::size_t&#160;</td>
-          <td class="paramname"><em>dim</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; DataType &gt; &amp;&#160;</td>
-          <td class="paramname"><em>stl_mat</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; std::size_t &gt; &amp;&#160;</td>
-          <td class="paramname"><em>indices</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>eigen_mat</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>convert matrix data STL -&gt; Eigen </p>
 
 </div>
 </div>

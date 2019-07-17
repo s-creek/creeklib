@@ -176,10 +176,10 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a729508a4ce2a8e783a751a3b7fbcb289"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classscl_1_1KMeans.html#a729508a4ce2a8e783a751a3b7fbcb289">initCentroidsPlusplus</a> (const std::vector&lt; DataType &gt; &amp;data_set, const std::size_t num_clusters, std::vector&lt; std::vector&lt; double &gt; &gt; &amp;centroids)</td></tr>
 <tr class="memdesc:a729508a4ce2a8e783a751a3b7fbcb289"><td class="mdescLeft">&#160;</td><td class="mdescRight">k-means++によるクラスタ重心の初期化  <a href="#a729508a4ce2a8e783a751a3b7fbcb289">More...</a><br /></td></tr>
 <tr class="separator:a729508a4ce2a8e783a751a3b7fbcb289"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f4d5c3dd1f52f6b2ba4ebfb30ebb985"><td class="memTemplParams" colspan="2">template&lt;class DataType &gt; </td></tr>
-<tr class="memitem:a8f4d5c3dd1f52f6b2ba4ebfb30ebb985"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classscl_1_1KMeans.html#a8f4d5c3dd1f52f6b2ba4ebfb30ebb985">calcSquaredDistance</a> (const DataType &amp;point, const std::vector&lt; double &gt; &amp;centroid)</td></tr>
-<tr class="memdesc:a8f4d5c3dd1f52f6b2ba4ebfb30ebb985"><td class="mdescLeft">&#160;</td><td class="mdescRight">データと重心の距離の2乗  <a href="#a8f4d5c3dd1f52f6b2ba4ebfb30ebb985">More...</a><br /></td></tr>
-<tr class="separator:a8f4d5c3dd1f52f6b2ba4ebfb30ebb985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a675fcbb0875bfe28da94d7908ecb73ca"><td class="memTemplParams" colspan="2">template&lt;class DataTypeA , class DataTypeB &gt; </td></tr>
+<tr class="memitem:a675fcbb0875bfe28da94d7908ecb73ca"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classscl_1_1KMeans.html#a675fcbb0875bfe28da94d7908ecb73ca">calcSquaredDistance</a> (const DataTypeA &amp;point_a, const DataTypeB &amp;point_b)</td></tr>
+<tr class="memdesc:a675fcbb0875bfe28da94d7908ecb73ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">データと重心の距離の2乗  <a href="#a675fcbb0875bfe28da94d7908ecb73ca">More...</a><br /></td></tr>
+<tr class="separator:a675fcbb0875bfe28da94d7908ecb73ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a4183eb30c4a70349882c59a4d5503c"><td class="memTemplParams" colspan="2">template&lt;class DataType &gt; </td></tr>
 <tr class="memitem:a0a4183eb30c4a70349882c59a4d5503c"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classscl_1_1KMeans.html#a0a4183eb30c4a70349882c59a4d5503c">updateLabel</a> (const std::vector&lt; DataType &gt; &amp;data_set, const std::vector&lt; std::vector&lt; double &gt; &gt; &amp;centroids)</td></tr>
 <tr class="memdesc:a0a4183eb30c4a70349882c59a4d5503c"><td class="mdescLeft">&#160;</td><td class="mdescRight">ラベルの更新  <a href="#a0a4183eb30c4a70349882c59a4d5503c">More...</a><br /></td></tr>
@@ -331,7 +331,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscl_1_1KMeans_af1a4481e57f8edfd57a96d2ae7cbd287_icgraph.png" border="0" usemap="#classscl_1_1KMeans_af1a4481e57f8edfd57a96d2ae7cbd287_icgraph" alt=""/></div>
 <map name="classscl_1_1KMeans_af1a4481e57f8edfd57a96d2ae7cbd287_icgraph" id="classscl_1_1KMeans_af1a4481e57f8edfd57a96d2ae7cbd287_icgraph">
-<area shape="rect" id="node2" href="classscl_1_1XMeans.html#a41514372b6812275e3568d2aff64de7b" title="k&#45;means のパラメータ設定 " alt="" coords="241,5,429,32"/>
+<area shape="rect" id="node2" href="classscl_1_1XMeans.html#a0201f3d21694b42a9d59edbd9538ed33" title="k&#45;means のパラメータ設定 " alt="" coords="241,5,429,32"/>
 </map>
 </div>
 </p>
@@ -412,7 +412,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" id="node4" href="classscl_1_1KMeans.html#a361d32ee6e1787219ec381832ecf7bf2" title="頭から順番にクラスタリングして重心初期化 " alt="" coords="212,123,388,164"/>
 <area shape="rect" id="node5" href="classscl_1_1KMeans.html#a729508a4ce2a8e783a751a3b7fbcb289" title="k&#45;means++によるクラスタ重心の初期化 " alt="" coords="212,188,388,229"/>
 <area shape="rect" id="node7" href="classscl_1_1KMeans.html#a0a4183eb30c4a70349882c59a4d5503c" title="ラベルの更新 " alt="" coords="213,254,387,281"/>
-<area shape="rect" id="node6" href="classscl_1_1KMeans.html#a8f4d5c3dd1f52f6b2ba4ebfb30ebb985" title="データと重心の距離の2乗 " alt="" coords="440,217,615,259"/>
+<area shape="rect" id="node6" href="classscl_1_1KMeans.html#a675fcbb0875bfe28da94d7908ecb73ca" title="データと重心の距離の2乗 " alt="" coords="440,217,615,259"/>
 </map>
 </div>
 </p>
@@ -423,7 +423,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="classscl_1_1KMeans_a232f760d441960e6c0b52a87e3692cdf_icgraph.png" border="0" usemap="#classscl_1_1KMeans_a232f760d441960e6c0b52a87e3692cdf_icgraph" alt=""/></div>
 <map name="classscl_1_1KMeans_a232f760d441960e6c0b52a87e3692cdf_icgraph" id="classscl_1_1KMeans_a232f760d441960e6c0b52a87e3692cdf_icgraph">
 <area shape="rect" id="node2" href="classscl_1_1KMeans.html#a752689be0f9f7a149f1291426777eb4e" title="クラスタリング " alt="" coords="212,5,371,32"/>
-<area shape="rect" id="node3" href="classscl_1_1XMeans.html#a045d9016c5dfc2e9257e2f1baf00432f" title="クラスタリング " alt="" coords="212,56,371,83"/>
+<area shape="rect" id="node3" href="classscl_1_1XMeans.html#a317f7c5f0a5fdb9d7f295b8bebfbde8a" title="クラスタリング " alt="" coords="212,56,371,83"/>
 </map>
 </div>
 </p>
@@ -482,7 +482,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" id="node5" href="classscl_1_1KMeans.html#a361d32ee6e1787219ec381832ecf7bf2" title="頭から順番にクラスタリングして重心初期化 " alt="" coords="419,123,595,164"/>
 <area shape="rect" id="node6" href="classscl_1_1KMeans.html#a729508a4ce2a8e783a751a3b7fbcb289" title="k&#45;means++によるクラスタ重心の初期化 " alt="" coords="419,188,595,229"/>
 <area shape="rect" id="node8" href="classscl_1_1KMeans.html#a0a4183eb30c4a70349882c59a4d5503c" title="ラベルの更新 " alt="" coords="420,254,593,281"/>
-<area shape="rect" id="node7" href="classscl_1_1KMeans.html#a8f4d5c3dd1f52f6b2ba4ebfb30ebb985" title="データと重心の距離の2乗 " alt="" coords="647,217,821,259"/>
+<area shape="rect" id="node7" href="classscl_1_1KMeans.html#a675fcbb0875bfe28da94d7908ecb73ca" title="データと重心の距離の2乗 " alt="" coords="647,217,821,259"/>
 </map>
 </div>
 </p>
@@ -504,6 +504,16 @@ Here is the call graph for this function:</div>
 
 <p>全クラスタの情報取得 </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classscl_1_1KMeans.html#a0317038165a355821130ce3cfd5b0535" title="クラスタID(=index)ごとにデータIDを割り振った配列 ">KMeans::m_clusterid_to_dataids</a> </dd></dl>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classscl_1_1KMeans_a597d07c24cfd0882fee521b2e020cfcd_icgraph.png" border="0" usemap="#classscl_1_1KMeans_a597d07c24cfd0882fee521b2e020cfcd_icgraph" alt=""/></div>
+<map name="classscl_1_1KMeans_a597d07c24cfd0882fee521b2e020cfcd_icgraph" id="classscl_1_1KMeans_a597d07c24cfd0882fee521b2e020cfcd_icgraph">
+<area shape="rect" id="node2" href="classscl_1_1XMeans.html#a317f7c5f0a5fdb9d7f295b8bebfbde8a" title="クラスタリング " alt="" coords="224,5,383,32"/>
+</map>
+</div>
+</p>
 
 </div>
 </div>
@@ -599,7 +609,7 @@ Here is the caller graph for this function:</div>
 <map name="classscl_1_1KMeans_a082f680b169864648e975dd0d4c9ff7f_icgraph" id="classscl_1_1KMeans_a082f680b169864648e975dd0d4c9ff7f_icgraph">
 <area shape="rect" id="node2" href="classscl_1_1KMeans.html#a232f760d441960e6c0b52a87e3692cdf" title="クラスタリング " alt="" coords="229,31,388,57"/>
 <area shape="rect" id="node3" href="classscl_1_1KMeans.html#a752689be0f9f7a149f1291426777eb4e" title="クラスタリング " alt="" coords="436,5,595,32"/>
-<area shape="rect" id="node4" href="classscl_1_1XMeans.html#a045d9016c5dfc2e9257e2f1baf00432f" title="クラスタリング " alt="" coords="436,56,595,83"/>
+<area shape="rect" id="node4" href="classscl_1_1XMeans.html#a317f7c5f0a5fdb9d7f295b8bebfbde8a" title="クラスタリング " alt="" coords="436,56,595,83"/>
 </map>
 </div>
 </p>
@@ -666,7 +676,7 @@ Here is the caller graph for this function:</div>
 <map name="classscl_1_1KMeans_a361d32ee6e1787219ec381832ecf7bf2_icgraph" id="classscl_1_1KMeans_a361d32ee6e1787219ec381832ecf7bf2_icgraph">
 <area shape="rect" id="node2" href="classscl_1_1KMeans.html#a232f760d441960e6c0b52a87e3692cdf" title="クラスタリング " alt="" coords="229,31,388,57"/>
 <area shape="rect" id="node3" href="classscl_1_1KMeans.html#a752689be0f9f7a149f1291426777eb4e" title="クラスタリング " alt="" coords="436,5,595,32"/>
-<area shape="rect" id="node4" href="classscl_1_1XMeans.html#a045d9016c5dfc2e9257e2f1baf00432f" title="クラスタリング " alt="" coords="436,56,595,83"/>
+<area shape="rect" id="node4" href="classscl_1_1XMeans.html#a317f7c5f0a5fdb9d7f295b8bebfbde8a" title="クラスタリング " alt="" coords="436,56,595,83"/>
 </map>
 </div>
 </p>
@@ -721,7 +731,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscl_1_1KMeans_a729508a4ce2a8e783a751a3b7fbcb289_cgraph.png" border="0" usemap="#classscl_1_1KMeans_a729508a4ce2a8e783a751a3b7fbcb289_cgraph" alt=""/></div>
 <map name="classscl_1_1KMeans_a729508a4ce2a8e783a751a3b7fbcb289_cgraph" id="classscl_1_1KMeans_a729508a4ce2a8e783a751a3b7fbcb289_cgraph">
-<area shape="rect" id="node2" href="classscl_1_1KMeans.html#a8f4d5c3dd1f52f6b2ba4ebfb30ebb985" title="データと重心の距離の2乗 " alt="" coords="229,5,404,47"/>
+<area shape="rect" id="node2" href="classscl_1_1KMeans.html#a675fcbb0875bfe28da94d7908ecb73ca" title="データと重心の距離の2乗 " alt="" coords="229,5,404,47"/>
 </map>
 </div>
 </p>
@@ -733,18 +743,18 @@ Here is the caller graph for this function:</div>
 <map name="classscl_1_1KMeans_a729508a4ce2a8e783a751a3b7fbcb289_icgraph" id="classscl_1_1KMeans_a729508a4ce2a8e783a751a3b7fbcb289_icgraph">
 <area shape="rect" id="node2" href="classscl_1_1KMeans.html#a232f760d441960e6c0b52a87e3692cdf" title="クラスタリング " alt="" coords="229,31,388,57"/>
 <area shape="rect" id="node3" href="classscl_1_1KMeans.html#a752689be0f9f7a149f1291426777eb4e" title="クラスタリング " alt="" coords="436,5,595,32"/>
-<area shape="rect" id="node4" href="classscl_1_1XMeans.html#a045d9016c5dfc2e9257e2f1baf00432f" title="クラスタリング " alt="" coords="436,56,595,83"/>
+<area shape="rect" id="node4" href="classscl_1_1XMeans.html#a317f7c5f0a5fdb9d7f295b8bebfbde8a" title="クラスタリング " alt="" coords="436,56,595,83"/>
 </map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="a8f4d5c3dd1f52f6b2ba4ebfb30ebb985"></a>
+<a class="anchor" id="a675fcbb0875bfe28da94d7908ecb73ca"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class DataType &gt; </div>
+template&lt;class DataTypeA , class DataTypeB &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -752,14 +762,14 @@ template&lt;class DataType &gt; </div>
         <tr>
           <td class="memname">double scl::KMeans::calcSquaredDistance </td>
           <td>(</td>
-          <td class="paramtype">const DataType &amp;&#160;</td>
-          <td class="paramname"><em>point</em>, </td>
+          <td class="paramtype">const DataTypeA &amp;&#160;</td>
+          <td class="paramname"><em>point_a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::vector&lt; double &gt; &amp;&#160;</td>
-          <td class="paramname"><em>centroid</em>&#160;</td>
+          <td class="paramtype">const DataTypeB &amp;&#160;</td>
+          <td class="paramname"><em>point_b</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -787,13 +797,13 @@ template&lt;class DataType &gt; </div>
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classscl_1_1KMeans_a8f4d5c3dd1f52f6b2ba4ebfb30ebb985_icgraph.png" border="0" usemap="#classscl_1_1KMeans_a8f4d5c3dd1f52f6b2ba4ebfb30ebb985_icgraph" alt=""/></div>
-<map name="classscl_1_1KMeans_a8f4d5c3dd1f52f6b2ba4ebfb30ebb985_icgraph" id="classscl_1_1KMeans_a8f4d5c3dd1f52f6b2ba4ebfb30ebb985_icgraph">
+<div class="center"><img src="classscl_1_1KMeans_a675fcbb0875bfe28da94d7908ecb73ca_icgraph.png" border="0" usemap="#classscl_1_1KMeans_a675fcbb0875bfe28da94d7908ecb73ca_icgraph" alt=""/></div>
+<map name="classscl_1_1KMeans_a675fcbb0875bfe28da94d7908ecb73ca_icgraph" id="classscl_1_1KMeans_a675fcbb0875bfe28da94d7908ecb73ca_icgraph">
 <area shape="rect" id="node2" href="classscl_1_1KMeans.html#a729508a4ce2a8e783a751a3b7fbcb289" title="k&#45;means++によるクラスタ重心の初期化 " alt="" coords="228,5,404,47"/>
 <area shape="rect" id="node6" href="classscl_1_1KMeans.html#a0a4183eb30c4a70349882c59a4d5503c" title="ラベルの更新 " alt="" coords="229,71,403,98"/>
 <area shape="rect" id="node3" href="classscl_1_1KMeans.html#a232f760d441960e6c0b52a87e3692cdf" title="クラスタリング " alt="" coords="452,42,611,69"/>
 <area shape="rect" id="node4" href="classscl_1_1KMeans.html#a752689be0f9f7a149f1291426777eb4e" title="クラスタリング " alt="" coords="659,17,817,43"/>
-<area shape="rect" id="node5" href="classscl_1_1XMeans.html#a045d9016c5dfc2e9257e2f1baf00432f" title="クラスタリング " alt="" coords="659,67,817,94"/>
+<area shape="rect" id="node5" href="classscl_1_1XMeans.html#a317f7c5f0a5fdb9d7f295b8bebfbde8a" title="クラスタリング " alt="" coords="659,67,817,94"/>
 </map>
 </div>
 </p>
@@ -855,7 +865,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscl_1_1KMeans_a0a4183eb30c4a70349882c59a4d5503c_cgraph.png" border="0" usemap="#classscl_1_1KMeans_a0a4183eb30c4a70349882c59a4d5503c_cgraph" alt=""/></div>
 <map name="classscl_1_1KMeans_a0a4183eb30c4a70349882c59a4d5503c_cgraph" id="classscl_1_1KMeans_a0a4183eb30c4a70349882c59a4d5503c_cgraph">
-<area shape="rect" id="node2" href="classscl_1_1KMeans.html#a8f4d5c3dd1f52f6b2ba4ebfb30ebb985" title="データと重心の距離の2乗 " alt="" coords="227,5,401,47"/>
+<area shape="rect" id="node2" href="classscl_1_1KMeans.html#a675fcbb0875bfe28da94d7908ecb73ca" title="データと重心の距離の2乗 " alt="" coords="227,5,401,47"/>
 </map>
 </div>
 </p>
@@ -867,7 +877,7 @@ Here is the caller graph for this function:</div>
 <map name="classscl_1_1KMeans_a0a4183eb30c4a70349882c59a4d5503c_icgraph" id="classscl_1_1KMeans_a0a4183eb30c4a70349882c59a4d5503c_icgraph">
 <area shape="rect" id="node2" href="classscl_1_1KMeans.html#a232f760d441960e6c0b52a87e3692cdf" title="クラスタリング " alt="" coords="227,31,385,57"/>
 <area shape="rect" id="node3" href="classscl_1_1KMeans.html#a752689be0f9f7a149f1291426777eb4e" title="クラスタリング " alt="" coords="433,5,592,32"/>
-<area shape="rect" id="node4" href="classscl_1_1XMeans.html#a045d9016c5dfc2e9257e2f1baf00432f" title="クラスタリング " alt="" coords="433,56,592,83"/>
+<area shape="rect" id="node4" href="classscl_1_1XMeans.html#a317f7c5f0a5fdb9d7f295b8bebfbde8a" title="クラスタリング " alt="" coords="433,56,592,83"/>
 </map>
 </div>
 </p>
@@ -932,7 +942,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" id="node5" href="classscl_1_1KMeans.html#a082f680b169864648e975dd0d4c9ff7f" title="乱数によるクラスタ重心の初期化 " alt="" coords="236,25,412,67"/>
 <area shape="rect" id="node6" href="classscl_1_1KMeans.html#a361d32ee6e1787219ec381832ecf7bf2" title="頭から順番にクラスタリングして重心初期化 " alt="" coords="236,91,412,132"/>
 <area shape="rect" id="node3" href="classscl_1_1KMeans.html#a752689be0f9f7a149f1291426777eb4e" title="クラスタリング " alt="" coords="667,7,825,34"/>
-<area shape="rect" id="node4" href="classscl_1_1XMeans.html#a045d9016c5dfc2e9257e2f1baf00432f" title="クラスタリング " alt="" coords="667,58,825,85"/>
+<area shape="rect" id="node4" href="classscl_1_1XMeans.html#a317f7c5f0a5fdb9d7f295b8bebfbde8a" title="クラスタリング " alt="" coords="667,58,825,85"/>
 </map>
 </div>
 </p>

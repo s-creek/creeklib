@@ -63,17 +63,17 @@ int main ()
 
     for (std::size_t i = 0; i < num; ++i)
     {
-        double pdf = scl::calcPdf(mat.row(i), mean, covariance);
+        double pdf = scl::normal::probabilityDensityFunction(mat.row(i), mean, covariance);
         std::cout << " " << log(pdf);
     }
     std::cout << std::endl;
 
 
-    double log_likelihood = scl::calcLogLikelihood(mat);
+    double log_likelihood = scl::normal::calcLogLikelihood(mat);
     std::cout << "------------\nresult\n  " << log_likelihood << std::endl; 
 
 
-    double likelihood = scl::calcLikelihood(mat);
+    double likelihood = scl::normal::calcLikelihood(mat);
     std::cout << "------------\nresult\n  " << likelihood << std::endl;
     std::cout << "  " << std::log(likelihood) << std::endl;
 

@@ -1,4 +1,5 @@
 <map id="scl::calcPdf" name="scl::calcPdf">
-<area shape="rect" id="node2" href="$namespacescl.html#ad549c5e34c6afab5740341a6a671f423" title="対数尤度 " alt="" coords="144,5,295,32"/>
-<area shape="rect" id="node3" href="$namespacescl.html#ab12bf19f48e562bee73bcf4857415f0f" title="尤度 " alt="" coords="155,56,284,83"/>
+<area shape="rect" id="node2" href="$namespacescl.html#a2f264aa142669def640829c88bef8f1a" title="対数尤度 " alt="" coords="144,5,295,32"/>
+<area shape="rect" id="node4" href="$namespacescl.html#ab12bf19f48e562bee73bcf4857415f0f" title="尤度 " alt="" coords="155,56,284,83"/>
+<area shape="rect" id="node3" href="$namespacescl.html#ad549c5e34c6afab5740341a6a671f423" title="対数尤度 " alt="" coords="343,5,493,32"/>
 </map>

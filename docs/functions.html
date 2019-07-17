@@ -178,7 +178,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="classscl_1_1KMeans.html#a20c38c760f0b5607283addbb3daf863e">scl::KMeans</a>
 </li>
 <li>calcSquaredDistance()
-: <a class="el" href="classscl_1_1KMeans.html#a8f4d5c3dd1f52f6b2ba4ebfb30ebb985">scl::KMeans</a>
+: <a class="el" href="classscl_1_1KMeans.html#a675fcbb0875bfe28da94d7908ecb73ca">scl::KMeans</a>
 </li>
 <li>child()
 : <a class="el" href="classscl_1_1KdTree_1_1Node.html#aa7143c83beebaa6a264e1baf5d605f51">scl::KdTree&lt; PointType &gt;::Node</a>
@@ -189,7 +189,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </li>
 <li>clustering()
 : <a class="el" href="classscl_1_1KMeans.html#a232f760d441960e6c0b52a87e3692cdf">scl::KMeans</a>
-, <a class="el" href="classscl_1_1XMeans.html#a045d9016c5dfc2e9257e2f1baf00432f">scl::XMeans</a>
+, <a class="el" href="classscl_1_1XMeans.html#a317f7c5f0a5fdb9d7f295b8bebfbde8a">scl::XMeans</a>
 </li>
 <li>CubicSpline()
 : <a class="el" href="classCubicSpline.html#a5c82d8a587a480e846c680fef66be0fa">CubicSpline</a>
@@ -283,16 +283,21 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>m_axis
 : <a class="el" href="classscl_1_1KdTree_1_1Node.html#aeccc1b8f7eb42252ff5dcb92366fff97">scl::KdTree&lt; PointType &gt;::Node</a>
 </li>
+<li>m_centroids
+: <a class="el" href="classscl_1_1XMeans.html#ab08af32a626430ce67835ec9bbbf01cc">scl::XMeans</a>
+</li>
 <li>m_child
 : <a class="el" href="classscl_1_1KdTree_1_1Node.html#a469ac4654796c596cccbe495503e8f69">scl::KdTree&lt; PointType &gt;::Node</a>
 </li>
 <li>m_clusterid_to_dataids
 : <a class="el" href="classscl_1_1KMeans.html#a0317038165a355821130ce3cfd5b0535">scl::KMeans</a>
+, <a class="el" href="classscl_1_1XMeans.html#a3bb87f71d0842662299834ab72b02306">scl::XMeans</a>
 </li>
 <li>m_dim
 : <a class="el" href="classBSpline.html#a751c918d24a53532b2928c1f9369279e">BSpline</a>
 , <a class="el" href="classscl_1_1KdTree.html#a507105ff40964a09cdf2969b8a57e39e">scl::KdTree&lt; PointType &gt;</a>
 , <a class="el" href="classscl_1_1KMeans.html#a012b790ced4abbf9fe55b1f1eab19470">scl::KMeans</a>
+, <a class="el" href="classscl_1_1XMeans.html#a7be8a9a1d177cf6e5d56812a95ec44dd">scl::XMeans</a>
 </li>
 <li>m_index
 : <a class="el" href="classscl_1_1KdTree_1_1Node.html#a14d926c520ba438be5b8a2a003758dcd">scl::KdTree&lt; PointType &gt;::Node</a>
@@ -314,6 +319,9 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </li>
 <li>m_max_pp_trial
 : <a class="el" href="classscl_1_1KMeans.html#a3a54127781842bd10d61a9674a0b2e71">scl::KMeans</a>
+</li>
+<li>m_method
+: <a class="el" href="classscl_1_1XMeans.html#afb6be9e7782da8a4bc62cc751bdaa040">scl::XMeans</a>
 </li>
 <li>m_nodeNumber
 : <a class="el" href="classCubicSpline.html#a9f1f1572cdda870531d18738ce23b76b">CubicSpline</a>
@@ -413,10 +421,13 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="classscl_1_1KdTree.html#a7269fb6f47e376929a9094b1cb893078">scl::KdTree&lt; PointType &gt;</a>
 </li>
 <li>rangeSearchRecursive()
-: <a class="el" href="classscl_1_1KdTree.html#a6c75000e5908548660ed4432566c521f">scl::KdTree&lt; PointType &gt;</a>
+: <a class="el" href="classscl_1_1KdTree.html#a63c300abd75cd02c5f0a871debb056f6">scl::KdTree&lt; PointType &gt;</a>
 </li>
 <li>rangeSearchRecursiveSort()
 : <a class="el" href="classscl_1_1KdTree.html#ae144dc3a58efb059cfa493dc1c6268f6">scl::KdTree&lt; PointType &gt;</a>
+</li>
+<li>recursivelySplit()
+: <a class="el" href="classscl_1_1XMeans.html#a2e7a4c397f96db7f319ca032f97c6725">scl::XMeans</a>
 </li>
 <li>root()
 : <a class="el" href="classscl_1_1KdTree.html#af3b1bcd8b3873bfbb98a33ac4c97b6f6">scl::KdTree&lt; PointType &gt;</a>
@@ -433,7 +444,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </li>
 <li>setParameters()
 : <a class="el" href="classscl_1_1KMeans.html#af1a4481e57f8edfd57a96d2ae7cbd287">scl::KMeans</a>
-, <a class="el" href="classscl_1_1XMeans.html#a41514372b6812275e3568d2aff64de7b">scl::XMeans</a>
+, <a class="el" href="classscl_1_1XMeans.html#a0201f3d21694b42a9d59edbd9538ed33">scl::XMeans</a>
 </li>
 </ul>
 

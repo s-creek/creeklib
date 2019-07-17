@@ -107,6 +107,7 @@ $(document).ready(function(){initNavTree('classscl_1_1XMeans.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classscl_1_1XMeans-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -132,19 +133,38 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8728bc7f1613acf5fc7b2d640cae7230"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscl_1_1XMeans.html#a8728bc7f1613acf5fc7b2d640cae7230">XMeans</a> ()</td></tr>
 <tr class="memdesc:a8728bc7f1613acf5fc7b2d640cae7230"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="#a8728bc7f1613acf5fc7b2d640cae7230">More...</a><br /></td></tr>
 <tr class="separator:a8728bc7f1613acf5fc7b2d640cae7230"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41514372b6812275e3568d2aff64de7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscl_1_1XMeans.html#a41514372b6812275e3568d2aff64de7b">setParameters</a> (const std::size_t max_iteration, const double tolerance, const std::size_t max_pp_trial=3)</td></tr>
-<tr class="memdesc:a41514372b6812275e3568d2aff64de7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">k-means のパラメータ設定  <a href="#a41514372b6812275e3568d2aff64de7b">More...</a><br /></td></tr>
-<tr class="separator:a41514372b6812275e3568d2aff64de7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a045d9016c5dfc2e9257e2f1baf00432f"><td class="memTemplParams" colspan="2">template&lt;class DataType &gt; </td></tr>
-<tr class="memitem:a045d9016c5dfc2e9257e2f1baf00432f"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classscl_1_1XMeans.html#a045d9016c5dfc2e9257e2f1baf00432f">clustering</a> (const std::size_t dim, const std::vector&lt; DataType &gt; &amp;data_set, const std::size_t init_num_clusters, std::vector&lt; std::vector&lt; double &gt; &gt; &amp;centroids, const <a class="el" href="classscl_1_1KMeans.html#af06aa7b562d4b32603e0d444a5958eb8">KMeans::InitMethod</a> method=<a class="el" href="classscl_1_1KMeans.html#af06aa7b562d4b32603e0d444a5958eb8a73ccb821faf78a4964cc8ae585466429">KMeans::PLUSPLUS</a>)</td></tr>
-<tr class="memdesc:a045d9016c5dfc2e9257e2f1baf00432f"><td class="mdescLeft">&#160;</td><td class="mdescRight">クラスタリング  <a href="#a045d9016c5dfc2e9257e2f1baf00432f">More...</a><br /></td></tr>
-<tr class="separator:a045d9016c5dfc2e9257e2f1baf00432f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0201f3d21694b42a9d59edbd9538ed33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscl_1_1XMeans.html#a0201f3d21694b42a9d59edbd9538ed33">setParameters</a> (const std::size_t max_iteration, const double tolerance, const std::size_t max_pp_trial=3, const <a class="el" href="classscl_1_1KMeans.html#af06aa7b562d4b32603e0d444a5958eb8">KMeans::InitMethod</a> method=<a class="el" href="classscl_1_1KMeans.html#af06aa7b562d4b32603e0d444a5958eb8a73ccb821faf78a4964cc8ae585466429">KMeans::PLUSPLUS</a>)</td></tr>
+<tr class="memdesc:a0201f3d21694b42a9d59edbd9538ed33"><td class="mdescLeft">&#160;</td><td class="mdescRight">k-means のパラメータ設定  <a href="#a0201f3d21694b42a9d59edbd9538ed33">More...</a><br /></td></tr>
+<tr class="separator:a0201f3d21694b42a9d59edbd9538ed33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a317f7c5f0a5fdb9d7f295b8bebfbde8a"><td class="memTemplParams" colspan="2">template&lt;class DataType &gt; </td></tr>
+<tr class="memitem:a317f7c5f0a5fdb9d7f295b8bebfbde8a"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classscl_1_1XMeans.html#a317f7c5f0a5fdb9d7f295b8bebfbde8a">clustering</a> (const std::size_t dim, const std::vector&lt; DataType &gt; &amp;data_set, const std::size_t init_num_clusters, std::vector&lt; std::vector&lt; double &gt; &gt; &amp;centroids)</td></tr>
+<tr class="memdesc:a317f7c5f0a5fdb9d7f295b8bebfbde8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">クラスタリング  <a href="#a317f7c5f0a5fdb9d7f295b8bebfbde8a">More...</a><br /></td></tr>
+<tr class="separator:a317f7c5f0a5fdb9d7f295b8bebfbde8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a2e7a4c397f96db7f319ca032f97c6725"><td class="memTemplParams" colspan="2">template&lt;class DataType &gt; </td></tr>
+<tr class="memitem:a2e7a4c397f96db7f319ca032f97c6725"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classscl_1_1XMeans.html#a2e7a4c397f96db7f319ca032f97c6725">recursivelySplit</a> (const std::vector&lt; DataType &gt; &amp;data_set, const std::vector&lt; std::size_t &gt; &amp;indices, const std::vector&lt; double &gt; &amp;centroid)</td></tr>
+<tr class="memdesc:a2e7a4c397f96db7f319ca032f97c6725"><td class="mdescLeft">&#160;</td><td class="mdescRight">split data  <a href="#a2e7a4c397f96db7f319ca032f97c6725">More...</a><br /></td></tr>
+<tr class="separator:a2e7a4c397f96db7f319ca032f97c6725"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
+<tr class="memitem:a7be8a9a1d177cf6e5d56812a95ec44dd"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscl_1_1XMeans.html#a7be8a9a1d177cf6e5d56812a95ec44dd">m_dim</a></td></tr>
+<tr class="memdesc:a7be8a9a1d177cf6e5d56812a95ec44dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">クラスタリングするデータの次数  <a href="#a7be8a9a1d177cf6e5d56812a95ec44dd">More...</a><br /></td></tr>
+<tr class="separator:a7be8a9a1d177cf6e5d56812a95ec44dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bb87f71d0842662299834ab72b02306"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; std::size_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscl_1_1XMeans.html#a3bb87f71d0842662299834ab72b02306">m_clusterid_to_dataids</a></td></tr>
+<tr class="memdesc:a3bb87f71d0842662299834ab72b02306"><td class="mdescLeft">&#160;</td><td class="mdescRight">x-means で確定したクラスタ情報  <a href="#a3bb87f71d0842662299834ab72b02306">More...</a><br /></td></tr>
+<tr class="separator:a3bb87f71d0842662299834ab72b02306"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab08af32a626430ce67835ec9bbbf01cc"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscl_1_1XMeans.html#ab08af32a626430ce67835ec9bbbf01cc">m_centroids</a></td></tr>
+<tr class="memdesc:ab08af32a626430ce67835ec9bbbf01cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">x-means で確定したクラスタの各重心  <a href="#ab08af32a626430ce67835ec9bbbf01cc">More...</a><br /></td></tr>
+<tr class="separator:ab08af32a626430ce67835ec9bbbf01cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4360ba5d800d8b9e31318a961cbf0c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscl_1_1KMeans.html">scl::KMeans</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscl_1_1XMeans.html#ae4360ba5d800d8b9e31318a961cbf0c9">m_kmeans</a></td></tr>
 <tr class="memdesc:ae4360ba5d800d8b9e31318a961cbf0c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">k-means class  <a href="#ae4360ba5d800d8b9e31318a961cbf0c9">More...</a><br /></td></tr>
 <tr class="separator:ae4360ba5d800d8b9e31318a961cbf0c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb6be9e7782da8a4bc62cc751bdaa040"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classscl_1_1KMeans.html#af06aa7b562d4b32603e0d444a5958eb8">KMeans::InitMethod</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscl_1_1XMeans.html#afb6be9e7782da8a4bc62cc751bdaa040">m_method</a></td></tr>
+<tr class="memdesc:afb6be9e7782da8a4bc62cc751bdaa040"><td class="mdescLeft">&#160;</td><td class="mdescRight">k-means method  <a href="#afb6be9e7782da8a4bc62cc751bdaa040">More...</a><br /></td></tr>
+<tr class="separator:afb6be9e7782da8a4bc62cc751bdaa040"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>x-means clustering. </p>
@@ -169,7 +189,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a41514372b6812275e3568d2aff64de7b"></a>
+<a class="anchor" id="a0201f3d21694b42a9d59edbd9538ed33"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -189,7 +209,13 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::size_t&#160;</td>
-          <td class="paramname"><em>max_pp_trial</em> = <code>3</code>&#160;</td>
+          <td class="paramname"><em>max_pp_trial</em> = <code>3</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classscl_1_1KMeans.html#af06aa7b562d4b32603e0d444a5958eb8">KMeans::InitMethod</a>&#160;</td>
+          <td class="paramname"><em>method</em> = <code><a class="el" href="classscl_1_1KMeans.html#af06aa7b562d4b32603e0d444a5958eb8a73ccb821faf78a4964cc8ae585466429">KMeans::PLUSPLUS</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -200,13 +226,19 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>k-means のパラメータ設定 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">method</td><td>クラスタ重心の初期化方法 (デフォルト k-means++) </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classscl_1_1KMeans.html#af1a4481e57f8edfd57a96d2ae7cbd287" title="クラスタリング時のパラメータ設定 ">KMeans::setParameters</a> </dd></dl>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classscl_1_1XMeans_a41514372b6812275e3568d2aff64de7b_cgraph.png" border="0" usemap="#classscl_1_1XMeans_a41514372b6812275e3568d2aff64de7b_cgraph" alt=""/></div>
-<map name="classscl_1_1XMeans_a41514372b6812275e3568d2aff64de7b_cgraph" id="classscl_1_1XMeans_a41514372b6812275e3568d2aff64de7b_cgraph">
+<div class="center"><img src="classscl_1_1XMeans_a0201f3d21694b42a9d59edbd9538ed33_cgraph.png" border="0" usemap="#classscl_1_1XMeans_a0201f3d21694b42a9d59edbd9538ed33_cgraph" alt=""/></div>
+<map name="classscl_1_1XMeans_a0201f3d21694b42a9d59edbd9538ed33_cgraph" id="classscl_1_1XMeans_a0201f3d21694b42a9d59edbd9538ed33_cgraph">
 <area shape="rect" id="node2" href="classscl_1_1KMeans.html#af1a4481e57f8edfd57a96d2ae7cbd287" title="クラスタリング時のパラメータ設定 " alt="" coords="241,5,429,32"/>
 </map>
 </div>
@@ -214,7 +246,7 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="a045d9016c5dfc2e9257e2f1baf00432f"></a>
+<a class="anchor" id="a317f7c5f0a5fdb9d7f295b8bebfbde8a"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -242,13 +274,7 @@ template&lt;class DataType &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::vector&lt; std::vector&lt; double &gt; &gt; &amp;&#160;</td>
-          <td class="paramname"><em>centroids</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classscl_1_1KMeans.html#af06aa7b562d4b32603e0d444a5958eb8">KMeans::InitMethod</a>&#160;</td>
-          <td class="paramname"><em>method</em> = <code><a class="el" href="classscl_1_1KMeans.html#af06aa7b562d4b32603e0d444a5958eb8a73ccb821faf78a4964cc8ae585466429">KMeans::PLUSPLUS</a></code>&#160;</td>
+          <td class="paramname"><em>centroids</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -271,7 +297,6 @@ template&lt;class DataType &gt; </div>
     <tr><td class="paramdir">[in]</td><td class="paramname">data_set</td><td>クラスタリングするデータセット </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">init_num_clusters</td><td>初期クラスタ数 </td></tr>
     <tr><td class="paramdir">[in,out]</td><td class="paramname">centroids</td><td>各クラスタの重心位置 ( method が <a class="el" href="classscl_1_1KMeans.html#af06aa7b562d4b32603e0d444a5958eb8a058ff8e44a58623f586dff12c5d3d02e">KMeans::MANUAL</a> の時だけ[in]も使う) </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">method</td><td>クラスタ重心の初期化方法 (デフォルト k-means++) </td></tr>
   </table>
   </dd>
 </dl>
@@ -281,15 +306,71 @@ template&lt;class DataType &gt; </div>
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classscl_1_1XMeans_a045d9016c5dfc2e9257e2f1baf00432f_cgraph.png" border="0" usemap="#classscl_1_1XMeans_a045d9016c5dfc2e9257e2f1baf00432f_cgraph" alt=""/></div>
-<map name="classscl_1_1XMeans_a045d9016c5dfc2e9257e2f1baf00432f_cgraph" id="classscl_1_1XMeans_a045d9016c5dfc2e9257e2f1baf00432f_cgraph">
-<area shape="rect" id="node2" href="classscl_1_1KMeans.html#a232f760d441960e6c0b52a87e3692cdf" title="クラスタリング " alt="" coords="212,130,371,157"/>
-<area shape="rect" id="node3" href="classscl_1_1KMeans.html#a082f680b169864648e975dd0d4c9ff7f" title="乱数によるクラスタ重心の初期化 " alt="" coords="419,5,595,47"/>
-<area shape="rect" id="node4" href="classscl_1_1KMeans.html#a20c38c760f0b5607283addbb3daf863e" title="クラスタ重心の計算 " alt="" coords="643,71,825,98"/>
-<area shape="rect" id="node5" href="classscl_1_1KMeans.html#a361d32ee6e1787219ec381832ecf7bf2" title="頭から順番にクラスタリングして重心初期化 " alt="" coords="419,123,595,164"/>
-<area shape="rect" id="node6" href="classscl_1_1KMeans.html#a729508a4ce2a8e783a751a3b7fbcb289" title="k&#45;means++によるクラスタ重心の初期化 " alt="" coords="419,188,595,229"/>
-<area shape="rect" id="node8" href="classscl_1_1KMeans.html#a0a4183eb30c4a70349882c59a4d5503c" title="ラベルの更新 " alt="" coords="420,254,593,281"/>
-<area shape="rect" id="node7" href="classscl_1_1KMeans.html#a8f4d5c3dd1f52f6b2ba4ebfb30ebb985" title="データと重心の距離の2乗 " alt="" coords="647,217,821,259"/>
+<div class="center"><img src="classscl_1_1XMeans_a317f7c5f0a5fdb9d7f295b8bebfbde8a_cgraph.png" border="0" usemap="#classscl_1_1XMeans_a317f7c5f0a5fdb9d7f295b8bebfbde8a_cgraph" alt=""/></div>
+<map name="classscl_1_1XMeans_a317f7c5f0a5fdb9d7f295b8bebfbde8a_cgraph" id="classscl_1_1XMeans_a317f7c5f0a5fdb9d7f295b8bebfbde8a_cgraph">
+<area shape="rect" id="node2" href="classscl_1_1KMeans.html#a232f760d441960e6c0b52a87e3692cdf" title="クラスタリング " alt="" coords="218,130,377,157"/>
+<area shape="rect" id="node9" href="classscl_1_1KMeans.html#a597d07c24cfd0882fee521b2e020cfcd" title="全クラスタの情報取得 " alt="" coords="212,181,383,207"/>
+<area shape="rect" id="node10" href="classscl_1_1XMeans.html#a2e7a4c397f96db7f319ca032f97c6725" title="split data " alt="" coords="214,232,381,273"/>
+<area shape="rect" id="node3" href="classscl_1_1KMeans.html#a082f680b169864648e975dd0d4c9ff7f" title="乱数によるクラスタ重心の初期化 " alt="" coords="431,5,607,47"/>
+<area shape="rect" id="node4" href="classscl_1_1KMeans.html#a20c38c760f0b5607283addbb3daf863e" title="クラスタ重心の計算 " alt="" coords="655,71,837,98"/>
+<area shape="rect" id="node5" href="classscl_1_1KMeans.html#a361d32ee6e1787219ec381832ecf7bf2" title="頭から順番にクラスタリングして重心初期化 " alt="" coords="431,123,607,164"/>
+<area shape="rect" id="node6" href="classscl_1_1KMeans.html#a729508a4ce2a8e783a751a3b7fbcb289" title="k&#45;means++によるクラスタ重心の初期化 " alt="" coords="431,188,607,229"/>
+<area shape="rect" id="node8" href="classscl_1_1KMeans.html#a0a4183eb30c4a70349882c59a4d5503c" title="ラベルの更新 " alt="" coords="432,254,605,281"/>
+<area shape="rect" id="node7" href="classscl_1_1KMeans.html#a675fcbb0875bfe28da94d7908ecb73ca" title="データと重心の距離の2乗 " alt="" coords="659,217,833,259"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2e7a4c397f96db7f319ca032f97c6725"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void scl::XMeans::recursivelySplit </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; DataType &gt; &amp;&#160;</td>
+          <td class="paramname"><em>data_set</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::size_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>indices</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>centroid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>split data </p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classscl_1_1XMeans_a2e7a4c397f96db7f319ca032f97c6725_icgraph.png" border="0" usemap="#classscl_1_1XMeans_a2e7a4c397f96db7f319ca032f97c6725_icgraph" alt=""/></div>
+<map name="classscl_1_1XMeans_a2e7a4c397f96db7f319ca032f97c6725_icgraph" id="classscl_1_1XMeans_a2e7a4c397f96db7f319ca032f97c6725_icgraph">
+<area shape="rect" id="node2" href="classscl_1_1XMeans.html#a317f7c5f0a5fdb9d7f295b8bebfbde8a" title="クラスタリング " alt="" coords="220,13,379,39"/>
 </map>
 </div>
 </p>
@@ -297,6 +378,72 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a7be8a9a1d177cf6e5d56812a95ec44dd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t scl::XMeans::m_dim</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>クラスタリングするデータの次数 </p>
+
+</div>
+</div>
+<a class="anchor" id="a3bb87f71d0842662299834ab72b02306"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::vector&lt;std::size_t&gt; &gt; scl::XMeans::m_clusterid_to_dataids</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>x-means で確定したクラスタ情報 </p>
+
+</div>
+</div>
+<a class="anchor" id="ab08af32a626430ce67835ec9bbbf01cc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::vector&lt;double&gt; &gt; scl::XMeans::m_centroids</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>x-means で確定したクラスタの各重心 </p>
+
+</div>
+</div>
 <a class="anchor" id="ae4360ba5d800d8b9e31318a961cbf0c9"></a>
 <div class="memitem">
 <div class="memproto">
@@ -316,6 +463,28 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>k-means class </p>
+
+</div>
+</div>
+<a class="anchor" id="afb6be9e7782da8a4bc62cc751bdaa040"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classscl_1_1KMeans.html#af06aa7b562d4b32603e0d444a5958eb8">KMeans::InitMethod</a> scl::XMeans::m_method</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>k-means method </p>
 
 </div>
 </div>

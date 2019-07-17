@@ -1,4 +1,10 @@
 var searchData=
 [
-  ['top',['top',['../classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a5676ced2567c7bdd16946a3669713de9',1,'scl::KdTree::BoundedPriorityQueue::top()'],['../classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a0b4e17a35230386992fcbe2f2a0ba76c',1,'scl::KdTree::BoundedPriorityQueue::top() const ']]]
+  ['internal',['internal',['../namespacescl_1_1internal.html',1,'scl']]],
+  ['normal',['normal',['../namespacescl_1_1normal.html',1,'scl']]],
+  ['scl',['scl',['../namespacescl.html',1,'']]],
+  ['sequence',['sequence',['../classCubicSpline.html#a14bb59af86ab8db3753017f6ff897149',1,'CubicSpline::sequence(std::vector&lt; double &gt; &amp;seq, double sampling)'],['../classCubicSpline.html#a89be80952dc80bd02d41623c5413316e',1,'CubicSpline::sequence(double sampling)']]],
+  ['setdim',['setDim',['../classBSpline.html#a9df02625dca4520b4c97a206157c3b2a',1,'BSpline']]],
+  ['setparameters',['setParameters',['../classscl_1_1KMeans.html#af1a4481e57f8edfd57a96d2ae7cbd287',1,'scl::KMeans::setParameters()'],['../classscl_1_1XMeans.html#a0201f3d21694b42a9d59edbd9538ed33',1,'scl::XMeans::setParameters()']]],
+  ['statistics_2ehpp',['Statistics.hpp',['../Statistics_8hpp.html',1,'']]]
 ];

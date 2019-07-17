@@ -1,4 +1,5 @@
 <map id="scl::calcCovariance" name="scl::calcCovariance">
-<area shape="rect" id="node2" href="$namespacescl.html#ad549c5e34c6afab5740341a6a671f423" title="対数尤度 " alt="" coords="191,5,341,32"/>
-<area shape="rect" id="node3" href="$namespacescl.html#ab12bf19f48e562bee73bcf4857415f0f" title="尤度 " alt="" coords="201,56,331,83"/>
+<area shape="rect" id="node2" href="$namespacescl_1_1normal.html#a89db45c17eee47725544a0ad85c78348" title="対数尤度 &#160;&#160;&#160;" alt="" coords="191,5,388,32"/>
+<area shape="rect" id="node4" href="$namespacescl_1_1normal.html#a673988c7f7cf59622d06b757819b0845" title="尤度 &#160;&#160;" alt="" coords="201,56,377,83"/>
+<area shape="rect" id="node3" href="$namespacescl_1_1normal.html#ad7af73d4d3d21df061d36e40e3503688" title="対数尤度 " alt="" coords="436,5,633,32"/>
 </map>

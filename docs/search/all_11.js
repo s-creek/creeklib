@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['xmeans',['XMeans',['../classscl_1_1XMeans.html',1,'scl']]],
-  ['xmeans',['XMeans',['../classscl_1_1XMeans.html#a8728bc7f1613acf5fc7b2d640cae7230',1,'scl::XMeans']]],
-  ['xmeans_2ehpp',['XMeans.hpp',['../XMeans_8hpp.html',1,'']]]
+  ['uniform',['UNIFORM',['../classscl_1_1KMeans.html#af06aa7b562d4b32603e0d444a5958eb8a611465a43344421db884064d13c4ebb7',1,'scl::KMeans']]],
+  ['uniformknot',['uniformKnot',['../classBSpline.html#a404e864f7ce8909fd85a1ed4f4aa5e48',1,'BSpline']]],
+  ['updatelabel',['updateLabel',['../classscl_1_1KMeans.html#a0a4183eb30c4a70349882c59a4d5503c',1,'scl::KMeans']]]
 ];

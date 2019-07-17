@@ -1,10 +1,8 @@
 var searchData=
 [
-  ['radiussearch',['radiusSearch',['../classscl_1_1KdTree.html#a5b2de3ac7fff76574dd1ac8105da0441',1,'scl::KdTree::radiusSearch(const PointType &amp;query, const double radius, std::vector&lt; std::size_t &gt; &amp;indices, bool sort=false)'],['../classscl_1_1KdTree.html#a00b53fa0db19fa819cc7c9f1fc5d2903',1,'scl::KdTree::radiusSearch(const PointType &amp;query, const double radius, std::vector&lt; std::size_t &gt; &amp;indices, std::vector&lt; ValueType &gt; &amp;distances, bool sort=false)']]],
-  ['radiussearchrecursive',['radiusSearchRecursive',['../classscl_1_1KdTree.html#a5cfc75965431d83b9a22d00ba6f26df0',1,'scl::KdTree::radiusSearchRecursive(const NodePtr node, const PointType &amp;query, const double radius, std::vector&lt; std::size_t &gt; &amp;indices)'],['../classscl_1_1KdTree.html#aabd795a26c9d5b8798f588143279de62',1,'scl::KdTree::radiusSearchRecursive(const NodePtr node, const PointType &amp;query, const double radius, std::vector&lt; std::size_t &gt; &amp;indices, std::vector&lt; ValueType &gt; &amp;distances)']]],
-  ['radiussearchrecursivesort',['radiusSearchRecursiveSort',['../classscl_1_1KdTree.html#a1b45d4f1d974a6c99ddba23b9053e2ba',1,'scl::KdTree']]],
-  ['rangesearch',['rangeSearch',['../classscl_1_1KdTree.html#a35dc60a31ba0b2848085c68cb2fc0bab',1,'scl::KdTree::rangeSearch(const PointType &amp;query, const double range, std::vector&lt; std::size_t &gt; &amp;indices, bool sort=false)'],['../classscl_1_1KdTree.html#a7269fb6f47e376929a9094b1cb893078',1,'scl::KdTree::rangeSearch(const PointType &amp;query, const double range, std::vector&lt; std::size_t &gt; &amp;indices, std::vector&lt; ValueType &gt; &amp;distances, bool sort=false)']]],
-  ['rangesearchrecursive',['rangeSearchRecursive',['../classscl_1_1KdTree.html#a63c300abd75cd02c5f0a871debb056f6',1,'scl::KdTree::rangeSearchRecursive(const NodePtr node, const PointType &amp;query, const double range, std::vector&lt; std::size_t &gt; &amp;indices)'],['../classscl_1_1KdTree.html#a6c75000e5908548660ed4432566c521f',1,'scl::KdTree::rangeSearchRecursive(const NodePtr node, const PointType &amp;query, const double range, std::vector&lt; std::size_t &gt; &amp;indices, std::vector&lt; ValueType &gt; &amp;distances)']]],
-  ['rangesearchrecursivesort',['rangeSearchRecursiveSort',['../classscl_1_1KdTree.html#ae144dc3a58efb059cfa493dc1c6268f6',1,'scl::KdTree']]],
-  ['root',['root',['../classscl_1_1KdTree.html#af3b1bcd8b3873bfbb98a33ac4c97b6f6',1,'scl::KdTree']]]
+  ['point',['point',['../classscl_1_1KdTree.html#aafebd80e886ad2fa40048fea650b0419',1,'scl::KdTree']]],
+  ['points',['points',['../classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e',1,'scl::KdTree']]],
+  ['pop',['pop',['../classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a745acb96230dbe907301be6200fe190e',1,'scl::KdTree::BoundedPriorityQueue']]],
+  ['probabilitydensityfunction',['probabilityDensityFunction',['../namespacescl_1_1normal.html#a0653c99eed4e86b9541640ffad088bf7',1,'scl::normal']]],
+  ['push',['push',['../classscl_1_1KdTree_1_1BoundedPriorityQueue.html#a85c442933928a9ac477ccbbe1a6e888c',1,'scl::KdTree::BoundedPriorityQueue']]]
 ];

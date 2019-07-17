@@ -1,9 +1,10 @@
 var searchData=
 [
   ['m_5faxis',['m_axis',['../classscl_1_1KdTree_1_1Node.html#aeccc1b8f7eb42252ff5dcb92366fff97',1,'scl::KdTree::Node']]],
+  ['m_5fcentroids',['m_centroids',['../classscl_1_1XMeans.html#ab08af32a626430ce67835ec9bbbf01cc',1,'scl::XMeans']]],
   ['m_5fchild',['m_child',['../classscl_1_1KdTree_1_1Node.html#a469ac4654796c596cccbe495503e8f69',1,'scl::KdTree::Node']]],
-  ['m_5fclusterid_5fto_5fdataids',['m_clusterid_to_dataids',['../classscl_1_1KMeans.html#a0317038165a355821130ce3cfd5b0535',1,'scl::KMeans']]],
-  ['m_5fdim',['m_dim',['../classscl_1_1KMeans.html#a012b790ced4abbf9fe55b1f1eab19470',1,'scl::KMeans::m_dim()'],['../classBSpline.html#a751c918d24a53532b2928c1f9369279e',1,'BSpline::m_dim()'],['../classscl_1_1KdTree.html#a507105ff40964a09cdf2969b8a57e39e',1,'scl::KdTree::m_dim()']]],
+  ['m_5fclusterid_5fto_5fdataids',['m_clusterid_to_dataids',['../classscl_1_1KMeans.html#a0317038165a355821130ce3cfd5b0535',1,'scl::KMeans::m_clusterid_to_dataids()'],['../classscl_1_1XMeans.html#a3bb87f71d0842662299834ab72b02306',1,'scl::XMeans::m_clusterid_to_dataids()']]],
+  ['m_5fdim',['m_dim',['../classscl_1_1KMeans.html#a012b790ced4abbf9fe55b1f1eab19470',1,'scl::KMeans::m_dim()'],['../classscl_1_1XMeans.html#a7be8a9a1d177cf6e5d56812a95ec44dd',1,'scl::XMeans::m_dim()'],['../classBSpline.html#a751c918d24a53532b2928c1f9369279e',1,'BSpline::m_dim()'],['../classscl_1_1KdTree.html#a507105ff40964a09cdf2969b8a57e39e',1,'scl::KdTree::m_dim()']]],
   ['m_5findex',['m_index',['../classscl_1_1KdTree_1_1Node.html#a14d926c520ba438be5b8a2a003758dcd',1,'scl::KdTree::Node']]],
   ['m_5fisinit',['m_isInit',['../classCubicSpline.html#a29f5569b3b523b0268662162708def5e',1,'CubicSpline']]],
   ['m_5fkmeans',['m_kmeans',['../classscl_1_1XMeans.html#ae4360ba5d800d8b9e31318a961cbf0c9',1,'scl::XMeans']]],
@@ -11,6 +12,7 @@ var searchData=
   ['m_5fknottype',['m_knotType',['../classBSpline.html#abe7880fdab8147fa98468bdc804e618c',1,'BSpline']]],
   ['m_5fmax_5fiteration',['m_max_iteration',['../classscl_1_1KMeans.html#aeae5bb6741ea6ac98589cb3fd2ae7974',1,'scl::KMeans']]],
   ['m_5fmax_5fpp_5ftrial',['m_max_pp_trial',['../classscl_1_1KMeans.html#a3a54127781842bd10d61a9674a0b2e71',1,'scl::KMeans']]],
+  ['m_5fmethod',['m_method',['../classscl_1_1XMeans.html#afb6be9e7782da8a4bc62cc751bdaa040',1,'scl::XMeans']]],
   ['m_5fnodenumber',['m_nodeNumber',['../classCubicSpline.html#a9f1f1572cdda870531d18738ce23b76b',1,'CubicSpline']]],
   ['m_5fpoints',['m_points',['../classscl_1_1KdTree.html#affa62bd86cd932d3143670391b67db2a',1,'scl::KdTree']]],
   ['m_5froot',['m_root',['../classscl_1_1KdTree.html#ad56bcfd9045430e66ccf1bf6512ea516',1,'scl::KdTree']]],
