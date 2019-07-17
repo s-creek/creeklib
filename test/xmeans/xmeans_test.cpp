@@ -37,7 +37,7 @@ void saveClusters(std::string filename, const std::size_t dim, const std::vector
 int main ()
 {
     // file open
-    std::ifstream file("./log/sample_dataset_03.log");
+    std::ifstream file("./log/sample_dataset_02.log");
     if ( !file )
     {
         return 0;
@@ -74,7 +74,7 @@ int main ()
     scl::XMeans xmeans;
     xmeans.setParameters(10, 0.1, 5, scl::KMeans::PLUSPLUS);
     std::vector< std::vector<double> > centroids;
-    xmeans.clustering(dim, dataset, 1, centroids);
+    xmeans.clustering(dim, dataset, 2, centroids);
 
     std::cout << "cluster num : " << xmeans.getClusters().size() << std::endl;
     std::priority_queue<std::size_t, std::vector<std::size_t>, std::greater<std::size_t> > pque;

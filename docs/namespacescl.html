@@ -154,9 +154,9 @@ Functions</h2></td></tr>
 <tr class="memitem:acab90aaeee418e7bb8bb1021964e213d"><td class="memTemplItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacescl.html#acab90aaeee418e7bb8bb1021964e213d">toEigenVector</a> (const std::size_t dim, const DataType data)</td></tr>
 <tr class="memdesc:acab90aaeee418e7bb8bb1021964e213d"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert vector data : DataType -&gt; Eigen  <a href="#acab90aaeee418e7bb8bb1021964e213d">More...</a><br /></td></tr>
 <tr class="separator:acab90aaeee418e7bb8bb1021964e213d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc4a2d3c5d662659ddfe5aeb88a1639f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescl.html#afc4a2d3c5d662659ddfe5aeb88a1639f">calcCovariance</a> (const Eigen::MatrixXd &amp;data_set, Eigen::MatrixXd &amp;covariance)</td></tr>
-<tr class="memdesc:afc4a2d3c5d662659ddfe5aeb88a1639f"><td class="mdescLeft">&#160;</td><td class="mdescRight">calc covariance-matrix  <a href="#afc4a2d3c5d662659ddfe5aeb88a1639f">More...</a><br /></td></tr>
-<tr class="separator:afc4a2d3c5d662659ddfe5aeb88a1639f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe96ecfbbeb232d7143b4bd30ac58c7f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacescl.html#abe96ecfbbeb232d7143b4bd30ac58c7f">calcCovariance</a> (const Eigen::MatrixXd &amp;dataset, Eigen::MatrixXd &amp;covariance)</td></tr>
+<tr class="memdesc:abe96ecfbbeb232d7143b4bd30ac58c7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">calc covariance-matrix  <a href="#abe96ecfbbeb232d7143b4bd30ac58c7f">More...</a><br /></td></tr>
+<tr class="separator:abe96ecfbbeb232d7143b4bd30ac58c7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="afd785d69790eac2553b70b1ba89f80ce"></a>
@@ -194,6 +194,17 @@ Here is the call graph for this function:</div>
 </div>
 </p>
 
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacescl_afd785d69790eac2553b70b1ba89f80ce_icgraph.png" border="0" usemap="#namespacescl_afd785d69790eac2553b70b1ba89f80ce_icgraph" alt=""/></div>
+<map name="namespacescl_afd785d69790eac2553b70b1ba89f80ce_icgraph" id="namespacescl_afd785d69790eac2553b70b1ba89f80ce_icgraph">
+<area shape="rect" id="node2" href="classscl_1_1XMeans.html#acfb549e06764318010fc810529b4babb" title="split data " alt="" coords="180,5,347,47"/>
+<area shape="rect" id="node3" href="classscl_1_1XMeans.html#a6bd95662b30886437228d4b908dfd384" title="クラスタリング " alt="" coords="395,13,553,39"/>
+</map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="ae4ac98127b4e3ec18eeaff6037c49b75"></a>
@@ -220,6 +231,17 @@ template&lt;class Vector &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Eigen::Vector </dd></dl>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacescl_ae4ac98127b4e3ec18eeaff6037c49b75_icgraph.png" border="0" usemap="#namespacescl_ae4ac98127b4e3ec18eeaff6037c49b75_icgraph" alt=""/></div>
+<map name="namespacescl_ae4ac98127b4e3ec18eeaff6037c49b75_icgraph" id="namespacescl_ae4ac98127b4e3ec18eeaff6037c49b75_icgraph">
+<area shape="rect" id="node2" href="classscl_1_1XMeans.html#acfb549e06764318010fc810529b4babb" title="split data " alt="" coords="183,5,349,47"/>
+<area shape="rect" id="node3" href="classscl_1_1XMeans.html#a6bd95662b30886437228d4b908dfd384" title="クラスタリング " alt="" coords="397,13,556,39"/>
+</map>
+</div>
+</p>
 
 </div>
 </div>
@@ -319,7 +341,7 @@ template&lt;class DataType &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="afc4a2d3c5d662659ddfe5aeb88a1639f"></a>
+<a class="anchor" id="abe96ecfbbeb232d7143b4bd30ac58c7f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -327,7 +349,7 @@ template&lt;class DataType &gt; </div>
           <td class="memname">bool scl::calcCovariance </td>
           <td>(</td>
           <td class="paramtype">const Eigen::MatrixXd &amp;&#160;</td>
-          <td class="paramname"><em>data_set</em>, </td>
+          <td class="paramname"><em>dataset</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -346,7 +368,7 @@ template&lt;class DataType &gt; </div>
 <p>calc covariance-matrix </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">data_set</td><td>dataset (num data x dim) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dataset</td><td>dataset (num data x dim) </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">covariance</td><td>covariance-matrix </td></tr>
   </table>
   </dd>
@@ -356,11 +378,13 @@ template&lt;class DataType &gt; </div>
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespacescl_afc4a2d3c5d662659ddfe5aeb88a1639f_icgraph.png" border="0" usemap="#namespacescl_afc4a2d3c5d662659ddfe5aeb88a1639f_icgraph" alt=""/></div>
-<map name="namespacescl_afc4a2d3c5d662659ddfe5aeb88a1639f_icgraph" id="namespacescl_afc4a2d3c5d662659ddfe5aeb88a1639f_icgraph">
-<area shape="rect" id="node2" href="namespacescl_1_1normal.html#a89db45c17eee47725544a0ad85c78348" title="対数尤度 &#160;&#160;&#160;" alt="" coords="191,5,388,32"/>
-<area shape="rect" id="node4" href="namespacescl_1_1normal.html#a673988c7f7cf59622d06b757819b0845" title="尤度 &#160;&#160;" alt="" coords="201,56,377,83"/>
-<area shape="rect" id="node3" href="namespacescl_1_1normal.html#ad7af73d4d3d21df061d36e40e3503688" title="対数尤度 " alt="" coords="436,5,633,32"/>
+<div class="center"><img src="namespacescl_abe96ecfbbeb232d7143b4bd30ac58c7f_icgraph.png" border="0" usemap="#namespacescl_abe96ecfbbeb232d7143b4bd30ac58c7f_icgraph" alt=""/></div>
+<map name="namespacescl_abe96ecfbbeb232d7143b4bd30ac58c7f_icgraph" id="namespacescl_abe96ecfbbeb232d7143b4bd30ac58c7f_icgraph">
+<area shape="rect" id="node2" href="namespacescl_1_1normal.html#ac06cfcadff3709c2b41587984c74303b" title="対数尤度 &#160;&#160;&#160;" alt="" coords="191,13,388,40"/>
+<area shape="rect" id="node4" href="classscl_1_1XMeans.html#acfb549e06764318010fc810529b4babb" title="split data " alt="" coords="451,57,618,98"/>
+<area shape="rect" id="node6" href="namespacescl_1_1normal.html#a0acf5486cbec5f337698f3a26c448993" title="尤度 &#160;&#160;" alt="" coords="201,115,377,141"/>
+<area shape="rect" id="node3" href="namespacescl_1_1normal.html#a835f60a652243acf0c13003e39ae151e" title="対数尤度 &#160;" alt="" coords="436,5,633,32"/>
+<area shape="rect" id="node5" href="classscl_1_1XMeans.html#a6bd95662b30886437228d4b908dfd384" title="クラスタリング " alt="" coords="681,64,840,91"/>
 </map>
 </div>
 </p>

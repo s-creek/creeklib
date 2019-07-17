@@ -16,6 +16,9 @@ namespace scl
     /** 
      * @class XMeans
      * @brief x-means clustering.
+     * @par 論文
+     * <a href="http://www.cs.cmu.edu/%7Edpelleg/download/xmeans.pdf">X-means: Extending K-means with Efficient Estimation of the Number of Clusters | Carnegie Mellon Univ. (2000)</a> @n
+     * <a href="http://www.rd.dnc.ac.jp/%7Etunenori/doc/xmeans_euc.pdf">クラスター数を自動決定するk-meansアルゴリズムの拡張について | 大学入試センター 研究開発部 (2000)</a>
      * @details 参考サイト @n
      * <a href="https://qiita.com/deaikei/items/8615362d320c76e2ce0b">qiita</a>
      */

@@ -1,8 +1,10 @@
 var Statistics_8hpp =
 [
-    [ "calcCovariance", "Statistics_8hpp.html#afc4a2d3c5d662659ddfe5aeb88a1639f", null ],
+    [ "calcCovariance", "Statistics_8hpp.html#abe96ecfbbeb232d7143b4bd30ac58c7f", null ],
+    [ "probabilityDensityFunction", "Statistics_8hpp.html#a8764e402e0bc28e5dbc5bad6e34d1717", null ],
+    [ "cumulativeDensityFunction", "Statistics_8hpp.html#a64a0c64fea33223437f5fcbefe4b050f", null ],
     [ "probabilityDensityFunction", "Statistics_8hpp.html#a0653c99eed4e86b9541640ffad088bf7", null ],
-    [ "calcLogLikelihood", "Statistics_8hpp.html#a89db45c17eee47725544a0ad85c78348", null ],
-    [ "calcLogLikelihood", "Statistics_8hpp.html#ad7af73d4d3d21df061d36e40e3503688", null ],
-    [ "calcLikelihood", "Statistics_8hpp.html#a673988c7f7cf59622d06b757819b0845", null ]
+    [ "calcLogLikelihood", "Statistics_8hpp.html#ac06cfcadff3709c2b41587984c74303b", null ],
+    [ "calcLogLikelihood", "Statistics_8hpp.html#a835f60a652243acf0c13003e39ae151e", null ],
+    [ "calcLikelihood", "Statistics_8hpp.html#a0acf5486cbec5f337698f3a26c448993", null ]
 ];

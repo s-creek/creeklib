@@ -6,6 +6,6 @@ var searchData=
   ['rangesearch',['rangeSearch',['../classscl_1_1KdTree.html#a35dc60a31ba0b2848085c68cb2fc0bab',1,'scl::KdTree::rangeSearch(const PointType &amp;query, const double range, std::vector&lt; std::size_t &gt; &amp;indices, bool sort=false)'],['../classscl_1_1KdTree.html#a7269fb6f47e376929a9094b1cb893078',1,'scl::KdTree::rangeSearch(const PointType &amp;query, const double range, std::vector&lt; std::size_t &gt; &amp;indices, std::vector&lt; ValueType &gt; &amp;distances, bool sort=false)']]],
   ['rangesearchrecursive',['rangeSearchRecursive',['../classscl_1_1KdTree.html#a63c300abd75cd02c5f0a871debb056f6',1,'scl::KdTree::rangeSearchRecursive(const NodePtr node, const PointType &amp;query, const double range, std::vector&lt; std::size_t &gt; &amp;indices)'],['../classscl_1_1KdTree.html#a6c75000e5908548660ed4432566c521f',1,'scl::KdTree::rangeSearchRecursive(const NodePtr node, const PointType &amp;query, const double range, std::vector&lt; std::size_t &gt; &amp;indices, std::vector&lt; ValueType &gt; &amp;distances)']]],
   ['rangesearchrecursivesort',['rangeSearchRecursiveSort',['../classscl_1_1KdTree.html#ae144dc3a58efb059cfa493dc1c6268f6',1,'scl::KdTree']]],
-  ['recursivelysplit',['recursivelySplit',['../classscl_1_1XMeans.html#a2e7a4c397f96db7f319ca032f97c6725',1,'scl::XMeans']]],
+  ['recursivelysplit',['recursivelySplit',['../classscl_1_1XMeans.html#acfb549e06764318010fc810529b4babb',1,'scl::XMeans']]],
   ['root',['root',['../classscl_1_1KdTree.html#af3b1bcd8b3873bfbb98a33ac4c97b6f6',1,'scl::KdTree']]]
 ];

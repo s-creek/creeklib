@@ -306,6 +306,7 @@ namespace scl
         std::shuffle(shuffle_indices.begin(), shuffle_indices.end(), engine);
     
         // init label
+        m_clusterid_to_dataids.clear();
         m_clusterid_to_dataids.resize(num_clusters);
         for (std::size_t shuffle_index = 0; shuffle_index < shuffle_indices.size(); ++shuffle_index)
         {
@@ -324,6 +325,7 @@ namespace scl
     void KMeans::initCentroidsUniform(const std::vector<DataType> &dataset, const std::size_t num_clusters, std::vector< std::vector<double> > &centroids)
     {
         // init label
+        m_clusterid_to_dataids.clear();
         m_clusterid_to_dataids.resize(num_clusters);
         for (std::size_t data_index = 0; data_index < dataset.size(); ++data_index)
         {
@@ -334,7 +336,7 @@ namespace scl
         // init centroids
         centroids.resize(num_clusters, std::vector<double>(m_dim, 0.0));
         calcCentroids(dataset, centroids);
-    }
+     }
 
 
     template<class DataType>
