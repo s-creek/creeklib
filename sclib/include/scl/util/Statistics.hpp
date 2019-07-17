@@ -17,19 +17,19 @@ namespace scl
 {
     /**
      * @brief calc covariance-matrix
-     * @param[in] data_set dataset (num data x dim)
+     * @param[in] dataset dataset (num data x dim)
      * @param[out] covariance covariance-matrix
      * @return size check
      */
-    bool calcCovariance(const Eigen::MatrixXd &data_set, Eigen::MatrixXd &covariance)
+    bool calcCovariance(const Eigen::MatrixXd &dataset, Eigen::MatrixXd &covariance)
     {
-        if ( data_set.rows() < 2 )
+        if ( dataset.rows() < 2 )
         {
             return false;
         }
 
-        Eigen::MatrixXd centered = data_set.rowwise() - data_set.colwise().mean();
-        covariance = (centered.adjoint() * centered) / double(data_set.rows() - 1);
+        Eigen::MatrixXd centered = dataset.rowwise() - dataset.colwise().mean();
+        covariance = (centered.adjoint() * centered) / double(dataset.rows() - 1);
 
         return true;
     }
@@ -40,6 +40,32 @@ namespace scl
     {
         /**
          * @brief probability density function
+         */
+        double probabilityDensityFunction(const double x, const double mean=0, const double variance=1)
+        {
+            // set parameter
+            constexpr double two_pi(2.0 * M_PI);
+
+            // calc value
+            double alpha = 1.0 / std::sqrt(two_pi * variance);
+            double beta = -0.5 * std::pow((x-mean), 2) / variance;
+
+            return ( alpha * std::exp(beta) );
+        }
+
+
+        /**
+         * @brief cumulative density function
+         */
+        double cumulativeDensityFunction(const double x, const double mean=0, const double variance=1)
+        {
+            double alpha = (x - mean) / std::sqrt(2 * variance);
+            return 0.5 * (1 + std::erf(alpha));
+        }
+        
+        
+        /**
+         * @brief multivariate probability density function
          */
         double probabilityDensityFunction(const Eigen::VectorXd &x, const Eigen::VectorXd &mean, const Eigen::MatrixXd &covariance)
         {
@@ -63,19 +89,19 @@ namespace scl
          * \f{eqnarray*}{ likelihood = \Pi pdf \f}
          * \f{eqnarray*}{ log(likelihood) = \Sigma log(pdf) \f}
          */
-        double calcLogLikelihood(const Eigen::MatrixXd &data_set, const Eigen::VectorXd &mean)
+        double calcLogLikelihood(const Eigen::MatrixXd &dataset, const Eigen::VectorXd &mean)
         {
             // calc parameter
-            //Eigen::VectorXd mean(data_set.colwise().mean());
+            //Eigen::VectorXd mean(dataset.colwise().mean());
             Eigen::MatrixXd covariance;
-            calcCovariance(data_set, covariance);
+            calcCovariance(dataset, covariance);
 
             // calc likelihood
-            const std::size_t num(data_set.rows());
+            const std::size_t num(dataset.rows());
             double log_likelihood(0.0);
             for (std::size_t i = 0; i < num; ++i)
             {
-                double pdf = probabilityDensityFunction(data_set.row(i), mean, covariance);
+                double pdf = probabilityDensityFunction(dataset.row(i), mean, covariance);
                 log_likelihood += std::log(pdf);
             }
             return log_likelihood;
@@ -86,11 +112,11 @@ namespace scl
          * @brief 対数尤度 \f$ log(likelihood) \f$
          * @see calcLogLikelihood
          */
-        double calcLogLikelihood(const Eigen::MatrixXd &data_set)
+        double calcLogLikelihood(const Eigen::MatrixXd &dataset)
         {
             // calc parameter
-            Eigen::VectorXd mean(data_set.colwise().mean());
-            return calcLogLikelihood(data_set, mean);
+            Eigen::VectorXd mean(dataset.colwise().mean());
+            return calcLogLikelihood(dataset, mean);
         }
 
 
@@ -102,19 +128,19 @@ namespace scl
          * かけ算が足し算にできる計算のしやすさもあり対数尤度とすることが多い。
          * @see calcLogLikelihood
          */
-        double calcLikelihood(const Eigen::MatrixXd &data_set)
+        double calcLikelihood(const Eigen::MatrixXd &dataset)
         {
             // calc parameter
-            Eigen::VectorXd mean(data_set.colwise().mean());
+            Eigen::VectorXd mean(dataset.colwise().mean());
             Eigen::MatrixXd covariance;
-            calcCovariance(data_set, covariance);
+            calcCovariance(dataset, covariance);
 
             // calc likelihood
-            const std::size_t num(data_set.rows());
+            const std::size_t num(dataset.rows());
             double likelihood(1.0);
             for (std::size_t i = 0; i < num; ++i)
             {
-                double pdf = probabilityDensityFunction(data_set.row(i), mean, covariance);
+                double pdf = probabilityDensityFunction(dataset.row(i), mean, covariance);
                 likelihood *= pdf;
             }
             return likelihood;

@@ -61,6 +61,7 @@ int main ()
     PRINT_MAT(mean);
         
 
+    std::cout << "each probability density function" << std::endl;
     for (std::size_t i = 0; i < num; ++i)
     {
         double pdf = scl::normal::probabilityDensityFunction(mat.row(i), mean, covariance);
@@ -70,13 +71,31 @@ int main ()
 
 
     double log_likelihood = scl::normal::calcLogLikelihood(mat);
-    std::cout << "------------\nresult\n  " << log_likelihood << std::endl; 
+    std::cout << "--------------------------------" << std::endl;
+    std::cout << "log likelihood result" << std::endl;
+    std::cout << "  " << log_likelihood << std::endl;
 
 
     double likelihood = scl::normal::calcLikelihood(mat);
-    std::cout << "------------\nresult\n  " << likelihood << std::endl;
-    std::cout << "  " << std::log(likelihood) << std::endl;
+    std::cout << "--------------------------------" << std::endl;
+    std::cout << "likelihood result" << std::endl;
+    std::cout << "  " << likelihood << std::endl;
 
+
+    std::cout << "--------------------------------" << std::endl;
+    std::cout << "probability density function : 0.0,  0.5,  1.0" << std::endl;
+    std::cout << " " << scl::normal::probabilityDensityFunction(0.0)
+              << " " << scl::normal::probabilityDensityFunction(0.5)
+              << " " << scl::normal::probabilityDensityFunction(1.0)
+              << std::endl;
+    
+    std::cout << "--------------------------------" << std::endl;
+    std::cout << "cumulative density function : 0.0,  0.5,  1.0" << std::endl;
+    std::cout << " " << scl::normal::cumulativeDensityFunction(0.0)
+              << " " << scl::normal::cumulativeDensityFunction(0.5)
+              << " " << scl::normal::cumulativeDensityFunction(1.0)
+              << std::endl;
+    
     
     return 0;
 }

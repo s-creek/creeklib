@@ -62,7 +62,7 @@ namespace scl
          * @brief クラスタリング
          * @tparam DataType クラスタリングするデータの型
          * @param[in] dim DataTypeの次数
-         * @param[in] data_set クラスタリングするデータセット
+         * @param[in] dataset クラスタリングするデータセット
          * @param[in] num_clusters クラスタ数
          * @param[in,out] centroids 各クラスタの重心位置 ( method が  KMeans::MANUAL の時だけ[in]も使う)
          * @param[in] method クラスタ重心の初期化方法 (デフォルト k-means++)
@@ -70,7 +70,7 @@ namespace scl
          * @details DataType needs [] access operator
          */
         template<class DataType>
-        bool clustering(const std::size_t dim, const std::vector<DataType> &data_set, const std::size_t num_clusters, std::vector< std::vector<double> > &centroids, const InitMethod method=PLUSPLUS);
+        bool clustering(const std::size_t dim, const std::vector<DataType> &dataset, const std::size_t num_clusters, std::vector< std::vector<double> > &centroids, const InitMethod method=PLUSPLUS);
 
 
         /**
@@ -78,7 +78,7 @@ namespace scl
          * @see KMeans::clustering
          */
         template<class DataType>
-        bool clustering(const std::size_t dim, const std::vector<DataType> &data_set, const std::size_t num_clusters, const InitMethod method=PLUSPLUS);
+        bool clustering(const std::size_t dim, const std::vector<DataType> &dataset, const std::size_t num_clusters, const InitMethod method=PLUSPLUS);
 
 
         /** 
@@ -99,12 +99,12 @@ namespace scl
         /**
          * @brief 乱数によるクラスタ重心の初期化
          * @tparam DataType クラスタリングするデータの型
-         * @param[in] data_set クラスタリングするデータセット
+         * @param[in] dataset クラスタリングするデータセット
          * @param[in] num_clusters クラスタ数
          * @param[out] centroids 各クラスタの重心位置
          */
         template<class DataType>
-        void initCentroidsRandom(const std::vector<DataType> &data_set, const std::size_t num_clusters, std::vector< std::vector<double> > &centroids);
+        void initCentroidsRandom(const std::vector<DataType> &dataset, const std::size_t num_clusters, std::vector< std::vector<double> > &centroids);
 
 
         /**
@@ -112,7 +112,7 @@ namespace scl
          * @see Kmeans::initCentroidsRandom
          */
         template<class DataType>
-        void initCentroidsUniform(const std::vector<DataType> &data_set, const std::size_t num_clusters, std::vector< std::vector<double> > &centroids);
+        void initCentroidsUniform(const std::vector<DataType> &dataset, const std::size_t num_clusters, std::vector< std::vector<double> > &centroids);
 
 
         /**
@@ -120,7 +120,7 @@ namespace scl
          * @see Kmeans::initCentroidsRandom
          */
         template<class DataType>
-        void initCentroidsPlusplus(const std::vector<DataType> &data_set, const std::size_t num_clusters, std::vector< std::vector<double> > &centroids);
+        void initCentroidsPlusplus(const std::vector<DataType> &dataset, const std::size_t num_clusters, std::vector< std::vector<double> > &centroids);
 
 
         /**
@@ -136,22 +136,22 @@ namespace scl
         /**
          * @brief ラベルの更新
          * @tparam DataType クラスタリングするデータの型
-         * @param[in] data_set クラスタリングするデータセット
+         * @param[in] dataset クラスタリングするデータセット
          * @param[out] centroids 各クラスタの重心位置
          * @return 評価値
          */
         template<class DataType>
-        double updateLabel(const std::vector<DataType> &data_set, const std::vector< std::vector<double> > &centroids);
+        double updateLabel(const std::vector<DataType> &dataset, const std::vector< std::vector<double> > &centroids);
     
 
         /**
          * @brief クラスタ重心の計算
          * @tparam DataType クラスタリングするデータの型
-         * @param[in] data_set クラスタリングするデータセット
+         * @param[in] dataset クラスタリングするデータセット
          * @param[out] centroids 各クラスタの重心位置
          */
         template<class DataType>
-        void calcCentroids(const std::vector<DataType> &data_set, std::vector< std::vector<double> > &centroids);
+        void calcCentroids(const std::vector<DataType> &dataset, std::vector< std::vector<double> > &centroids);
         
         
         /**
@@ -211,10 +211,10 @@ namespace scl
 
 
     template<class DataType>
-    bool KMeans::clustering(const std::size_t dim, const std::vector<DataType> &data_set, const std::size_t num_clusters, std::vector< std::vector<double> > &centroids, const InitMethod method)
+    bool KMeans::clustering(const std::size_t dim, const std::vector<DataType> &dataset, const std::size_t num_clusters, std::vector< std::vector<double> > &centroids, const InitMethod method)
     {
         // size check
-        if (dim == 0 || data_set.empty() || num_clusters == 0)
+        if (dim == 0 || dataset.empty() || num_clusters == 0)
         {
             return false;
         }
@@ -226,17 +226,17 @@ namespace scl
         {
         case KMeans::RANDOM:
         {
-            initCentroidsRandom(data_set, num_clusters, centroids);
+            initCentroidsRandom(dataset, num_clusters, centroids);
             break;
         }
         case KMeans::UNIFORM:
         {
-            initCentroidsUniform(data_set, num_clusters, centroids);
+            initCentroidsUniform(dataset, num_clusters, centroids);
             break;
         }
         case KMeans::PLUSPLUS:
         {
-            initCentroidsPlusplus(data_set, num_clusters, centroids);
+            initCentroidsPlusplus(dataset, num_clusters, centroids);
             break;
         }
         case KMeans::MANUAL:
@@ -255,10 +255,10 @@ namespace scl
         for (std::size_t iteration = 0; iteration < m_max_iteration; ++iteration)
         {
             // update label
-            double cost = updateLabel(data_set, centroids);
+            double cost = updateLabel(dataset, centroids);
 
              // update centroids
-            calcCentroids(data_set, centroids);
+            calcCentroids(dataset, centroids);
 
             // check converged
             double error(cost - pre_cost);
@@ -274,10 +274,10 @@ namespace scl
 
 
     template<class DataType>
-    bool KMeans::clustering(const std::size_t dim, const std::vector<DataType> &data_set, const std::size_t num_clusters, const InitMethod method)
+    bool KMeans::clustering(const std::size_t dim, const std::vector<DataType> &dataset, const std::size_t num_clusters, const InitMethod method)
     {
         std::vector< std::vector<double> > centroids;
-        return clustering(dim, data_set, num_clusters, centroids, method);
+        return clustering(dim, dataset, num_clusters, centroids, method);
     }
 
 
@@ -294,10 +294,10 @@ namespace scl
 
 
     template<class DataType>
-    void KMeans::initCentroidsRandom(const std::vector<DataType> &data_set, const std::size_t num_clusters, std::vector< std::vector<double> > &centroids)
+    void KMeans::initCentroidsRandom(const std::vector<DataType> &dataset, const std::size_t num_clusters, std::vector< std::vector<double> > &centroids)
     {
         // データセットのインデックスリストを作成 //
-        std::vector<std::size_t> shuffle_indices(data_set.size());
+        std::vector<std::size_t> shuffle_indices(dataset.size());
         std::iota(shuffle_indices.begin(), shuffle_indices.end(), 0);
 
          // シャッフル //
@@ -316,16 +316,16 @@ namespace scl
     
         // init centroids
         centroids.resize(num_clusters, std::vector<double>(m_dim, 0.0));
-        calcCentroids(data_set, centroids);
+        calcCentroids(dataset, centroids);
     }
 
 
     template<class DataType>
-    void KMeans::initCentroidsUniform(const std::vector<DataType> &data_set, const std::size_t num_clusters, std::vector< std::vector<double> > &centroids)
+    void KMeans::initCentroidsUniform(const std::vector<DataType> &dataset, const std::size_t num_clusters, std::vector< std::vector<double> > &centroids)
     {
         // init label
         m_clusterid_to_dataids.resize(num_clusters);
-        for (std::size_t data_index = 0; data_index < data_set.size(); ++data_index)
+        for (std::size_t data_index = 0; data_index < dataset.size(); ++data_index)
         {
             std::size_t cluster_index = data_index % num_clusters;
             m_clusterid_to_dataids[cluster_index].push_back(data_index);
@@ -333,12 +333,12 @@ namespace scl
 
         // init centroids
         centroids.resize(num_clusters, std::vector<double>(m_dim, 0.0));
-        calcCentroids(data_set, centroids);
+        calcCentroids(dataset, centroids);
     }
 
 
     template<class DataType>
-    void KMeans::initCentroidsPlusplus(const std::vector<DataType> &data_set, const std::size_t num_clusters, std::vector< std::vector<double> > &centroids)
+    void KMeans::initCentroidsPlusplus(const std::vector<DataType> &dataset, const std::size_t num_clusters, std::vector< std::vector<double> > &centroids)
     {
         // init data
         const std::size_t dim(m_dim);
@@ -348,13 +348,13 @@ namespace scl
         // 乱数器の生成 //
         std::random_device seed_gen;
         std::mt19937 engine(seed_gen());
-        std::uniform_int_distribution<std::size_t> index_distribution(0, data_set.size()-1);  // [min, max] 最大値以下 //
+        std::uniform_int_distribution<std::size_t> index_distribution(0, dataset.size()-1);  // [min, max] 最大値以下 //
         std::uniform_real_distribution<double> threshold_distribution(0.0, 1.0);              // [min, max) 最大値未満 //
 
         // 1個目のクラスタ重心位置をデータからランダムに選択 //
         {
             std::size_t random_index = index_distribution(engine);
-            const DataType &target(data_set.at(random_index));
+            const DataType &target(dataset.at(random_index));
             std::vector<double> centroid(dim, 0.0);
             for (std::size_t value_index = 0; value_index < dim; ++value_index)
             {
@@ -364,11 +364,11 @@ namespace scl
         }
 
         // initialize list data
-        std::vector<double> distance_list(data_set.size());
+        std::vector<double> distance_list(dataset.size());
         double sum_squared_distance(0.0);
-        for (std::size_t data_index = 0; data_index < data_set.size(); ++data_index)
+        for (std::size_t data_index = 0; data_index < dataset.size(); ++data_index)
         {
-            distance_list[data_index] = calcSquaredDistance(data_set.at(data_index), centroids.back());
+            distance_list[data_index] = calcSquaredDistance(dataset.at(data_index), centroids.back());
             sum_squared_distance += distance_list[data_index];
         }
 
@@ -389,13 +389,13 @@ namespace scl
                 // 次の重心位置を決める閾値を設定 //
                 double threshold = sum_squared_distance * threshold_distribution(engine);
 
-                for (std::size_t data_index = 0; data_index < data_set.size(); ++data_index)
+                for (std::size_t data_index = 0; data_index < dataset.size(); ++data_index)
                 {
                     threshold -= distance_list[data_index];
                     if (threshold < 0)
                     {
                         // new centroid
-                        const DataType &target(data_set.at(data_index));
+                        const DataType &target(dataset.at(data_index));
                         for (std::size_t value_index = 0; value_index < dim; ++value_index)
                         {
                             proposed_centroid[value_index] = static_cast<double>(target[value_index]);
@@ -405,9 +405,9 @@ namespace scl
                 }
 
                 // proposed_centroid 時の評価値計算 //
-                for (std::size_t data_index = 0; data_index < data_set.size(); ++data_index)
+                for (std::size_t data_index = 0; data_index < dataset.size(); ++data_index)
                 {
-                    double squared_distance = calcSquaredDistance(data_set.at(data_index), proposed_centroid);
+                    double squared_distance = calcSquaredDistance(dataset.at(data_index), proposed_centroid);
                     if ( squared_distance < distance_list[data_index] )
                     {
                         proposed_distance_list[data_index] = squared_distance;
@@ -450,7 +450,7 @@ namespace scl
 
 
     template<class DataType>
-    double KMeans::updateLabel(const std::vector<DataType> &data_set, const std::vector< std::vector<double> > &centroids)
+    double KMeans::updateLabel(const std::vector<DataType> &dataset, const std::vector< std::vector<double> > &centroids)
     {
         // set size data
         const std::size_t dim(m_dim);
@@ -461,7 +461,7 @@ namespace scl
 
         // for each data
         double cost(0);
-        for (std::size_t data_index = 0; data_index < data_set.size(); ++data_index)
+        for (std::size_t data_index = 0; data_index < dataset.size(); ++data_index)
         {
             // set target data
             double min_squared_distance(std::numeric_limits<double>::max());
@@ -471,7 +471,7 @@ namespace scl
             for (std::size_t cluster_index = 0; cluster_index < centroids.size(); ++cluster_index)
             {
                 // calc squared distance
-                double new_squared_distance = calcSquaredDistance(data_set.at(data_index), centroids.at(cluster_index));
+                double new_squared_distance = calcSquaredDistance(dataset.at(data_index), centroids.at(cluster_index));
 
                 // update nearest cluster (centroid)
                 if (new_squared_distance < min_squared_distance)
@@ -490,7 +490,7 @@ namespace scl
     
 
     template<class DataType>
-    void KMeans::calcCentroids(const std::vector<DataType> &data_set, std::vector< std::vector<double> > &centroids)
+    void KMeans::calcCentroids(const std::vector<DataType> &dataset, std::vector< std::vector<double> > &centroids)
     {
         // set size data
         const std::size_t cluster_size(m_clusterid_to_dataids.size());
@@ -521,7 +521,7 @@ namespace scl
                 for (std::size_t i = 0; i < num_data; ++i)
                 {
                     std::size_t data_index = m_clusterid_to_dataids.at(cluster_index).at(i);
-                    const DataType &target(data_set.at(data_index));
+                    const DataType &target(dataset.at(data_index));
                     
                     for (std::size_t value_index = 0; value_index < dim; ++value_index)
                     {

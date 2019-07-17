@@ -10,7 +10,7 @@
 
 
 template<class DataType>
-void saveClusters(std::string filename, const std::size_t dim, const std::vector<DataType> &data_set, const std::vector< std::vector<std::size_t> > &clusters)
+void saveClusters(std::string filename, const std::size_t dim, const std::vector<DataType> &dataset, const std::vector< std::vector<std::size_t> > &clusters)
 {
     std::ofstream log(filename);
 
@@ -19,7 +19,7 @@ void saveClusters(std::string filename, const std::size_t dim, const std::vector
         for (std::size_t data_num = 0; data_num < clusters.at(cluster_id).size(); ++data_num)
         {
             std::size_t data_id = clusters.at(cluster_id).at(data_num);
-            const DataType &point = data_set.at(data_id);
+            const DataType &point = dataset.at(data_id);
 
             for (std::size_t value_index = 0; value_index < dim; ++value_index)
             {
@@ -69,7 +69,7 @@ int main ()
 
     // save points
     {
-        std::ofstream dat("../data/sample_data.log");
+        std::ofstream dat("./log/sample_data.log");
         for (std::size_t i = 0; i < points.size(); ++i)
         {
             dat << points.at(i).at(0) << " " << points.at(i).at(1) << std::endl;
@@ -152,11 +152,11 @@ int main ()
                       << std::endl;
         }
 
-        saveClusters("../data/random.log", 2, points, clusters_random);
-        saveClusters("../data/uniform.log", 2, points, clusters_uniform);
-        saveClusters("../data/pp.log", 2, points, clusters_pp);
-        saveClusters("../data/manual.log", 2, points, clusters_manual);
-        saveClusters("../data/cv.log", 2, points, clusters_cv);
+        saveClusters("./log/random.log", 2, points, clusters_random);
+        saveClusters("./log/uniform.log", 2, points, clusters_uniform);
+        saveClusters("./log/data/pp.log", 2, points, clusters_pp);
+        saveClusters("./log/data/manual.log", 2, points, clusters_manual);
+        saveClusters("./log/data/cv.log", 2, points, clusters_cv);
     }
     
     
