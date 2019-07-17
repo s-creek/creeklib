@@ -1,5 +1,3 @@
-// -*- coding: utf-8; tab-width: 4; mode: c++ -*-
-
 /**
  * @file XMeans.hpp
  */
@@ -9,6 +7,7 @@
 
 #include <scl/clustering/KMeans.hpp>
 #include <scl/util/Statistics.hpp>
+#include <vector>
 
 namespace scl
 {
@@ -48,6 +47,23 @@ namespace scl
 
     
     private:
+        /** @brief split data */
+        template<class DataType>
+        void recursivelySplit(const std::vector<DataType> &data_set, const std::vector<std::size_t> &indices, const std::vector<double> &centroid);
+
+
+        /** @brief クラスタリングするデータの次数 */
+        std::size_t m_dim;
+
+
+        /** @brief x-means で確定したクラスタ情報 */
+        std::vector< std::vector<std::size_t> > m_clusterid_to_dataids;
+
+
+        /** @brief x-means で確定したクラスタの各重心 */
+        std::vector< std::vector<double> > m_centroids;
+                
+        
         /** @brief k-means class */
         scl::KMeans m_kmeans;
 
@@ -81,8 +97,34 @@ namespace scl
     template<class DataType>
     bool XMeans::clustering(const std::size_t dim, const std::vector<DataType> &data_set, const std::size_t init_num_clusters, std::vector< std::vector<double> > &centroids)
     {
-        m_kmeans.clustering(dim, data_set, init_num_clusters, centroids, m_method);
+        // set parameter
+        m_dim = dim;
+        m_clusterid_to_dataids.clear();
+        m_centroids.clear();
+
+        // calc first k-means
+        std::vector< std::vector<double> > child_centroids;
+        m_kmeans.clustering(m_dim, data_set, init_num_clusters, child_centroids, m_method);
+
+        // x-means
+        const std::vector< std::vector<std::size_t> > clusters(m_kmeans.getClusters());
+        for (std::size_t cluster_id = 0; cluster_id < clusters.size(); ++cluster_id)
+        {
+            recursivelySplit(data_set, clusters.at(cluster_id), child_centroids.at(cluster_id));
+        }
     }
+
+
+    template<class DataType>
+    void XMeans::recursivelySplit(const std::vector<DataType> &data_set, const std::vector<std::size_t> &indices, const std::vector<double> &centroid)
+    {
+        if ( indices.size() < 3 )
+        {
+            m_clusterid_to_dataids.push_back(indices);
+            m_centroids.push_back(centroid);
+        }
+    }
+    
   
 }  // end of namespace scl
 

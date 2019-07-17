@@ -10,7 +10,7 @@ from scipy import stats
 #
 if __name__ == '__main__':
 
-    dataset = np.loadtxt("./log/sample_data.log")
+    dataset = np.loadtxt("../data/sample_data.log")
 
     cov = np.cov(dataset.T)
     print "cov :"

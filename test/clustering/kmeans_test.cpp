@@ -69,7 +69,7 @@ int main ()
 
     // save points
     {
-        std::ofstream dat("./log/sample_data.log");
+        std::ofstream dat("../data/sample_data.log");
         for (std::size_t i = 0; i < points.size(); ++i)
         {
             dat << points.at(i).at(0) << " " << points.at(i).at(1) << std::endl;
@@ -152,11 +152,11 @@ int main ()
                       << std::endl;
         }
 
-        saveClusters("./log/random.log", 2, points, clusters_random);
-        saveClusters("./log/uniform.log", 2, points, clusters_uniform);
-        saveClusters("./log/pp.log", 2, points, clusters_pp);
-        saveClusters("./log/manual.log", 2, points, clusters_manual);
-        saveClusters("./log/cv.log", 2, points, clusters_cv);
+        saveClusters("../data/random.log", 2, points, clusters_random);
+        saveClusters("../data/uniform.log", 2, points, clusters_uniform);
+        saveClusters("../data/pp.log", 2, points, clusters_pp);
+        saveClusters("../data/manual.log", 2, points, clusters_manual);
+        saveClusters("../data/cv.log", 2, points, clusters_cv);
     }
     
     

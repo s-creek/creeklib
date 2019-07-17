@@ -1,4 +1,4 @@
-#include <scl/clustering/XMeans.hpp>
+#include <scl/util/Statistics.hpp>
 #include <scl/util/EigenUtil.hpp>
 
 #include <vector>
@@ -12,7 +12,7 @@
 int main ()
 {
     // file open
-    std::ifstream file("./log/sample_data.log");
+    std::ifstream file("../data/sample_data.log");
     if ( !file )
     {
         return 0;
@@ -39,10 +39,43 @@ int main ()
     }
     file.close();
 
-    
+
     // convert data
     const std::size_t num(dataset.size()), dim(dataset.front().size());
     Eigen::MatrixXd mat(scl::toEigenMatrix(dim, dataset));
+    
+
+    // calc covariance
+    Eigen::MatrixXd covariance;
+    scl::calcCovariance(mat, covariance);
+    PRINT_MAT(covariance);
+    
+
+    // check first data
+    Eigen::VectorXd x(mat.row(0));
+    PRINT_MAT(x);
+
+
+    // calc mean
+    Eigen::VectorXd mean(mat.colwise().mean());
+    PRINT_MAT(mean);
+        
+
+    for (std::size_t i = 0; i < num; ++i)
+    {
+        double pdf = scl::calcPdf(mat.row(i), mean, covariance);
+        std::cout << " " << log(pdf);
+    }
+    std::cout << std::endl;
+
+
+    double log_likelihood = scl::calcLogLikelihood(mat);
+    std::cout << "------------\nresult\n  " << log_likelihood << std::endl; 
+
+
+    double likelihood = scl::calcLikelihood(mat);
+    std::cout << "------------\nresult\n  " << likelihood << std::endl;
+    std::cout << "  " << std::log(likelihood) << std::endl;
 
     
     return 0;
