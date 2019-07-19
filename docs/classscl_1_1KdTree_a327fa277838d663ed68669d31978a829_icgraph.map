@@ -1,4 +1,5 @@
 <map id="scl::KdTree::nnSearchRecursive" name="scl::KdTree::nnSearchRecursive">
-<area shape="rect" id="node2" href="$classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="全データ " alt="" coords="274,5,406,32"/>
-<area shape="rect" id="node3" href="$classscl_1_1KdTree.html#a828409d630bfc7c95d2966f243504dc4" title="scl::KdTree::nnSearch" alt="" coords="264,56,416,83"/>
+<area shape="rect" id="node2" href="$classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="全データ " alt="" coords="474,5,606,32"/>
+<area shape="rect" id="node3" href="$classscl_1_1KdTree.html#a828409d630bfc7c95d2966f243504dc4" title="最近傍探索 (nearest neighbor search) " alt="" coords="264,56,416,83"/>
+<area shape="rect" id="node4" href="$classscl_1_1KdTree.html#aeb61742e883aedd8875d73405063d14f" title="scl::KdTree::nnSearch" alt="" coords="464,56,616,83"/>
 </map>

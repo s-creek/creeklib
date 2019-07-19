@@ -1,14 +1,15 @@
 <map id="scl::KdTree::distance" name="scl::KdTree::distance">
-<area shape="rect" id="node2" href="$classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="全データ " alt="" coords="688,219,820,246"/>
-<area shape="rect" id="node3" href="$classscl_1_1KdTree.html#a327fa277838d663ed68669d31978a829" title="scl::KdTree::nnSearchRecursive" alt="" coords="204,67,415,94"/>
-<area shape="rect" id="node5" href="$classscl_1_1KdTree.html#aaa908e2a11c36a6b234c119c1df5034e" title="scl::KdTree::knnSearchRecursive" alt="" coords="200,169,419,195"/>
-<area shape="rect" id="node7" href="$classscl_1_1KdTree.html#a5cfc75965431d83b9a22d00ba6f26df0" title="scl::KdTree::radiusSearch\lRecursive" alt="" coords="223,249,396,291"/>
-<area shape="rect" id="node10" href="$classscl_1_1KdTree.html#a1b45d4f1d974a6c99ddba23b9053e2ba" title="scl::KdTree::radiusSearch\lRecursiveSort" alt="" coords="223,315,396,356"/>
-<area shape="rect" id="node11" href="$classscl_1_1KdTree.html#a6c75000e5908548660ed4432566c521f" title="scl::KdTree::rangeSearch\lRecursive" alt="" coords="224,380,395,421"/>
-<area shape="rect" id="node12" href="$classscl_1_1KdTree.html#ae144dc3a58efb059cfa493dc1c6268f6" title="scl::KdTree::rangeSearch\lRecursiveSort" alt="" coords="224,445,395,487"/>
-<area shape="rect" id="node4" href="$classscl_1_1KdTree.html#a828409d630bfc7c95d2966f243504dc4" title="scl::KdTree::nnSearch" alt="" coords="477,67,629,94"/>
-<area shape="rect" id="node6" href="$classscl_1_1KdTree.html#a03527e2f394b328ef20b7aaabc5a311b" title="scl::KdTree::knnSearch" alt="" coords="474,169,633,195"/>
-<area shape="rect" id="node8" href="$classscl_1_1KdTree.html#a5b2de3ac7fff76574dd1ac8105da0441" title="scl::KdTree::radiusSearch" alt="" coords="467,337,640,363"/>
-<area shape="rect" id="node9" href="$classscl_1_1KdTree.html#aabd795a26c9d5b8798f588143279de62" title="scl::KdTree::radiusSearch\lRecursive" alt="" coords="467,271,640,312"/>
-<area shape="rect" id="node13" href="$classscl_1_1KdTree.html#a35dc60a31ba0b2848085c68cb2fc0bab" title="scl::KdTree::rangeSearch" alt="" coords="468,489,639,515"/>
+<area shape="rect" id="node2" href="$classscl_1_1KdTree.html#ae977affb37137b7ec6b3fd813831bb2e" title="全データ " alt="" coords="698,208,830,235"/>
+<area shape="rect" id="node3" href="$classscl_1_1KdTree.html#a327fa277838d663ed68669d31978a829" title="最近傍探索用 (nearest neighbor search) " alt="" coords="204,56,415,83"/>
+<area shape="rect" id="node6" href="$classscl_1_1KdTree.html#aaa908e2a11c36a6b234c119c1df5034e" title="k近傍探索用 (k&#45;nearest neighbor search) " alt="" coords="200,157,419,184"/>
+<area shape="rect" id="node8" href="$classscl_1_1KdTree.html#a5cfc75965431d83b9a22d00ba6f26df0" title="scl::KdTree::radiusSearch\lRecursive" alt="" coords="223,293,396,334"/>
+<area shape="rect" id="node9" href="$classscl_1_1KdTree.html#a1b45d4f1d974a6c99ddba23b9053e2ba" title="scl::KdTree::radiusSearch\lRecursiveSort" alt="" coords="223,227,396,269"/>
+<area shape="rect" id="node11" href="$classscl_1_1KdTree.html#a6c75000e5908548660ed4432566c521f" title="各軸間距離が±range内にあるノード探索用 (2次元なら正方、3次元なら立方) " alt="" coords="224,358,395,399"/>
+<area shape="rect" id="node14" href="$classscl_1_1KdTree.html#ae144dc3a58efb059cfa493dc1c6268f6" title="scl::KdTree::rangeSearch\lRecursiveSort" alt="" coords="224,423,395,465"/>
+<area shape="rect" id="node4" href="$classscl_1_1KdTree.html#a828409d630bfc7c95d2966f243504dc4" title="最近傍探索 (nearest neighbor search) " alt="" coords="477,5,629,32"/>
+<area shape="rect" id="node5" href="$classscl_1_1KdTree.html#aeb61742e883aedd8875d73405063d14f" title="scl::KdTree::nnSearch" alt="" coords="688,5,840,32"/>
+<area shape="rect" id="node7" href="$classscl_1_1KdTree.html#a03527e2f394b328ef20b7aaabc5a311b" title="scl::KdTree::knnSearch" alt="" coords="474,157,633,184"/>
+<area shape="rect" id="node10" href="$classscl_1_1KdTree.html#a5b2de3ac7fff76574dd1ac8105da0441" title="scl::KdTree::radiusSearch" alt="" coords="467,259,640,285"/>
+<area shape="rect" id="node12" href="$classscl_1_1KdTree.html#a35dc60a31ba0b2848085c68cb2fc0bab" title="scl::KdTree::rangeSearch" alt="" coords="468,427,639,453"/>
+<area shape="rect" id="node13" href="$classscl_1_1KdTree.html#a63c300abd75cd02c5f0a871debb056f6" title="scl::KdTree::rangeSearch\lRecursive" alt="" coords="468,361,639,402"/>
 </map>

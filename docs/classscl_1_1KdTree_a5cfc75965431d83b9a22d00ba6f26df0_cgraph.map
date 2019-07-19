@@ -1,4 +1,5 @@
 <map id="scl::KdTree::radiusSearchRecursive" name="scl::KdTree::radiusSearchRecursive">
-<area shape="rect" id="node2" href="$classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="分割した軸 " alt="" coords="227,5,387,32"/>
-<area shape="rect" id="node3" href="$classscl_1_1KdTree.html#aec30f91a2b2f5f589dca86166fd4cedb" title="scl::KdTree::distance" alt="" coords="233,56,380,83"/>
+<area shape="rect" id="node2" href="$classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="分割した軸 " alt="" coords="448,5,608,32"/>
+<area shape="rect" id="node3" href="$classscl_1_1KdTree.html#aabd795a26c9d5b8798f588143279de62" title="半径内に含まれるノード探索用 (radius search) " alt="" coords="227,25,400,66"/>
+<area shape="rect" id="node4" href="$classscl_1_1KdTree.html#aec30f91a2b2f5f589dca86166fd4cedb" title="2点間の距離を計算 " alt="" coords="455,60,601,87"/>
 </map>

@@ -179,87 +179,121 @@ namespace scl
 
         /**
          * @brief kd-treeの構築
+         * @param points 入力データ
+         * @param leaf_size ツリーの最大深度
          */
         template <template <class T, class A = std::allocator<T> > class Container>
         void build(const Container<PointType> &points, const std::size_t leaf_size = 20);
 
 
-        //
-        // 最近傍探索 (nearest neighbor search)
-        //
-        std::size_t nnSearch(const PointType& query);
+        /**
+         * @brief 最近傍探索 (nearest neighbor search)
+         * @param[in] query ターゲット
+         * @param[out] dist 最近傍点までの距離
+         * @return 最近傍点のインデックス
+         */
         std::size_t nnSearch(const PointType& query, double& dist);
 
+        /** @see nnSearch */
+        std::size_t nnSearch(const PointType& query);
 
-        //
-        // k近傍探索 (k-nearest neighbor search)
-        // 近い順にk個のノードを探索
-        //
-        void knnSearch(const PointType& query, const std::size_t k, std::vector<std::size_t>& indices);
 
+        /**
+         * @brief k近傍探索 (k-nearest neighbor search)
+         * @tparam ValueType 距離の型
+         * @param[in] query ターゲット
+         * @param[in] k 最大個数
+         * @param[out] indices k近傍のインデックスリスト
+         * @param[out] distances 距離のリスト
+         * @details ターゲットから近い順に最大k個(k近傍)のノードを探索
+        */
         template<class ValueType>
         void knnSearch(const PointType& query, const std::size_t k, std::vector<std::size_t>& indices, std::vector<ValueType>& distances);
 
+        /** @see knnSearch */
+        void knnSearch(const PointType& query, const std::size_t k, std::vector<std::size_t>& indices);
 
-        //
-        // 半径内に含まれるノード探索 (radius search)
-        //
-        void radiusSearch(const PointType& query, const double radius, std::vector<std::size_t>& indices, bool sort = false);
 
+        /**
+         * @brief 半径内に含まれるノード探索 (radius search)
+         * @tparam ValueType 距離の型
+         * @param[in] query ターゲット
+         * @param[in] radius 最大半径
+         * @param[out] indices ターゲットからradius以内に存在するデータのインデックスリスト
+         * @param[out] distances 距離のリスト
+         * @param[in] sort true: 近い順にソート, false: 見つけた順
+         */
         template<class ValueType>
         void radiusSearch(const PointType& query, const double radius, std::vector<std::size_t>& indices, std::vector<ValueType>& distances, bool sort = false);
 
+        /** @see radiusSearch */
+        void radiusSearch(const PointType& query, const double radius, std::vector<std::size_t>& indices, bool sort = false);
 
-        //
-        // 各軸間距離が±range内にあるノード探索 (2次元なら正方、3次元なら立方)
-        //
-        void rangeSearch(const PointType& query, const double range, std::vector<std::size_t>& indices, bool sort = false);
 
+        /**
+         * @brief 各軸間距離が±range内にあるノード探索 (2次元なら正方、3次元なら立方)
+         * @tparam ValueType 距離の型
+         * @param[in] query ターゲット
+         * @param[in] range 最大軸間距離
+         * @param[out] indices ターゲットからrange以内に存在するデータのインデックスリスト
+         * @param[out] distances 距離のリスト
+         * @param[in] sort true: 近い順にソート, false: 見つけた順
+         */
         template<class ValueType>
         void rangeSearch(const PointType& query, const double range, std::vector<std::size_t>& indices, std::vector<ValueType>& distances, bool sort = false);
 
+        /** @see rangeSearch */
+        void rangeSearch(const PointType& query, const double range, std::vector<std::size_t>& indices, bool sort = false);
+
 
     private:
+        /** @brief 2点間の距離を計算 */
         double distance(const PointType& l, const PointType& r);
 
-        // kd-tree構築
+        
+        /** @brief kd-tree構築用 */
         NodePtr buildRecursive(std::vector<std::size_t>& indices, const int lo, const int hi, const std::size_t k, const std::size_t leaf_size);
 
 
-        // 最近傍探索 (nearest neighbor search)
+        /** @brief 最近傍探索用 (nearest neighbor search) */
         void nnSearchRecursive(const NodePtr node, const PointType& query, std::size_t& guess, double& dist);
 
 
-        // k近傍探索 (k-nearest neighbor search)
+        /** @brief k近傍探索用 (k-nearest neighbor search) */
         void knnSearchRecursive(const NodePtr node, const PointType& query, const std::size_t k, KnnQueue& queue);
 
 
-        // 半径内に含まれるノード探索(radius search)
-        void radiusSearchRecursive(const NodePtr node, const PointType& query, const double radius, std::vector<std::size_t>& indices);
-
+        /** @brief 半径内に含まれるノード探索用 (radius search) */
         template<class ValueType>
         void radiusSearchRecursive(const NodePtr node, const PointType& query, const double radius, std::vector<std::size_t>& indices, std::vector<ValueType>& distances);
 
+        /** @see radiusSearchRecursive */
+        void radiusSearchRecursive(const NodePtr node, const PointType& query, const double radius, std::vector<std::size_t>& indices);
+
+        /** @see radiusSearchRecursive */
         void radiusSearchRecursiveSort(const NodePtr node, const PointType& query, const double radius, KnnQueue& queue);
 
 
-        // 各軸間距離が±range内にあるノード探索 (2次元なら正方、3次元なら立方)
-        void rangeSearchRecursive(const NodePtr node, const PointType& query, const double range, std::vector<std::size_t>& indices);
-
+        /** @brief 各軸間距離が±range内にあるノード探索用 (2次元なら正方、3次元なら立方) */
         template<class ValueType>
         void rangeSearchRecursive(const NodePtr node, const PointType& query, const double range, std::vector<std::size_t>& indices, std::vector<ValueType>& distances);
 
+        /** @see rangeSearchRecursive */
+        void rangeSearchRecursive(const NodePtr node, const PointType& query, const double range, std::vector<std::size_t>& indices);
+
+        /** @see rangeSearchRecursive */
         void rangeSearchRecursiveSort(const NodePtr node, const PointType& query, const double range, KnnQueue& queue);
 
 
-
-        // PointTypeの次元
+        /** @brief PointTypeの次元 */
         std::size_t m_dim;
 
-        // tree構造の根
+        
+        /** @brief tree構造の根 */
         NodePtr m_root;
 
-        // 入力データのコピー
+        
+        /** @brief 入力データのコピー */
         std::vector<PointType> m_points;
     };
 

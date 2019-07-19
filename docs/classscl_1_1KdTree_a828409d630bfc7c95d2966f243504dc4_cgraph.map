@@ -1,5 +1,5 @@
 <map id="scl::KdTree::nnSearch" name="scl::KdTree::nnSearch">
-<area shape="rect" id="node2" href="$classscl_1_1KdTree.html#a327fa277838d663ed68669d31978a829" title="scl::KdTree::nnSearchRecursive" alt="" coords="205,31,416,57"/>
+<area shape="rect" id="node2" href="$classscl_1_1KdTree.html#a327fa277838d663ed68669d31978a829" title="最近傍探索用 (nearest neighbor search) " alt="" coords="205,31,416,57"/>
 <area shape="rect" id="node3" href="$classscl_1_1KdTree_1_1Node.html#aaf24e85d30a4fee5846f4db1749007e2" title="分割した軸 " alt="" coords="464,5,624,32"/>
-<area shape="rect" id="node4" href="$classscl_1_1KdTree.html#aec30f91a2b2f5f589dca86166fd4cedb" title="scl::KdTree::distance" alt="" coords="471,56,617,83"/>
+<area shape="rect" id="node4" href="$classscl_1_1KdTree.html#aec30f91a2b2f5f589dca86166fd4cedb" title="2点間の距離を計算 " alt="" coords="471,56,617,83"/>
 </map>

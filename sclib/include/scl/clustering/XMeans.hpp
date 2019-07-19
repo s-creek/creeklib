@@ -111,13 +111,16 @@ namespace scl
          * @details 論文の石岡の手法 @n
          * <a href="https://web-salad.hateblo.jp/entry/2014/07/19/200347">参考ブログ</a> @n
          * <a href="https://gist.github.com/yasaichi/254a060eff56a3b3b858#file-x_means-py">↑のGist</a>
-         * @bug ただあまり結果がよろしくない・・・移植ミス？
+         * @bug あまり結果がよろしくない・・・移植ミス？
          */
         template<class DataType>
         double bayesianInformationCriterionIshioka(const std::vector<DataType> &dataset, const std::vector<std::vector<std::size_t> > &indices_list, const std::vector<std::vector<double> > &centroids);
 
 
-        /** @todo 実装 */
+        /**
+         * @brief Minimum noiseless description length
+         * @todo 実装
+         */
         double minimumNoiselessDescriptionLength();
 
         
