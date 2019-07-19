@@ -1,4 +1,5 @@
 <map id="scl::normal::cumulativeDensityFunction" name="scl::normal::cumulativeDensityFunction">
-<area shape="rect" id="node2" href="$classscl_1_1XMeans.html#a0c98906986f9e464ffd3adffec38bfd4" title="split data (x&#45;means main algorithm) " alt="" coords="256,5,423,47"/>
-<area shape="rect" id="node3" href="$classscl_1_1XMeans.html#a0e14f70eb1750170b2b0bbdf33c52788" title="クラスタリング " alt="" coords="471,13,629,39"/>
+<area shape="rect" id="node2" href="$classscl_1_1XMeans.html#a978d9cc2019023bc55fb59332cb3db9e" title="Bayesian information criterion, BIC. " alt="" coords="256,5,476,47"/>
+<area shape="rect" id="node3" href="$classscl_1_1XMeans.html#a0c98906986f9e464ffd3adffec38bfd4" title="split data (x&#45;means main algorithm) " alt="" coords="524,5,691,47"/>
+<area shape="rect" id="node4" href="$classscl_1_1XMeans.html#a0e14f70eb1750170b2b0bbdf33c52788" title="クラスタリング " alt="" coords="739,13,897,39"/>
 </map>

@@ -1,4 +1,5 @@
 <map id="scl::toEigenVector" name="scl::toEigenVector">
-<area shape="rect" id="node2" href="$classscl_1_1XMeans.html#a0c98906986f9e464ffd3adffec38bfd4" title="split data (x&#45;means main algorithm) " alt="" coords="183,5,349,47"/>
-<area shape="rect" id="node3" href="$classscl_1_1XMeans.html#a0e14f70eb1750170b2b0bbdf33c52788" title="クラスタリング " alt="" coords="397,13,556,39"/>
+<area shape="rect" id="node2" href="$classscl_1_1XMeans.html#a978d9cc2019023bc55fb59332cb3db9e" title="Bayesian information criterion, BIC. " alt="" coords="183,5,403,47"/>
+<area shape="rect" id="node3" href="$classscl_1_1XMeans.html#a0c98906986f9e464ffd3adffec38bfd4" title="split data (x&#45;means main algorithm) " alt="" coords="451,5,617,47"/>
+<area shape="rect" id="node4" href="$classscl_1_1XMeans.html#a0e14f70eb1750170b2b0bbdf33c52788" title="クラスタリング " alt="" coords="665,13,824,39"/>
 </map>

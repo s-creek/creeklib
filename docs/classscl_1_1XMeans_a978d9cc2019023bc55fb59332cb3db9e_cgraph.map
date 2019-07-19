@@ -1,0 +1,10 @@
+<map id="scl::XMeans::bayesianInformationCriterionIshioka" name="scl::XMeans::bayesianInformationCriterionIshioka">
+<area shape="rect" id="node2" href="$namespacescl_1_1normal.html#ac06cfcadff3709c2b41587984c74303b" title="対数尤度 &#160;&#160;&#160;" alt="" coords="276,61,473,88"/>
+<area shape="rect" id="node3" href="$namespacescl.html#abe96ecfbbeb232d7143b4bd30ac58c7f" title="calc covariance&#45;matrix " alt="" coords="552,5,689,32"/>
+<area shape="rect" id="node5" href="$namespacescl.html#afd785d69790eac2553b70b1ba89f80ce" title="Eigen::Matrix from matrix. " alt="" coords="311,112,438,139"/>
+<area shape="rect" id="node7" href="$namespacescl.html#ae4ac98127b4e3ec18eeaff6037c49b75" title="Eigen::Vector from vector. " alt="" coords="310,163,439,189"/>
+<area shape="rect" id="node8" href="$classscl_1_1KMeans.html#a675fcbb0875bfe28da94d7908ecb73ca" title="距離の2乗 " alt="" coords="287,214,462,255"/>
+<area shape="rect" id="node9" href="$namespacescl_1_1normal.html#a64a0c64fea33223437f5fcbefe4b050f" title="cumulative density function " alt="" coords="273,279,476,321"/>
+<area shape="rect" id="node4" href="$namespacescl_1_1normal.html#a8764e402e0bc28e5dbc5bad6e34d1717" title="probability density function " alt="" coords="544,57,697,98"/>
+<area shape="rect" id="node6" href="$namespacescl_1_1internal.html#a7d8e9e019294ec5c9a3338f3310d0e5d" title="Serialize Matrix to 1D array. " alt="" coords="524,123,717,149"/>
+</map>

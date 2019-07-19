@@ -93,7 +93,15 @@ namespace scl
          * @see KMeans::m_clusterid_to_dataids
          */
         const std::vector<std::size_t> & getCluster(const std::size_t cluster_id) const;
+
         
+        /**
+         * @brief 距離の2乗
+         * @return ||point_a - point_b||^2
+         */
+        template<class DataTypeA, class DataTypeB>
+        double calcSquaredDistance(const DataTypeA &point_a, const DataTypeB &point_b);
+
         
     protected: 
         /**
@@ -124,16 +132,6 @@ namespace scl
 
 
         /**
-         * @brief データと重心の距離の2乗
-         * @param[in] point データセットの中の一点
-         * @param[in] centroid 重心位置
-         * @return point と centroid の距離の2乗
-         */
-        template<class DataTypeA, class DataTypeB>
-        double calcSquaredDistance(const DataTypeA &point_a, const DataTypeB &point_b);
-
-    
-        /**
          * @brief ラベルの更新
          * @tparam DataType クラスタリングするデータの型
          * @param[in] dataset クラスタリングするデータセット
@@ -149,6 +147,7 @@ namespace scl
          * @tparam DataType クラスタリングするデータの型
          * @param[in] dataset クラスタリングするデータセット
          * @param[out] centroids 各クラスタの重心位置
+         * @attention m_clusterid_to_dataids が必要
          */
         template<class DataType>
         void calcCentroids(const std::vector<DataType> &dataset, std::vector< std::vector<double> > &centroids);
@@ -252,22 +251,43 @@ namespace scl
         // k-means
         double pre_cost(-m_tolerance);  // 最初の一回で収束しないように //
         bool is_converged(false);
+        std::vector< std::vector<double> > pre_centroids(centroids);
         for (std::size_t iteration = 0; iteration < m_max_iteration; ++iteration)
         {
             // update label
             double cost = updateLabel(dataset, centroids);
 
              // update centroids
+            centroids.swap(pre_centroids);
             calcCentroids(dataset, centroids);
 
-            // check converged
-            double error(cost - pre_cost);
-            if (error < m_tolerance)
+            // check converged ver.1
+            // double error(cost - pre_cost);
+            // if (error < m_tolerance)
+            // {
+            //     is_converged = true;
+            //     break;
+            // }
+            // pre_cost = cost;
+
+            // check converged ver.2
             {
-                is_converged = true;
-                break;
+                double max_change(0.0);
+                for (std::size_t centroids_index = 0; centroids_index < centroids.size(); ++centroids_index)
+                {
+                    double squared_distance = calcSquaredDistance(centroids.at(centroids_index), pre_centroids.at(centroids_index));
+                    if (squared_distance > max_change)
+                    {
+                        max_change = squared_distance;
+                    }
+                }
+
+                if (max_change < m_tolerance)
+                {
+                    is_converged = true;
+                    break;
+                }
             }
-            pre_cost = cost;
         }
         return is_converged;
     }
@@ -316,7 +336,7 @@ namespace scl
         }
     
         // init centroids
-        centroids.resize(num_clusters, std::vector<double>(m_dim, 0.0));
+        //centroids.resize(num_clusters, std::vector<double>(m_dim, 0.0));
         calcCentroids(dataset, centroids);
     }
 
@@ -334,7 +354,7 @@ namespace scl
         }
 
         // init centroids
-        centroids.resize(num_clusters, std::vector<double>(m_dim, 0.0));
+        //centroids.resize(num_clusters, std::vector<double>(m_dim, 0.0));
         calcCentroids(dataset, centroids);
      }
 
@@ -497,7 +517,9 @@ namespace scl
         // set size data
         const std::size_t cluster_size(m_clusterid_to_dataids.size());
         const std::size_t dim(m_dim);
+        centroids.resize(cluster_size, std::vector<double>(dim, 0.0));
 
+        
         // for each cluster
         for (std::size_t cluster_index = 0; cluster_index < cluster_size; ++cluster_index)
         {

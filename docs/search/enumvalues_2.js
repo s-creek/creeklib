@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['random',['RANDOM',['../classscl_1_1KMeans.html#af06aa7b562d4b32603e0d444a5958eb8a60b234d90c5607c53ab4ea218d2febfe',1,'scl::KMeans']]]
+  ['plusplus',['PLUSPLUS',['../classscl_1_1KMeans.html#af06aa7b562d4b32603e0d444a5958eb8a73ccb821faf78a4964cc8ae585466429',1,'scl::KMeans']]]
 ];

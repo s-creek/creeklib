@@ -1,6 +1,8 @@
 var NAVTREE =
 [
   [ "sc library", "index.html", [
+    [ "Todo List", "todo.html", null ],
+    [ "Bug List", "bug.html", null ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],
       [ "Namespace Members", "namespacemembers.html", [

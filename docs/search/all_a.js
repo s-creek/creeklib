@@ -17,10 +17,13 @@ var searchData=
   ['m_5fpoints',['m_points',['../classscl_1_1KdTree.html#affa62bd86cd932d3143670391b67db2a',1,'scl::KdTree']]],
   ['m_5froot',['m_root',['../classscl_1_1KdTree.html#ad56bcfd9045430e66ccf1bf6512ea516',1,'scl::KdTree']]],
   ['m_5fsearchtype',['m_searchType',['../classBSpline.html#af4f7ac8e888b1c5fb5e5a63811545c1d',1,'BSpline']]],
+  ['m_5fsplitting_5ftype',['m_splitting_type',['../classscl_1_1XMeans.html#abfba5ffbf3e81962fe0238cb36b463b2',1,'scl::XMeans']]],
   ['m_5ftolerance',['m_tolerance',['../classscl_1_1KMeans.html#a754b430613703dfa15a8eb84b98e1494',1,'scl::KMeans']]],
   ['m_5fx',['m_x',['../classBSpline.html#af4a291a219bc54f086982f0643e39c97',1,'BSpline::m_x()'],['../classCubicSpline.html#a813a8e9bce68d7a553234a5e6df75922',1,'CubicSpline::m_x()']]],
   ['m_5fy',['m_y',['../classBSpline.html#ac2327ce2652bc6889f8e9bb56e9451dc',1,'BSpline::m_y()'],['../classCubicSpline.html#a48b453de7792a0d7799d068841b3e77b',1,'CubicSpline::m_y()']]],
   ['m_5fy2d',['m_y2d',['../classCubicSpline.html#a4d659f329b2c67d4e71e98036e966892',1,'CubicSpline']]],
   ['manual',['MANUAL',['../classscl_1_1KMeans.html#af06aa7b562d4b32603e0d444a5958eb8a058ff8e44a58623f586dff12c5d3d02e',1,'scl::KMeans']]],
-  ['matrixtoarray1d',['matrixToArray1d',['../namespacescl_1_1internal.html#a7d8e9e019294ec5c9a3338f3310d0e5d',1,'scl::internal']]]
+  ['matrixtoarray1d',['matrixToArray1d',['../namespacescl_1_1internal.html#a7d8e9e019294ec5c9a3338f3310d0e5d',1,'scl::internal']]],
+  ['minimumnoiselessdescriptionlength',['minimumNoiselessDescriptionLength',['../classscl_1_1XMeans.html#afb6fa5bd14db937e9d21737041d56493',1,'scl::XMeans']]],
+  ['mndl',['MNDL',['../classscl_1_1XMeans.html#a1af04fe3ad0b8d82af3561dbe8f6d805a4fd50de1f0a25119511451218eb912ea',1,'scl::XMeans']]]
 ];

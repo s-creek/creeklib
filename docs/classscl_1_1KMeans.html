@@ -46,6 +46,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -161,6 +162,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3c833d0cdfec33f7aa78c3abd8bff887"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::size_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscl_1_1KMeans.html#a3c833d0cdfec33f7aa78c3abd8bff887">getCluster</a> (const std::size_t cluster_id) const </td></tr>
 <tr class="memdesc:a3c833d0cdfec33f7aa78c3abd8bff887"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定したクラスタの情報取得  <a href="#a3c833d0cdfec33f7aa78c3abd8bff887">More...</a><br /></td></tr>
 <tr class="separator:a3c833d0cdfec33f7aa78c3abd8bff887"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a675fcbb0875bfe28da94d7908ecb73ca"><td class="memTemplParams" colspan="2">template&lt;class DataTypeA , class DataTypeB &gt; </td></tr>
+<tr class="memitem:a675fcbb0875bfe28da94d7908ecb73ca"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classscl_1_1KMeans.html#a675fcbb0875bfe28da94d7908ecb73ca">calcSquaredDistance</a> (const DataTypeA &amp;point_a, const DataTypeB &amp;point_b)</td></tr>
+<tr class="memdesc:a675fcbb0875bfe28da94d7908ecb73ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">距離の2乗  <a href="#a675fcbb0875bfe28da94d7908ecb73ca">More...</a><br /></td></tr>
+<tr class="separator:a675fcbb0875bfe28da94d7908ecb73ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -176,10 +181,6 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a4e3c894d8a0fd11d5e788baa5f6a026d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classscl_1_1KMeans.html#a4e3c894d8a0fd11d5e788baa5f6a026d">initCentroidsPlusplus</a> (const std::vector&lt; DataType &gt; &amp;dataset, const std::size_t num_clusters, std::vector&lt; std::vector&lt; double &gt; &gt; &amp;centroids)</td></tr>
 <tr class="memdesc:a4e3c894d8a0fd11d5e788baa5f6a026d"><td class="mdescLeft">&#160;</td><td class="mdescRight">k-means++によるクラスタ重心の初期化  <a href="#a4e3c894d8a0fd11d5e788baa5f6a026d">More...</a><br /></td></tr>
 <tr class="separator:a4e3c894d8a0fd11d5e788baa5f6a026d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a675fcbb0875bfe28da94d7908ecb73ca"><td class="memTemplParams" colspan="2">template&lt;class DataTypeA , class DataTypeB &gt; </td></tr>
-<tr class="memitem:a675fcbb0875bfe28da94d7908ecb73ca"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classscl_1_1KMeans.html#a675fcbb0875bfe28da94d7908ecb73ca">calcSquaredDistance</a> (const DataTypeA &amp;point_a, const DataTypeB &amp;point_b)</td></tr>
-<tr class="memdesc:a675fcbb0875bfe28da94d7908ecb73ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">データと重心の距離の2乗  <a href="#a675fcbb0875bfe28da94d7908ecb73ca">More...</a><br /></td></tr>
-<tr class="separator:a675fcbb0875bfe28da94d7908ecb73ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf7c199085849269175efe144266ae1e"><td class="memTemplParams" colspan="2">template&lt;class DataType &gt; </td></tr>
 <tr class="memitem:adf7c199085849269175efe144266ae1e"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classscl_1_1KMeans.html#adf7c199085849269175efe144266ae1e">updateLabel</a> (const std::vector&lt; DataType &gt; &amp;dataset, const std::vector&lt; std::vector&lt; double &gt; &gt; &amp;centroids)</td></tr>
 <tr class="memdesc:adf7c199085849269175efe144266ae1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">ラベルの更新  <a href="#adf7c199085849269175efe144266ae1e">More...</a><br /></td></tr>
@@ -411,8 +412,8 @@ Here is the call graph for this function:</div>
 <area shape="rect" id="node3" href="classscl_1_1KMeans.html#af7974e79732e8b009d6b1b0f4fdc76de" title="クラスタ重心の計算 " alt="" coords="436,71,619,98"/>
 <area shape="rect" id="node4" href="classscl_1_1KMeans.html#a239e8f2f97945237934a273ad9ea1bae" title="頭から順番にクラスタリングして重心初期化 " alt="" coords="212,123,388,164"/>
 <area shape="rect" id="node5" href="classscl_1_1KMeans.html#a4e3c894d8a0fd11d5e788baa5f6a026d" title="k&#45;means++によるクラスタ重心の初期化 " alt="" coords="212,188,388,229"/>
-<area shape="rect" id="node7" href="classscl_1_1KMeans.html#adf7c199085849269175efe144266ae1e" title="ラベルの更新 " alt="" coords="213,254,387,281"/>
-<area shape="rect" id="node6" href="classscl_1_1KMeans.html#a675fcbb0875bfe28da94d7908ecb73ca" title="データと重心の距離の2乗 " alt="" coords="440,217,615,259"/>
+<area shape="rect" id="node6" href="classscl_1_1KMeans.html#a675fcbb0875bfe28da94d7908ecb73ca" title="距離の2乗 " alt="" coords="440,247,615,288"/>
+<area shape="rect" id="node7" href="classscl_1_1KMeans.html#adf7c199085849269175efe144266ae1e" title="ラベルの更新 " alt="" coords="213,305,387,331"/>
 </map>
 </div>
 </p>
@@ -477,13 +478,13 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscl_1_1KMeans_a156b57b78576f5ebf43c283bb3c954b3_cgraph.png" border="0" usemap="#classscl_1_1KMeans_a156b57b78576f5ebf43c283bb3c954b3_cgraph" alt=""/></div>
 <map name="classscl_1_1KMeans_a156b57b78576f5ebf43c283bb3c954b3_cgraph" id="classscl_1_1KMeans_a156b57b78576f5ebf43c283bb3c954b3_cgraph">
-<area shape="rect" id="node2" href="classscl_1_1KMeans.html#a1a1fe0c9948cfc66e3bae9ca24db3b37" title="クラスタリング " alt="" coords="212,130,371,157"/>
+<area shape="rect" id="node2" href="classscl_1_1KMeans.html#a1a1fe0c9948cfc66e3bae9ca24db3b37" title="クラスタリング " alt="" coords="212,163,371,190"/>
 <area shape="rect" id="node3" href="classscl_1_1KMeans.html#a606a8657d130805a1b0a312fb96b4fba" title="乱数によるクラスタ重心の初期化 " alt="" coords="419,5,595,47"/>
 <area shape="rect" id="node4" href="classscl_1_1KMeans.html#af7974e79732e8b009d6b1b0f4fdc76de" title="クラスタ重心の計算 " alt="" coords="643,71,825,98"/>
 <area shape="rect" id="node5" href="classscl_1_1KMeans.html#a239e8f2f97945237934a273ad9ea1bae" title="頭から順番にクラスタリングして重心初期化 " alt="" coords="419,123,595,164"/>
 <area shape="rect" id="node6" href="classscl_1_1KMeans.html#a4e3c894d8a0fd11d5e788baa5f6a026d" title="k&#45;means++によるクラスタ重心の初期化 " alt="" coords="419,188,595,229"/>
-<area shape="rect" id="node8" href="classscl_1_1KMeans.html#adf7c199085849269175efe144266ae1e" title="ラベルの更新 " alt="" coords="420,254,593,281"/>
-<area shape="rect" id="node7" href="classscl_1_1KMeans.html#a675fcbb0875bfe28da94d7908ecb73ca" title="データと重心の距離の2乗 " alt="" coords="647,217,821,259"/>
+<area shape="rect" id="node7" href="classscl_1_1KMeans.html#a675fcbb0875bfe28da94d7908ecb73ca" title="距離の2乗 " alt="" coords="647,247,821,288"/>
+<area shape="rect" id="node8" href="classscl_1_1KMeans.html#adf7c199085849269175efe144266ae1e" title="ラベルの更新 " alt="" coords="420,305,593,331"/>
 </map>
 </div>
 </p>
@@ -535,6 +536,54 @@ Here is the caller graph for this function:</div>
 
 <p>指定したクラスタの情報取得 </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classscl_1_1KMeans.html#a0317038165a355821130ce3cfd5b0535" title="クラスタID(=index)ごとにデータIDを割り振った配列 ">KMeans::m_clusterid_to_dataids</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a675fcbb0875bfe28da94d7908ecb73ca"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class DataTypeA , class DataTypeB &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">double scl::KMeans::calcSquaredDistance </td>
+          <td>(</td>
+          <td class="paramtype">const DataTypeA &amp;&#160;</td>
+          <td class="paramname"><em>point_a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const DataTypeB &amp;&#160;</td>
+          <td class="paramname"><em>point_b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>距離の2乗 </p>
+<dl class="section return"><dt>Returns</dt><dd>||point_a - point_b||^2 </dd></dl>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classscl_1_1KMeans_a675fcbb0875bfe28da94d7908ecb73ca_icgraph.png" border="0" usemap="#classscl_1_1KMeans_a675fcbb0875bfe28da94d7908ecb73ca_icgraph" alt=""/></div>
+<map name="classscl_1_1KMeans_a675fcbb0875bfe28da94d7908ecb73ca_icgraph" id="classscl_1_1KMeans_a675fcbb0875bfe28da94d7908ecb73ca_icgraph">
+<area shape="rect" id="node2" href="classscl_1_1KMeans.html#a1a1fe0c9948cfc66e3bae9ca24db3b37" title="クラスタリング " alt="" coords="483,54,641,81"/>
+<area shape="rect" id="node6" href="classscl_1_1KMeans.html#a4e3c894d8a0fd11d5e788baa5f6a026d" title="k&#45;means++によるクラスタ重心の初期化 " alt="" coords="228,30,404,71"/>
+<area shape="rect" id="node7" href="classscl_1_1KMeans.html#adf7c199085849269175efe144266ae1e" title="ラベルの更新 " alt="" coords="229,96,403,122"/>
+<area shape="rect" id="node8" href="classscl_1_1XMeans.html#a9f95c2e144204f9f1035739d6f7e93d5" title="Bayesian information criterion, BIC. " alt="" coords="452,124,672,166"/>
+<area shape="rect" id="node9" href="classscl_1_1XMeans.html#a978d9cc2019023bc55fb59332cb3db9e" title="Bayesian information criterion, BIC. " alt="" coords="452,190,672,231"/>
+<area shape="rect" id="node3" href="classscl_1_1KMeans.html#a156b57b78576f5ebf43c283bb3c954b3" title="クラスタリング " alt="" coords="724,22,883,49"/>
+<area shape="rect" id="node4" href="classscl_1_1XMeans.html#a0e14f70eb1750170b2b0bbdf33c52788" title="クラスタリング " alt="" coords="935,102,1093,129"/>
+<area shape="rect" id="node5" href="classscl_1_1XMeans.html#a0c98906986f9e464ffd3adffec38bfd4" title="split data (x&#45;means main algorithm) " alt="" coords="720,124,887,166"/>
+</map>
+</div>
+</p>
 
 </div>
 </div>
@@ -735,7 +784,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscl_1_1KMeans_a4e3c894d8a0fd11d5e788baa5f6a026d_cgraph.png" border="0" usemap="#classscl_1_1KMeans_a4e3c894d8a0fd11d5e788baa5f6a026d_cgraph" alt=""/></div>
 <map name="classscl_1_1KMeans_a4e3c894d8a0fd11d5e788baa5f6a026d_cgraph" id="classscl_1_1KMeans_a4e3c894d8a0fd11d5e788baa5f6a026d_cgraph">
-<area shape="rect" id="node2" href="classscl_1_1KMeans.html#a675fcbb0875bfe28da94d7908ecb73ca" title="データと重心の距離の2乗 " alt="" coords="229,5,404,47"/>
+<area shape="rect" id="node2" href="classscl_1_1KMeans.html#a675fcbb0875bfe28da94d7908ecb73ca" title="距離の2乗 " alt="" coords="229,5,404,47"/>
 </map>
 </div>
 </p>
@@ -749,67 +798,6 @@ Here is the caller graph for this function:</div>
 <area shape="rect" id="node3" href="classscl_1_1KMeans.html#a156b57b78576f5ebf43c283bb3c954b3" title="クラスタリング " alt="" coords="440,5,599,32"/>
 <area shape="rect" id="node4" href="classscl_1_1XMeans.html#a0e14f70eb1750170b2b0bbdf33c52788" title="クラスタリング " alt="" coords="651,85,809,112"/>
 <area shape="rect" id="node5" href="classscl_1_1XMeans.html#a0c98906986f9e464ffd3adffec38bfd4" title="split data (x&#45;means main algorithm) " alt="" coords="436,107,603,149"/>
-</map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a675fcbb0875bfe28da94d7908ecb73ca"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class DataTypeA , class DataTypeB &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double scl::KMeans::calcSquaredDistance </td>
-          <td>(</td>
-          <td class="paramtype">const DataTypeA &amp;&#160;</td>
-          <td class="paramname"><em>point_a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const DataTypeB &amp;&#160;</td>
-          <td class="paramname"><em>point_b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>データと重心の距離の2乗 </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">point</td><td>データセットの中の一点 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">centroid</td><td>重心位置 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>point と centroid の距離の2乗 </dd></dl>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classscl_1_1KMeans_a675fcbb0875bfe28da94d7908ecb73ca_icgraph.png" border="0" usemap="#classscl_1_1KMeans_a675fcbb0875bfe28da94d7908ecb73ca_icgraph" alt=""/></div>
-<map name="classscl_1_1KMeans_a675fcbb0875bfe28da94d7908ecb73ca_icgraph" id="classscl_1_1KMeans_a675fcbb0875bfe28da94d7908ecb73ca_icgraph">
-<area shape="rect" id="node2" href="classscl_1_1KMeans.html#a4e3c894d8a0fd11d5e788baa5f6a026d" title="k&#45;means++によるクラスタ重心の初期化 " alt="" coords="228,19,404,61"/>
-<area shape="rect" id="node7" href="classscl_1_1KMeans.html#adf7c199085849269175efe144266ae1e" title="ラベルの更新 " alt="" coords="229,85,403,112"/>
-<area shape="rect" id="node3" href="classscl_1_1KMeans.html#a1a1fe0c9948cfc66e3bae9ca24db3b37" title="クラスタリング " alt="" coords="452,56,611,83"/>
-<area shape="rect" id="node4" href="classscl_1_1KMeans.html#a156b57b78576f5ebf43c283bb3c954b3" title="クラスタリング " alt="" coords="663,5,821,32"/>
-<area shape="rect" id="node5" href="classscl_1_1XMeans.html#a0e14f70eb1750170b2b0bbdf33c52788" title="クラスタリング " alt="" coords="873,85,1032,112"/>
-<area shape="rect" id="node6" href="classscl_1_1XMeans.html#a0c98906986f9e464ffd3adffec38bfd4" title="split data (x&#45;means main algorithm) " alt="" coords="659,107,825,149"/>
 </map>
 </div>
 </p>
@@ -871,7 +859,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscl_1_1KMeans_adf7c199085849269175efe144266ae1e_cgraph.png" border="0" usemap="#classscl_1_1KMeans_adf7c199085849269175efe144266ae1e_cgraph" alt=""/></div>
 <map name="classscl_1_1KMeans_adf7c199085849269175efe144266ae1e_cgraph" id="classscl_1_1KMeans_adf7c199085849269175efe144266ae1e_cgraph">
-<area shape="rect" id="node2" href="classscl_1_1KMeans.html#a675fcbb0875bfe28da94d7908ecb73ca" title="データと重心の距離の2乗 " alt="" coords="227,5,401,47"/>
+<area shape="rect" id="node2" href="classscl_1_1KMeans.html#a675fcbb0875bfe28da94d7908ecb73ca" title="距離の2乗 " alt="" coords="227,5,401,47"/>
 </map>
 </div>
 </p>
@@ -939,6 +927,7 @@ template&lt;class DataType &gt; </div>
   </table>
   </dd>
 </dl>
+<dl class="section attention"><dt>Attention</dt><dd>m_clusterid_to_dataids が必要 </dd></dl>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>

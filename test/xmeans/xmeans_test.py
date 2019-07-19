@@ -104,7 +104,7 @@ if __name__ == "__main__":
     import matplotlib.pyplot as plt
 
     # データの準備
-    dataset = np.loadtxt("./log/sample_dataset_03.log")
+    dataset = np.loadtxt("./log/sample_dataset_00.log")
 
     # クラスタリングの実行
     x_means = XMeans(random_state = 1).fit(dataset) 

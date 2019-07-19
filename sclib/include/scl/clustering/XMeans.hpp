@@ -9,6 +9,8 @@
 #include <scl/util/Statistics.hpp>
 #include <scl/util/EigenUtil.hpp>
 #include <vector>
+#include <limits>
+
 #include <iostream>
 
 namespace scl
@@ -25,6 +27,18 @@ namespace scl
     class XMeans
     {
     public:
+        /**
+         * @enum SplittingType
+         * @brief 分割手法
+         */
+        enum SplittingType
+        {
+            BIC_ORG,      /**< Bayesian information criterion (pyclusteringを参考にした手法) */
+            BIC_ISHIOKA,  /**< Bayesian information criterion (石岡の手法) */
+            MNDL          /**< Minimum noiseless description length */
+        };
+
+        
         /** @brief コンストラクタ */
         XMeans();
 
@@ -36,6 +50,10 @@ namespace scl
          */
         void setParameters(const std::size_t max_iteration, const double tolerance, const std::size_t max_pp_trial=3, const KMeans::InitMethod method=KMeans::PLUSPLUS);
 
+
+        /** @brief 分割時の評価方法を設定 */
+        void setSplittingType(const SplittingType splitting_type);
+        
 
         /**
          * @brief クラスタリング
@@ -77,6 +95,32 @@ namespace scl
         void recursivelySplit(const std::vector<DataType> &dataset, const std::vector<std::size_t> &indices, const std::vector<double> &centroid, const std::size_t min_num);
 
 
+        /**
+         * @brief Bayesian information criterion, BIC
+         * @details pyclustering を参考にした @n
+         * <a href="https://github.com/annoviko/pyclustering">GitHub</a>
+         * @bug たまに結果がよろしくない。
+         *      分割するときのスコアを0.95倍にすると割といい感じ。
+         */
+        template<class DataType>
+        double bayesianInformationCriterion(const std::vector<DataType> &dataset, const std::vector<std::vector<std::size_t> > &indices_list, const std::vector<std::vector<double> > &centroids);
+
+        
+        /**
+         * @brief Bayesian information criterion, BIC
+         * @details 論文の石岡の手法 @n
+         * <a href="https://web-salad.hateblo.jp/entry/2014/07/19/200347">参考ブログ</a> @n
+         * <a href="https://gist.github.com/yasaichi/254a060eff56a3b3b858#file-x_means-py">↑のGist</a>
+         * @bug ただあまり結果がよろしくない・・・移植ミス？
+         */
+        template<class DataType>
+        double bayesianInformationCriterionIshioka(const std::vector<DataType> &dataset, const std::vector<std::vector<std::size_t> > &indices_list, const std::vector<std::vector<double> > &centroids);
+
+
+        /** @todo 実装 */
+        double minimumNoiselessDescriptionLength();
+
+        
         /** @brief クラスタリングするデータの次数 */
         std::size_t m_dim;
 
@@ -96,6 +140,9 @@ namespace scl
         /** @brief k-means method */
         KMeans::InitMethod m_method;
 
+
+        /** @brief 分割時の評価方法 */
+        SplittingType m_splitting_type;
         
     };  // end of x-means class
 
@@ -107,7 +154,8 @@ namespace scl
     //------------------------------------------------------------------
 
     XMeans::XMeans()
-        : m_method(KMeans::PLUSPLUS)
+        : m_method(KMeans::PLUSPLUS),
+          m_splitting_type(XMeans::BIC_ORG)
     {
     }
     
@@ -116,6 +164,12 @@ namespace scl
     {
         m_kmeans.setParameters(max_iteration, tolerance, max_pp_trial);
         m_method = method;
+    }
+
+
+    void XMeans::setSplittingType(const SplittingType splitting_type)
+    {
+        m_splitting_type = splitting_type;
     }
     
     
@@ -200,46 +254,29 @@ namespace scl
             }
         }
 
-        
-        // calc current BIC
-        double p(m_dim);
-        double q = p * (p + 3) * 0.5;
-        double ni(indices.size());
-        
-        double current_bic = -2.0 * scl::normal::calcLogLikelihood( scl::toEigenMatrix(m_dim, dataset, indices), scl::toEigenVector(m_dim, centroid) ) + q * std::log(ni);
- 
 
-        // calc beta
-        double beta(0.0);
+        // calc score
+        double current_score(0.0), split_score(0.0);
+        switch (m_splitting_type)
         {
-            double squared_distance(0.0);
-            for (std::size_t i = 0; i < m_dim; ++i)
-            {
-                double error = current_centroids[0][i] - current_centroids[1][i];
-                squared_distance += (error * error);
-            }
-
-            Eigen::MatrixXd cov0, cov1;
-            scl::calcCovariance( scl::toEigenMatrix(m_dim, current_dataset, current_clusters[0]), cov0);
-            scl::calcCovariance( scl::toEigenMatrix(m_dim, current_dataset, current_clusters[1]), cov1);
-
-            beta = std::sqrt( squared_distance / (cov0.determinant() + cov1.determinant()) );
+        case XMeans::BIC_ISHIOKA:
+        {
+            current_score = bayesianInformationCriterionIshioka(dataset, std::vector<std::vector<std::size_t> >(1, indices), std::vector<std::vector<double> >(1, centroid));
+            split_score = bayesianInformationCriterionIshioka(current_dataset, current_clusters, current_centroids);
+            break;
         }
-  
+        case XMeans::MNDL:
+        case XMeans::BIC_ORG:
+        {
+            current_score = bayesianInformationCriterion(dataset, std::vector<std::vector<std::size_t> >(1, indices), std::vector<std::vector<double> >(1, centroid));
+            split_score = bayesianInformationCriterion(current_dataset, current_clusters, current_centroids);
+            split_score *= 0.95;  // todo check
+        }
+        }
 
-        // calc alpha
-        double alpha = 0.5 / scl::normal::cumulativeDensityFunction(beta);
-
-
-        // calc split BIC
-        double log_likelihood0 = scl::normal::calcLogLikelihood( scl::toEigenMatrix(m_dim, current_dataset, current_clusters[0]), scl::toEigenVector(current_centroids[0]) );
-        double log_likelihood1 = scl::normal::calcLogLikelihood( scl::toEigenMatrix(m_dim, current_dataset, current_clusters[1]), scl::toEigenVector(current_centroids[1]) );
         
-        double split_bic = -2.0 * ( ni * std::log(alpha) + log_likelihood0 + log_likelihood1 ) + 2.0 * q * std::log(ni);
-
-
         // compare BIC
-        if ( split_bic < current_bic )
+        if ( split_score < current_score )
         {
             for (std::size_t split_id = 0; split_id < 2; ++split_id)
             {
@@ -258,8 +295,110 @@ namespace scl
             m_centroids.push_back(centroid);
         }
     }
+
+
+    template<class DataType>
+    double XMeans::bayesianInformationCriterion(const std::vector<DataType> &dataset, const std::vector<std::vector<std::size_t> > &indices_list, const std::vector<std::vector<double> > &centroids)
+    {
+        double bic( std::numeric_limits<double>::max() );
+        
+        /* 計算に使うので先にdoubleにキャストしておく */
+        double dim(m_dim);
+        double K(indices_list.size());
+        double N(0);
+        double squared_sigma(0.0);
+
+        // calc variance
+        for (std::size_t cluster_id = 0; cluster_id < indices_list.size(); ++cluster_id)
+        {
+            const std::vector<double> centroid(centroids.at(cluster_id));
+            for (std::size_t data_index = 0; data_index < indices_list.at(cluster_id).size(); ++data_index)
+            {
+                DataType data = dataset.at(indices_list.at(cluster_id).at(data_index));
+                squared_sigma += m_kmeans.calcSquaredDistance(data, centroid);
+            }
+
+            N += static_cast<double>(indices_list.at(cluster_id).size());
+        }
+
+        if ( N - K > 0 )
+        {
+            squared_sigma /= (N - K);
+            double p = (K - 1) + dim * K + 1;
+
+            // in case of the same points, sigma_sqrt can be zero
+            double sigma_multiplier(0.0);
+            if (squared_sigma <= 0.0)
+            {
+                sigma_multiplier = -1.0 * std::numeric_limits<double>::max();
+            }
+            else
+            {
+                sigma_multiplier = dim * 0.5 * std::log(squared_sigma);
+            }
+
+            // splitting criterion
+            bic = 0.0;
+            for (std::size_t cluster_id = 0; cluster_id < indices_list.size(); ++cluster_id)
+            {
+                double n = static_cast<double>(indices_list.at(cluster_id).size());
+                double L = n * std::log(n) - n * std::log(N) - n * 0.5 * std::log(2.0 * M_PI) - n * sigma_multiplier - (n - K) * 0.5;
+                bic += p * 0.5 * std::log(N) - L;
+            }
+        }
+
+        return bic;
+    }
+
     
-  
+    template<class DataType>
+    double XMeans::bayesianInformationCriterionIshioka(const std::vector<DataType> &dataset, const std::vector<std::vector<std::size_t> > &indices_list, const std::vector<std::vector<double> > &centroids)
+    {
+        double bic(0.0);
+        
+        /* 計算に使うので先にdoubleにキャストしておく */
+        double p(m_dim);
+        double q = p * (p + 3) * 0.5;
+        double K(indices_list.size());
+        double N(0);
+
+        // calc data size
+        for (std::size_t cluster_id = 0; cluster_id < indices_list.size(); ++cluster_id)
+        {
+            N += static_cast<double>(indices_list.at(cluster_id).size());
+        }
+
+        // calc BIC
+        for (std::size_t cluster_id = 0; cluster_id < indices_list.size(); ++cluster_id)
+        {
+            double log_likelihood = scl::normal::calcLogLikelihood( scl::toEigenMatrix(m_dim, dataset, indices_list.at(cluster_id)), scl::toEigenVector(m_dim, centroids.at(cluster_id)) );
+            bic += -2.0 * log_likelihood + q * std::log(N);
+        }
+
+        // split
+        if (K == 2)
+        {
+            double squared_distance = m_kmeans.calcSquaredDistance(centroids[0], centroids[1]);
+            Eigen::MatrixXd cov0, cov1;
+            scl::calcCovariance( scl::toEigenMatrix(m_dim, dataset, indices_list[0]), cov0);
+            scl::calcCovariance( scl::toEigenMatrix(m_dim, dataset, indices_list[1]), cov1);
+
+            double beta = std::sqrt( squared_distance / (cov0.determinant() + cov1.determinant()) );
+            double alpha = 0.5 / scl::normal::cumulativeDensityFunction(beta);
+
+            bic += -2.0 * N * std::log(alpha);
+        }
+        
+        return bic;
+    }
+
+
+    double XMeans::minimumNoiselessDescriptionLength()
+    {
+        return 0;
+    }
+
+    
 }  // end of namespace scl
 
 

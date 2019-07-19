@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['manual',['MANUAL',['../classscl_1_1KMeans.html#af06aa7b562d4b32603e0d444a5958eb8a058ff8e44a58623f586dff12c5d3d02e',1,'scl::KMeans']]]
+  ['bic_5fishioka',['BIC_ISHIOKA',['../classscl_1_1XMeans.html#a1af04fe3ad0b8d82af3561dbe8f6d805a0d027c17e7ed652cf9967a67b2b0a670',1,'scl::XMeans']]],
+  ['bic_5forg',['BIC_ORG',['../classscl_1_1XMeans.html#a1af04fe3ad0b8d82af3561dbe8f6d805ad6071a00546908d954d8c2bbae8af5c9',1,'scl::XMeans']]]
 ];
