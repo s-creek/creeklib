@@ -34,10 +34,17 @@ void saveClusters(std::string filename, const std::size_t dim, const std::vector
 }
 
 
-int main ()
+int main (int argc, char **argv)
 {
+    std::string file_name("./log/sample_dataset_00.log");
+    if (argc > 1)
+    {
+        file_name = argv[1];
+    }
+    
+    
     // file open
-    std::ifstream file("./log/sample_dataset_00.log");
+    std::ifstream file(file_name);
     if ( !file )
     {
         return 0;
