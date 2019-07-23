@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['xmeans',['XMeans',['../classscl_1_1XMeans.html',1,'scl']]]
+  ['node',['Node',['../classscl_1_1KdTree_1_1Node.html',1,'scl::KdTree']]]
 ];

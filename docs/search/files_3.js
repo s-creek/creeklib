@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['kdtree_2ehpp',['KdTree.hpp',['../KdTree_8hpp.html',1,'']]],
-  ['kmeans_2ehpp',['KMeans.hpp',['../KMeans_8hpp.html',1,'']]]
+  ['gaussianmixturemodel_2ehpp',['GaussianMixtureModel.hpp',['../GaussianMixtureModel_8hpp.html',1,'']]]
 ];
