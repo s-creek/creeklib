@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['scl_5fstatistics_5fhp',['SCL_STATISTICS_HP',['../Statistics_8hpp.html#a7e382fd7ee10853f5ca49b55ff6a6531',1,'Statistics.hpp']]]
+  ['print_5fmat',['PRINT_MAT',['../GaussianMixtureModel_8hpp.html#a92102ea2f9ade1cc1a6dcce355db1677',1,'GaussianMixtureModel.hpp']]]
 ];

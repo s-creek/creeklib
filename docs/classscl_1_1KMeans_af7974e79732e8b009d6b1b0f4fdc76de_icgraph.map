@@ -1,8 +1,10 @@
 <map id="scl::KMeans::calcCentroids" name="scl::KMeans::calcCentroids">
-<area shape="rect" id="node2" href="$classscl_1_1KMeans.html#a1a1fe0c9948cfc66e3bae9ca24db3b37" title="クラスタリング " alt="" coords="460,56,619,83"/>
-<area shape="rect" id="node6" href="$classscl_1_1KMeans.html#a606a8657d130805a1b0a312fb96b4fba" title="乱数によるクラスタ重心の初期化 " alt="" coords="236,49,412,90"/>
-<area shape="rect" id="node7" href="$classscl_1_1KMeans.html#a239e8f2f97945237934a273ad9ea1bae" title="頭から順番にクラスタリングして重心初期化 " alt="" coords="236,114,412,155"/>
-<area shape="rect" id="node3" href="$classscl_1_1KMeans.html#a156b57b78576f5ebf43c283bb3c954b3" title="クラスタリング " alt="" coords="671,5,829,32"/>
-<area shape="rect" id="node4" href="$classscl_1_1XMeans.html#a0e14f70eb1750170b2b0bbdf33c52788" title="クラスタリング " alt="" coords="881,85,1040,112"/>
-<area shape="rect" id="node5" href="$classscl_1_1XMeans.html#a0c98906986f9e464ffd3adffec38bfd4" title="split data (x&#45;means main algorithm) " alt="" coords="667,107,833,149"/>
+<area shape="rect" id="node2" href="$classscl_1_1KMeans.html#a1a1fe0c9948cfc66e3bae9ca24db3b37" title="クラスタリング " alt="" coords="460,97,619,123"/>
+<area shape="rect" id="node8" href="$classscl_1_1KMeans.html#a606a8657d130805a1b0a312fb96b4fba" title="乱数によるクラスタ重心の初期化 " alt="" coords="236,89,412,131"/>
+<area shape="rect" id="node9" href="$classscl_1_1KMeans.html#a239e8f2f97945237934a273ad9ea1bae" title="頭から順番にクラスタリングして重心初期化 " alt="" coords="236,155,412,196"/>
+<area shape="rect" id="node3" href="$classscl_1_1GaussianMixtureModel.html#a0e28958b9173be9eacaa8b2cc65ea9f9" title="scl::GaussianMixtureModel\l::initialize2" alt="" coords="667,5,847,47"/>
+<area shape="rect" id="node5" href="$classscl_1_1KMeans.html#a156b57b78576f5ebf43c283bb3c954b3" title="クラスタリング " alt="" coords="677,71,836,98"/>
+<area shape="rect" id="node6" href="$classscl_1_1XMeans.html#a0e14f70eb1750170b2b0bbdf33c52788" title="クラスタリング " alt="" coords="905,151,1064,178"/>
+<area shape="rect" id="node7" href="$classscl_1_1XMeans.html#a0c98906986f9e464ffd3adffec38bfd4" title="split data (x&#45;means main algorithm) " alt="" coords="673,173,840,215"/>
+<area shape="rect" id="node4" href="$classscl_1_1GaussianMixtureModel.html#ae8aecd000f42d6c068007c1de5501a82" title="scl::GaussianMixtureModel\l::clustering" alt="" coords="895,5,1075,47"/>
 </map>

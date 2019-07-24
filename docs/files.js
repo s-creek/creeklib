@@ -9,9 +9,7 @@ var files =
       [ "CubicSpline", "classCubicSpline.html", "classCubicSpline" ]
     ] ],
     [ "EigenUtil.hpp", "EigenUtil_8hpp.html", "EigenUtil_8hpp" ],
-    [ "GaussianMixtureModel.hpp", "GaussianMixtureModel_8hpp.html", [
-      [ "GaussianMixtureModel", "classscl_1_1GaussianMixtureModel.html", "classscl_1_1GaussianMixtureModel" ]
-    ] ],
+    [ "GaussianMixtureModel.hpp", "GaussianMixtureModel_8hpp.html", "GaussianMixtureModel_8hpp" ],
     [ "KdTree.hpp", "KdTree_8hpp.html", [
       [ "KdTree", "classscl_1_1KdTree.html", "classscl_1_1KdTree" ],
       [ "Node", "classscl_1_1KdTree_1_1Node.html", "classscl_1_1KdTree_1_1Node" ],

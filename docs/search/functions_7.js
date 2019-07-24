@@ -1,7 +1,10 @@
 var searchData=
 [
-  ['kdtree',['KdTree',['../classscl_1_1KdTree.html#aa8b1d17cb840811ab5b4b4b157f2f625',1,'scl::KdTree::KdTree()'],['../classscl_1_1KdTree.html#ae1490e7d8d3f895b25ead4f6411946fc',1,'scl::KdTree::KdTree(const Container&lt; PointType &gt; &amp;points, const std::size_t leaf_size=20)']]],
-  ['kmeans',['KMeans',['../classscl_1_1KMeans.html#aa6257231780046e999055dbd4266ae95',1,'scl::KMeans']]],
-  ['knnsearch',['knnSearch',['../classscl_1_1KdTree.html#a83fcdc02e0239e27d9c3ad60546d7004',1,'scl::KdTree::knnSearch(const PointType &amp;query, const std::size_t k, std::vector&lt; std::size_t &gt; &amp;indices, std::vector&lt; ValueType &gt; &amp;distances)'],['../classscl_1_1KdTree.html#a03527e2f394b328ef20b7aaabc5a311b',1,'scl::KdTree::knnSearch(const PointType &amp;query, const std::size_t k, std::vector&lt; std::size_t &gt; &amp;indices)']]],
-  ['knnsearchrecursive',['knnSearchRecursive',['../classscl_1_1KdTree.html#aaa908e2a11c36a6b234c119c1df5034e',1,'scl::KdTree']]]
+  ['index',['index',['../classscl_1_1KdTree_1_1Node.html#ac95e1306e4722bfb9c896d62973783cf',1,'scl::KdTree::Node']]],
+  ['initcentroidsplusplus',['initCentroidsPlusplus',['../classscl_1_1KMeans.html#a4e3c894d8a0fd11d5e788baa5f6a026d',1,'scl::KMeans']]],
+  ['initcentroidsrandom',['initCentroidsRandom',['../classscl_1_1KMeans.html#a606a8657d130805a1b0a312fb96b4fba',1,'scl::KMeans']]],
+  ['initcentroidsuniform',['initCentroidsUniform',['../classscl_1_1KMeans.html#a239e8f2f97945237934a273ad9ea1bae',1,'scl::KMeans']]],
+  ['initialize',['initialize',['../classscl_1_1GaussianMixtureModel.html#a535287c16d9a7d840adb9245cf422446',1,'scl::GaussianMixtureModel']]],
+  ['initialize2',['initialize2',['../classscl_1_1GaussianMixtureModel.html#a0e28958b9173be9eacaa8b2cc65ea9f9',1,'scl::GaussianMixtureModel']]],
+  ['isinit',['isInit',['../classCubicSpline.html#a1a22e8d3e6ecdef5fa5ff7873b1af400',1,'CubicSpline']]]
 ];

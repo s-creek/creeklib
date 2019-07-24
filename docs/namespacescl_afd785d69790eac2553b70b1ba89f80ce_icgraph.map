@@ -1,5 +1,6 @@
 <map id="scl::toEigenMatrix" name="scl::toEigenMatrix">
-<area shape="rect" id="node2" href="$classscl_1_1XMeans.html#a978d9cc2019023bc55fb59332cb3db9e" title="Bayesian information criterion, BIC. " alt="" coords="180,5,400,47"/>
-<area shape="rect" id="node3" href="$classscl_1_1XMeans.html#a0c98906986f9e464ffd3adffec38bfd4" title="split data (x&#45;means main algorithm) " alt="" coords="448,5,615,47"/>
-<area shape="rect" id="node4" href="$classscl_1_1XMeans.html#a0e14f70eb1750170b2b0bbdf33c52788" title="クラスタリング " alt="" coords="663,13,821,39"/>
+<area shape="rect" id="node2" href="$classscl_1_1GaussianMixtureModel.html#ae8aecd000f42d6c068007c1de5501a82" title="scl::GaussianMixtureModel\l::clustering" alt="" coords="200,5,380,47"/>
+<area shape="rect" id="node3" href="$classscl_1_1XMeans.html#a978d9cc2019023bc55fb59332cb3db9e" title="Bayesian information criterion, BIC. " alt="" coords="180,71,400,112"/>
+<area shape="rect" id="node4" href="$classscl_1_1XMeans.html#a0c98906986f9e464ffd3adffec38bfd4" title="split data (x&#45;means main algorithm) " alt="" coords="448,71,615,112"/>
+<area shape="rect" id="node5" href="$classscl_1_1XMeans.html#a0e14f70eb1750170b2b0bbdf33c52788" title="クラスタリング " alt="" coords="663,78,821,105"/>
 </map>

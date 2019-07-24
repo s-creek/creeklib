@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['matrixtoarray1d',['matrixToArray1d',['../namespacescl_1_1internal.html#a7d8e9e019294ec5c9a3338f3310d0e5d',1,'scl::internal']]],
-  ['minimumnoiselessdescriptionlength',['minimumNoiselessDescriptionLength',['../classscl_1_1XMeans.html#afb6fa5bd14db937e9d21737041d56493',1,'scl::XMeans']]]
+  ['lo',['lo',['../classscl_1_1KdTree_1_1Node.html#a4e12e18d46b166b18aa98c17831318d6',1,'scl::KdTree::Node::lo()'],['../classscl_1_1KdTree_1_1Node.html#a4e11fa8c0f603fd81f58570f1c688dd2',1,'scl::KdTree::Node::lo() const ']]]
 ];

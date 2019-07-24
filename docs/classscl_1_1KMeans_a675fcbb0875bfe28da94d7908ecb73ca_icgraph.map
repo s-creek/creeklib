@@ -1,10 +1,12 @@
 <map id="scl::KMeans::calcSquaredDistance" name="scl::KMeans::calcSquaredDistance">
-<area shape="rect" id="node2" href="$classscl_1_1KMeans.html#a1a1fe0c9948cfc66e3bae9ca24db3b37" title="クラスタリング " alt="" coords="483,54,641,81"/>
-<area shape="rect" id="node6" href="$classscl_1_1KMeans.html#a4e3c894d8a0fd11d5e788baa5f6a026d" title="k&#45;means++によるクラスタ重心の初期化 " alt="" coords="228,30,404,71"/>
-<area shape="rect" id="node7" href="$classscl_1_1KMeans.html#adf7c199085849269175efe144266ae1e" title="ラベルの更新 " alt="" coords="229,96,403,122"/>
-<area shape="rect" id="node8" href="$classscl_1_1XMeans.html#a9f95c2e144204f9f1035739d6f7e93d5" title="Bayesian information criterion, BIC. " alt="" coords="452,124,672,166"/>
-<area shape="rect" id="node9" href="$classscl_1_1XMeans.html#a978d9cc2019023bc55fb59332cb3db9e" title="Bayesian information criterion, BIC. " alt="" coords="452,190,672,231"/>
-<area shape="rect" id="node3" href="$classscl_1_1KMeans.html#a156b57b78576f5ebf43c283bb3c954b3" title="クラスタリング " alt="" coords="724,22,883,49"/>
-<area shape="rect" id="node4" href="$classscl_1_1XMeans.html#a0e14f70eb1750170b2b0bbdf33c52788" title="クラスタリング " alt="" coords="935,102,1093,129"/>
-<area shape="rect" id="node5" href="$classscl_1_1XMeans.html#a0c98906986f9e464ffd3adffec38bfd4" title="split data (x&#45;means main algorithm) " alt="" coords="720,124,887,166"/>
+<area shape="rect" id="node2" href="$classscl_1_1KMeans.html#a1a1fe0c9948cfc66e3bae9ca24db3b37" title="クラスタリング " alt="" coords="483,73,641,99"/>
+<area shape="rect" id="node8" href="$classscl_1_1KMeans.html#a4e3c894d8a0fd11d5e788baa5f6a026d" title="k&#45;means++によるクラスタ重心の初期化 " alt="" coords="228,65,404,107"/>
+<area shape="rect" id="node9" href="$classscl_1_1KMeans.html#adf7c199085849269175efe144266ae1e" title="ラベルの更新 " alt="" coords="229,131,403,158"/>
+<area shape="rect" id="node10" href="$classscl_1_1XMeans.html#a9f95c2e144204f9f1035739d6f7e93d5" title="Bayesian information criterion, BIC. " alt="" coords="452,171,672,212"/>
+<area shape="rect" id="node11" href="$classscl_1_1XMeans.html#a978d9cc2019023bc55fb59332cb3db9e" title="Bayesian information criterion, BIC. " alt="" coords="452,236,672,277"/>
+<area shape="rect" id="node3" href="$classscl_1_1GaussianMixtureModel.html#a0e28958b9173be9eacaa8b2cc65ea9f9" title="scl::GaussianMixtureModel\l::initialize2" alt="" coords="720,5,900,47"/>
+<area shape="rect" id="node5" href="$classscl_1_1KMeans.html#a156b57b78576f5ebf43c283bb3c954b3" title="クラスタリング " alt="" coords="731,71,889,98"/>
+<area shape="rect" id="node6" href="$classscl_1_1XMeans.html#a0e14f70eb1750170b2b0bbdf33c52788" title="クラスタリング " alt="" coords="959,151,1117,178"/>
+<area shape="rect" id="node7" href="$classscl_1_1XMeans.html#a0c98906986f9e464ffd3adffec38bfd4" title="split data (x&#45;means main algorithm) " alt="" coords="727,173,893,215"/>
+<area shape="rect" id="node4" href="$classscl_1_1GaussianMixtureModel.html#ae8aecd000f42d6c068007c1de5501a82" title="scl::GaussianMixtureModel\l::clustering" alt="" coords="948,5,1128,47"/>
 </map>
