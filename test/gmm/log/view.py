@@ -20,7 +20,7 @@ def show(filename):
 
 
 def main():
-    show("./clustering_gmm_cpp.log")
+    show("./clustering_gmm_best_cpp.log")
     plt.show()
     
     

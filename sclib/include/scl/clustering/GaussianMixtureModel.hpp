@@ -24,7 +24,8 @@ namespace scl
      * @details クラスタ数 = 正規分布数 @n
      * 参考サイト @n
      * <a href="https://datachemeng.com/gaussianmixturemodel/">GMM</a> @n
-     * <a href="http://nonbiri-tereka.hatenablog.com/entry/2014/07/29/100733">code</a> 
+     * <a href="http://nonbiri-tereka.hatenablog.com/entry/2014/07/29/100733">code</a> @n
+     * <a href="https://qiita.com/BigSea/items/1949b3ceefcec4fc32ea">logsumexp</a>
      */
     class GaussianMixtureModel
     {
@@ -178,6 +179,23 @@ namespace scl
             }
             m_clusterid_to_dataids[best_cluster_id].push_back(j);
         }
+
+
+        for (int i = 0; i < N; ++i)
+        {
+            for (int j = 0; j < num_clusters; ++j)
+            {
+                printf("%8.4f", m_gamma[i][j]);
+            }
+            std::cout << std::endl;
+        }
+        std::cout << "------------------------" << std::endl;
+        for (int i = 0; i < num_clusters; ++i)
+        {
+            printf("%8.4f", m_pi[i]);
+        }
+        std::cout << std::endl;
+        std::cout << pre_bic << std::endl;
     }
 
     
@@ -373,7 +391,7 @@ namespace scl
             double pdf(0.0);
             for (std::size_t k = 0; k < num_clusters; ++k)
             {
-                pdf += m_pi[k] * scl::normal::probabilityDensityFunction(dataset.row(j), m_mean[k], m_covariance[k]);
+                pdf += ( m_pi[k] * scl::normal::probabilityDensityFunction(dataset.row(j), m_mean[k], m_covariance[k]) );
             }
             log_likelihood += std::log(pdf);
         }
@@ -381,8 +399,8 @@ namespace scl
         
         double p(m_dim);
         double q = p * (p + 1) * 0.5 * num_clusters;
-        q += (p + 1) * num_clusters;
-        q -= 1.0;
+        q += ( p * num_clusters );
+        q += ( static_cast<double>(num_clusters) - 1.0);
         double bic = -2.0 * log_likelihood + q * std::log( static_cast<double>(N) );
         return bic;
     }

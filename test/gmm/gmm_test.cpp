@@ -37,7 +37,7 @@ void saveClusters(std::string filename, const std::size_t dim, const std::vector
 
 int main (int argc, char **argv)
 {
-    std::string file_name("../xmeans/log/sample_dataset_00.log");
+    std::string file_name("../xmeans/log/sample_dataset_01.log");
     if (argc > 1)
     {
         file_name = argv[1];
@@ -75,7 +75,8 @@ int main (int argc, char **argv)
     
     scl::GaussianMixtureModel *gmm = new scl::GaussianMixtureModel();
     std::vector< std::vector<double> > centroids;
-    gmm->clustering(2, dataset, 6, centroids);
+    gmm->clustering(2, dataset, 4, centroids);
+    return 0;
 
     for (std::size_t k = 0; k < gmm->getClusters().size(); ++k)
     {
@@ -90,15 +91,23 @@ int main (int argc, char **argv)
     {
         Eigen::MatrixXd data_eigen( scl::toEigenMatrix(2, dataset) );
 
-        for (int i = 0; i < 10; ++i)
+        std::size_t best_k(3);
+        for (int i = 0; i < 1; ++i)
         {
             double best_bic = 10000;
-            std::size_t best_k(2);
-            for (std::size_t k = best_k; k < 10; ++k)
+            best_k = 3;
+            for (std::size_t k = best_k; k < 8; ++k)
             {
                 gmm->clustering(2, dataset, k, centroids);
                 //std::cout << k << "  " << gmm->calcBIC(data_eigen) << std::endl;
                 double bic = gmm->calcBIC(data_eigen);
+                std::cout << k << "  " << bic << std::endl;
+                // for (int a = 0; a < k; ++a)
+                // {
+                //     std::cout << gmm->m_mean[a][0] << ", " << gmm->m_mean[a][1] << std::endl;
+                // }
+                // std::cout << std::endl;
+                
                 if ( std::isnan(bic) )
                 {
                     continue;
@@ -111,6 +120,8 @@ int main (int argc, char **argv)
             }
             std::cout << "best cluster size : " << best_k << std::endl;
         }
+        gmm->clustering(2, dataset, best_k, centroids);
+        saveClusters("./log/clustering_gmm_best_cpp.log", 2, dataset, gmm->getClusters());
     }
     
     
